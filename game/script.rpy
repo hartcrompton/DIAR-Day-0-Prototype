@@ -41,10 +41,6 @@ default pc_education = 0
 #choice variables
 default phone_wait_count = 0
 
-#init python:
- #   if persistent.scores is None:
-  #      persistent.scores = [ ]
-
 # The game starts here.
 label start:
 
