@@ -243,7 +243,9 @@ init python:
 
             # Return the render.
             return render
-    #these are the overlaid images that will be randomly selected, very manually     intensive -H
+
+    #these are the overlaid images that will be randomly selected, very manually intensive -H
+    #Currently the images are hardcoded. This can be broken out into a separate function that can import different images -H
     diff_items = []
     diff_items.append(STD_Item("images/mona_overlay.png", 0,0,205,521))
     diff_items.append(STD_Item("images/mona_overlay.png", 205,68,174,103))
@@ -263,29 +265,23 @@ init python:
 
 label minigamestart:
     python:
+        #time and score may not really be relevant to us -H
         starttime = renpy.time.time()
         the_score = 0
-    
         renpy.block_rollback()
-        
-        joe = SpotTheDifference("images/mona.png", diff_items)
-
-        joe.randomizeItems(5)
-        #image logo doubled = im.FactorScale("logo.png", 1.5)
-        #joe = im.FactorScale(joe, .5)
-        ui.add(joe)
-        #ui.textbutton("Give Up", clicked=ui.returns(joe.the_score), xalign=0.98, yalign=0.1)
-             
-        
+        difference_image = SpotTheDifference("images/mona.png", diff_items)
+        difference_image.randomizeItems(5)
+        ui.add(difference_image)
+        #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
         winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
-        winner = joe.the_score
+        winner = difference_image.the_score
         elapsed = round(renpy.time.time() - starttime)
         the_score += winner
         renpy.block_rollback()
 
-    image joe_img = afterImage("images/mona.png", diff_items)
-    show joe_img at cc
-    if (joe.count_differences() == 0):
+    image difference_image_img = afterImage("images/mona.png", diff_items)
+    show difference_image_img at cc
+    if (difference_image.count_differences() == 0):
         $ timebonus = int(100 * max((1.0 - ((elapsed - 20.0)/40.0)),0.0))
         $ the_score += timebonus
     jump afterminigame

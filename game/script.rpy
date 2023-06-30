@@ -1,7 +1,7 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+﻿#variables
+#default vs define
+#default variables are meant to be CHANGEABLE. The value is stored in save files.
+#define variables are meant to be CONSTANT. Changing a define variable will not be saved.
 
 #where character names start with the same letter, all are given 2-letter abbreviations
 #player character
@@ -18,7 +18,8 @@ define su = Character("Sunflowers")
 define so = Character("Soup")
 
 #side characters
-define ad = Character("Admin")
+#define ad = Character("Admin")
+define ad = Character("Admin", image="admin", kind=bubble)
 define e = Character("Ea-Nasir")
 define n = Character("Nighthawks")
 define p = Character("Poster")
@@ -64,10 +65,12 @@ label start:
     #vending machine "minigame" goes here
     jump vending_machine_intro
 
+#I am using WAY too few labels in this prototype
 label arguing_davids:
     d "But do you have to {i}stand{/i} on the head? It's grisly."
     meta "A voice echoes through the hall, but you still can't see anyone."
 
+    #menus are used for player choices / dialogue
     menu:                                               
             "\"Hello?\"":                                
                 meta "Your voice echoes like a ghost with no one to haunt."
@@ -104,6 +107,7 @@ label arguing_davids:
     scene davids with hpunch:
     meta "It's not stopping either."
 
+    #cutesy little phone interaction
     label get_the_phone:
         scene davids with hpunch:
         call phone_wait_response
@@ -113,6 +117,8 @@ label arguing_davids:
             "[phone_wait]":          
                 jump get_the_phone
 
+    #Show bubble vs regular text
+    #Bubbles seem to be VERY labor intensive
     show admin excited at right
     ad "Admin jumps into their long list of things that need to get done."
     show admin stressed at right
@@ -126,8 +132,9 @@ label arguing_davids:
 
     ad "What\'s your name?"
 
+    #player name input
     python:
-        pc_name = renpy.input("What is your name?", length=32)
+        pc_name = renpy.input("What is your name?", length=32) #length is maximum length of the string
         pc_name = pc_name.strip()
 
         if not pc_name:
@@ -170,6 +177,7 @@ label arguing_davids:
             $ pc_work = 5    
             ad "That's... well it's not too important."
     
+    #This dialogue line shows up twice so that the question is still visible in the menu
     ad "Any relevant skills?"
 
     menu:              
@@ -214,6 +222,7 @@ label arguing_davids:
     ad "I'm sure you're eager to start your journey here, so take the headset and follow along!"
 
     scene lobby
+    show admin at right
     ad "This is the lobby"
 
     scene antiquities
@@ -234,7 +243,7 @@ label arguing_davids:
 
     scene contemporary
     ad "This is contemporary"
-    gl "I'm young and unsure"
+    gl "I'm young and unsure."
     
     scene lobby
     ad "That's the tour! Remember to lock up! Fate of the museum is decided in one week!"
@@ -245,6 +254,7 @@ label arguing_davids:
     v "This is my helpful advice."
     pc "This is still weird but thanks for the helpful advice."
     v "You're welcome. Also if the museum closes then I GET CRUSHED INTO A CUBE."
+    pc "Oh shit!"
     meta "PC locks up, maybe some more brief encounters with pieces."
     meta "On the way out, encounter Nighthawks"
     n "You reckon they'll stay on?"
@@ -260,9 +270,6 @@ label afterminigame:
     n "Alright, that's it for now."
     jump end
 
-
-    
-
 #generates random responses for the phone
 label phone_wait_response:
     if phone_wait_count == 0:
@@ -275,12 +282,9 @@ label phone_wait_response:
 
 label vending_machine_intro:
         python:
-                button_press_count = 0
-                selection = 0
+            button_press_count = 0
+            selection = 0
         call screen vendingmachineselection          
-        #set button count to 0
-        #define the imagebutton posititions
-        #if buttoncount <= 1:
 
 
 label end:

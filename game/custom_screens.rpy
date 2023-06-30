@@ -277,24 +277,6 @@ screen vendingmachineselection:
         hover "vending_machine/button_hover.png"
         action [SetVariable("selection", If(button_press_count == 0, selection+0, selection+0)), SetVariable("button_press_count", button_press_count+1), If(button_press_count >= 1, Jump("vending_machine_checker"))]
 
-            #if button count == 0
-                #selection += 10
-                #buttoncount += 1
-            #else
-                #selection += 1
-        #image 2
-        #image 3
-        #image 4
-        #image 5
-        #image 6
-        #image 7
-        #image 8
-        #image 9
-        #image 0
-    #else
-        #check if valid selection
-            #dispense snack OR
-            #loop back around
 #checks for valid selection, restarts interaction if invalid
 label vending_machine_checker:
     python:

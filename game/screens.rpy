@@ -1454,7 +1454,7 @@ style bubble_who:
 
 style bubble_what:
     align (0.5, 0.5)
-    text_align 0.5
+    text_align 0
     layout "subtitle"
     color "#000"
 

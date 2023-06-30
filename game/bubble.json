@@ -1,0 +1,27 @@
+{
+    "get_the_phone_53a122c1": {
+        "area": [
+            960,
+            180,
+            640,
+            270
+        ]
+    },
+    "get_the_phone_7a27be58": {
+        "area": [
+            1040,
+            225,
+            560,
+            270
+        ],
+        "properties": "bottom_right"
+    },
+    "get_the_phone_a6cbcfb9": {
+        "area": [
+            960,
+            135,
+            720,
+            315
+        ]
+    }
+}

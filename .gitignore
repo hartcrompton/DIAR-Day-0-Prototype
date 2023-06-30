@@ -2,6 +2,8 @@
 ########################################
 cache/
 saves/
+game/cache/
+games/saves/
 
 
 # Compiled source #
@@ -15,6 +17,8 @@ saves/
 
 *.rpyc
 *.rpymc
+
+*.save
 
 
 # The log file and other misc things #
