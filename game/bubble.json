@@ -9,10 +9,10 @@
     },
     "get_the_phone_7a27be58": {
         "area": [
-            1040,
-            225,
-            560,
-            270
+            1120,
+            270,
+            480,
+            225
         ],
         "properties": "bottom_right"
     },

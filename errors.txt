@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 329: invalid syntax
-    else
+File "game/script.rpy", line 64: expected statement.
+    d_Total = 0
+            ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Wed Jun 28 17:15:07 2023
+Fri Jul  7 23:05:46 2023

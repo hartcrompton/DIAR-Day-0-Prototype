@@ -1,0 +1,18 @@
+Choice Strings
+Dialogue Strings
+120 characters, about 20 words
+Dialogue Flow
+10 dialogue strings max
+
+Writing checkpoints
+
+Stubs
+Iterate and Revise
+Drafts
+Iterate and Revise
+Finals
+Revise Revise Revise
+
+What random stats should we track
+
+How many times a player walks past a piece

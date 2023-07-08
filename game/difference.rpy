@@ -189,7 +189,7 @@ init python:
             if self.winner:
                     return (self.the_score)
                     
-            
+        #randomizes the overlay images
         def randomizeItems(self, difference_count):
             #randomzing at start:
             for index,i in enumerate(self.diff_items): 
@@ -263,12 +263,15 @@ init python:
 
 
 
-label minigamestart:
+label minigamestart(gameimage="default"):
+    if gameimage == "default":
+        return
     python:
         #time and score may not really be relevant to us -H
         starttime = renpy.time.time()
         the_score = 0
         renpy.block_rollback()
+        #we need to be able to input an argument here
         difference_image = SpotTheDifference("images/mona.png", diff_items)
         difference_image.randomizeItems(5)
         ui.add(difference_image)
@@ -284,4 +287,4 @@ label minigamestart:
     if (difference_image.count_differences() == 0):
         $ timebonus = int(100 * max((1.0 - ((elapsed - 20.0)/40.0)),0.0))
         $ the_score += timebonus
-    jump afterminigame
+    return

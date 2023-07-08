@@ -1,45 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/difference.rpy", line 285, in script
-    python:
-  File "game/difference.rpy", line 300, in <module>
-    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
-OSError: Couldn't find file 'sounds/yay.wav'.
+  File "game/day_zero.rpy", line 8, in script call
+    call DispositionCalc
+  File "game/day_zero.rpy", line 8, in script call
+    call DispositionCalc
+ScriptError: could not find label 'DispositionCalc'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/difference.rpy", line 285, in script
-    python:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/difference.rpy", line 300, in <module>
-    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4376, in interact_core
-    renpy.audio.audio.periodic()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\audio\audio.py", line 1222, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 444, in raise_
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\audio\audio.py", line 1200, in periodic_thread_main
-    periodic_pass()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\audio\audio.py", line 1142, in periodic_pass
-    c.periodic()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\audio\audio.py", line 534, in periodic
-    topf = load(filename)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\audio\audio.py", line 72, in load
-    rv = renpy.loader.load(fn, directory="audio")
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\loader.py", line 833, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'sounds/yay.wav'.
+  File "game/day_zero.rpy", line 8, in script call
+    call DispositionCalc
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1725, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+  File "game/day_zero.rpy", line 8, in script call
+    call DispositionCalc
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\script.py", line 1013, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'DispositionCalc'.
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Wed Jun 28 19:34:54 2023
+Fri Jul  7 23:09:29 2023
