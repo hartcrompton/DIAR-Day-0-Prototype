@@ -1,5 +1,150 @@
 #disposition system
 
+screen DispositionMenu:
+    add "UI/Disposition/DispositionMenuBG.png"
+    frame:
+        xalign 0
+        yalign 0
+        xoffset 30
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "Arnolfini" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "1" size 40
+                text "2" size 40
+                text "3" size 40
+    frame:
+        xalign 0
+        yalign .3
+        xoffset 30
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "The Davids" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "1" size 40
+                text "2" size 40
+                text "3" size 40
+    frame:
+        xalign 0
+        yalign .6
+        xoffset 30
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "Gilgamesh" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "1" size 40
+                text "2" size 40
+                text "3" size 40
+    frame:
+        xalign .3
+        yalign 0
+        xoffset 30
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "Glimmer" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "1" size 40
+                text "2" size 40
+                text "3" size 40
+    frame:
+        xalign .3
+        yalign .3
+        xoffset 30
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "Mona Lisa" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "1" size 40
+                text "2" size 40
+                text "3" size 40
+    frame:
+        xalign .3
+        yalign .6
+        xoffset 30
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "Saint Catherine" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "1" size 40
+                text "2" size 40
+                text "3" size 40
+    frame:
+        xalign .6
+        yalign 0
+        xoffset 30
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "Soup" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "1" size 40
+                text "2" size 40
+                text "3" size 40
+    frame:
+        xalign .6
+        yalign .3
+        xoffset 30
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "Sunflowers" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "1" size 40
+                text "2" size 40
+                text "3" size 40
+    textbutton "Return":
+        xalign 1.0
+        yalign 0.0
+        xoffset -30
+        yoffset 30
+        action Return()
+
 label TotalDisposition:
     python:
         arr_dispositions = []

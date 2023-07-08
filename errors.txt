@@ -2,9 +2,38 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 64: expected statement.
-    d_Total = 0
-            ^
+File "game/characters/C_Arnolfini.rpy", line 63: invalid syntax
+    if (d_Arnolfini > 0, d_Arnolfini - 1)
+
+File "game/characters/C_Arnolfini.rpy", line 74: invalid syntax
+    if (d_Arnolfini < 6, d_Arnolfini + 1)
+
+File "game/characters/C_Arnolfini.rpy", line 81: invalid syntax
+    if (d_Arnolfini > 0, d_Arnolfini - 1)
+
+File "game/characters/C_Arnolfini.rpy", line 92: invalid syntax
+    if (d_Arnolfini < 6, d_Arnolfini + 1)
+
+File "game/characters/C_Arnolfini.rpy", line 99: invalid syntax
+    if (d_Arnolfini > 0, d_Arnolfini - 1)
+
+File "game/characters/C_Arnolfini.rpy", line 110: invalid syntax
+    if (d_Arnolfini < 6, d_Arnolfini + 1)
+
+File "game/characters/C_Arnolfini.rpy", line 117: invalid syntax
+    if (d_Arnolfini > 0, d_Arnolfini - 1)
+
+File "game/characters/C_Arnolfini.rpy", line 128: invalid syntax
+    if (d_Arnolfini < 6, d_Arnolfini + 1)
+
+File "game/characters/C_Arnolfini.rpy", line 135: invalid syntax
+    if (d_Arnolfini > 0, d_Arnolfini - 1)
+
+File "game/characters/C_Arnolfini.rpy", line 146: invalid syntax
+    if (d_Arnolfini < 6, d_Arnolfini + 1)
+
+File "game/characters/C_Arnolfini.rpy", line 153: invalid syntax
+    if (d_Arnolfini > 0, d_Arnolfini - 1)
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Fri Jul  7 23:05:46 2023
+Sat Jul  8 12:07:32 2023

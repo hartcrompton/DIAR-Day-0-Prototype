@@ -7,7 +7,6 @@ label gameintroduction:
     meta "You have just enough cash for something from the vending machine."
     call TotalDisposition
     meta "Current disposition is: [d_Total]"
-    jump call_mapUI
     #vending machine "minigame" goes here
     jump vending_machine_intro
 
@@ -231,4 +230,3 @@ label vending_machine_intro:
             button_press_count = 0
             selection = 0
         call screen vendingmachineselection          
-

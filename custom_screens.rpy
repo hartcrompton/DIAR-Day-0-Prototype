@@ -1,15 +1,11 @@
 ﻿## Screen with Stats Button
 screen gameUI:
-    imagebutton:
+    textbutton "Stats":
         xalign 1.0
         yalign 0.0
         xoffset -30
         yoffset 30
-        auto "UI/map_%s.png"
-        action Jump ("call_mapUI")
-        # You may also use the code below depending on your needs.
-        # action ShowMenu("mapUI")
-        # This was the same code used in the vlog.
+        action ShowMenu("DispositionMenu")
 
 # If you just want to show a map that does nothing more than just an indicator, it's good to use ShowMenu.
 # If you want to navigate using the map, it's prefered to use "call".
