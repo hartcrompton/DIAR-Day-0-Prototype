@@ -1,73 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 76, in script call
-    call pronounselection
-  File "game/pronountool.rpy", line 349, in script
-    menu:
-  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 69, in _window_show
-    renpy.with_statement(trans)
-  File "game/custom_screens.rpy", line 2, in execute
-    screen gameUI:
-  File "game/custom_screens.rpy", line 2, in execute
-    screen gameUI:
-  File "game/custom_screens.rpy", line 3, in execute
-    imagebutton:
-Exception: Imagebutton does not have a idle image. (auto='UI/map_%s.png').
+  File "game/map.rpy", line 16, in script
+    call screen Office
+ScriptError: could not find label 'conv_Poster'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 76, in script call
-    call pronounselection
-  File "game/pronountool.rpy", line 349, in script
-    menu:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1878, in execute
-    statement_name("menu-with-caption")
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 47, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 69, in _window_show
-    renpy.with_statement(trans)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1757, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 2975, in do_with
-    return self.interact(trans_pause=True,
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  [Previous line repeated 1 more time]
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 476, in visit_all
-    callback(self)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 487, in per_interact
-    self.update()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 680, in update
-    self.screen.function(**self.scope)
-  File "game/custom_screens.rpy", line 2, in execute
-    screen gameUI:
-  File "game/custom_screens.rpy", line 2, in execute
-    screen gameUI:
-  File "game/custom_screens.rpy", line 3, in execute
-    imagebutton:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 948, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 942, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto='UI/map_%s.png').
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\main.py", line 670, in main
+    run(restart)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\main.py", line 144, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\execution.py", line 953, in run_context
+    context.run()
+  File "game/map.rpy", line 16, in script
+    call screen Office
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\script.py", line 1013, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'conv_Poster'.
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Sat Jul  8 10:32:53 2023
+Sat Jul  8 12:48:10 2023
