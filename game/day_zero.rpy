@@ -7,7 +7,6 @@ label gameintroduction:
     meta "You have just enough cash for something from the vending machine."
     call TotalDisposition
     meta "Current disposition is: [d_Total]"
-    jump call_mapUI
     #vending machine "minigame" goes here
     jump vending_machine_intro
 
@@ -25,10 +24,10 @@ label arguing_davids:
 
     d "Anyway it's \"David and Goliath\" not \"Goliath and Goliath\" you oversized fool."
 
-    scene bg davids distant
+    scene davids
     meta "The voices seem to come from somewhere behind a trio of statues."
 
-    scene bg davids close
+    scene davids
     meta "Moving closer, the voices are clearer."
     meta "They're not... coming from the statues, are they?"
 
@@ -167,31 +166,34 @@ label arguing_davids:
     ad "Ok, great! I'll take care of the filing."
     ad "I'm sure you're eager to start your journey here, so take the headset and follow along!"
 
-    scene lobby
+    scene foyer_bg
     show admin at right
     ad "This is the lobby"
 
-    scene antiquities
+    scene antiquities_bg
     ad "This is antiquities"
     gi "Something rude about the admin"
     pc "What?"
     ad "Moving on."
 
-    scene fineart
+    scene fineart_bg
     ad "This is the Fine Art wing"
     t "Please don't mention Van Gogh."
-    ad "These are the famous paintings by Van Gogh."
+    ad "This is the famous self portrait by Van Gogh."
     t "God damnit."
-    su "Man I hate this soup."
-    so "Don't you want to be something more than just sunflowers?"
+    ar "We hate each other."
+    ar "So much."
     pc "WHAT IS HAPPENING?"
     ad "Next stop, keep up, I have 1078 more calls today"
 
-    scene contemporary
-    ad "This is contemporary"
+    scene mixedmedia_bg
+    ad "This is mixed media"
+    ad "Sunflowers was originally in the fine art wing, until..."
+    ad "Well, we couldn't afford to clean it, so now it's here."
     gl "I'm young and unsure."
+    su "I hate this soup."
     
-    scene lobby
+    scene foyer_bg
     ad "That's the tour! Remember to lock up! Fate of the museum is decided in one week!"
     pc "This sucks"
     v "Psst. Keys are in the drawer."
@@ -206,15 +208,9 @@ label arguing_davids:
     n "You reckon they'll stay on?"
     n "Nah, they won't even come back."
 
-    #just seeing how throwing in the minigame plays out
-    scene minigame bg
-    call minigamestart pass (gameimage="mona")
-
-label afterminigame:
-    n "Wow, [they] just played the Spot The Difference Minigame."
     scene minigameover bg
-    n "Alright, that's it for now."
-    jump end
+    n "Alright, that's the first day, see you tomorrow."
+    jump day_start
 
 #generates random responses for the phone
 label phone_wait_response:

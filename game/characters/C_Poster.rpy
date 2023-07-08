@@ -1,6 +1,8 @@
 #Poster
 
 label conv_Poster:
+    scene office_bg
+    show poster at right
     p "You're talking to me, the Poster! I'm a side character!"
     menu:
         "[[Chat a little.]":

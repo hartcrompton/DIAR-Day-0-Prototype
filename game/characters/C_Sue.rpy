@@ -1,6 +1,8 @@
 #Sue
 
 label conv_Sue:
+    scene antiquities_bg
+    show sue at right
     p "You're talking to me, the Sue! I'm a side character!"
     menu:
         "[[Chat a little.]":

@@ -4,31 +4,30 @@
 #choice between cleaning and research, this might change since I dunno how valuable the research stuff is
 #then the free roaming
 #then when out of actions, nighthawks or leave
-default daynumber = 1
+default DayNumber = 1
 default actions = 4
 
 label day_start:
-    if daynumber == 7:
-        jump final_exhibit
-    scene lobby bg morning
+    show screen gameUI
+    scene foyer_bg
     $ actions = 4
-    $ days_remaining = 7 - daynumber
-    meta "It is day [daynumber]."
+    $ days_remaining = 7 - DayNumber
+    meta "It is day [DayNumber]."
     show admin at right
     ad "Good morning! Hope you slept well, you have [days_remaining] days left before the exhibit."
-    if daynumber == 1:
+    if DayNumber == 1:
         ad "Since it's your first day, let me tell you what to do."
-    elif daynumber == 2:
+    elif DayNumber == 2:
         ad "It's your second day!"
-    elif daynumber == 3:
+    elif DayNumber == 3:
         ad "It's your third day!"
-    elif daynumber == 4:
+    elif DayNumber == 4:
         ad "It's your fourth day!"
-    elif daynumber == 5:
+    elif DayNumber == 5:
         ad "It's your fifth day!"
-    elif daynumber == 6:
+    elif DayNumber == 6:
         ad "It's your sixth day!"
-    elif daynumber == 7:
+    elif DayNumber == 7:
         ad "It's the last day!"
 
     ad "The museum's filthy, so you might want to clean."
@@ -42,14 +41,21 @@ label day_start:
 
 label daily_cleaning:
     #cleaning minigame goes here
-    call minigamestart("cleaning")
+    scene bg cleaning
+    call minigamestart_cleaning("cleaning")
+    meta "Now you're free to roam around the museum"
+    jump free_roam
 
 label daily_research:
+    scene bg research
     call minigamestart("research")
+    meta "Now you're free to roam around the museum"
+    jump free_roam
     #research minigame goes here
     #admin asks who you want to research, gives you some garbage directions, try to find the book
 
 label free_roam:
+    show screen gameUI
     if actions == 0:
         jump out_of_actions
     else:
@@ -66,8 +72,12 @@ label out_of_actions:
             jump day_end
 
 label nighthawks_daily:
+    n "We'll say something about the player actions here."
     jump day_end
 
-label day_end:
-    $ daynumber = daynumber - 1
-    return
+label day_end:    
+    meta "That's the end of day [DayNumber]"
+    if DayNumber == 7:
+        jump final_exhibit
+    $ DayNumber = DayNumber + 1
+    jump day_start

@@ -1,13 +1,60 @@
 #map
 label call_mapUI:
+    show screen gameUI
     call screen MapUI
 
 screen MapUI:
     add "map/museum map bg.png"
+    textbutton "Stats":
+        xalign 1.0
+        yalign 0.0
+        xoffset -30
+        yoffset 30
+        action ShowMenu("DispositionMenu")
+    textbutton "Day [DayNumber]":
+        xalign 0.0
+        yalign 0.0
+        xoffset 30
+        yoffset 30
+    textbutton "Remaining Actions: [actions]":
+        xalign 0.0
+        yalign 0.0
+        xoffset 30
+        yoffset 60
 
+
+    #foyer
     imagebutton:
         xpos 253
         ypos 305
+        idle "map/museum_map_idle.png"
+        hover "map/museum_map_hover.png"
+        action Jump("call_Foyer")
+    #antiquities
+    imagebutton:
+        xpos 832
+        ypos 305
+        idle "map/museum_map_idle.png"
+        hover "map/museum_map_hover.png"
+        action Jump("call_Antiquities")
+    #fineart
+    imagebutton:
+        xpos 1411
+        ypos 305
+        idle "map/museum_map_idle.png"
+        hover "map/museum_map_hover.png"
+        action Jump("call_FineArt")
+    #mixedmedia
+    imagebutton:
+        xpos 253
+        ypos 715
+        idle "map/museum_map_idle.png"
+        hover "map/museum_map_hover.png"
+        action Jump("call_MixedMedia")
+    #office
+    imagebutton:
+        xpos 832
+        ypos 715
         idle "map/museum_map_idle.png"
         hover "map/museum_map_hover.png"
         action Jump("call_Office")

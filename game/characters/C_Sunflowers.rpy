@@ -3,6 +3,8 @@
 default beat_Sunflowers = 1
 
 label conv_Sunflowers:
+    scene mixedmedia_bg
+    show sunflowers at right
     p "You're talking to me, the Sunflowers!"
     menu:
         "[[Chat a little.]":

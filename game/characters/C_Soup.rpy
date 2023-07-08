@@ -3,6 +3,8 @@
 default beat_Soup = 1
 
 label conv_Soup:
+    scene mixedmedia_bg
+    show soup at right
     p "You're talking to me, the Soup!"
     menu:
         "[[Chat a little.]":

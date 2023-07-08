@@ -3,6 +3,8 @@
 default beat_Glimmer = 1
 
 label conv_Glimmer:
+    scene mixedmedia_bg
+    show glimmer at right
     p "You're talking to me, the Glimmer!"
     menu:
         "[[Chat a little.]":

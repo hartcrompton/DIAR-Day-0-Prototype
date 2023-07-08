@@ -2,6 +2,8 @@
 
 screen DispositionMenu:
     add "UI/Disposition/DispositionMenuBG.png"
+    #arnolfini
+    $ d_LabelName = d_Label.ValueToLabel(d_Arnolfini)
     frame:
         xalign 0
         yalign 0
@@ -16,9 +18,11 @@ screen DispositionMenu:
                 text "Disposition" size 40
             vbox:
                 spacing 10
-                text "1" size 40
-                text "2" size 40
-                text "3" size 40
+                text "" size 40
+                text "[beat_Arnolfini] / 7" size 40
+                text "[d_LabelName]" size 40
+    #davids
+    $ d_LabelName = d_Label.ValueToLabel(d_Davids)
     frame:
         xalign 0
         yalign .3
@@ -33,9 +37,11 @@ screen DispositionMenu:
                 text "Disposition" size 40
             vbox:
                 spacing 10
-                text "1" size 40
-                text "2" size 40
-                text "3" size 40
+                text "" size 40
+                text "[beat_Davids] / 7" size 40
+                text "[d_LabelName]" size 40
+    #Gilgamesh
+    $ d_LabelName = d_Label.ValueToLabel(d_Gilgamesh)
     frame:
         xalign 0
         yalign .6
@@ -50,12 +56,14 @@ screen DispositionMenu:
                 text "Disposition" size 40
             vbox:
                 spacing 10
-                text "1" size 40
-                text "2" size 40
-                text "3" size 40
+                text "" size 40
+                text "[beat_Gilgamesh] / 7" size 40
+                text "[d_LabelName]" size 40
+    #Glimmer
+    $ d_LabelName = d_Label.ValueToLabel(d_Glimmer)
     frame:
-        xalign .3
-        yalign 0
+        xalign 0
+        yalign .9
         xoffset 30
         yoffset 30
         hbox:
@@ -67,47 +75,53 @@ screen DispositionMenu:
                 text "Disposition" size 40
             vbox:
                 spacing 10
-                text "1" size 40
-                text "2" size 40
-                text "3" size 40
+                text "" size 40
+                text "[beat_Glimmer] / 7" size 40
+                text "[d_LabelName]" size 40
+    #MonaLisa
+    $ d_LabelName = d_Label.ValueToLabel(d_MonaLisa)
     frame:
-        xalign .3
-        yalign .3
-        xoffset 30
-        yoffset 30
-        hbox:
-            spacing 40
-            vbox:
-                spacing 10
-                text "Mona Lisa" size 40
-                text "Beats Progress" size 40
-                text "Disposition" size 40
-            vbox:
-                spacing 10
-                text "1" size 40
-                text "2" size 40
-                text "3" size 40
-    frame:
-        xalign .3
-        yalign .6
-        xoffset 30
-        yoffset 30
-        hbox:
-            spacing 40
-            vbox:
-                spacing 10
-                text "Saint Catherine" size 40
-                text "Beats Progress" size 40
-                text "Disposition" size 40
-            vbox:
-                spacing 10
-                text "1" size 40
-                text "2" size 40
-                text "3" size 40
-    frame:
-        xalign .6
+        xalign 0
         yalign 0
-        xoffset 30
+        xoffset 1080
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "MonaLisa" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "" size 40
+                text "[beat_MonaLisa] / 7" size 40
+                text "[d_LabelName]" size 40
+    #SaintCatherine
+    $ d_LabelName = d_Label.ValueToLabel(d_SaintCatherine)
+    frame:
+        xalign 0
+        yalign .3
+        xoffset 1080
+        yoffset 30
+        hbox:
+            spacing 40
+            vbox:
+                spacing 10
+                text "SaintCatherine" size 40
+                text "Beats Progress" size 40
+                text "Disposition" size 40
+            vbox:
+                spacing 10
+                text "" size 40
+                text "[beat_SaintCatherine] / 7" size 40
+                text "[d_LabelName]" size 40
+    #Soup
+    $ d_LabelName = d_Label.ValueToLabel(d_Soup)
+    frame:
+        xalign 0
+        yalign .6
+        xoffset 1080
         yoffset 30
         hbox:
             spacing 40
@@ -118,13 +132,15 @@ screen DispositionMenu:
                 text "Disposition" size 40
             vbox:
                 spacing 10
-                text "1" size 40
-                text "2" size 40
-                text "3" size 40
+                text "" size 40
+                text "[beat_Soup] / 7" size 40
+                text "[d_LabelName]" size 40
+    #Sunflowers
+    $ d_LabelName = d_Label.ValueToLabel(d_Sunflowers)
     frame:
-        xalign .6
-        yalign .3
-        xoffset 30
+        xalign 0
+        yalign .9
+        xoffset 1080
         yoffset 30
         hbox:
             spacing 40
@@ -135,9 +151,9 @@ screen DispositionMenu:
                 text "Disposition" size 40
             vbox:
                 spacing 10
-                text "1" size 40
-                text "2" size 40
-                text "3" size 40
+                text "" size 40
+                text "[beat_Sunflowers] / 7" size 40
+                text "[d_LabelName]" size 40
     textbutton "Return":
         xalign 1.0
         yalign 0.0
@@ -172,4 +188,25 @@ label TotalDisposition:
                 d_Total += d_Tier6
             elif i == 6:
                 d_Total += d_Tier7
+    return
+
+#call DispositionValueToLabel pass (d_Arnolfini)
+
+label DispositionValueToLabel(d_Value = 0):
+    python:
+        d_Label = "UNDEFINED"
+        if d_Value == 0:
+            d_Label = "Terrible"
+        elif d_Value == 1:
+            d_Label = "Bad"
+        elif d_Value == 2:
+            d_Label = "Unpleasant"
+        elif d_Value == 3:
+            d_Label = "Neutral"
+        elif d_Value == 4:
+            d_Label = "OK"
+        elif d_Value == 5:
+            d_Label = "Good"
+        elif d_Value == 6:
+            d_Label = "Great"
     return

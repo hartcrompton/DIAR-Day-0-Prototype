@@ -1,6 +1,8 @@
 #Theodore
 
 label conv_Theodore:
+    scene fineart_bg
+    show theodore at right
     p "You're talking to me, the Theodore! I'm a side character!"
     menu:
         "[[Chat a little.]":

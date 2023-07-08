@@ -1,6 +1,8 @@
 #Nighthawks
 
 label conv_Nighthawks:
+    scene foyer_bg
+    show nighthawks at right
     p "You're talking to me, the Nighthawks! I'm a side character!"
     menu:
         "[[Chat a little.]":

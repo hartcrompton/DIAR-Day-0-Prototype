@@ -44,13 +44,13 @@ default phone_wait_count = 0
 
 
 default d_Arnolfini = 0
-default d_Davids = 0
-default d_Gilgamesh = 0
+default d_Davids = 1
+default d_Gilgamesh = 2
 default d_Glimmer = 0
-default d_MonaLisa = 0
-default d_SaintCatherine = 0
+default d_MonaLisa = 4
+default d_SaintCatherine = 5
 default d_Soup = 0
-default d_Sunflowers = 0
+default d_Sunflowers = 7
 
 #disposition tier values
 define d_Tier1 = -150
@@ -63,9 +63,37 @@ define d_Tier7 = 35
 
 default d_Total = 0
 
+init python:
+
+    class d_LabelFromValue():
+
+        def __init__(self):
+            self.value = 0
+            self.label = "none"
+
+        def ValueToLabel(self, value):
+            if value == 0:
+                self.label = "Terrible"
+            elif value == 1:
+                self.label = "Bad"
+            elif value == 2:
+                self.label = "Unpleasant"
+            elif value == 3:
+                self.label = "Neutral"
+            elif value == 4:
+                self.label = "OK"
+            elif value == 5:
+                self.label = "Good"
+            elif value == 6:
+                self.label = "Great"
+            return self.label
+
+default d_Label = d_LabelFromValue()
+
+#d_Label.ValueToLabel(d_Arnolfini)
+
 # The game starts here.
 label start:
-    show screen gameUI
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.

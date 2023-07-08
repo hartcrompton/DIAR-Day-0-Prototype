@@ -3,6 +3,8 @@
 default beat_SaintCatherine = 1
 
 label conv_SaintCatherine:
+    scene mixedmedia_bg
+    show saintcatherine at right
     p "You're talking to me, the SaintCatherine!"
     menu:
         "[[Chat a little.]":

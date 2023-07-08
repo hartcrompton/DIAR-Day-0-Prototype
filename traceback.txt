@@ -1,28 +1,65 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/map.rpy", line 16, in script
-    call screen Office
-ScriptError: could not find label 'conv_Poster'.
+While loading <renpy.display.im.Crop object at 0x0000000004a19d60>:
+  File "game/daily_loop.rpy", line 44, in script call
+    call minigamestart_cleaning("cleaning")
+  File "game/cleaning_minigame.rpy", line 237, in script
+    python:
+  File "game/cleaning_minigame.rpy", line 247, in <module>
+    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
+  File "game/cleaning_minigame.rpy", line 68, in render
+    diff_render = renpy.render(i.myimage, width, height, st, at)
+error: subsurface rectangle outside surface area.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\bootstrap.py", line 275, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\main.py", line 670, in main
-    run(restart)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\main.py", line 144, in run
-    renpy.execution.run_context(True)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\execution.py", line 953, in run_context
-    context.run()
-  File "game/map.rpy", line 16, in script
-    call screen Office
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\script.py", line 1013, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'conv_Poster'.
+  File "game/daily_loop.rpy", line 44, in script call
+    call minigamestart_cleaning("cleaning")
+  File "game/cleaning_minigame.rpy", line 237, in script
+    python:
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/cleaning_minigame.rpy", line 247, in <module>
+    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4172, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 2779, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "game/cleaning_minigame.rpy", line 68, in render
+    diff_render = renpy.render(i.myimage, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 676, in render
+    return cache.get(self, render=True)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 330, in get
+    surf = image.load()
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 1192, in load
+    return cache.get(self.image).subsurface((self.x*os, self.y*os,
+  File "src/pygame_sdl2/surface.pyx", line 642, in pygame_sdl2.surface.Surface.subsurface
+error: subsurface rectangle outside surface area.
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Sat Jul  8 12:48:10 2023
+Sat Jul  8 17:27:56 2023

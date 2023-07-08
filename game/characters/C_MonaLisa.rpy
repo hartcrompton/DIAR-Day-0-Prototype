@@ -3,6 +3,8 @@
 default beat_MonaLisa = 1
 
 label conv_MonaLisa:
+    scene fineart_bg
+    show monalisa at right
     p "You're talking to me, the MonaLisa!"
     menu:
         "[[Chat a little.]":

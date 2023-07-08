@@ -3,6 +3,8 @@
 default beat_Davids = 1
 
 label conv_Davids:
+    scene foyer_bg
+    show davids at right
     p "You're talking to me, the Davids!"
     menu:
         "[[Chat a little.]":

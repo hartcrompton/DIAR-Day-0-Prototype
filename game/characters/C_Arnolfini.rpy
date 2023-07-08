@@ -1,8 +1,11 @@
 #Arnolfini
 
 default beat_Arnolfini = 1
+default d_ArnolfiniLabel = "DEFAULT LABEL"
 
 label conv_Arnolfini:
+    scene fineart_bg
+    show arnolfini at right
     p "You're talking to me, the Arnolfini!"
     menu:
         "[[Chat a little.]":

@@ -3,6 +3,8 @@
 default beat_Gilgamesh = 1
 
 label conv_Gilgamesh:
+    scene antiquities_bg
+    show gilgamesh at right
     p "You're talking to me, the Gilgamesh!"
     menu:
         "[[Chat a little.]":

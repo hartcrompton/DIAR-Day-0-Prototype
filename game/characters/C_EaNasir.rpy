@@ -1,6 +1,8 @@
 #EaNasir
 
 label conv_EaNasir:
+    scene antiquities_bg
+    show eanasir at right
     p "You're talking to me, the EaNasir! I'm a side character!"
     menu:
         "[[Chat a little.]":

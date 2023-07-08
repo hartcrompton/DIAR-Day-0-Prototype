@@ -1,6 +1,8 @@
 #Admin
 
 label conv_Admin:
+    scene office_bg
+    show admin at right
     p "You're talking to me, the Admin! I'm a side character!"
     menu:
         "[[Chat a little.]":
