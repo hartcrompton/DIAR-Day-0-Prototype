@@ -27,3 +27,5 @@ log.txt
 errors.txt
 traceback.txt
 files.txt
+game/saves/persistent
+log.txt
