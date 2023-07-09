@@ -4,7 +4,7 @@ cache/
 saves/
 game/cache/
 games/saves/
-
+games/saves/persistent
 
 # Compiled source #
 ###################
