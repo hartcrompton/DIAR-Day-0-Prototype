@@ -1,6 +1,6 @@
 #day 0
 label gameintroduction:
-    
+    scene museum bg1
     meta "You're in a crappy museum because you missed your bus in the rain."
     meta "The museum is deserted, no one even working the front desk."
     meta "The rain is not stopping."
@@ -24,10 +24,10 @@ label arguing_davids:
 
     d "Anyway it's \"David and Goliath\" not \"Goliath and Goliath\" you oversized fool."
 
-    scene davids
+    scene museum bg1
+    show davids
     meta "The voices seem to come from somewhere behind a trio of statues."
 
-    scene davids
     meta "Moving closer, the voices are clearer."
     meta "They're not... coming from the statues, are they?"
 
@@ -36,7 +36,8 @@ label arguing_davids:
             meta "Cautiously, you raise a leg over the rope."
 
     meta "It feels wrong, like being in a school hallway after hours."
-    scene davids with hpunch:
+    scene museum bg1 with hpunch:
+    show davids
     meta "An alarm blares through the museum, you nearly drip as you hop back from the rope."
 
     menu:                                               
@@ -45,16 +46,17 @@ label arguing_davids:
         "Freeze and act small.":          
             meta "You're not the first person who tried to get too close to a museum piece."
 
-    scene davids with hpunch:
+    scene museum bg1 with hpunch:
+    show davids
     meta "The alarm blares again."
     meta "Oh. It's just the phone."
 
-    scene davids with hpunch:
+    scene museum bg1 with hpunch:
     meta "It's not stopping either."
 
     #cutesy little phone interaction
     label get_the_phone:
-        scene davids with hpunch:
+        scene museum bg1 with hpunch:
         call phone_wait_response
         menu:                                               
             "Answer the Phone":      
@@ -166,36 +168,51 @@ label arguing_davids:
     ad "Ok, great! I'll take care of the filing."
     ad "I'm sure you're eager to start your journey here, so take the headset and follow along!"
 
-    scene foyer_bg
+    scene museum bg1
     show admin at right
     ad "This is the lobby"
 
-    scene antiquities_bg
+    scene museum bg2
     ad "This is antiquities"
+    show gilgamesh at left
     gi "Something rude about the admin"
     pc "What?"
+    show admin at right
     ad "Moving on."
 
-    scene fineart_bg
+    scene museum bg1
+    show admin at right
     ad "This is the Fine Art wing"
+    show theodore at left
     t "Please don't mention Van Gogh."
+    show admin at right
     ad "This is the famous self portrait by Van Gogh."
+    show theodore angry at left
     t "God damnit."
+    hide theodore
+    show arnolfinim at left
     ar "We hate each other."
+    show arnolfiniw at left
     ar "So much."
     pc "WHAT IS HAPPENING?"
     ad "Next stop, keep up, I have 1078 more calls today"
 
-    scene mixedmedia_bg
+    scene museum bg2
+    show admin at right
     ad "This is mixed media"
+    show sunflowers at left
     ad "Sunflowers was originally in the fine art wing, until..."
     ad "Well, we couldn't afford to clean it, so now it's here."
+    show glimmer at left
     gl "I'm young and unsure."
+    hide glimmer
+    show sunflowers at left
     su "I hate this soup."
     
-    scene foyer_bg
+    scene museum bg1
     ad "That's the tour! Remember to lock up! Fate of the museum is decided in one week!"
     pc "This sucks"
+    show vendingmachine
     v "Psst. Keys are in the drawer."
     pc "You talk too?"
     v "Yeah, don't worry about it. Let me give you helpful advice."
@@ -203,12 +220,14 @@ label arguing_davids:
     pc "This is still weird but thanks for the helpful advice."
     v "You're welcome. Also if the museum closes then I GET CRUSHED INTO A CUBE."
     pc "Oh shit!"
+    hide vendingmachine
     meta "PC locks up, maybe some more brief encounters with pieces."
     meta "On the way out, encounter Nighthawks"
+    show nighthawks at truecenter
     n "You reckon they'll stay on?"
     n "Nah, they won't even come back."
 
-    scene minigameover bg
+    scene museum bg1
     n "Alright, that's the first day, see you tomorrow."
     jump day_start
 

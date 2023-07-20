@@ -9,9 +9,9 @@ default actions = 4
 
 label day_start:
     show screen gameUI
-    scene foyer_bg
+    scene museum bg1
     $ actions = 4
-    $ days_remaining = 7 - DayNumber
+    $ days_remaining = 4 - DayNumber
     meta "It is day [DayNumber]."
     show admin at right
     ad "Good morning! Hope you slept well, you have [days_remaining] days left before the exhibit."
@@ -22,13 +22,8 @@ label day_start:
     elif DayNumber == 3:
         ad "It's your third day!"
     elif DayNumber == 4:
-        ad "It's your fourth day!"
-    elif DayNumber == 5:
-        ad "It's your fifth day!"
-    elif DayNumber == 6:
-        ad "It's your sixth day!"
-    elif DayNumber == 7:
         ad "It's the last day!"
+
 
     ad "The museum's filthy, so you might want to clean."
     ad "But you don't know much, so maybe you want to research."
@@ -36,12 +31,10 @@ label day_start:
     menu:
         "I'll clean today.":
             jump daily_cleaning
-        "I need to do some research.":
-            jump daily_research
 
 label daily_cleaning:
     #cleaning minigame goes here
-    scene bg cleaning
+    scene museum bg1
     call minigamestart_cleaning("cleaning")
     meta "Now you're free to roam around the museum"
     jump free_roam
@@ -77,7 +70,7 @@ label nighthawks_daily:
 
 label day_end:    
     meta "That's the end of day [DayNumber]"
-    if DayNumber == 7:
+    if DayNumber == 4:
         jump final_exhibit
     $ DayNumber = DayNumber + 1
     jump day_start

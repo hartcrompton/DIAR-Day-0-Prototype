@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/cleaning_minigame.rpy", line 234: invalid syntax
-    diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.jpg", 1699,385,,465))
-                                                                                             ^
+File "game/script.rpy", line 123: choice menuitem expects a non-empty block.
+    "Glass":
+            ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sat Jul  8 17:27:59 2023
+Thu Jul 20 17:26:44 2023

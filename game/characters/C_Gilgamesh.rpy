@@ -11,7 +11,7 @@ label conv_Gilgamesh:
             p "We're chatting a little now!"
             pc "We sure are."
             jump conv_Gilgamesh
-        "[[Use an action.]" if actions > 0 and beat_Gilgamesh < 7:
+        "[[Use an action.]" if actions > 0 and beat_Gilgamesh < 4:
             p "Whoa, sure you want to use an action?"
             jump .use_action
         "Bye":
@@ -85,60 +85,6 @@ label .beat3:
     return
 label .beat4:
     p "This is the fourth beat of my story!"
-    menu:
-        "You rock.":
-            p "That raises my disposition."
-            p "You have [actions] action(s) left."
-            pc "I did an action."
-            $ beat_Gilgamesh += 1
-            $ if d_Gilgamesh < 6: d_Gilgamesh + 1
-            jump conv_Gilgamesh
-        "You suck.":
-            p "That lowers my disposition."
-            p "You have [actions] action(s) left."
-            pc "I did an action."
-            $ beat_Gilgamesh += 1
-            $ if d_Gilgamesh > 0: d_Gilgamesh - 1
-            jump conv_Gilgamesh
-    return
-label .beat5:
-    p "This is the fifth beat of my story!"
-    menu:
-        "You rock.":
-            p "That raises my disposition."
-            p "You have [actions] action(s) left."
-            pc "I did an action."
-            $ beat_Gilgamesh += 1
-            $ if d_Gilgamesh < 6: d_Gilgamesh + 1
-            jump conv_Gilgamesh
-        "You suck.":
-            p "That lowers my disposition."
-            p "You have [actions] action(s) left."
-            pc "I did an action."
-            $ beat_Gilgamesh += 1
-            $ if d_Gilgamesh > 0: d_Gilgamesh - 1
-            jump conv_Gilgamesh
-    return
-label .beat6:
-    p "This is the sixth beat of my story!"
-    menu:
-        "You rock.":
-            p "That raises my disposition."
-            p "You have [actions] action(s) left."
-            pc "I did an action."
-            $ beat_Gilgamesh += 1
-            $ if d_Gilgamesh < 6: d_Gilgamesh + 1
-            jump conv_Gilgamesh
-        "You suck.":
-            p "That lowers my disposition."
-            p "You have [actions] action(s) left."
-            pc "I did an action."
-            $ beat_Gilgamesh += 1
-            $ if d_Gilgamesh > 0: d_Gilgamesh - 1
-            jump conv_Gilgamesh
-    return
-label .beat7:
-    p "This is the seventh and final beat of my story!"
     menu:
         "You rock.":
             p "That raises my disposition."

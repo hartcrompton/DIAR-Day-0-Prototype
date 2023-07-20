@@ -19,7 +19,7 @@ screen DispositionMenu:
             vbox:
                 spacing 10
                 text "" size 40
-                text "[beat_Arnolfini] / 7" size 40
+                text "[beat_Arnolfini] / 4" size 40
                 text "[d_LabelName]" size 40
     #davids
     $ d_LabelName = d_Label.ValueToLabel(d_Davids)
@@ -38,7 +38,7 @@ screen DispositionMenu:
             vbox:
                 spacing 10
                 text "" size 40
-                text "[beat_Davids] / 7" size 40
+                text "[beat_Davids] / 4" size 40
                 text "[d_LabelName]" size 40
     #Gilgamesh
     $ d_LabelName = d_Label.ValueToLabel(d_Gilgamesh)
@@ -57,7 +57,7 @@ screen DispositionMenu:
             vbox:
                 spacing 10
                 text "" size 40
-                text "[beat_Gilgamesh] / 7" size 40
+                text "[beat_Gilgamesh] / 4" size 40
                 text "[d_LabelName]" size 40
     #Glimmer
     $ d_LabelName = d_Label.ValueToLabel(d_Glimmer)
@@ -76,7 +76,7 @@ screen DispositionMenu:
             vbox:
                 spacing 10
                 text "" size 40
-                text "[beat_Glimmer] / 7" size 40
+                text "[beat_Glimmer] / 4" size 40
                 text "[d_LabelName]" size 40
     #MonaLisa
     $ d_LabelName = d_Label.ValueToLabel(d_MonaLisa)
@@ -95,7 +95,7 @@ screen DispositionMenu:
             vbox:
                 spacing 10
                 text "" size 40
-                text "[beat_MonaLisa] / 7" size 40
+                text "[beat_MonaLisa] / 4" size 40
                 text "[d_LabelName]" size 40
     #SaintCatherine
     $ d_LabelName = d_Label.ValueToLabel(d_SaintCatherine)
@@ -114,7 +114,7 @@ screen DispositionMenu:
             vbox:
                 spacing 10
                 text "" size 40
-                text "[beat_SaintCatherine] / 7" size 40
+                text "[beat_SaintCatherine] / 4" size 40
                 text "[d_LabelName]" size 40
     #Soup
     $ d_LabelName = d_Label.ValueToLabel(d_Soup)
@@ -133,7 +133,7 @@ screen DispositionMenu:
             vbox:
                 spacing 10
                 text "" size 40
-                text "[beat_Soup] / 7" size 40
+                text "[beat_Soup] / 4" size 40
                 text "[d_LabelName]" size 40
     #Sunflowers
     $ d_LabelName = d_Label.ValueToLabel(d_Sunflowers)
@@ -152,7 +152,7 @@ screen DispositionMenu:
             vbox:
                 spacing 10
                 text "" size 40
-                text "[beat_Sunflowers] / 7" size 40
+                text "[beat_Sunflowers] / 4" size 40
                 text "[d_LabelName]" size 40
     textbutton "Return":
         xalign 1.0

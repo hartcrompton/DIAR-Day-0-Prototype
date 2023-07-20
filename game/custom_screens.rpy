@@ -16,7 +16,7 @@ screen gameUI:
 
 #displays the vending machine and allows clicking buttons to select a snack
 screen vendingmachineselection:
-    add "vending_machine/vendingmachineintro.jpg"
+    add "vending_machine/vendingmachineminigame.jpg"
 
     imagebutton:
         xpos 1519

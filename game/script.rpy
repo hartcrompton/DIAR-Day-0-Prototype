@@ -44,15 +44,15 @@ default phone_wait_count = 0
 
 
 default d_Arnolfini = 0
-default d_Davids = 1
-default d_Gilgamesh = 2
+default d_Davids =  0
+default d_Gilgamesh = 0
 default d_Glimmer = 0
-default d_MonaLisa = 4
-default d_SaintCatherine = 5
+default d_MonaLisa = 0
+default d_SaintCatherine = 0
 default d_Soup = 0
-default d_Sunflowers = 7
+default d_Sunflowers = 0
 
-#disposition tier values
+#disposition tier values - not really useful anymore
 define d_Tier1 = -150
 define d_Tier2 = -95
 define d_Tier3 = -80
@@ -98,7 +98,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene museum bg1
 
     #will need to make this changeable through the preferences menu too
     call pronounselection
@@ -110,3 +110,4 @@ label start:
 
 label end:
     return
+
