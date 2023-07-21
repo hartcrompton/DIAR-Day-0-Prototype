@@ -111,3 +111,16 @@ label start:
 label end:
     return
 
+label testing:
+    menu:
+        "Cleaning":
+            call minigamestart_cleaning("cleaning")
+            jump testing
+        "Saint Repair":
+            menu:
+                "Glass":
+                    call minigamestart_stainedglass("glass")
+                    jump testing
+                "Plastic":
+                    call minigamestart_stainedglass("plastic")
+                    jump testing

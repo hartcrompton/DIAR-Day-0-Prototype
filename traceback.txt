@@ -1,22 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 114, in script
-    label testing:
-Exception: Could not find return label ('game/daily_loop.rpy', 1688769353, 3).
+  File "game/script.rpy", line 104, in script call
+    call pronounselection
+  File "game/minigames/stainedglass.rpy", line 212, in script
+    return
+Exception: Could not find return label ('game/script.rpy', 1689899412, 42).
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 114, in script
-    label testing:
+  File "game/script.rpy", line 104, in script call
+    call pronounselection
+  File "game/minigames/stainedglass.rpy", line 212, in script
+    return
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1801, in execute
     next_node(renpy.game.context().lookup_return(pop=True))
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\execution.py", line 741, in lookup_return
     raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
-Exception: Could not find return label ('game/daily_loop.rpy', 1688769353, 3).
+Exception: Could not find return label ('game/script.rpy', 1689899412, 42).
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Thu Jul 20 17:28:06 2023
+Thu Jul 20 18:36:43 2023
