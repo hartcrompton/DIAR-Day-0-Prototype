@@ -112,6 +112,7 @@ label end:
     return
 
 label testing:
+    scene testing
     menu:
         "Cleaning":
             call minigamestart_cleaning("cleaning")

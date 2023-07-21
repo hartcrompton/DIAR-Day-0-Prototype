@@ -29,7 +29,7 @@ init python:
             
             self.the_score = 0
             self.end_start = None
-            self.end_delay = 3
+            self.end_delay = 1
             # The winner.
             self.winner = False
             
@@ -59,7 +59,7 @@ init python:
 
             # Blit (draw) the child's render to our render.
             #These draw the two background images, left and right -H
-            render.blit(child_render, (0 + self.x_offset-self.gutter, 0 + self.y_offset))
+            #render.blit(child_render, (0 + self.x_offset-self.gutter, 0 + self.y_offset))
             render.blit(child_render, (self.width+self.gutter + self.x_offset, 0 + self.y_offset))
             
             #This loop renders the overlaid difference images -H
@@ -96,23 +96,24 @@ init python:
                 score = self.count_differences()
                 score_txt = Text("All items found in %d seconds." % (self.end_start + self.end_delay), size=24)
                 score_img = renpy.render(score_txt, width, height,  st, at)
-                render.blit(score_img, (self.width - 200 + self.x_offset,self.height + self.y_offset))
+                #render.blit(score_img, (self.width - 200 + self.x_offset,self.height + self.y_offset))
             else:
                 score = self.count_differences()
                 score_txt = Text("Differences: %d    Current Score: %d" % (score,self.the_score), size=24)
                 score_img = renpy.render(score_txt, width, height,  st, at)
-                render.blit(score_img, (self.width - 190 + self.x_offset,self.height + self.y_offset))
+                #render.blit(score_img, (self.width - 190 + self.x_offset,self.height + self.y_offset))
             renpy.redraw(self,0) 
             
             
             # Return the render.
             return render
             
-            
+        #count as each piece is moved to the right
         def count_differences(self):
             myscore = 0
             for index,i in enumerate(self.diff_items): 
-                if i.right != i.left:
+                #i.right is False by default, so if every i.right has been assigned an image then this returns 0
+                if not i.right:
                     myscore += 1
             return myscore
             
@@ -125,47 +126,55 @@ init python:
                 clicked = False
                 for index,i in enumerate(self.diff_items): 
                     if i.left != i.right:
+                        if i.left != False:
                         #left side
                         #zoomfactor needed to make sure the clickable bounds match the visible images -H
-                        if (i.x * zoomfactor + self.x_offset-self.gutter <= x <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset) :  
-                            i.left = i.right
-                            clicked = True
-                            break
-                            
-    
-                        #right side
-                        elif (i.x * zoomfactor + self.x_offset + self.width+self.gutter <= x <= i.x * zoomfactor + self.width + i.w * zoomfactor + self.x_offset+self.gutter) and (i.y * zoomfactor <= y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):   
-                            i.right = i.left 
-                            clicked = True
-                            break
+                            if (i.x * zoomfactor + self.x_offset-self.gutter <= x <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset) :  
+                                i.temp = i.left
+                                i.left = False
+                                i.right = i.temp
+                                clicked = True
+                                break
+                                
+        
+                            #right side
+                            elif (i.x * zoomfactor + self.x_offset + self.width+self.gutter <= x <= i.x * zoomfactor + self.width + i.w * zoomfactor + self.x_offset+self.gutter) and (i.y * zoomfactor <= y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):   
+                                i.temp = i.left
+                                i.left = False
+                                i.right = i.temp
+                                clicked = True
+                                break
                         
                 #plays sound effects on click -H
-                if (clicked):
-                    self.score_bubble = Bubble_Text("+20", "#0f0",72,3, x-5, y-5)
-                    self.the_score += 20  
-                elif (self.x_offset <= x <= self.width*2 + self.x_offset) and (self.y_offset <= y <= self.height + self.y_offset):
-                    self.score_bubble = Bubble_Text("-5", "#f00",72,3, x-5, y-5)
-                    self.the_score = max(0,self.the_score - 5)  
+                #if (clicked):
+                    #self.score_bubble = Bubble_Text("+20", "#0f0",72,3, x-5, y-5)
+                   # self.the_score += 20  
+                #elif (self.x_offset <= x <= self.width*2 + self.x_offset) and (self.y_offset <= y <= self.height + self.y_offset):
+                    #self.score_bubble = Bubble_Text("-5", "#f00",72,3, x-5, y-5)
+                    #self.the_score = max(0,self.the_score - 5)  
                
-                #victory sound -H
+                # -H
                 if self.count_differences() == 0:
-                    self.end_start = -1
+                    if self.end_start != -1:
+                        self.end_start = -1
                     
             if self.winner:
                     return (self.the_score)
                     
-        #randomizes the overlay images
+        #misleading name, has been refactored to just fill in all the items from the diff_items array
         def randomizeItems(self, difference_count):
             #randomzing at start:
             for index,i in enumerate(self.diff_items): 
-                i.left = i.right =  renpy.random.choice([True, False])
-                
-            iterations = 0
-            while self.count_differences() < difference_count and iterations < 100:
-                i = renpy.random.choice(self.diff_items)
                 i.left = renpy.random.choice([True, False])
-                i.right = not i.left
-                iterations += 1
+                
+            #must be array size
+            iterations = 3
+            #while self.count_differences() < difference_count and iterations < 100:
+            while iterations >= 0:
+                i = diff_items[iterations]
+                i.left = True
+                #i.right = not i.left
+                iterations -= 1
     
 
     #Currently the images are hardcoded. This can be broken out into a separate function that can import different images -H
@@ -175,27 +184,31 @@ init python:
 
 
 
-label minigamestart_stainedglass(gameimage="default"):
-    if gameimage == "default":
+label minigamestart_stainedglass(materialchoice="default"):
+    if materialchoice == "default":
         return
-    python:
-        diff_items = []
-        diff_items.append(STD_Item("images/mona_overlay.png", 0,0,205,521))
-        diff_items.append(STD_Item("images/mona_overlay.png", 205,68,174,103))
-        diff_items.append(STD_Item("images/mona_overlay.png", 281,208,48,43))
-        diff_items.append(STD_Item("images/mona_overlay.png", 225,260,88,23))
-        diff_items.append(STD_Item("images/mona_overlay.png", 220,411,112,81))
-        diff_items.append(STD_Item("images/mona_overlay.png", 363,261,232,211))
-        diff_items.append(STD_Item("images/mona_overlay.png", 115,521,351,203))
-        diff_items.append(STD_Item("images/mona_overlay.png", 233,733,43,41))
-        diff_items.append(STD_Item("images/mona_overlay.png", 412,0,192,171))
+    if materialchoice == "glass":
+        python:
+            diff_items = []
+            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintGlass.png", 37,23,89,118))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintGlass.png", 205,105,124,69))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintGlass.png", 35,343,65,155))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintGlass.png", 163,280,95,125))
+    if materialchoice == "plastic":
+        python:
+            diff_items = []
+            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintPlastic.png", 37,23,89,118))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintPlastic.png", 205,105,124,69))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintPlastic.png", 35,343,65,155))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintPlastic.png", 163,280,95,125))
         #time and score may not really be relevant to us -H
+    python:
         starttime = renpy.time.time()
         the_score = 0
         renpy.block_rollback()
         #we need to be able to input an argument here
-        difference_image = SpotTheDifference("images/mona.png", diff_items)
-        difference_image.randomizeItems(5)
+        difference_image = StainedGlassRepair("images/minigame/StainedGlass/SaintBroken.png", diff_items)
+        difference_image.randomizeItems(4)
         ui.add(difference_image)
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
         winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
@@ -204,9 +217,14 @@ label minigamestart_stainedglass(gameimage="default"):
         the_score += winner
         renpy.block_rollback()
 
-    image difference_image_img = afterImage("images/mona.png", diff_items)
-    show difference_image_img at cc
-    if (difference_image.count_differences() == 0):
-        $ timebonus = int(100 * max((1.0 - ((elapsed - 20.0)/40.0)),0.0))
-        $ the_score += timebonus
+    #image difference_image_img = afterImage("images/mona.png", diff_items)
+    if materialchoice == "glass":
+        show saintcatherineglass at cc
+        meta "Repaired with [materialchoice]."
+    if materialchoice == "plastic":
+        show saintcatherineplastic at cc
+        meta "Repaired with [materialchoice]."
+    #if (difference_image.count_differences() == 0):
+        #$ timebonus = int(100 * max((1.0 - ((elapsed - 20.0)/40.0)),0.0))
+        #$ the_score += timebonus
     return

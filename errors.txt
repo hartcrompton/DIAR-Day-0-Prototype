@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 123: choice menuitem expects a non-empty block.
-    "Glass":
-            ^
+File "game/minigames/stainedglass.rpy", line 222: end of line expected.
+    show saintcatherineglass with zoom 1.5 at cc
+                                       ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Thu Jul 20 17:26:44 2023
+Thu Jul 20 20:59:09 2023
