@@ -1,44 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 104, in script call
-    call pronounselection
-  File "game/script.rpy", line 126, in script call
-    call minigamestart_stainedglass("plastic")
-  File "game/script.rpy", line 126, in script call
-    call minigamestart_stainedglass("plastic")
-  File "game/minigames/stainedglass.rpy", line 186, in script
-    python:
-  File "game/minigames/stainedglass.rpy", line 198, in <module>
-    difference_image.randomizeItems(4)
-  File "game/minigames/stainedglass.rpy", line 170, in randomizeItems
-    i = diff_items[iterations]
-IndexError: list index out of range
+  File "game/day_zero.rpy", line 200, in script
+    sue "Roar"
+Exception: Sayer 'sue' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 104, in script call
-    call pronounselection
-  File "game/script.rpy", line 126, in script call
-    call minigamestart_stainedglass("plastic")
-  File "game/script.rpy", line 126, in script call
-    call minigamestart_stainedglass("plastic")
-  File "game/minigames/stainedglass.rpy", line 186, in script
-    python:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/minigames/stainedglass.rpy", line 198, in <module>
-    difference_image.randomizeItems(4)
-  File "game/minigames/stainedglass.rpy", line 170, in randomizeItems
-    i = diff_items[iterations]
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\revertable.py", line 217, in __getitem__
-    rv = list.__getitem__(self, index)
-IndexError: list index out of range
+  File "game/day_zero.rpy", line 200, in script
+    sue "Roar"
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 890, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 783, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'sue' is not defined.
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Thu Jul 20 19:49:40 2023
+Sun Jul 30 08:31:23 2023

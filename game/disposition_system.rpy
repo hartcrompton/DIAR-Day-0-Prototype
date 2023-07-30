@@ -1,19 +1,40 @@
 #disposition system
 
+default HoveredName = "Test"
+
 screen DispositionMenu:
-    add "UI/Disposition/DispositionMenuBG.png"
+    #add "UI/Disposition/DispositionMenuBG.png"
+    #imagemap:
+        #ground "UI/Disposition/DispositionMenuBG.png"
+       # hover "UI/Disposition/newmap/museum_map.jpg"
+        #idle "UI/Disposition/DispositionMenuBG.png"
+        #hotspot (1800, 200, 100, 100) 
+        #hovered [SetVariable("TestName", "NewName")] unhovered [SetVariable("TestName", "OldName")]
+    imagemap:
+        ground "newmap/museum_map.jpg"
+        hover "UI/Disposition/DispositionMenuBG.png"
+
+        #glimmer
+        hotspot (30, 18, 163, 321) action [SetVariable("HoveredName", "Some really long name that will definitely be forced to wrap")] hovered [SetVariable("HoveredName", "Some really long name that will definitely be forced to wrap.")] unhovered [SetVariable("HoveredName", "OldName")]
+        #sunflowers
+        hotspot (217, 12,143,266) action Jump("conv_SoupAndSunflowers")
     #arnolfini
     $ d_LabelName = d_Label.ValueToLabel(d_Arnolfini)
     frame:
         xalign 0
-        yalign 0
-        xoffset 30
-        yoffset 30
+        yalign .5
+        xoffset 960
+        yoffset 0
+        xminimum 960
+        xmaximum 960
+        yminimum 900
+        ymaximum 900
         hbox:
+            box_wrap True
             spacing 40
             vbox:
                 spacing 10
-                text "Arnolfini" size 40
+                text [HoveredName] size 40
                 text "Beats Progress" size 40
                 text "Disposition" size 40
             vbox:
@@ -21,139 +42,7 @@ screen DispositionMenu:
                 text "" size 40
                 text "[beat_Arnolfini] / 4" size 40
                 text "[d_LabelName]" size 40
-    #davids
-    $ d_LabelName = d_Label.ValueToLabel(d_Davids)
-    frame:
-        xalign 0
-        yalign .3
-        xoffset 30
-        yoffset 30
-        hbox:
-            spacing 40
-            vbox:
-                spacing 10
-                text "The Davids" size 40
-                text "Beats Progress" size 40
-                text "Disposition" size 40
-            vbox:
-                spacing 10
-                text "" size 40
-                text "[beat_Davids] / 4" size 40
-                text "[d_LabelName]" size 40
-    #Gilgamesh
-    $ d_LabelName = d_Label.ValueToLabel(d_Gilgamesh)
-    frame:
-        xalign 0
-        yalign .6
-        xoffset 30
-        yoffset 30
-        hbox:
-            spacing 40
-            vbox:
-                spacing 10
-                text "Gilgamesh" size 40
-                text "Beats Progress" size 40
-                text "Disposition" size 40
-            vbox:
-                spacing 10
-                text "" size 40
-                text "[beat_Gilgamesh] / 4" size 40
-                text "[d_LabelName]" size 40
-    #Glimmer
-    $ d_LabelName = d_Label.ValueToLabel(d_Glimmer)
-    frame:
-        xalign 0
-        yalign .9
-        xoffset 30
-        yoffset 30
-        hbox:
-            spacing 40
-            vbox:
-                spacing 10
-                text "Glimmer" size 40
-                text "Beats Progress" size 40
-                text "Disposition" size 40
-            vbox:
-                spacing 10
-                text "" size 40
-                text "[beat_Glimmer] / 4" size 40
-                text "[d_LabelName]" size 40
-    #MonaLisa
-    $ d_LabelName = d_Label.ValueToLabel(d_MonaLisa)
-    frame:
-        xalign 0
-        yalign 0
-        xoffset 1080
-        yoffset 30
-        hbox:
-            spacing 40
-            vbox:
-                spacing 10
-                text "MonaLisa" size 40
-                text "Beats Progress" size 40
-                text "Disposition" size 40
-            vbox:
-                spacing 10
-                text "" size 40
-                text "[beat_MonaLisa] / 4" size 40
-                text "[d_LabelName]" size 40
-    #SaintCatherine
-    $ d_LabelName = d_Label.ValueToLabel(d_SaintCatherine)
-    frame:
-        xalign 0
-        yalign .3
-        xoffset 1080
-        yoffset 30
-        hbox:
-            spacing 40
-            vbox:
-                spacing 10
-                text "SaintCatherine" size 40
-                text "Beats Progress" size 40
-                text "Disposition" size 40
-            vbox:
-                spacing 10
-                text "" size 40
-                text "[beat_SaintCatherine] / 4" size 40
-                text "[d_LabelName]" size 40
-    #Soup
-    $ d_LabelName = d_Label.ValueToLabel(d_Soup)
-    frame:
-        xalign 0
-        yalign .6
-        xoffset 1080
-        yoffset 30
-        hbox:
-            spacing 40
-            vbox:
-                spacing 10
-                text "Soup" size 40
-                text "Beats Progress" size 40
-                text "Disposition" size 40
-            vbox:
-                spacing 10
-                text "" size 40
-                text "[beat_Soup] / 4" size 40
-                text "[d_LabelName]" size 40
-    #Sunflowers
-    $ d_LabelName = d_Label.ValueToLabel(d_Sunflowers)
-    frame:
-        xalign 0
-        yalign .9
-        xoffset 1080
-        yoffset 30
-        hbox:
-            spacing 40
-            vbox:
-                spacing 10
-                text "Sunflowers" size 40
-                text "Beats Progress" size 40
-                text "Disposition" size 40
-            vbox:
-                spacing 10
-                text "" size 40
-                text "[beat_Sunflowers] / 4" size 40
-                text "[d_LabelName]" size 40
+    
     textbutton "Return":
         xalign 1.0
         yalign 0.0

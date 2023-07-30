@@ -6,15 +6,37 @@
 #then when out of actions, nighthawks or leave
 default DayNumber = 1
 default actions = 4
+default time_of_day = 1
+
+image museum_morning:
+    "images/rooms/museum bg1.jpg"
+    matrixcolor TintMatrix("#ede493")
+image museum_day:
+    "images/rooms/museum bg1.jpg"
+image museum_evening:
+    "images/rooms/museum bg1.jpg"
+    matrixcolor TintMatrix("#c27f02")
+image museum_night:
+    "images/rooms/museum bg1.jpg"
+    matrixcolor TintMatrix("#546280")
+
+image museumtod = ConditionSwitch(
+        "actions == 4", "museum_morning",
+        "actions == 3", "museum_day",
+        "actions == 2", "museum_evening",
+        "actions == 1", "museum_night",
+        "actions == 0", "museum_night")
+
 
 label day_start:
-    show screen gameUI
-    scene museum bg1
     $ actions = 4
+    show screen gameUI
+    scene museumtod
     $ days_remaining = 4 - DayNumber
     meta "It is day [DayNumber]."
     show admin at right
     ad "Good morning! Hope you slept well, you have [days_remaining] days left before the exhibit."
+    ad "time of day change"
     if DayNumber == 1:
         ad "Since it's your first day, let me tell you what to do."
     elif DayNumber == 2:
@@ -39,15 +61,8 @@ label daily_cleaning:
     meta "Now you're free to roam around the museum"
     jump free_roam
 
-label daily_research:
-    scene bg research
-    call minigamestart("research")
-    meta "Now you're free to roam around the museum"
-    jump free_roam
-    #research minigame goes here
-    #admin asks who you want to research, gives you some garbage directions, try to find the book
-
 label free_roam:
+    scene mapbg
     show screen gameUI
     if actions == 0:
         jump out_of_actions
@@ -74,3 +89,45 @@ label day_end:
         jump final_exhibit
     $ DayNumber = DayNumber + 1
     jump day_start
+
+label advance_time:
+    if actions > 0:
+        $ actions = actions - 1
+    #morning - can be deleted, actions will never equal 4 in this label
+    if actions == 4:
+        image background1:
+            "images/rooms/museum bg1.jpg"
+            matrixcolor TintMatrix("#ede493")
+        image background2:
+            "images/rooms/museum bg2.jpg"
+            matrixcolor TintMatrix("#ede493")
+    #noon
+    if actions == 3:
+        image background1:
+            "images/rooms/museum bg1.jpg"
+        image background2:
+            "images/rooms/museum bg2.jpg"
+    #evening
+    if actions == 2:
+        image background1:
+            "images/rooms/museum bg1.jpg"
+            matrixcolor TintMatrix("#c27f02")
+        image background2:
+            "images/rooms/museum bg2.jpg"
+            matrixcolor TintMatrix("#c27f02")
+    #night
+    if actions == 1:
+        image background1:
+            "images/rooms/museum bg1.jpg"
+            matrixcolor TintMatrix("#546280")
+        image background2:
+            "images/rooms/museum bg2.jpg"
+            matrixcolor TintMatrix("#546280")
+    if actions == 0:
+        image background1:
+            "images/rooms/museum bg1.jpg"
+            matrixcolor TintMatrix("#546280")
+        image background2:
+            "images/rooms/museum bg2.jpg"
+            matrixcolor TintMatrix("#546280")
+    return

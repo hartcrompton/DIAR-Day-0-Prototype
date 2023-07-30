@@ -3,7 +3,7 @@
 #default variables are meant to be CHANGEABLE. The value is stored in save files.
 #define variables are meant to be CONSTANT. Changing a define variable will not be saved.
 
-#where character names start with the same letter, all are given 2-letter abbreviations
+#when character names start with the same letter, all are given 2-letter abbreviations
 #player character
 define pc = Character("[pc_name]")
 
@@ -16,22 +16,22 @@ define m = Character("Mona")
 define st = Character("St. Catherine")
 define so = Character("Soup")
 define su = Character("Sunflowers")
+define ss = Character("Soup & Sunflowers")
 
 #side characters
 define ad = Character("Admin")
-#define ad = Character("Admin", image="admin", kind=bubble)
 define e = Character("Ea-Nasir")
 define n = Character("Nighthawks")
 define p = Character("Poster")
-define s = Character("Sue")
+define sue = Character("Sue")
 define t = Character("Theodore")
 define v = Character("Vending Machine")
 
 #utility characters
-define meta = Character("") #used for text that does not come from any specific character
+define meta = Character("") #used for text that does not come from any specific character, does not display a name in the dialogue box
 
 #character name variables
-default pc_name = "Firstname Lastname"
+default pc_name = False
 default the_davids = "???"
 
 #player backgrounds
@@ -42,7 +42,7 @@ default pc_education = 0
 #choice variables
 default phone_wait_count = 0
 
-
+#character disposition trackers - deprecated, to be removed
 default d_Arnolfini = 0
 default d_Davids =  0
 default d_Gilgamesh = 0
@@ -52,7 +52,7 @@ default d_SaintCatherine = 0
 default d_Soup = 0
 default d_Sunflowers = 0
 
-#disposition tier values - not really useful anymore
+#disposition tier values - deprecated, to be removed
 define d_Tier1 = -150
 define d_Tier2 = -95
 define d_Tier3 = -80
@@ -60,9 +60,9 @@ define d_Tier4 = -50
 define d_Tier5 = 0
 define d_Tier6 = 50
 define d_Tier7 = 35
-
 default d_Total = 0
 
+#function to return disposition label from value - deprecated, to be removed
 init python:
 
     class d_LabelFromValue():
@@ -90,18 +90,18 @@ init python:
 
 default d_Label = d_LabelFromValue()
 
-#d_Label.ValueToLabel(d_Arnolfini)
 
-# The game starts here.
+# start label is the first bit of game code that gets read
 label start:
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene museum bg1
+    menu:
+        "Skip to tour.":
+            jump gameintroduction
+        "Continue":
+            call pronounselection
 
     scene museum bg1
-
     #will need to make this changeable through the preferences menu too
-    call pronounselection
     meta "You picked [selectedpronouns], right on."
     meta "[they!c] [are] eating [their] apple."
     meta "[they!c] eat[s] [their] apple."
@@ -111,6 +111,7 @@ label start:
 label end:
     return
 
+#label used for in progress features, only accessible through developer commands
 label testing:
     scene testing
     menu:

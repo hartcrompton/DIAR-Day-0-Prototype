@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigames/stainedglass.rpy", line 222: end of line expected.
-    show saintcatherineglass with zoom 1.5 at cc
-                                       ^
+File "game/day_zero.rpy", line 166: expected 'label_name_declare' not found.
+    label 
+         ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Thu Jul 20 20:59:09 2023
+Sun Jul 30 09:27:35 2023
