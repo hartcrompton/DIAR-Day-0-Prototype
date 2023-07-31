@@ -34,7 +34,7 @@ define t = Character("Theodore")
 define v = Character("Vending Machine")
 
 #utility characters
-define meta = Character("") #used for text that does not come from any specific character, does not display a name in the dialogue box
+define meta = Character("") #deprecated, no use
 
 #character name variables
 default pc_name = False
@@ -107,9 +107,10 @@ label start:
 
     scene museum bg1
     #will need to make this changeable through the preferences menu too
-    meta "You picked [selectedpronouns], right on."
-    meta "[they!c] [are] eating [their] apple."
-    meta "[they!c] eat[s] [their] apple."
+    "You picked [selectedpronouns], right on."
+    "[they!c] [are] eating [their] apple."
+    "[they!c] eat[s] [their] apple."
+    "The apple is [theirs]."
 
     jump GameIntroduction
 
