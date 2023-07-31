@@ -11,4 +11,4 @@ label conv_VendingMachine:
             jump conv_VendingMachine
         "Bye":
             p "See ya"
-            jump free_roam
+            jump FreeRoam

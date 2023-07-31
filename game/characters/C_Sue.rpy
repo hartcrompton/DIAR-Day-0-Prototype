@@ -11,4 +11,4 @@ label conv_Sue:
             jump conv_Sue
         "Bye":
             p "See ya"
-            jump free_roam
+            jump FreeRoam

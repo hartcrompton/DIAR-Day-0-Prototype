@@ -11,4 +11,4 @@ label conv_Nighthawks:
             jump conv_Nighthawks
         "Bye":
             p "See ya"
-            jump free_roam
+            jump FreeRoam

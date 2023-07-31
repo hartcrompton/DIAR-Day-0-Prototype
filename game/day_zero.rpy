@@ -1,69 +1,68 @@
 #day 0
 
-
-label gameintroduction:
+label GameIntroduction:
     scene museum bg1
-    meta "You're in a crappy museum because you missed your bus in the rain."
-    meta "The museum is deserted, no one even working the front desk."
-    meta "The rain is not stopping."
-    meta "You have just enough cash for something from the vending machine."
-    jump vending_machine_intro
+    "You're in a crappy museum because you missed your bus in the rain."
+    "The museum is deserted, no one even working the front desk."
+    "The rain is not stopping."
+    "You have just enough cash for something from the vending machine."
+    jump VendingMachineIntro
 
 #I am using WAY too few labels in this prototype
-label dayzero:
+label DayZero:
     scene museum bg1
     d "But do you have to {i}stand{/i} on the head? It's grisly."
-    meta "A voice echoes through the hall, but you can't see anyone."
+    "A voice echoes through the hall, but you can't see anyone."
 
     menu:                                               
-            "Hello?":                                
-                meta "Your voice echoes like a ghost with no one to haunt."
-            "Where is that coming from?":                                 
-                meta "You look for the sound."
+        "Hello?":                                
+            "Your voice echoes like a ghost with no one to haunt."
+        "Where is that coming from?":                                 
+            "You look for the sound."
 
     d "It's {i}David{/i} and Goliath not {i}Goliath{/i} and Goliath you oversized freak."
 
     scene museum bg1
     show davids
-    meta "The voices seem to come from somewhere behind a trio of statues."
+    "The voices seem to come from somewhere behind a trio of statues."
 
-    meta "Moving closer, the voices are clearer."
-    meta "They're not... coming from the statues, are they?"
-    meta "All that's stopping you from getting closer is the velvet rope."
+    "Moving closer, the voices are clearer."
+    "They're not... coming from the statues, are they?"
+    "All that's stopping you from getting closer is the velvet rope."
 
     menu:                                               
         "Step over the velvet rope.":          
-            meta "Cautiously, you raise a leg over the rope."
+            "Cautiously, you raise a leg over the rope."
 
-    meta "It feels wrong, like being in a school hallway after hours."
+    "It feels wrong, like being in a school hallway after hours."
     scene museum bg1 with hpunch:
     show davids
-    meta "An alarm blares through the museum."
-    meta "Player nearly trips jumping back."
+    "An alarm blares through the museum."
+    "Player nearly trips jumping back."
 
     menu:                                               
         "I DIDN'T TOUCH ANYTHING!":          
-            meta "Tell that to the judge."
-        "Freeze and act small.":          
-            meta "You're not the first person who tried to get too close to a museum piece."
+            "Tell that to the judge."
+        "[[Freeze and act small.]":          
+            "You're not the first person who tried to get too close to a museum piece."
 
     scene museum bg1 with hpunch:
     show davids
-    meta "The alarm blares again."
-    meta "Oh. It's just the phone."
+    "The alarm blares again."
+    "Oh. It's just the phone."
 
     scene museum bg1 with hpunch:
-    meta "It's not stopping either."
+    "It's not stopping either."
 
     #cutesy little phone interaction
-    label get_the_phone:
+    label GetThePhone:
         scene museum bg1 with hpunch:
-        call phone_wait_response
+        call PhoneWaitResponse
         menu:                                               
             "Answer the Phone":      
-                meta "You answer the phone."    
+                "You answer the phone."    
             "[phone_wait]":          
-                jump get_the_phone
+                jump GetThePhone
 
     show admin excited at right
     ad "Admin jumps into their long list of things that need to get done."
@@ -72,20 +71,20 @@ label dayzero:
 
     menu:                                               
         "I could do it.":          
-            meta "What IT exactly is, you're not sure of."
+            "What IT exactly is, you're not sure of."
         "Sounds like you're hiring.":          
-            meta "Hey, worth a shot."
+            "Hey, worth a shot."
 
     ad "What\'s your name?"
-    jump playernameinput
+    jump PlayerNameInput
 
-label playernameinput:
+label PlayerNameInput:
     #player name input
     python:
         pc_name = renpy.input("What is your name?", length=32) #length is maximum length of the string
         pc_name = pc_name.strip()
         if not pc_name:
-            renpy.jump("playernameinput")
+            renpy.jump("PlayerNameInput")
 
     pc "My name is [pc_name]!"
     show admin excited at right
@@ -96,11 +95,11 @@ label playernameinput:
 
     menu:                                               
         "Yes. [[Lie]":          
-            meta "In this economy, the truth has to be a little flexible."
+            "In this economy, the truth has to be a little flexible."
         "Yes?":          
-            meta "Well, it isn't {i}NOT{/i} your name."
+            "Well, it isn't {i}NOT{/i} your name."
         "No.":          
-            meta "Smart to wait until you have the job to start lying."
+            "Smart to wait until you have the job to start lying."
 
     show admin at right
     ad "OK, let's skip over most of the paperwork."
@@ -163,12 +162,11 @@ label playernameinput:
     ad "Ok, great! I'll take care of the filing."
     ad "I'm sure you're eager to start your journey here, so take the phone and follow along!"
 
-label museumtour:
+label MuseumTour:
     scene museum bg1 with fade
     show admin at right
     ad "This is the foyer."
     ad "These are the Davids."
-    $ the_davids = "The Davids"
     show davids at left
     d "Arguing amongst themselves"
     pc "They sure seem to be talking. Weird."
@@ -249,28 +247,28 @@ label museumtour:
     pc "Oh shit!"
 
     scene museum bg1 with fade
-    meta "PC locks up."
-    meta "On the way out, encounter Nighthawks"
+    "PC locks up."
+    "On the way out, encounter Nighthawks"
     show nighthawks at truecenter
     n "You reckon they'll stay on?"
     n "Nah, they won't even come back."
 
     scene museum bg1
-    meta "Alright, work starts tomorrow."
+    "Alright, work starts tomorrow."
 
     menu:
         "Daily Loop - VERY Work-In-Progress":
-            jump day_start
+            jump DayStart
         "Restart Tour":
-            jump museumtour
+            jump MuseumTour
         "Main Menu":
             return
 
     return
-    #jump day_start
+    #jump DayStart
 
 #generates random responses for the phone
-label phone_wait_response:
+label PhoneWaitResponse:
     if phone_wait_count == 0:
         $ phone_wait = "Someone will get it."
         $ phone_wait_count += 1
@@ -279,7 +277,7 @@ label phone_wait_response:
         $ phone_wait_count += 1
     return
 
-label vending_machine_intro:
+label VendingMachineIntro:
         python:
             button_press_count = 0
             selection = 0

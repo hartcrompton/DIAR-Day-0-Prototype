@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day_zero.rpy", line 166: expected 'label_name_declare' not found.
-    label 
-         ^
+File "game/day_zero.rpy", line 15: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    "A voice echoes through the hall, but you can't see anyone."
+    ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sun Jul 30 09:27:35 2023
+Sun Jul 30 20:20:55 2023

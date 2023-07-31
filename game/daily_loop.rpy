@@ -28,7 +28,7 @@ image museumtod = ConditionSwitch(
         "actions == 0", "museum_night")
 
 
-label day_start:
+label DayStart:
     $ actions = 4
     show screen gameUI
     scene museumtod
@@ -52,43 +52,43 @@ label day_start:
 
     menu:
         "I'll clean today.":
-            jump daily_cleaning
+            jump DailyCleaning
 
-label daily_cleaning:
+label DailyCleaning:
     #cleaning minigame goes here
     scene museum bg1
     call minigamestart_cleaning("cleaning")
     meta "Now you're free to roam around the museum"
-    jump free_roam
+    jump FreeRoam
 
-label free_roam:
+label FreeRoam:
     scene mapbg
     show screen gameUI
     if actions == 0:
-        jump out_of_actions
+        jump OutOfActions
     else:
         jump call_mapUI
 #after that, go into the free roam
 #pull up map
 #
-label out_of_actions:
+label OutOfActions:
     pc "Wow I'm really tired, I must be out of ACTIONS for the day."
     menu:
         "Listen to the Nighthawks.":
-            jump nighthawks_daily
+            jump NighthawksDaily
         "Go Home":
-            jump day_end
+            jump DayEnd
 
-label nighthawks_daily:
+label NighthawksDaily:
     n "We'll say something about the player actions here."
-    jump day_end
+    jump DayEnd
 
-label day_end:    
+label DayEnd:    
     meta "That's the end of day [DayNumber]"
     if DayNumber == 4:
         jump final_exhibit
     $ DayNumber = DayNumber + 1
-    jump day_start
+    jump DayStart
 
 label advance_time:
     if actions > 0:

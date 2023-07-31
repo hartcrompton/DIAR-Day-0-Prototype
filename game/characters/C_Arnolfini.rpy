@@ -17,7 +17,7 @@ label conv_Arnolfini:
             jump .use_action
         "Bye":
             ar "See ya"
-            jump free_roam
+            jump FreeRoam
 
 label .use_action:
     menu:

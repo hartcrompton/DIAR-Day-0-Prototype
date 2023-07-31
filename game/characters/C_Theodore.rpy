@@ -11,4 +11,4 @@ label conv_Theodore:
             jump conv_Theodore
         "Bye":
             p "See ya"
-            jump free_roam
+            jump FreeRoam

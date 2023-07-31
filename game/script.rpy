@@ -8,11 +8,18 @@
 define pc = Character("[pc_name]")
 
 #main characters
-define ar = Character("Arnolfini Portrait") #like The Davids, probably will also have separate characters for the couple + dog
-define d = Character("[the_davids]") #will probably need to also have three separate david characters
+define ar = Character("Arnolfini Portrait")
+define arm = Character("Arnolfini Portrait") #man
+define arw = Character("Arnolfini Portrait") #woman
+define ard = Character("Arnolfini Portrait") #dog
+define d = Character("The Davids")
+define dm = Character("David") #mikey
+define db = Character("David") #bernini
+define dd = Character("David") #donny
 define gi = Character("Gilgamesh")
 define gl = Character("Glimmer")
-define m = Character("Mona")
+define m = Character("Mona Lisa")
+define p = Character("Poster")
 define st = Character("St. Catherine")
 define so = Character("Soup")
 define su = Character("Sunflowers")
@@ -22,7 +29,6 @@ define ss = Character("Soup & Sunflowers")
 define ad = Character("Admin")
 define e = Character("Ea-Nasir")
 define n = Character("Nighthawks")
-define p = Character("Poster")
 define sue = Character("Sue")
 define t = Character("Theodore")
 define v = Character("Vending Machine")
@@ -32,7 +38,6 @@ define meta = Character("") #used for text that does not come from any specific 
 
 #character name variables
 default pc_name = False
-default the_davids = "???"
 
 #player backgrounds
 default pc_work = 0
@@ -96,7 +101,7 @@ label start:
     scene museum bg1
     menu:
         "Skip to tour.":
-            jump gameintroduction
+            jump GameIntroduction
         "Continue":
             call pronounselection
 
@@ -106,7 +111,7 @@ label start:
     meta "[they!c] [are] eating [their] apple."
     meta "[they!c] eat[s] [their] apple."
 
-    jump gameintroduction
+    jump GameIntroduction
 
 label end:
     return

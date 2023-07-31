@@ -11,4 +11,4 @@ label conv_EaNasir:
             jump conv_EaNasir
         "Bye":
             p "See ya"
-            jump free_roam
+            jump FreeRoam

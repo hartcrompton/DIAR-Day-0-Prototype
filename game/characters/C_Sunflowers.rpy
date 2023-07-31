@@ -16,7 +16,7 @@ label conv_Sunflowers:
             jump .use_action
         "Bye":
             p "See ya"
-            jump free_roam
+            jump FreeRoam
 
 label .use_action:
     menu:
