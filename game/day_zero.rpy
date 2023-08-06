@@ -1,10 +1,17 @@
 #day 0
 
 label GameIntroduction:
+    scene intro bg1
+    #this is too long
+    #leaving the interview, missed bus, chased by the rain into an empty museum.
+    "Hiring Manager" "Every journey begins somewhere."
+    "Hiring Manager" "Yours, unfortunately, does not begin with us."
+    "So, the interview hadn't gone great."
+    "And your day didn't improve when you missed your bus and the rain chased you into an empty museum."
+
     scene museum bg1
-    "You're in a crappy museum because you missed your bus in the rain."
-    "The museum is deserted, no one even working the front desk."
-    "The rain is not stopping."
+    
+    "The rain isn't stopping, and your dinner is waiting for you at home."
     "You have just enough cash for something from the vending machine."
     jump VendingMachineIntro
 
@@ -12,7 +19,7 @@ label GameIntroduction:
 label DayZero:
     scene museum bg1
     d "But do you have to {i}stand{/i} on the head? It's grisly."
-    "A voice echoes through the hall, but you can't see anyone."
+    "A voice echoes through the empty hall. Looking around, you can't see anyone."
 
     menu:                                               
         "Hello?":                                
@@ -24,9 +31,7 @@ label DayZero:
 
     scene museum bg1
     show davids
-    "The voices seem to come from somewhere behind a trio of statues."
-
-    "Moving closer, the voices are clearer."
+    "The voices come from somewhere behind a trio of statues."
     "They're not... coming from the statues, are they?"
     "All that's stopping you from getting closer is the velvet rope."
 
@@ -38,18 +43,18 @@ label DayZero:
     scene museum bg1 with hpunch:
     show davids
     "An alarm blares through the museum."
-    "Player nearly trips jumping back."
+    "You hastily pull your leg back."
 
     menu:                                               
         "I DIDN'T TOUCH ANYTHING!":          
-            "Tell that to the judge."
+            "You can tell that to the judge. Knowing your luck, you won't even get parole."
         "[[Freeze and act small.]":          
             "You're not the first person who tried to get too close to a museum piece."
 
     scene museum bg1 with hpunch:
     show davids
-    "The alarm blares again."
-    "Oh. It's just the phone."
+    "The alarm blares again and again."
+    "With some relief, you realize it's just the phone."
 
     scene museum bg1 with hpunch:
     "It's not stopping either."
@@ -59,23 +64,43 @@ label DayZero:
         scene museum bg1 with hpunch:
         call PhoneWaitResponse
         menu:                                               
-            "Answer the Phone":      
+            "[[Answer the phone.]":      
                 "You answer the phone."    
             "[phone_wait]":          
                 jump GetThePhone
 
     show admin excited at right
-    ad "Admin jumps into their long list of things that need to get done."
+    ad "Charles! Where were you?"
+    ad "We need to reprint the brochures. They should not say \"Nickelodeon's\" David."
+    pc "Hold on-"
+    ad "Then I need you to get down in the archives and chase the raccoons out again."
+    pc "I don't think-"
+    ad "And start putting some names in the visitor log, it doesn't look good to have it empty."
+    menu:
+        ad "Do you have all that?"
+        "Uh. Hi.":
+            "On the other end, mental gears grind to a halt."
+            ad "Who is this? Where's Charles?"
+        "I'm sorry, who are you?":
+            "On the other end, mental gears grind to a halt."
+            ad "Who are {i}you{/i}? Where's Charles?"
     show admin stressed at right
-    ad "Panic sets in when they realize there's no one left working at the museum."
+    "The voice goes silent again. On the other end, you hear furious typing."
+    ad "Oh he resigned."
+    ad "That's great, that's fine." 
+    ad "If I finish the paperwork and start driving now..." 
+    ad "...budgeting a generous half-hour each night for sleep..." 
+    ad "...I could get to the museum by Thursday."
+    ad "Which would leave... twenty-minutes to prep for the gala."
 
     menu:                                               
         "I could do it.":          
-            "What IT exactly is, you're not sure of."
+            ad "You could?"
+            "What IT is exactly, you're not sure."
         "Sounds like you're hiring.":          
             "Hey, worth a shot."
 
-    ad "What\'s your name?"
+    ad "What's your name?"
     jump PlayerNameInput
 
 label PlayerNameInput:
@@ -88,111 +113,131 @@ label PlayerNameInput:
 
     pc "My name is [pc_name]!"
     show admin excited at right
-    ad "Wow, are you {i}the{/i} Dr. [pc_name]?"
-    ad "I thought you said you woldn't visit."
+    "A gasp crackles over the line."
+    ad "Are you {i}the{/i} Dr. [pc_name]?"
+    #ad "We spoke after your last visit."
     ad "Your paper on the deontological ramifications of popularized historicity was..."
     ad "Well, I didn't understand much of it, but wow!"
 
     menu:                                               
         "Yes. [[Lie]":          
             "In this economy, the truth has to be a little flexible."
+            #ad "You'll be happy to know we're getting that racoon problem sorted out."
         "Yes?":          
             "Well, it isn't {i}NOT{/i} your name."
         "No.":          
             "Smart to wait until you have the job to start lying."
 
     show admin at right
-    ad "OK, let's skip over most of the paperwork."
-    ad "Any relevant work experience?"
+    ad "I'm just going to connect you to the hiring manager now."
+    "There is a clunk as the receiver is set down."
+    "A moment later, the same voice answers the phone."
+    ad "Retention and Recruitment, am I speaking with {0}Mr.{/0}{1}Ms.{/1}{2}Mx.{/2} [pc_name]?"
+    menu:
+        "Who else?":
+            ad "Wonderful, I've heard great things from the head office so I'm going to fast track you."
+        "Yes.":
+            ad "Wonderful, I've heard great things from the head office so I'm going to fast track you."
+        "We were just speaking.":
+            ad "No, that was Head Office, this is Retention and Recruitment."
+            ad "I've heard great things though, so I'll fast track you."
 
+    ad "We'll skip to the relevant questions."
+    ad "Any relevant work experience?"
     #work experience choices
     menu:               
         ad "Any relevant work experience?"                                
         "I was a gas station attendant.": 
             ad "That's... OK, great!"
         "Mostly gig work.":       
-            ad "That's... OK, great!"
+            ad "Good, you'll be wearing plenty of hats here."
+            ad "Metaphorically. The raccoons started off in the gift shop."
         "Bouncer.":       
             ad "That's... OK, great!"
-        "Painter.":      
-            ad "Portraits, landscapes?"
+        "I've done some painting.":      
+            ad "Wonderful! Portraits, landscapes?"
             pc "Mostly houses. A few boats, some propane tanks."
             ad "That's... OK, great!"
-        "I um, I've procured art for private clients.":      
-            ad "That's... OK, great!"
+        "I um, I've {i}procured{/i} art from private clients.":      
+            ad "Do you mean 'for'?"
+            pc "No."
         #"I mean, not really?":      
             #ad "That's... well it's not too important."
     
-    ad "Any relevant skills?"
+    
     menu:              
-        ad "Any relevant skills?"                                 
+        ad "Next: Any relevant skills?"                                 
         "I can really dissociate at work.":
             ad "I'm not sure... oh, it's fine."
         "My friends all treat me like their therapist.":    
             ad "I'm not sure... oh, it's fine."
         "I know how to throw a KILLER party.":   
-            ad "I'm not sure... oh, it's fine."
+            ad "We don't have many of those here."
+            pc "Ragers, keggers, raves, I'm flexible."
         "Just some light breaking and entering.":      
-            ad "Why would you tell me... oh, it's fine."
+            ad "Why would you tell me..."
+            ad "It's fine. We'll put: 'discretion and '"
         "I've listened to a lot of people complain.":      
             ad "I'm not sure... oh, it's fine."
         #"Afraid not.":      
             #ad "I'm not sure... oh, it's fine."
-    ad "Lastly, what's your education background?"
 
     menu:             
-        ad "Lastly, what's your education background?"                                  
+        ad "Lastly: What's your education background?"                                  
         "I've apprenticed in the trades.":
-            ad "Hmm, I guess that works?"
+            ad "Wonderful! Our maintenance budget has really tanked."
         "I listen to like, A LOT of podcasts.":    
-            ad "Hmm, I guess that works?"
+            ad "Me too! I have three going right now."
         "I think I took an art course?":   
             ad "You think?"
             pc "I mean, I didn't go."
-            ad "Hmm..."
+            ad "OK..."
             ad "It's better than nothing."
         "I've seen The Da Vinci Code":      
-            ad "Hmm, I guess that works?"
-        "I've got over three-hundred college credits.":      
+            ad "Oh, that is my favorite documentary!"
+            ad "I never knew Tom Hanks was a historian."
+        "I have over three-hundred college credits.":      
             ad "Oh! What did you major in?"
             pc "I didn't. Never quite graduated."
         #"I'd rather not say.":      
             #ad "Hmm, I guess that works?"
 
-    ad "Ok, great! I'll take care of the filing."
-    ad "I'm sure you're eager to start your journey here, so take the phone and follow along!"
+    ad "Ok, great! Let me look this over while I transfer you back."
+    "There is a clunk as they set down the receiver."
+    ad "Wonderful, I've heard from Retention and Recruitment. They've approved!"
+    ad "You are officially our new curator."
 
 label MuseumTour:
     scene museum bg1 with fade
     show admin at right
     ad "This is the foyer."
-    ad "These are the Davids."
+    ad "These are the famous Davids. Most people don't know they were actually triplets."
     show davids at left
     d "Arguing amongst themselves"
-    pc "They sure seem to be talking. Weird."
-    ad "Moving on!"
 
     scene museum bg2 with fade
-    ad "This is antiquities"
+    ad "This is the antiquities wing."
+    ad "We're lucky to have a small collection of Sumerian artifacts."
     show gilgamesh at left
-    gi "Something rude about the admin."
-    show eanasir at right
-    e "Exasperated."
+    gi "Ea-Nasir, look sharp! Another of the common-folk has come to bask in my glory. I would envy [them] this opportunity."
+    gi "If I didn't pity [them]."
+    show eanasir angry at right
+    e "Ugh..."
     hide gilgamesh
     hide eanasir
     show sue at center with hpunch
     sue "Roar."
     pc "Did you just {i}say{/i}, \"Roar\"?"
     show admin at right
-    ad "I am oblivious to this weirdness. Moving on!"
+    ad "Try not to fall behind, I have 57 calls waiting!"
 
     scene museum bg1 with fade
     show admin at right
-    ad "This is the Fine Art wing"
+    ad "This is the Fine Art wing."
     show theodore at left
     t "Please don't mention Van Gogh."
     show admin at right
-    ad "This is the famous self portrait by Van Gogh."
+    ad "This is, of course, the famous self portrait by Van Gogh."
     show theodore angry at left
     t "God damnit."
     hide theodore
@@ -202,18 +247,17 @@ label MuseumTour:
     ar "So much."
     hide arnolfinim
     hide arnolfiniw
-    pc "WHAT IS HAPPENING?"
-    ad "And of course, the Mona Lisa."
+    ad "And our crown jewel, the Mona Lisa."
     show monalisa at left
     m "A cutting remark."
     ad "Next stop, keep up, I have 1078 more calls today."
 
     scene museum bg2 with fade
     show admin at right
-    ad "This is mixed media"
+    ad "This is Mixed Media."
     show sunflowers at left
-    ad "Sunflowers was originally in the fine art wing, until..."
-    ad "Well, we couldn't afford to clean it, so now it's here."
+    ad "Sunflowers was originally in the Fine Art wing with the other Van Gogh, until..."
+    ad "Well, we couldn't afford to clean the soup off, so now it's here."
     show glimmer at left
     gl "I'm young and unsure."
     hide glimmer
@@ -233,22 +277,51 @@ label MuseumTour:
     pc "Of course you can."
     
     scene museum bg1 with fade
-    ad "That's the tour! Remember to lock up! Fate of the museum is decided in four days!"
-    pc "I have several questions."
-    ad "Already hanging up."
-    pc "This sucks."
+    ad "And that's the tour! You should have everything you need to get started."
+    pc "About that, do you know where the keys--"
+    ad "Oh and we have our Grand Gala in four days! If it goes bad, the donors might revoke our funding!"
+    menu:
+        "Hello?":
+            "The dial tone does not respond."
+        "[[Hang up.]"
+    "???" "Psst."
+    "No, the vending machine did not just, 'psst' you."
     show vendingmachine
-    v "Psst. Keys are in the drawer."
+    v "{i}Pssst.{/i} Hey!"
+    "Its lights flicker conspiratorially."
     pc "You talk too?"
-    v "Yeah, don't worry about it. Let me give you helpful advice."
-    v "This is my helpful advice."
-    pc "This is still weird but thanks for the helpful advice."
-    v "You're welcome. Also if the museum closes then I GET CRUSHED INTO A CUBE."
-    pc "Oh shit!"
+    pc "Of course you do."
+    v "You the new{0} guy{/0}{1} gal{/1}{2}bie{/2}?"
+    v "Right on. Here, let me get you the keys."
+    "The machine kachunks and grinds. A heavy key ring flies out of the change door."
+    menu:
+        "Thanks?":
+            v "De nada, {0}bro{/0}{1}sis{/1}{2}friendo{/2}."
+        "Why do you have these?":
+            v "Gotta stay prepped."
+    v "So you're the new curator? Like to think I'm a bit of a cu-ra-tor myself. Any questions, ask away."
+    menu:
+        "Is the museum really going to close in four days?":
+            v "Yeah, bummer. But maybe you can save it!"
+        "What happened to the last curator?"
+    v "Last dude was a bit of a hodad tee-bee-haitch."
+    v "Had all these ideas about lighting, layout, merch."
+    v "No {i}soul{/i}. Couldn't {i}listen{/i} to the art."
+    pc "Yeah, why is the art here... alive?"
+    v "Haha, you got it twisted, {0}buddy{/0}{1}girl{/1}{2}buckaroo{/2}."
+    v "All art can speak, most people just can't listen."
+    v "They got all these {i}ideas{/i} and {i}thoughts{/i}. What art IS, what it ISN'T."
+    v "Art speaks so quiet, they can't hear it over their own thoughts."
+    pc "So why can {i}I{/i} hear it?"
+    v "You must know how to keep your head clear."
+    menu:
+        "Are you saying I'm stupid?":
+            v "Whoa, {0}bro{/0}{1}sis{/1}{2}champ{/2}! No aggro; I'm saying you're {i}zen{/i}."
+        "So it's a superpower.":
+            v "Heck yes, {0}bro{/0}{1}sis{/1}{2}champ{/2}!"
+    v "Now go luck up, busy day tomorrow!"
 
     scene museum bg1 with fade
-    "PC locks up."
-    "On the way out, encounter Nighthawks"
     show nighthawks at truecenter
     n "You reckon they'll stay on?"
     n "Nah, they won't even come back."

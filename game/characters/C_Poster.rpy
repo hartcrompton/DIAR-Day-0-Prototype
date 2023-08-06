@@ -1,5 +1,5 @@
 #Poster
-
+default beat_Poster = 1
 label conv_Poster:
     scene office_bg
     show poster at right

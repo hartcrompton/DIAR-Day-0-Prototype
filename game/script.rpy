@@ -37,7 +37,7 @@ define v = Character("Vending Machine")
 define meta = Character("") #deprecated, no use
 
 #character name variables
-default pc_name = False
+default pc_name = ""
 
 #player backgrounds
 default pc_work = 0
@@ -101,7 +101,7 @@ label start:
     scene museum bg1
     menu:
         "Skip to tour.":
-            jump GameIntroduction
+            jump MuseumTour
         "Continue":
             call pronounselection
 

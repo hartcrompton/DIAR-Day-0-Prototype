@@ -8,6 +8,7 @@ default DayNumber = 1
 default actions = 4
 default time_of_day = 1
 
+#the different times of day are just recolored versions of the same background
 image museum_morning:
     "images/rooms/museum bg1.jpg"
     matrixcolor TintMatrix("#ede493")
@@ -20,13 +21,13 @@ image museum_night:
     "images/rooms/museum bg1.jpg"
     matrixcolor TintMatrix("#546280")
 
+#this image automatically changes appearance based on actions
 image museumtod = ConditionSwitch(
         "actions == 4", "museum_morning",
         "actions == 3", "museum_day",
         "actions == 2", "museum_evening",
         "actions == 1", "museum_night",
         "actions == 0", "museum_night")
-
 
 label DayStart:
     $ actions = 4
@@ -36,7 +37,7 @@ label DayStart:
     meta "It is day [DayNumber]."
     show admin at right
     ad "Good morning! Hope you slept well, you have [days_remaining] days left before the exhibit."
-    ad "time of day change"
+
     if DayNumber == 1:
         ad "Since it's your first day, let me tell you what to do."
     elif DayNumber == 2:
@@ -46,16 +47,13 @@ label DayStart:
     elif DayNumber == 4:
         ad "It's the last day!"
 
-
     ad "The museum's filthy, so you might want to clean."
-    ad "But you don't know much, so maybe you want to research."
 
     menu:
         "I'll clean today.":
             jump DailyCleaning
 
 label DailyCleaning:
-    #cleaning minigame goes here
     scene museum bg1
     call minigamestart_cleaning("cleaning")
     meta "Now you're free to roam around the museum"
@@ -90,6 +88,7 @@ label DayEnd:
     $ DayNumber = DayNumber + 1
     jump DayStart
 
+#this needs to get refactored, TOD uses a conditionswitch now
 label advance_time:
     if actions > 0:
         $ actions = actions - 1
