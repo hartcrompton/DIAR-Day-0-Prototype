@@ -278,13 +278,6 @@ label MuseumTour:
     scene museum bg1 with fade
     show admin at right
     ad "This is the Fine Art wing."
-    show theodore at left
-    t "Please don't mention Van Gogh."
-    show admin at right
-    ad "This is, of course, the famous self-portrait by Van Gogh."
-    show theodore angry at left
-    t "God damnit."
-    hide theodore
     show arnolfiniw at left
     arw "I didn't take it. What makes you think I took it?"
     ad "This is the Arnolfini Portrait, note the lovely detail!"
@@ -310,10 +303,11 @@ label MuseumTour:
     show admin at right
     ad "This is the Mixed Media wing."
     show sunflowers at left
-    ad "Sunflowers was in the Fine Art wing with the other Van Gogh, until..."
-    ad "Well, we couldn't afford to clean the soup off, so now it's here."
-    su "I hate this soup."
-    ad "(We decided to close the cafe after that incident.)"
+    #ad "Sunflowers was in the Fine Art wing with the other Van Gogh, until..."
+    ad "We've got a couple of Van Goghs in our collection. This one was purchased at a generous discount!"
+    su "Say, there's a new face! So nice to meet you. My name is-"
+    so "WHAT ARE YOU DOING WANDERING AROUND A STUPID MUSEUM?! THE PLANET IS ON FIRE!"
+    su "Sigh..."
     hide sunflowers
     show glimmer at left
     gl "If only we had a lunch special...the finest chicken nuggets and chardonnay. The kids can have bubble tea."
