@@ -363,7 +363,7 @@ label pronounselection:
 
     # This calls the label for updating self-voicing text tags.
 
-    call tts_tag_update from _call_tts_tag_update
+    call tts_tag_update
 
     # TODO: The following are used in this guide to set the pronoun variables to match the selected pronouns (as explained below). These would need to be changed if you need more/different variables (e.g., for translations).
 
@@ -408,7 +408,7 @@ label tts_tag_update:
 
 label after_load:
 
-    call tts_tag_update from _call_tts_tag_update_1
+    call tts_tag_update
 
     return
 

@@ -24,7 +24,7 @@ label .use_action:
     menu:
         ar "Whoa, sure you want to use an action?"
         "Yeah, why not.":
-            call advance_time from _call_advance_time
+            call advance_time
             jump expression "conv_Arnolfini" + "." + "Beat" + "%d" % beat_Arnolfini
         "No, not really.":
             ar "Understandable."

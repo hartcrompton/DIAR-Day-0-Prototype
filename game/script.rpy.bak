@@ -103,7 +103,7 @@ label start:
         "Skip to tour.":
             jump MuseumTour
         "Continue":
-            call pronounselection from _call_pronounselection
+            call pronounselection
 
     scene museum bg1
     #will need to make this changeable through the preferences menu too
@@ -122,13 +122,13 @@ label testing:
     scene testing
     menu:
         "Cleaning":
-            call minigamestart_cleaning("cleaning") from _call_minigamestart_cleaning_1
+            call minigamestart_cleaning("cleaning")
             jump testing
         "Saint Repair":
             menu:
                 "Glass":
-                    call minigamestart_stainedglass("glass") from _call_minigamestart_stainedglass
+                    call minigamestart_stainedglass("glass")
                     jump testing
                 "Plastic":
-                    call minigamestart_stainedglass("plastic") from _call_minigamestart_stainedglass_1
+                    call minigamestart_stainedglass("plastic")
                     jump testing

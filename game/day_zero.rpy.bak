@@ -66,7 +66,7 @@ label DayZero:
     #cutesy little phone interaction
     label GetThePhone:
         scene museum bg1 with hpunch:
-        call PhoneWaitResponse from _call_PhoneWaitResponse
+        call PhoneWaitResponse
         menu:                                               
             "[[Answer the phone.]":      
                 "You answer the phone."    
@@ -236,7 +236,6 @@ label MuseumTour:
     show admin at right
     ad "This is the Grand Foyer."
     ad "These are our Davids. Most people don't know they were actually triplets."
-    "At first, you think you hear an echo:"
     hide admin
     show davids at left
     d "I'm David."

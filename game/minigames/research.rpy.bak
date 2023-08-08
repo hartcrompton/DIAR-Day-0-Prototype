@@ -33,7 +33,7 @@ label call_inventory():
         return
 
     show layer middle at unfocus
-    call expression _return from _call_expression
+    call expression _return
     show layer middle at reset
     jump .repeat
 
@@ -46,7 +46,7 @@ label call_catalogue():
         return
 
     show layer middle at unfocus
-    call expression _return from _call_expression_1
+    call expression _return
     show layer middle at reset
     jump .repeat
 
