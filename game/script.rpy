@@ -41,7 +41,7 @@ default pc_name = ""
 
 #player backgrounds
 default pc_work = 0
-default pc_skills = 0
+default pc_skill = 0
 default pc_education = 0
 
 #choice variables

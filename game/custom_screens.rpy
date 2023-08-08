@@ -93,34 +93,34 @@ screen vendingmachineselection:
 label vending_machine_checker:
     python:
         if selection == 15:
-            renpy.say(meta, "You selected 'Blue Raspberry Kettle Chips'?")
+            #renpy.say(meta, "You selected 'Blue Raspberry Kettle Chips'?")
             renpy.jump("DayZero")
         elif selection == 21:
-            renpy.say(meta, "Thes BBQ chips weren't even packaged this decade.")
+            #renpy.say(meta, "Thes BBQ chips weren't even packaged this decade.")
             renpy.jump("DayZero")
         elif selection == 23:
-            renpy.say(meta, "A knockoff of a knockoff. Likely half sawdust.")
+            #renpy.say(meta, "A knockoff of a knockoff. Likely half sawdust.")
             renpy.jump("DayZero")
         elif selection == 25:
-            renpy.say(meta, "'Chunky' Chocolate Chip.")
+            #renpy.say(meta, "'Chunky' Chocolate Chip.")
             renpy.jump("DayZero")
         elif selection == 31:
-            renpy.say(meta, "The Snickers bar flops against the glass. It does not fall.")
+            #renpy.say(meta, "The Snickers bar flops against the glass. It does not fall.")
             renpy.jump("DayZero")
         elif selection == 33:
-            renpy.say(meta, "You selected [selection]")
+            #renpy.say(meta, "You selected [selection]")
             renpy.jump("DayZero")
         elif selection == 35:
-            renpy.say(meta, "You selected [selection]")
+            #renpy.say(meta, "You selected [selection]")
             renpy.jump("DayZero")
         elif selection == 41:
-            renpy.say(meta, "The can has no label. Did someone can this at home?")
+            #renpy.say(meta, "The can has no label. Did someone can this at home?")
             renpy.jump("DayZero")
         elif selection == 43:
-            renpy.say(meta, "You selected [selection]")
+            #renpy.say(meta, "You selected [selection]")
             renpy.jump("DayZero")
         elif selection == 44:
-            renpy.say(meta, "The bag says, 'Bliss.' The taste says, 'Sorrow.'")
+            #renpy.say(meta, "The bag says, 'Bliss.' The taste says, 'Sorrow.'")
             renpy.jump("DayZero")
         else:
             renpy.say(meta, "You selected INVALID")

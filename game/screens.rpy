@@ -138,6 +138,29 @@ style window:
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
+style block1_multiple2_say_window:
+    xalign 0
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+    xsize 860
+    xoffset 100
+    left_padding -325 
+    background "#000000"
+
+    #background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+style block2_multiple2_say_window:
+    xalign 0
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+    xsize 860
+    xoffset 1060
+    left_padding -325 
+    background "#000000"
+
+    #background None
+
 style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign

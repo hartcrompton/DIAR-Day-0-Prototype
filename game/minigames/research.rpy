@@ -6,6 +6,8 @@ default Card5Title = "Gator"
 default CardTitleVisible = 1
 default CardHovered = 0
 default TempCharacter = "None"
+image card1 = "images/minigame/research/test/card1.png"
+image drawerfront = "images/minigame/research/test/drawerfront.png"
 
 init python:
     renpy.add_layer("middle", above="master")
@@ -54,6 +56,15 @@ label DrawerStuck:
 
 transform unfocus:
     blur 10
+
+transform CardUp:
+    ease .1 yoffset -55
+
+transform CardDown:
+    ease .1 yoffset 0
+
+transform CardFirst:
+    yoffset 645
 
 label ResearchMinigame(ResearchCharacter="Default"):
     #jump ResearchTransition
@@ -119,8 +130,8 @@ screen ResearchMinigameDrawerUI:
         #CardTitle1 = "A5" etc
     
     imagemap:
-        ground "images/minigame/research/ResearchBg2.jpg"
-        hover "images/minigame/research/ResearchBg2Hover.jpg"
+        ground "images/minigame/research/test/drawerbghover.jpg"
+        #hover "images/minigame/research/ResearchBg2Hover.jpg"
 
         #cards
         hotspot (467, 588, 989, 124) action [NullAction()] hovered [SetVariable("CardHovered", 1)] unhovered [SetVariable("CardHovered", 0)]
@@ -134,6 +145,7 @@ screen ResearchMinigameDrawerUI:
         idle "map/rooms/back_idle.png"
         hover "map/rooms/back_hover.png"
         action Jump("call_catalogue")
+
     frame:
         xalign 0
         yalign 0
@@ -148,91 +160,123 @@ screen ResearchMinigameDrawerUI:
                 xalign 0.5
                 yalign 0.85
                 text "{color=#000000}[ResearchLetter]{/color}" size 80
-        hbox:
+        vbox:
                 xalign 0.5
                 yalign 0
-                yoffset 645
-                text "{color=#000000}[Card1Title]{/color}":
-                    size 40
-                    if CardHovered == 1:
-                        at transform:
-                            yoffset -55
-                    else:
-                        at transform:
-                            yoffset 0
-    
-        hbox:
-                xalign 0.5
-                yalign 0
-                yoffset 575
-                text "{color=#000000}[Card2Title]{/color}": 
-                    size 40
-                    if CardHovered == 1:
-                        at transform:
-                            alpha 0
-                    else:
-                        at transform:
-                            alpha 1
-                    if CardHovered == 2:
-                        at transform:
-                            yoffset -55
-                    else:
-                        at transform:
-                            yoffset 0
-        hbox:
-                xalign 0.5
-                yalign 0
-                yoffset 500
-                text "{color=#000000}[Card3Title]{/color}": 
-                    size 40
-                    if CardHovered == 2:
-                        at transform:
-                            alpha 0
-                    else:
-                        at transform:
-                            alpha 1
-                    if CardHovered == 3:
-                        at transform:
-                            yoffset -55
-                    else:
-                        at transform:
-                            yoffset 0
-        hbox:
-                xalign 0.5
-                yalign 0
-                yoffset 430
-                text "{color=#000000}[Card4Title]{/color}":
-                    size 40
-                    if CardHovered == 3:
-                        at transform:
-                            alpha 0
-                    else:
-                        at transform:
-                            alpha 1
-                    if CardHovered == 4:
-                        at transform:
-                            yoffset -55
-                    else:
-                        at transform:
-                            yoffset 0
-        hbox:
-                xalign 0.5
-                yalign 0
-                yoffset 360
-                text "{color=#000000}[Card5Title]{/color}": 
-                    size 40
-                    if CardHovered == 4:
-                        at transform:
-                            alpha 0
-                    else:
-                        at transform:
-                            alpha 1
+                yoffset 345
+                add "card1":
+                    yoffset 0
+                    zoom .68
                     if CardHovered == 5:
                         at transform:
-                            yoffset -55
+                            CardUp
                     else:
                         at transform:
-                            yoffset 0
+                            CardDown
+                text "{color=#000000}[Card5Title]{/color}":
+                    size 40
+                    xalign .5
+                    yoffset -390
+                    if CardHovered == 5:
+                        at transform:
+                            CardUp
+                    else:
+                        at transform:
+                            CardDown
+        vbox:
+                xalign 0.5
+                yalign 0
+                yoffset 419
+                add "card1":
+                    yoffset 0
+                    zoom .76
+                    if CardHovered == 4:
+                        at transform:
+                            CardUp
+                    else:
+                        at transform:
+                            CardDown
+                text "{color=#000000}[Card4Title]{/color}":
+                    size 40
+                    xalign .5
+                    yoffset -435
+                    if CardHovered == 4:
+                        at transform:
+                            CardUp
+                    else:
+                        at transform:
+                            CardDown
+        vbox:
+                xalign 0.5
+                yalign 0
+                yoffset 492
+                add "card1":
+                    yoffset 0
+                    zoom .84
+                    if CardHovered == 3:
+                        at transform:
+                            CardUp
+                    else:
+                        at transform:
+                            CardDown
+                text "{color=#000000}[Card3Title]{/color}":
+                    size 40
+                    xalign .5
+                    yoffset -485
+                    if CardHovered == 3:
+                        at transform:
+                            CardUp
+                    else:
+                        at transform:
+                            CardDown
+        vbox:
+                xalign 0.5
+                yalign 0
+                yoffset 565
+                add "card1":
+                    yoffset 0
+                    zoom .92
+                    if CardHovered == 2:
+                        at transform:
+                            CardUp
+                    else:
+                        at transform:
+                            CardDown
+                text "{color=#000000}[Card2Title]{/color}":
+                    size 40
+                    xalign .5
+                    yoffset -530
+                    if CardHovered == 2:
+                        at transform:
+                            CardUp
+                    else:
+                        at transform:
+                            CardDown
+        vbox:
+                xalign 0.5
+                yalign 0
+                yoffset 638
+                add "card1":
+                    yoffset 0
+                    if CardHovered == 1:
+                        at transform:
+                            CardUp
+                    else:
+                        at transform:
+                            CardDown
+                text "{color=#000000}[Card1Title]{/color}":
+                    size 40
+                    xalign .5
+                    yoffset -575
+                    if CardHovered == 1:
+                        at transform:
+                            CardUp
+                    else:
+                        at transform:
+                            CardDown
+    add "drawerfront"
+    
+        
 
                 #if you click the wrong one, no sort interaction aside from some text maybe
                 #if you click the right one, jump to the library scene and then you just need to click the correct shelf
