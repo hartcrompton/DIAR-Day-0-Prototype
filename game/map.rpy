@@ -26,33 +26,33 @@ screen MapUI:
         hover "newmap/museum_map_hover.jpg"
 
         #glimmer
-        hotspot (30, 18, 163, 321) action Jump("conv_Admin")
+        #hotspot (30, 18, 163, 321) action Jump("conv_Admin")
         #sunflowers
-        hotspot (217, 12,143,266) action Jump("conv_SoupAndSunflowers")
+        #hotspot (217, 12,143,266) action Jump("conv_SoupAndSunflowers")
         #saintcatherine
         hotspot (368,217,141,286) action Jump("conv_SaintCatherine")
         #gilgamesh
         hotspot (544,174,144,288) action Jump("conv_Gilgamesh")
         #sue
-        hotspot (707,190,169,331) action Jump("conv_Sue")
+        #hotspot (707,190,169,331) action Jump("conv_Sue")
         #EaNasir
-        hotspot (948,158,116,263) action Jump("conv_EaNasir")
+        #hotspot (948,158,116,263) action Jump("conv_EaNasir")
         #Theodore
-        hotspot (1106,58,144,283) action Jump("conv_Theodore")
+        #hotspot (1106,58,144,283) action Jump("conv_Theodore")
         #MonaLisa
         hotspot (1244,88,268,399) action Jump("conv_MonaLisa")
         #Arnolfini
         hotspot (1456,278,137,255) action Jump("conv_Arnolfini")
         #Nighthawks
-        hotspot (749,584,205,154) action Jump("conv_Nighthawks")
+        #hotspot (749,584,205,154) action Jump("conv_Nighthawks")
         #VendingMachine
-        hotspot (1028,622,109,205) action Jump("conv_VendingMachine")
+        #hotspot (1028,622,109,205) action Jump("conv_VendingMachine")
         #Davids
         hotspot (1185,608,248,222) action Jump("conv_Davids")
         #Poster
         hotspot (1443,550,277,245) action Jump("conv_Poster")
         #Admin
-        hotspot (1732,595,151,283) action Jump("conv_Admin")
+        #hotspot (1732,595,151,283) action Jump("conv_Admin")
 
    
 

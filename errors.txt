@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day_zero.rpy", line 252: expected 'image_name_component' not found.
-    show
-        ^
+File "game/script.rpy", line 106: choice menuitem expects a non-empty block.
+    "Continue":
+               ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Mon Aug  7 19:18:24 2023
+Tue Aug 22 14:40:17 2023

@@ -187,39 +187,52 @@ label PlayerNameInput:
             $ pc_work = "layabout" 
             ad "That's... well it's not too important."
     
-    
+    #update variables
     menu:              
         ad "Next: Any relevant skills?"                                 
         "I can really dissociate at work.":
+            $ pc_skill = "dissociating"
             ad "Oh my, that must be nice."
-        "My friends all treat me like their therapist.":    
+        "My friends all treat me like their therapist.":   
+            $ pc_skill = "therapy" 
             ad "Friends? Wow, I'll put, 'great social skills.'"
         "I know how to throw a KILLER party.":   
+            $ pc_skill = "partying"
             pc "Ragers, keggers, raves, I'm flexible."
         "Just some light breaking and entering.":      
-            ad "Hmm, let's put: 'discretion and experience with tools.'"
+            $ pc_skill = "burglary"
+            ad "Hmm, let's put: 'discretion and experience with tools.'" #logistics import export #asset acquisition
         "I've listened to a lot of people complain.":      
+            $ pc_skill = "listening"
             ad "Ah, we do get a lot of those here."
         "Afraid not.":      
+            $ pc_skill = "nothing"
             ad "I'm not sure... oh, it's fine."
 
+    #update variables
     menu:             
         ad "Lastly: What's your education background?"                                  
         "I've apprenticed in the trades.":
+            $ pc_education = "trades"
             ad "Wonderful! Our maintenance budget has really tanked."
-        "I listen to like, A LOT of podcasts.":    
+        "I listen to like, A LOT of podcasts.":   
+            $ pc_education = "podcastas" 
             ad "Me too! I have three going right now."
         "I think I took an art course?":   
+            $ pc_education = "art course"
             ad "You think?"
             pc "I mean, I didn't go."
             ad "Well, that's better than nothing!"
         "I've seen The Da Vinci Code":      
+            $ pc_education = "Da Vinci Code"
             ad "Oh, that is my favorite documentary!"
             ad "I never would have guessed Tom Hanks was a historian."
         "I have over three-hundred college credits.":      
+            $ pc_education = "college credits"
             ad "Oh! What did you major in?"
             pc "I didn't. Never quite graduated."
         "I'd rather not say.":      
+            $ pc_education = "not say"
             ad "Well, it's not that important."
 
     ad "Ok, great! Let me look this over while I transfer you back."

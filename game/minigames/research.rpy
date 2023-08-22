@@ -156,10 +156,7 @@ screen ResearchMinigameDrawerUI:
         xmaximum 1214
         yminimum 1080
         ymaximum 1080
-        hbox:
-                xalign 0.5
-                yalign 0.85
-                text "{color=#000000}[ResearchLetter]{/color}" size 80
+        
         vbox:
                 xalign 0.5
                 yalign 0
@@ -274,6 +271,10 @@ screen ResearchMinigameDrawerUI:
                     else:
                         at transform:
                             CardDown
+        hbox:
+            xalign 0.5
+            yalign 0.85
+            text "{color=#000000}[ResearchLetter]{/color}" size 80
     add "drawerfront"
     
         

@@ -37,7 +37,7 @@ define v = Character("Vending Machine")
 define meta = Character("") #deprecated, no use
 
 #character name variables
-default pc_name = ""
+default pc_name = "Player Name"
 
 #player backgrounds
 default pc_work = 0
@@ -99,11 +99,14 @@ default d_Label = d_LabelFromValue()
 # start label is the first bit of game code that gets read
 label start:
     scene museum bg1
+    call pronounselection from _call_pronounselection
     menu:
+        "Skip to beats":
+            jump FreeRoam
         "Skip to tour.":
             jump MuseumTour
         "Continue":
-            call pronounselection from _call_pronounselection
+            pass
 
     scene museum bg1
     #will need to make this changeable through the preferences menu too
