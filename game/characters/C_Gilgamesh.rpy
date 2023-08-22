@@ -7,7 +7,6 @@ label conv_Gilgamesh:
     show gilgamesh at right
     menu:
         "Beat [beat_Gilgamesh]" if actions > 0 and beat_Gilgamesh < 5:
-            gi "Whoa, sure you want to use an action?"
             jump .use_action
         "Bye":
             gi "See ya"

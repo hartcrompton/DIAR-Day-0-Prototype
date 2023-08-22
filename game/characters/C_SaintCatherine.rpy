@@ -11,7 +11,6 @@ label conv_SaintCatherine:
     show saintcatherine at right
     menu:
         "Beat [beat_SaintCatherine]" if actions > 0 and beat_SaintCatherine < 5:
-            st "Whoa, sure you want to use an action?"
             jump .use_action
         "Bye":
             st "See ya"

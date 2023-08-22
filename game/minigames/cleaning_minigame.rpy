@@ -141,10 +141,10 @@ init python:
                         
                 #plays sound effects on click -H
                 if (clicked):
-                    self.score_bubble = Bubble_Text("+20", "#0f0",72,3, x-5, y-5)
+                    #self.score_bubble = Bubble_Text("+20", "#0f0",72,3, x-5, y-5)
                     self.the_score += 20  
                 elif (self.x_offset <= x <= self.width*2 + self.x_offset) and (self.y_offset <= y <= self.height + self.y_offset):
-                    self.score_bubble = Bubble_Text("-5", "#f00",72,3, x-5, y-5)
+                    #self.score_bubble = Bubble_Text("-5", "#f00",72,3, x-5, y-5)
                     self.the_score = max(0,self.the_score - 5)  
                
                 #game ends when no differences remain -H

@@ -40,7 +40,7 @@ screen MapUI:
         #Theodore
         #hotspot (1106,58,144,283) action Jump("conv_Theodore")
         #MonaLisa
-        hotspot (1244,88,268,399) action Jump("conv_MonaLisa")
+        hotspot (1311,109,135,251) action Jump("conv_MonaLisa")
         #Arnolfini
         hotspot (1456,278,137,255) action Jump("conv_Arnolfini")
         #Nighthawks

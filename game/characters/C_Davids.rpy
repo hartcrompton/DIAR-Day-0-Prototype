@@ -8,7 +8,6 @@ label conv_Davids:
     d "You're talking to me, the Davids!"
     menu:
         "Beat [beat_Davids]" if actions > 0 and beat_Davids < 5:
-            d "Whoa, sure you want to use an action?"
             jump .use_action
         "Bye":
             d "See ya"
