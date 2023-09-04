@@ -11,6 +11,7 @@ image drawerfront = "images/minigame/research/test/drawerfront.png"
 
 init python:
     renpy.add_layer("middle", above="master")
+    arr_GilgameshCards = ["Gator", "Gourmand", "Gilgamesh", "Gilead", "Guybrush"]
 
 #so for me, the card cat is the inventory
 screen inventory():
@@ -117,6 +118,12 @@ screen ResearchMinigameUI():
 
 
 label ResearchMinigameDrawer(ResearchLetter="Default"):
+    if ResearchLetter == "G":
+        $ Card1Title = arr_GilgameshCards[0]
+        $ Card1Title = arr_GilgameshCards[1]
+        $ Card1Title = arr_GilgameshCards[2]
+        $ Card1Title = arr_GilgameshCards[3]
+        $ Card1Title = arr_GilgameshCards[4]
     call screen ResearchMinigameDrawerUI
     
 screen ResearchMinigameDrawerUI:

@@ -1,7 +1,7 @@
 #map
 label call_mapUI:
-    show screen gameUI
     call screen MapUI
+    #show screen gameUI
 
 screen MapUI:
     add "newmap/museum_map.jpg"
@@ -53,6 +53,44 @@ screen MapUI:
         hotspot (1443,550,277,245) action Jump("conv_Poster")
         #Admin
         #hotspot (1732,595,151,283) action Jump("conv_Admin")
+    frame:
+        xalign 0
+        yalign 1.0
+        xoffset 10
+        yoffset -10
+        xminimum 300
+        xmaximum 300
+        yminimum 300
+        ymaximum 300
+        hbox:
+            box_wrap True
+            spacing 40
+            vbox:
+                spacing 10
+                text "Day [DayNumber] / 4":
+                    size 40
+                text "Morning":
+                    size 20
+                    if actions == 4:
+                        size 40
+                text "Noon":
+                    size 20
+                    if actions == 3:
+                        size 40
+                text "Evening":
+                    size 20
+                    if actions == 2:
+                        size 40
+                text "Night":
+                    size 20
+                    if actions == 1:
+                        size 40
+    textbutton "Stats":
+        xalign 1.0
+        yalign 0.0
+        xoffset -30
+        yoffset 30
+        action ShowMenu("DispositionMenu")
 
    
 

@@ -1,7 +1,10 @@
+image TempCleaningBackground = False
+
 init python:
     import math
     import pygame
     import time
+    #renpy.add_layer("middle", above="master")
 
     # Value that determines zoom level -H
     zoomfactor = 1
@@ -142,9 +145,11 @@ init python:
                 #plays sound effects on click -H
                 if (clicked):
                     #self.score_bubble = Bubble_Text("+20", "#0f0",72,3, x-5, y-5)
+                    #renpy.call_in_new_context("TestPosterLines")
                     self.the_score += 20  
                 elif (self.x_offset <= x <= self.width*2 + self.x_offset) and (self.y_offset <= y <= self.height + self.y_offset):
                     #self.score_bubble = Bubble_Text("-5", "#f00",72,3, x-5, y-5)
+                    
                     self.the_score = max(0,self.the_score - 5)  
                
                 #game ends when no differences remain -H
@@ -214,7 +219,14 @@ init python:
     diff_items = []
     cc = Position(xpos=0.5, xanchor='center', ypos=0.5, yanchor='center')
     
-    
+
+
+#Ok, this kind of works, but
+label TestPosterLines():
+    $ ui.add(difference_image)
+    #$ renpy_blur(difference_image, 1.5)
+    p "This is a test line."
+    return
 
 
 
@@ -242,6 +254,7 @@ label minigamestart_cleaning(gameimage="notdefault"):
         #we need to be able to input an argument here
         difference_image = MinigameCleaning("images/minigame/cleaning/cleaning_ph.png", diff_items)
         difference_image.randomizeItems(5)
+        #TempCleaningBackground = difference_image
         ui.add(difference_image)
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
         winner = ui.interact(suppress_overlay=False, suppress_underlay=False)

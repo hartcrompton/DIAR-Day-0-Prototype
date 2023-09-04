@@ -1,4 +1,18 @@
 ﻿## Screen with Stats Button
+
+style TODStyle is text:
+        color "ffffff"
+        size 40
+
+style style_CurrentDay is text:
+        color "ffffff"
+        size 40
+        bold True
+
+style style_OtherDay is text:
+        color "ffffff"
+        size 20
+
 screen gameUI:
     textbutton "Stats":
         xalign 1.0
@@ -6,9 +20,7 @@ screen gameUI:
         xoffset -30
         yoffset 30
         action ShowMenu("DispositionMenu")
-        # You may also use the code below depending on your needs.
-        # action ShowMenu("mapUI")
-        # This was the same code used in the vlog.
+    
 
 # If you just want to show a map that does nothing more than just an indicator, it's good to use ShowMenu.
 # If you want to navigate using the map, it's prefered to use "call".

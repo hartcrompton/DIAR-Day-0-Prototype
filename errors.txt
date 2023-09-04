@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 106: choice menuitem expects a non-empty block.
-    "Continue":
-               ^
+File "game/characters/C_Poster.rpy", line 103: invalid syntax
+    p_b3_c1 =
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Aug 22 14:40:17 2023
+Sun Sep  3 18:08:10 2023

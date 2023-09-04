@@ -56,6 +56,7 @@ label DayStart:
 label DailyCleaning:
     scene museum bg1
     call minigamestart_cleaning("cleaning") from _call_minigamestart_cleaning
+    
     meta "Now you're free to roam around the museum"
     jump FreeRoam
 

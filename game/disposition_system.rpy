@@ -1,5 +1,6 @@
 #disposition system
-
+default ExhibitOutcome = 0
+default EndTotal = 0
 default HoveredName = "Test"
 default CharacterBio = "None selected."
 default CharacterBeat = "0"
@@ -118,6 +119,26 @@ label TotalDisposition:
                 d_Total += d_Tier6
             elif i == 6:
                 d_Total += d_Tier7
+    return
+
+label CalculateOutcome:
+    python:
+        arr_beats = []
+        arr_beats.append(beat_Arnolfini)
+        arr_beats.append(beat_Davids)
+        arr_beats.append(beat_Gilgamesh)
+        arr_beats.append(beat_MonaLisa)
+        arr_beats.append(beat_SaintCatherine)
+        arr_beats.append(beat_Soup)
+        arr_beats.append(beat_Sunflowers)
+        EndTotal = 0
+        for i in arr_beats:
+            if i == 5:
+                EndTotal += 1
+        if EndTotal >= 3:
+            ExhibitOutcome = 1
+        if EndTotal < 3:
+            ExhibitOutcome = 0
     return
 
 #call DispositionValueToLabel pass (d_Arnolfini)

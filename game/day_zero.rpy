@@ -1,5 +1,5 @@
 #day 0
-
+default NameLie = 0
 label GameIntroduction:
     scene intro bg1
     #leaving the interview, missed bus, chased by the rain into an empty museum.

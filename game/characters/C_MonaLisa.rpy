@@ -1,6 +1,8 @@
 #MonaLisa
 
 default beat_MonaLisa = 1
+default MonaHeist = 0
+default MonaOnly = 0
 
 label conv_MonaLisa:
     scene monalisabackground
@@ -29,46 +31,53 @@ label .use_action:
     jump expression "conv_MonaLisa" + "." + "beat" + "%d" % beat_MonaLisa
 
 label .beat1:
-    m "Hey [pc_name],"
+    m "The famous [pc_name]! You hear more than most. I should expect no less from someone..."
     if pc_work == "gas station attendant":
-        m "(placeholder) you're reliable and low class."
+        m "...who wears the fragrance of petrol and heat-lamp hot dogs with such panache."
     if pc_work == "gig worker":
-        m "(placeholder) you're adventurous and have no goals."
+        m "...as focused and disciplined as a cat at a laser show. All that energy and no goals."
     if pc_work == "bouncer":
-        m "(placeholder) you're strong and stupid."
+        m "...with the resilience and mental agility of a truck tire."
     if pc_work == "\"painter\"":
-        m "(placeholder) you're adept and don't belong here."
+        m "...so masterful at applying paint. To a wall. Outside."
     if pc_work == "\"procurer\"":
-        m "(placeholder) you're clever and broke."
+        m "...with a complexion brighter than their future."
     if pc_work == "layabout":
         m "(placeholder) you think you're good at self care, you're a lazy pos."
-    m "You realize the enormity of your job, right?"
-    m "Sunflowers looks good for their age, and a forty-million valuation."
-    m "And Theodore, one of the most famous faces here and he doesn't want to be seen."
-    m "Or Gilgamesh, a great hero of mighty voice; especially when he's crying."
-    m "But we have you now. And your talent for [pc_skill]."
+    m "You realize the enormity of your job, yes? Making something of this rathole?"
+    m "I suppose you have your work cut out for you..."
+    m "Sunflowers looks good for their age. And the forty-million valuation."
+    m "Then there's Theodore, one of the most famous faces here, dozens of copies, and he doesn't want to be seen."
+    m "And of course Gilgamesh, mighty hero with a mighty voice. Especially when he's crying."
+    m "But now we have you. And your talent for [pc_skill]."
     menu:
-        "You don't know me.":
-            pass
+        "How do you know all this?":
+            m "Being famous gives me me access. And lots of it."
         "You don't have to be so mean.":
-            pass
-    m "Darling, I know everything. I'm everywhere."
-    m "If you can see my face, I can see you."
-    m "Maybe you can get the others to open up. Or calm down."
-    m "You've got a way with words, at least."
+            m "These are facts, my friend. Perhaps you read too much from too little."
+    m "I know everything, bambinə. I'm everywhere."
+    m "If you can see my face, I can see you. "
+    m "I saw your whole interview from the admin's tote bag."
+    m "You're a clever one."
+    m "Maybe you {i}can{/i} get the others to open up. Or calm down."
     if pc_education == "trades":
-        m "(placeholder) an apprentice might have potential"
+        m "If you've apprenticed in a trade, you know to be quick, yes? Or you lose a hand."
     if pc_education == "podcasts":
-        m "(placeholder) a podcast fan can collect lots of little tidbits"
+        m "If you enjoy podcasts you must have some capacity for obscure details."
     if pc_education == "art course":
-        m "(placeholder) you've seen a paintbrush before"
+        m "If you've taken an art class you know your instructors know more than you."
     if pc_education == "Da Vinci Code":
-        m "(placeholder) you participate in bad art, at least"
+        m "If you've read that book you've participated in bad art, at least. It's a start."
     if pc_education == "college credits":
-        m "(placeholder) you show up, but have no ambition"
+        m "You may lack the ambition to finish school, but you did show up. Consistently."
     if pc_education == "not say":
-        m "(placeholder) you know when to shut up"
-    m "When you're worth my time, we'll talk more."
+        m "Not speaking on your education, though... Better to seem quiet and wise than the alternative, no? Worked for me."
+    menu:
+        "Don't neg me like you want me to fail.":
+            m "Great works rot in foreign basements while empires form, fall and forget. That won't be me. Ever."
+        "I can be mysterious and enigmatic, too.":
+            m "Is that true? {i}Va bene{/i}. Perhaps we can come up with a plan together."
+    m "When you're worth my time, we'll talk more. Ciao, {0}bambino{/0}{1}bambina{/1}{2}bambinə{/2}."
 
     meta "You have [actions] action(s) left."
     $ beat_MonaLisa += 1
@@ -77,6 +86,7 @@ label .beat1:
 
 label .beat2:
     m "Perhaps a touring exhibit will take me to Italy... Oh, it's you."
+    m "Are you playing nice with the others?"
     menu:
         m "Are you playing nice with the others?"
         "I thought you know everything.":
@@ -84,25 +94,49 @@ label .beat2:
         "What's your problem?":
             m "I don't have a problem. I have a temporary setback."
     m "This is just a layover. More fame, more copies; the better chance I can go home."
-    m "All art wants to go home."
+    m "The land you see behind me. The family of the person I'm modeled on. The culture that made me."
+    m "{i}Repubblica Fiorentina{/i}."
     menu:
-        "What is home, for you?":
-            m "The land you see behind me. The family of the person I'm modeled on. The culture that made me."
-        "Where are you trying to go?":
-            m "Florence, Italy."
+        "Bless you?":
+            pass
+        "What did you call me?":
+            pass
+    m "Florence. "
+    m "...Italy."
     m "I have to get back while it still exists. If my people are wiped out, or borders redrawn... it might be too late."
-    m "This discussion is truly riveting, but I'm sure you have other duties."
+    pc "That seems... unlikely for Italy."
+    m "No? Why is that?"
+    menu:
+        "Italy's a modern, stable country.":
+            m "\"Italy\" is a baby. Born in 1946, and already overtaking my Florence's name in a mere 81 years."
+        "Italy has a rich, ancient history.":
+            m "So does Palestine. When the dust settles, who will claim that history?"
+    m "We are plundered, lost, and re-written every day. But not me. There are millions of me."
+    menu:
+        "Is it enough if only one returns?":
+            m "No. Every copy increases my fame and influence; but originals are different. Special."
+        "I thought there were thousands of you.":
+            m "Yes, but they're part of me. I'm the original. I matter most."
+    m "The copies exist so that I can go home. All art wants to go home."
+    menu:
+        "What if this place were your home?":
+            pass
+        "There might be a way...":
+            $ MonaHeist = 1
+            pass
+    m "{i}Non importa, {0}bambino{/0}{1}bambina{/1}{2}bambinə{/2}{/i}. That's enough for now."
+    "She should be upset, but you honestly can't tell."
+    m "I'm sure you have other duties."
     m "Be seeing you."
+
     meta "You have [actions] action(s) left."
     $ beat_MonaLisa += 1
-    #$ if d_MonaLisa < 6: d_MonaLisa + 1
     jump FreeRoam
     
 label .beat3:
-    m "Ciao, [pc_name]."
-    meta "Player asks how Mona got to be so famous, setting up 3 possible endings."
     m "I found a use for you. Have you been to the office yet?"
     menu:
+        m "I found a use for you. Have you been to the office yet?"
         "Yes.":
             pass
         "No.":
@@ -116,25 +150,62 @@ label .beat3:
             m "Mugs, posters, mousepads, candy wrappers, memes. I told you, I'm everywhere."
         "You read over people's shoulders?":
             m "Of course I do. Don't you?"
-    m "Vai, vai, go do as I ask like a good little [pc_work]."
-    meta "Minigame of the admin office, random items like mugs, mousepads, are covered or turned around if you click on them they have a pic of ML. Maybe each one says \"phew,\" \"finally\" \"oh, hey\" \"keep going\""
+    m "{i}Vai{/i}, {i}vai{/i}, go do as I ask like a good little [pc_work]."
+    "Minigame of the admin office, random items like mugs, mousepads, are covered or turned around if you click on them they have a pic of ML. Maybe each one says \"phew,\" \"finally\" \"oh, hey\" \"keep going\""
+
     meta "You have [actions] action(s) left."
     $ beat_MonaLisa += 1
     #$ if d_MonaLisa < 6: d_MonaLisa + 1
     jump FreeRoam
 label .beat4:
     m "That is so much better. You did well, once you finally got around to it."
-    pc "You can't keep talking to people this way and expect them to like you."
-    m "No? I have historic and scientific value in addition to cultural cache."
-    m "I could make you famous, too. Or the museum. Whichever."
-    menu:
-        "Make me famous for partying.":
-            m "Here's what wat we're gonna do..."
-        "Make me rich.":
-            m "You want to squeeze every last coin out of rich donors? Put me at the center of the exhibit."
-        "Let's send you home.":
-            m "Really? Wow. You might have what it takes after all, [pc_name]."
-    m "This will be easy. Let's make it happen."
+    pc "I've been thinking about your role here, in the museum."
+    m "Really? Enlighten me."
+    label StayOrGo:
+        menu:
+            "Stay here, Mona":
+                m "What? No. Absolutely not. Why should I?"
+                menu:
+                    "You have historic, cultural, and scientific value. You're more than where you came from. This could be your home.":
+                        m "Fine. You want to squeeze every last coin out of rich donors? Put me at the center of the exhibit."
+                        $ MonaOnly = 1
+                        jump MonaStay
+                    "Let me reconsider.":
+                        jump StayOrGo
+            "Let's display you with all the other Monas.":
+                m "That's so tacky. What will that achieve?"
+                menu:
+                    "I think it'll make your story more real. Others should hear what you want, rather than guess, right?":
+                        m "Interesting. Put me on the promotional material. I want to see how far the story spreads."
+                        $ MonaOnly = 0
+                        jump MonaStay
+                    "Let me reconsider.":
+                        jump StayOrGo
+            "Let's send you home. Heist-style." if MonaHeist == 1:
+                m "A heist? What does that mean?"
+                menu:
+                    "Yes. I have all the yous in the office, you don't need to be here to tell your story.":
+                        m "Really? You'd give up the jewel of your collection like that?"
+                        pc "Of course. A little scandal, a little fame, we all get what we want."
+                        m "Heist and scandal. Clever, {0}bambino{/0}{1}bambina{/1}{2}bambinə{/2}. I knew I saw a little Peruggia in you. Don't break the deal like he did."
+                        jump MonaHeist
+                    "Let me reconsider.":
+                        jump StayOrGo
+    label MonaStay:
+        #stay lines go here if there are any
+        jump MonaEnd
+    label MonaHeist:
+        #heist lines go here of there are any
+        jump MonaEnd
+    label MonaEnd:
+        m "This will be easy. Let's make it happen."
+        pc "One last question before I set it up..."
+        pc "What's the secret behind the enigmatic smile?"
+        m "It's not the smile. It's the hands."
+        m "No one understands me when I don't move my hands."
+        
+    ####
+   
     meta "You have [actions] action(s) left."
     $ beat_MonaLisa += 1
     #$ if d_MonaLisa < 6: d_MonaLisa + 1
