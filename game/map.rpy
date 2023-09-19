@@ -28,7 +28,7 @@ screen MapUI:
         #glimmer
         #hotspot (30, 18, 163, 321) action Jump("conv_Admin")
         #sunflowers
-        #hotspot (217, 12,143,266) action Jump("conv_SoupAndSunflowers")
+        hotspot (217, 12,143,266) action Jump("conv_SoupAndSunflowers")
         #saintcatherine
         hotspot (368,217,141,286) action Jump("conv_SaintCatherine")
         #gilgamesh

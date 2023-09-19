@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Poster.rpy", line 103: invalid syntax
-    p_b3_c1 =
+File "game/characters/C_SoupAndSunflowers.rpy", line 37: expected menuitem
+    jump conv_SoupAndSunflowers 
+    ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sun Sep  3 18:08:10 2023
+Mon Sep 18 20:02:52 2023

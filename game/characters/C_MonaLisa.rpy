@@ -157,6 +157,7 @@ label .beat3:
     $ beat_MonaLisa += 1
     #$ if d_MonaLisa < 6: d_MonaLisa + 1
     jump FreeRoam
+    
 label .beat4:
     m "That is so much better. You did well, once you finally got around to it."
     pc "I've been thinking about your role here, in the museum."

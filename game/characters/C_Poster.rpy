@@ -49,10 +49,9 @@ label .beat1:
     p "I just need to! I feel like I'm missing something, something that will help me do better."
     pc "What do you need? I don't even know how-"
     p "I'm sure there's something in this room. I'll help!"
-    "\"I Spy\" minigame where the PC searches the room on a single screen for an object that will help the poster out. The poster will give a single hint and there will be a few selectable objects (about 5) on screen for the player to click. Each one elcits a bard from the poster, with the minigame ending with the correct object clicked on."
-    p "Thank you so much, this will help a ton! Hopefully! Now do your best today!"    
-
-    "You have [actions] action(s) left."
+    #minigame go here
+    p "Thank you so much, this will help a ton! Hopefully! Now do your best today!"
+    #####
     $ beat_Poster += 1
     jump FreeRoam
     
@@ -77,26 +76,26 @@ label .beat2:
         "I'm not sure":
             p "Oh, I'm messing it up again! Was the flag (or whatever item from the Beat 1 minigame) not enough?"
             $ p_b2_c1 = "b"
-
-    "You have [actions] action(s) left."
+    ####
     $ beat_Poster += 1
     jump FreeRoam
 label .beat3:
     pc "Got anything to help me stay confident today?"
     if p_b2_c1 == "b":
+        pc "Got anything to help me stay confident today?"
         p "If you're just going to leave like the last person because I'm bad at my job, why try?"
         pc "I could still say! I think I have something to cheer you up."
         p "What is it?"
-        pc "What if I brought you out to show you the whole museum?"
+        p "What if I brought you out to show you the whole museum? "
         p "Okay, I guess..."
         pc "I have to do some cleaning and could really use the motivation"
         p "I think I can help! Maybe."
-        "Cleaning minigame where the poster gets to give a motiviating quip after each item is picked up"
+        #minigame go here
         p "Thank you, that really helped!"
     if p_b2_c1 == "a":
         p "Good morning! I'm thrilled to help you any way I can!"
-        pc "Good to hear!"
-    p "I was thinking, I want to motivate everyone but I don't even know anything outside of this room!"
+        pc "Good to hear!"  
+    p "I was thinking, I want to motivate everyone!"
     pc "What if I moved you somewhere where more people could see you?"
     p "Really? What would you suggest?"
     menu:
@@ -110,14 +109,14 @@ label .beat3:
     p "But I feel like I'm still missing something. Can you help?"
     pc "Again?"
     p "Yeah, just one more thing."
-    "Same \"I Spy\" minigame as Beat 1 with the same mechanics - 5 objects in the room and each selection gets a bark from the poster, with the minigame ending when the correct object (a pom pom) is selected."
+    #minigame go here
     p "This is perfect, thank you! I'm rooting for you!"
-    "The poster seems to indicate it's doing something with the object to cheer you on, but again, its a poster and cannot really move."    
+    "The poster seems to indicate it's doing something with the object to cheer you on, but again, its a poster and cannot really move."
 
-    "You have [actions] action(s) left."
     $ beat_Poster += 1
     jump FreeRoam
 label .beat4:
+    ####
     p "Good luck today..."
     pc "Something wrong?"
     p "You found these things for me to hold to help, but what if it's not enough? What if you leave?"

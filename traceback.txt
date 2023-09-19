@@ -1,26 +1,77 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/minigames/cleaning_minigame.rpy", line 227, in script
-    $ renpy_blur(difference_image, 1.5)
-  File "game/minigames/cleaning_minigame.rpy", line 227, in <module>
-    $ renpy_blur(difference_image, 1.5)
-NameError: name 'renpy_blur' is not defined
+While loading <renpy.display.im.Crop object at 0x000000001d3186a0>:
+  File "game/map.rpy", line 3, in script call
+    call screen MapUI
+  File "renpy/common/00console.rpy", line 1163, in script call
+    python in _console:
+  File "game/minigames/office.rpy", line 244, in script
+    python:
+  File "game/minigames/office.rpy", line 255, in <module>
+    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
+  File "game/minigames/office.rpy", line 71, in render
+    diff_render = renpy.render(i.myimage, width, height, st, at)
+OSError: Couldn't find file 'images/minigame/cleaning/MonaOfficeOverlay.jpg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/minigames/cleaning_minigame.rpy", line 227, in script
-    $ renpy_blur(difference_image, 1.5)
+  File "game/map.rpy", line 3, in script call
+    call screen MapUI
+  File "renpy/common/00console.rpy", line 1163, in script call
+    python in _console:
+  File "<string>", line 1, in script call
+  File "game/minigames/office.rpy", line 244, in script
+    python:
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/minigames/cleaning_minigame.rpy", line 227, in <module>
-    $ renpy_blur(difference_image, 1.5)
-NameError: name 'renpy_blur' is not defined
+  File "game/minigames/office.rpy", line 255, in <module>
+    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4172, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 2779, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "game/minigames/office.rpy", line 71, in render
+    diff_render = renpy.render(i.myimage, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 676, in render
+    return cache.get(self, render=True)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 330, in get
+    surf = image.load()
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 1192, in load
+    return cache.get(self.image).subsurface((self.x*os, self.y*os,
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 330, in get
+    surf = image.load()
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 803, in load
+    raise e
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 757, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\loader.py", line 833, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/minigame/cleaning/MonaOfficeOverlay.jpg'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Tue Aug 29 16:54:47 2023
+Sun Sep 17 09:53:01 2023

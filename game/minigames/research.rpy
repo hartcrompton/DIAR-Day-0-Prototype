@@ -11,7 +11,9 @@ image drawerfront = "images/minigame/research/test/drawerfront.png"
 
 init python:
     renpy.add_layer("middle", above="master")
-    arr_GilgameshCards = ["Gator", "Gourmand", "Gilgamesh", "Gilead", "Guybrush"]
+    #arr_GilgameshCards = ["Gator", "Gourmand", "Gilgamesh", "Gilead", "Guybrush"]
+    #arr_DavidsCards = ["Dinosaur", "Donatello", "Deontology", "David", "Dionysus"]
+    CardTitles = {"G": ["Gator", "Gourmand", "Gilgamesh", "Gilead", "Guybrush"], "D": ["Dinosaur", "Donatello", "Deontology", "David", "Dionysus"]}
 
 #so for me, the card cat is the inventory
 screen inventory():
@@ -118,12 +120,32 @@ screen ResearchMinigameUI():
 
 
 label ResearchMinigameDrawer(ResearchLetter="Default"):
-    if ResearchLetter == "G":
-        $ Card1Title = arr_GilgameshCards[0]
-        $ Card1Title = arr_GilgameshCards[1]
-        $ Card1Title = arr_GilgameshCards[2]
-        $ Card1Title = arr_GilgameshCards[3]
-        $ Card1Title = arr_GilgameshCards[4]
+    python:
+        TempCardTitles = []
+        if CardTitles.get(ResearchLetter):
+            TempCardTitles = CardTitles.get(ResearchLetter)
+            #this could be done through iteration if it needed to work with different numbers of cards
+            Card1Title = TempCardTitles[0]
+            Card2Title = TempCardTitles[1]
+            Card3Title = TempCardTitles[2]
+            Card4Title = TempCardTitles[3]
+            Card5Title = TempCardTitles[4]
+        else:
+            renpy.return_statement("DrawerStuck")
+    #if ResearchLetter == "G":
+    #    $ Card1Title = arr_GilgameshCards[0]
+    #    $ Card2Title = arr_GilgameshCards[1]
+    #    $ Card3Title = arr_GilgameshCards[2]
+    #    $ Card4Title = arr_GilgameshCards[3]
+    #    $ Card5Title = arr_GilgameshCards[4]
+    #if ResearchLetter == "D":
+    #    $ Card1Title = arr_DavidsCards[0]
+    #    $ Card2Title = arr_DavidsCards[1]
+    #    $ Card3Title = arr_DavidsCards[2]
+    #    $ Card4Title = arr_DavidsCards[3]
+    #    $ Card5Title = arr_DavidsCards[4]
+    #better way to do this if more cards are required
+    #
     call screen ResearchMinigameDrawerUI
     
 screen ResearchMinigameDrawerUI:

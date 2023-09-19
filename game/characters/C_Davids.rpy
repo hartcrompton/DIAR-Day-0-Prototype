@@ -35,36 +35,63 @@ label .beat1:
     dm "How many times do we have to go over this? My reputation precedes me..."
     dd "Yeah yeah, dude. First colosal statue of its kind. We get it, we get it."
     db "At 17 feet you sound more like a Goliath than a David."
-    pc "Hey could y'all give me the introductions without the insults?"
-    pc "Alright, alright. Enough out of you dudes and Daves."
+    menu:
+        "Hey could y'all give me the introductions without the insults?":
+            d "Oh my! And who might you be?"
+            pc "I'm the new curator. The one from yesterday... you know?"
+        "[[Retrieve metro cards from your pockets and throw them at the Davids.]":
+            d "Hey! Hey! Hey! And who might you be?"
     dd "Yeah bruh, that's why I'm the David. Cuz I'm actually A KID. And how do you know? Because I'm the actual height of...you guessed it... A KID."
     "He stamps his feet and inadvertantly bounces the head of Goliath up in the air before catching it on his feet like a hacky sack."
-    db "And you bring inapproriate materials to a museum, like a kid." 
-    "He scowls at both Davids."
-    db "Both of ya...posers...feckless and improvident fuckboys."
+    db "And you bring inapproriate materials to a museum, like a kid."
+    menu:
+        "Gross. Could you come off of that thing?":
+            pass
+    d "We're the highest of High art! "
+    dd "Note the pedestal, dude."
+    db "With no come down. We can just move around up here."
     "He twists and stretches his limbs, almost doing calesthenics before banging out a push-up or two."
-    db "How do you expect to defeat a giant by playacting like you both are?"
-    pc "Can y'all even hear me? Just trying to help out here ok? I'll check back tomorrow."
-    pc "I already have four or five Davids in my life. Remind me why I need another?"
+    pc "Ok, so there's like a big one and a small one?"
+    db "Both of them...posers...feckless and improvident fuckboys."
+    db "How do you expect to defeat a giant by playacting like they both do?"
+    menu:
+        "Well what's your deal then?":
+            pass
+        "I already have four or five Davids in my life. Remind me why I need another?":
+            pass
+    db "Who me? I'm the heroic one. You can take pictures, but I ain't posing. "
     dm "Hark! Tell me, False Davids, did you hear something?"
-    dd "I told you. It's {i}THE DAVID{/i} not {i}FALSE DAVID{/i}."
-    db "Just the same old shit I've heard you two squabble about now for years: Who's really the {i}The David{/i}?"
-
-    "You have [actions] action(s) left."
+    dd "I told you. It's THE DAVID not FALSE DAVID."
+    db "Just the same old shit I've heard you two squabble about now for years: Who's really the The David?"
+    pc "Wait a second. Let me see if I can resolve this real quick: there's a big one, a kid one, and a heroic one?"
+    pc "Or you all are supposed to be that same thing rolled up into one?"
+    d "The SAME thing?!"
+    dm "My gentle docent, despite sharing the name David..."
+    menu:
+        "I'm sorry! It's just....It's just that y'all are just hurling invectives at each other. Not exactly clear introductions.":
+            pass
+        "Let me stop you right there. I've had my fill of Davids for today. I'll come back tomorrow and we can try this again.":
+            pass
+    d "Yes! If you come back tomorrow, we'll be on our best behavior."    
+    
+    ####
     $ beat_Davids += 1
     jump FreeRoam
 
 label .beat2:
-    d "Ah you there... Yes... you? Do you know who we are?"
-    dm "(placeholder) probably only know who I am because after all I am..."
-    dd "You've got a good chance of recognizing my face and this guy's. " 
+    d "You came back!"
+    dm "(placeholder) probably only because after all I am..."
+    dd "You've got a good chance of recognizing my face and this guy's. "
     "He kicks the head and a thud resonantes in the quarter of the museum."
-    db "Something to make clear that he's the only legitimate one because he's not posing but doing. "
+    db "You came back. You got gumption. I'll give you that. "
     pc "That's enough out of you all. I want some real introductions.  Not formal bickering between you."
     "They all strike their famous pose."
     d "We are The Davids!"
-    pc "Obviously I know that. It's all you all talk about. But I also know a few Daves, a Davey, and went to school with like five other Davids too."
-    pc "So which Davids are you?"
+    menu:
+        "Obviously I know that. It's all you all talk about. But I also know a few Daves, a Davey, and went to school with like five other Davids too.":
+            pass
+        "So which Davids are you?":
+            pass
     dm "The Biblical. The original."
     dd "The one who slew Goliath."
     db "The one to combine bravery and skill."
@@ -74,9 +101,10 @@ label .beat2:
         "I thought you already had a star named after you...":
             pass
     d "Well we were a King too!"
-    pc "Oh like King Aruthur "
-    "For the first time, the Davids are stunned into silence."
-    "But only for a moment--"
+    pc "Oh... like King Aruthur."
+    dm "..."
+    db "..."
+    dd "..."
     d "NO. NOT LIKE KING ARTHUR!"
     dm "We are the young shepherd boy..."
     dd "Chosen by like the actual God himself."
@@ -101,41 +129,53 @@ label .beat2:
         "And who are you?":
             pass
         "Another one? I can't even with this. I'm done.":
-            pass
+            $ beat_Davids += 1
+            jump FreeRoam
     db "The name's Bernini's David, couple of hundred years after these two yahoos."
     db "Long enought after to know art ain't no beauty pagent.  That being a hero ain't about philosophizing neither."
-    db "Art is an action. Drama has its actors. And a heroes got jobs, kid. And so I'm here to do mine."
+    db "Art is an action. Drama has its actors. And a heroes got jobs, kid. And so I'm here to do mine.  "
     db "Now if you'll excuse, I need to Baroque about a bit, and explore all three dimensions."
     pc "So after first introductions and impressions I'm feeling that the definitive David so far is"
     menu:
-        pc "So after first introductions and impressions I'm feeling that the definitive David so far is"
         "Michelangelo's David":
-            pass
+            dm "I knew it! You knew it. We all knew it."
+            dd "Change your answer!"
+            db "This can't be right."
         "Donnatello's David":
-            pass
+            dm "Oh no! Your vision is cloud and imagination dull!"
+            dd "Let's goooooooo!"
+            db "You can't be for real? The kid?"
         "Bernini's David":
-            pass
-    
-    "You have [actions] action(s) left."
+            dm "Oh no, not him. Hardly any one knows him!"
+            dd "That dude? He hasn't even slayed Goliath yet! Got no goodies to show for it."
+            db "That a way there, newbie.  Now people can see what a hero is. "
+    pc "Oh don't get mad! "
+    pc "Well, I'll be honest, your introductions stink, so don't blame me."
+    d "There must be another way to show him/her/them..."
+    pc "Can someone make a case for you all besides.... you know, you all?"
+    d "Something more authoritative than...us? "
+    pc "Think on it tonight, and I'll be back tomorrow. But arguing your case yourselves isn't working."
+    d "We'll find a way!"
+    ###
     $ beat_Davids += 1
     jump FreeRoam
 label .beat3:
     d "But that's what I've been saying!"
-    pc "Oh, God. You three agian. On about the same thing? Who's the definitive David?"
-    dm "Forsooth, my dear (placeholder). But this time I have a--"
+    pc "Oh, God. You three agian. Well, you've had the night to think. What ya got?"
+    dm "Forsooth, my dear (placeholder). Yes, yes, this time I have a--"
     db "He means \"we.\""
     dd "Yeah as in \"we\" came up with a solution."
     pc "Consult an expert like myself?"
     "You beam a smile."
-    d "Not {i}an{/i} expert...{i}the{/i} expert."
+    d "Not an expert...the expert."
     d "THE SOURCE!"
     pc "The what?"
-    db "Scuttlebutt around the vending machine is that you can read."
+    db "Scuttlebutt around the vending machine is that you can read. "
     dd "Aloud and silently!"
     db "And that you can make it down stairwells no problem."
     dm "There are rumors that beneath our very feet, hidden in the shelves of archives, is a copy of..."
     d "The Bible"
-    d "{i}Our{/i} source!"
+    d "Our source!"
     pc "Oh God..."
     d "Exactly!"
     db "Kid, if you could let us know what the original passage says about us taking out ol Philistenian Oaf, Goliath..."
@@ -143,17 +183,39 @@ label .beat3:
     dm "then you could tell us who is the definitve David!"
     pc "You want me to go read the bible for you?"
     "They all slowly nod their heads."
-    menu:
-        "Psh. I got that memorized. I don't need to run you no errand.":
-            $ BibleResearched = 0
-            pass
-        "I'm so done with y'all that I can't even stand to look at you. Time to escort you to your corners.":
-            "You settle them into their corners, facing the wall so they can't provoke eachother "
-        "Of course I'll head to the archives for y'all.":
-            $ BibleResearched = 1
-            "Research minigame. The player finds a copy of the bible and read the passage of David and Goliath "
-
-    "You have [actions] action(s) left."
+    label DavidResearchChoice:
+        menu:
+            "[[Lie] Psh. I got that memorized. I don't need to run you no errand.":
+                d "You have the Bible memorized?"
+                dm "All chapters and verses...committed to memory?"
+                dd "That's a lot of words...Not gonna lie."
+                db "You shootin us straight?"
+                pc "Uhhhh...yeah... of course. All of it...Right up here... In my mind palace."
+                d "Well in that case we can't wait to hear what you think tomorrow!"
+                pc "Erm...right!...Yes...Tomorrow!"
+                $ BibleResearched = -1
+            "I'm so done with y'all that I can't even stand to look at you. Time to escort you to your corners.":
+                d "No please! Wait!"
+                pc "What is it now?"
+                dm "Give us one last chance!"
+                dd "We'll be good! We promise! "
+                db "We're on our last legs here. If you don't help us out...it could..."
+                d "Crumble us!"
+                menu:
+                    "Sorry, my Daves. It's to the corner with y'all!":
+                        #bad end
+                        $ BibleResearched = 0
+                        $ beat_Davids += 1
+                        jump FreeRoam
+                    "Nevermind":
+                        jump DavidResearchChoice
+            "Of course I'll head to the archives for y'all.":
+                #archives
+                d "We can't wait to hear what you find! Be safe on the stairs!"
+                "research minigame in the archive"
+                $ BibleResearched = 1
+                #minigame go here
+    #######
     $ beat_Davids += 1
     jump FreeRoam
 label .beat4:
@@ -161,6 +223,8 @@ label .beat4:
         jump BibleResearched
     if BibleResearched == 0:
         jump DavidsDestroyed
+    if BibleResearched == -1:
+        jump DavidsIntact
         
     label DavidsDestroyed:
         "For the first time ever, the David's wing is silent. Not even a peep from them."
