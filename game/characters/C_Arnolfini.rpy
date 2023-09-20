@@ -250,13 +250,13 @@ label .Beat4:
     ard "PC, can you maybe talk to them one-on-one?"
     menu:
         "ArnolfiniMan":
-            $ ar_b4_c1 = a
+            $ ar_b4_c1 = "a"
             arm "History about what he knows of ArnolfiniWoman leading to conclusion: They're married"
         "ArnolfiniWoman":
-            $ ar_b4_c1 = b
+            $ ar_b4_c1 = "b"
             arw "History about what she knows of ArnolfiniMan leading to conclusion: They're cousins. Just blood related."
         "Dog":
-            $ ar_b4_c1 = c
+            $ ar_b4_c1 = "c"
             ard "History about what the dog knows of the two Arnolfinis leading to conclusion: They're related AND married. It was the 1400s."
     ard "Alright what do you think?"
     arm "Well?"
