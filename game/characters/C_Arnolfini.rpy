@@ -31,7 +31,7 @@ label .use_action:
     jump expression "conv_Arnolfini" + "." + "Beat" + "%d" % beat_Arnolfini
 
 label .Beat1:
-    
+
     arm "Just admit you took it!"
     arw "No! And what about my brooch?"
     pc "Ahem."
@@ -102,17 +102,17 @@ label .Beat2:
 
     menu:
         "Help Arnolfini's Wife (?)":
-            $ ar_b2_c = "a"
+            $ ar_b2_c1 = "a"
             arw "Oh, thank you! I knew you'd see reason."
             arm "Really? Hmph! See if I speak to you ever again."
             ard "Good luck. Talk to you later."
         "Help Giovanni":
-            $ ar_b2_c = "b"
+            $ ar_b2_c1 = "b"
             arm "Ha! Good choice."
             arw "Him? Really? I knew I was right about you."
             ard "Good luck..."
         "Help The Dog":
-            $ ar_b2_c = "c"
+            $ ar_b2_c1 = "c"
             ard "I judged you right. I have some ideas to make things work here. I'll talk to you later."
             arm "The dog? Really? Hmph!"
             arw "Uh, the dog? I knew I was right about you."

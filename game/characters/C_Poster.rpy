@@ -5,7 +5,7 @@ default p_b3_c1 = 0
 
 label conv_Poster:
     scene posterbackground
-    show poster at left
+    show poster at center
     p "You're talking to me, the Poster!"
     menu:
         #"[[Chat a little.]":

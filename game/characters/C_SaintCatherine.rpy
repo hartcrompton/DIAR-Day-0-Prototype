@@ -33,7 +33,7 @@ label .use_action:
     jump expression "conv_SaintCatherine" + "." + "beat" + "%d" % beat_SaintCatherine
 
 label .beat1:
-    st "I've heard your misgivings, [pc_job]. Can I help in some way?"
+    st "I've heard your misgivings, [pc_work]. Can I help in some way?"
     pc "You heard me?"
     st "Worries, fears, wishes. Prayers. Everything."
     pc "Who are you?"

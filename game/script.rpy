@@ -9,21 +9,21 @@ define pc = Character("[pc_name]")
 
 #main characters
 define ar = Character("Arnolfini Portrait")
-define arm = Character("Arnolfini Portrait") #man
-define arw = Character("Arnolfini Portrait") #woman
-define ard = Character("Arnolfini Portrait") #dog
+define arm = Character("Giovanni", image="arnolfiniman") #man
+define arw = Character("Arnolfini Woman", image="arnolfiniwoman") #woman
+define ard = Character("Dog", image="arnolfinidog") #dog
 define d = Character("The Davids")
-define dm = Character("David") #mikey
-define db = Character("David") #bernini
-define dd = Character("David") #donny
-define gi = Character("Gilgamesh")
+define dm = Character("David M.", image="davidm") #mikey
+define db = Character("David B.", image="davidb") #bernini
+define dd = Character("David D.", image="davidd") #donny
+define gi = Character("Gilgamesh", image="gilgamesh")
 define gl = Character("Glimmer")
-define m = Character("Mona Lisa")
-define p = Character("Poster")
-define st = Character("St. Catherine")
-define so = Character("Soup")
-define su = Character("Sunflowers")
-define ss = Character("Soup & Sunflowers")
+define m = Character("Mona Lisa", image="mona")
+define p = Character("Poster", image="poster")
+define st = Character("St. Catherine", image="saintcatherine")
+define so = Character("Soup", image="soup")
+define su = Character("Sunflowers", image="sunflowers")
+define ss = Character("Soup & Sunflowers", image="soupandsunflowers")
 
 #side characters
 define ad = Character("Admin")
