@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Arnolfini.rpy", line 256: is not terminated with a newline. (Check strings and parenthesis.)
+File "game/characters/C_SaintCatherine.rpy", line 211: is not terminated with a newline. (Check strings and parenthesis.)
 (Perhaps you left out a " at the end of the first line.)
-                $ ar_b4_c1 = b"
+                call minigamestart_stainedglass(""")
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Sep 19 20:02:12 2023
+Fri Sep 22 18:01:35 2023

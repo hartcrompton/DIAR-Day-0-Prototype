@@ -49,6 +49,7 @@ label .Beat1:
     arw "Well...I guess you could try. I'd really appreciate it."
     arm "I'd appreciate it more."
     #minigame go here
+    call minigamestart_arnolfini
     arw "My brooch! Oh, thank you thank you thank you!"
     arm "Yes, thank you!"
     arm "..."
@@ -208,7 +209,8 @@ label .Beat3:
         ard "Finally!"
         arw "Do you think you could help us find these things for each other?"
         arm "Yes that'd be so nice of you! One last favor!"
-    ### minigame go here
+    "Placeholder minigame: Waiting on final objects"
+    call minigamestart_arnolfini
     arw "Oh thank you, this is just lovely!"
     arm "Yes, thank you!"
     ard "Thank you SO MUCH! Finally! Some peace!"

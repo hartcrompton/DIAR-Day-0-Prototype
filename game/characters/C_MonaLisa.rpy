@@ -151,7 +151,7 @@ label .beat3:
         "You read over people's shoulders?":
             m "Of course I do. Don't you?"
     m "{i}Vai{/i}, {i}vai{/i}, go do as I ask like a good little [pc_work]."
-    "Minigame of the admin office, random items like mugs, mousepads, are covered or turned around if you click on them they have a pic of ML. Maybe each one says \"phew,\" \"finally\" \"oh, hey\" \"keep going\""
+    call minigamestart_office
 
     meta "You have [actions] action(s) left."
     $ beat_MonaLisa += 1

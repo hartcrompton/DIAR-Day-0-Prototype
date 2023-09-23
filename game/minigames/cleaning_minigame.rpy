@@ -32,7 +32,7 @@ init python:
             
             self.the_score = 0
             self.end_start = None
-            self.end_delay = 3
+            self.end_delay = 0
             # The winner.
             self.winner = False
             

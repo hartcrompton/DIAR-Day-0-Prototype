@@ -208,10 +208,11 @@ label .beat4:
         "Glass.":
             $ st_glass = 1
             #minigame go here
+            call minigamestart_stainedglass("glass")
             pass
         "Plastic.":
             $ st_glass = 0
-            #minigame go here
+            call minigamestart_stainedglass("plastic")
             pass
     if st_human >= st_saint:
         if st_glass == 0:

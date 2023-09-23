@@ -234,6 +234,7 @@ label TestOfficeLines():
 
 
 label minigamestart_office(gameimage="notdefault"):
+    scene monaofficegame
     python:
         diff_items = []
         diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 183,715,282,175))
