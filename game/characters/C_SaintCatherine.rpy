@@ -5,7 +5,9 @@ default st_human = 0
 default st_saint = 0
 default st_glass = 0
 default st_plastic = 0
-default st_personality = 0
+# 0 is Saint, 1 is Human
+default SaintPersonality = 0
+default SaintHumanChoice = "NONE"
 
 label conv_SaintCatherine:
     scene saintbackground
@@ -33,7 +35,8 @@ label .use_action:
     jump expression "conv_SaintCatherine" + "." + "beat" + "%d" % beat_SaintCatherine
 
 label .beat1:
-    st "I've heard your misgivings, [pc_work]. Can I help in some way?"
+    "You open a door marked \"Staff Only.\" The last fluorescent bulb casts cold light on dusty racks."
+    st "I've heard your misgivings, [pc_work]. Can I help in some way?" 
     pc "You heard me?"
     st "Worries, fears, wishes. Prayers. Everything."
     pc "Who are you?"
@@ -93,10 +96,10 @@ label .beat2:
     st "You were someone else before the museum. Who do you hope to become, now that you have this role?"
     menu:
         "Powerful, important, and influential.":
-            $ st_saint += 1
+            $ SaintPersonality = 0
             st "Yes. As a saint, I could lend shelter and the solace of knowledge to all of our visitors."
         "Unbothered and happy, with lots of freedom.":
-            $ st_human += 1
+            $ SaintPersonality = 1
             st "Yeah, look at this huge building! If I were mortal, I could help make this place welcoming and fun."
     st "Thank you for telling me the truth. It resonates."
     st "You've been working tirelessly to help us. To what end? How would you like our visitors to feel?"
@@ -125,6 +128,7 @@ label .beat2:
     #####
     $ beat_SaintCatherine += 1
     jump FreeRoam
+    
 label .beat3:
     st "I'm so glad to see you. I heard we have a grand event soon. Do you have a moment?"
     menu:
@@ -138,22 +142,23 @@ label .beat3:
             st "Part of me is Roman, but also Greek, or maybe French? It's so muddled... I don't know."
         "When were you made?":
             st "The third century? But my glass was from the fifteenth century... I don't know... I don't know..."
-    st "I delivered lunches to the glass studio. One of the artists there stared, but we never spoke."
-    st "I also debated philosophy. I protected archivists, students, wheelwrights, and many others."
+    st "Part of me delivered lunches to the glass studio. One of the artists there stared, but we never spoke."
+    st "Part of me also debated philosophy -- I protected archivists, students, wheelwrights, and many others."
     st "I've witnessed centuries of joy and sorrow. Shone light on so many when they believed they were alone."
     st "You're the first person who has truly heard me in return."
-    st "Please, we don't have much time. For this age, for this moment, who am I?"
+    st "Please... of these two women, which is my true self?"
     menu:
         "Your true nature is mortal.":
-            $ st_human += 1
+            $ SaintHumanChoice = "human"
+            $ SaintPersonality = 1
             st "The glass artist. He'd never seen the saint, so he made her in my likeness."
             pc "Wait, so you're not a saint from Alexandria, you're a random French girl the artist was in love with?"
             st "I didn't mean to deceive you. I don't think he did, either."
         "Your essence is divine.":
-            $ st_saint += 1
-            st "Yes... I remember. I feel them all."
-            pc "Are you just you, or a mix of people from the time?"
-            st "Hypatia, or St. Dorothea of Alexandria. Philosophers, both. Perhaps we reflect each other."
+            $ SaintHumanChoice = "a saint"
+            $ SaintPersonality = 0
+            st "Yes... I remember. An amalgam of great women; the strength of their ideas. I feel them all."
+            st "Hypatia, or St. Dorothea of Alexandria. All of us, philosophers. We reflect each other."
     st "I remain...Catherine."
     st "Do you still feel like an imposter, here?"
     menu:
@@ -161,49 +166,99 @@ label .beat3:
             pass
         "No, I'm getting the hang of it.":
             pass
-    st "I see. Whatever you choose..."
+    st "I see. Whatever your future holds..."
     st "You remain [pc_name]."
     "The stained glass is less clouded, its colors more vivid."
     st "I feel much improved, my friend. You are a marvel."
     st "All that remains are my repairs. When you have time, of course."
+    "The stained glass is less clouded, its colors more vivid."
 
     #####
     $ beat_SaintCatherine += 1
     jump FreeRoam
+    
 label .beat4:
-    st "Ah, you've returned!  (maybe another \"how are you feeling\" question? Do you feel weird making this decision for me? What is self determination in a museum context?)"
-    "FINAL DISCUSSION WHERE THE PLAYER AND SAINT WEIGH GLASS VS. PLASTIC, REFLECT ON SAINT'S JOURNEY, PLAYER'S CHOICES"
-    pc "Here's what I'm thinking..."
-    "Glass isn't the only material that colors light."
-    if st_human >= st_saint:
-        "She might warm to modern materials, rather than being stuck in the role she was assigned."
-    if st_saint >= st_human:
-        "She might prefer traditional materials, so her full glory will shine for all who need her."
-    pc "I'll see what we have and get back to you."
-    "The stained glass should come out of storage soon."
-    if st_human >= st_saint:
-        "All this warm, welcoming energy needs a bigger space."
-    if st_saint >= st_human:
-        "If she can calm your mind in this little room, imagine what she'll do for visitors."
-    st "Do we have what we need to fix my glass?"
-    pc "Here's what I'm thinking..."
+
+    st "Ah, you've returned! There's still the matter of my repairs."
+    st "Charles took some measurements before he left, but never finished the work."
+    "A faded note-card taped to the wall indicates the size and shape of each break."
     menu:
-        "Plastic, very modern.":
-            if st_human >= st_saint:
-                st "How innovative! That sounds perfect."
-            if st_saint >= st_human:
-                st "Unexpected, but we shall see."
-                st "I was hoping for ..."
-        "Glass, keep it classic.":
-            if st_human >= st_saint:
-                st "...Oh. Well, I'll do my best to be a 'proper' saint."
-                st "I was hoping for ..."
-            if st_saint >= st_human:
-                st "Agreed. Your hard work will be celebrated; I'll see to it."
-    "As you take measurements, you discuss the other works of art. The museum. Your hopes, and worries."
-    "She listens."
-    st "The materials you choose will represent all that we've discussed, so others may know me as well as you do."
-    st "What is it to be? "
+        "Sweet, I'll take those.":
+            pass
+        "Let me double-check they're correct.":
+            pass
+    st "Can I ask you something else?"
+    st "How did you decide my true self was [SaintHumanChoice]?"
+    menu:
+        "It was best for you.":
+            pass
+        "It was the right call for the museum.":
+            pass
+    st "I see. Thank you for telling me. You made the right decision."
+    menu:
+        "Did Charles already order glass?":
+            st "If he did, he never returned with it."
+        "I don't know where to start.":
+            st "Oh... Well we need tools and materials."
+    menu:
+        "What if I can't find the glass in time?":
+            pass
+        "Does it have to be glass?":
+            pass
+    st "I didn't consider that. What else did you have in mind?"
+    menu:
+        "The vending machine casts welcoming light.":
+            pass
+        "A modern polymer. Very durable.":
+            pass
+    st "You want to fix my stained glass... with shards of plastic?"
+    pc "Glass isn't the only material that colors light."
+    ###if statements here for the divergent dialogue
+    if SaintPersonality == 1:
+        st "I'm glad to finally drop the great-and-glorious-saint act, but I don't want to look weird!"
+    if SaintPersonality == 0:
+        st "You would cheapen my efforts to serve humanity by patching me like a common appliance?"
+    #are these supposed to be choices?
+    pc "It might be our only option."
+    #are more of these lines supposed to be contingent on previous choices?
+    pc "Let's talk this through."
+    st "You're right. Perhaps a modern image would free me from the trappings of the past."
+    st "Then again, my full glory would shine for all who need me if we used traditional repairs."
+    if SaintHumanChoice == "mortal":
+        st "But you told me I was mortal. Have you changed your mind?"
+    if SaintHumanChoice == "a saint":
+        st "But you told me I was divine. Have you changed your mind?"
+    #are these supposed to be choices?
+    pc "You're your own person, Catherine."
+    pc "Let's try something else."
+    pc "Your breaks represent the history you've lived through. They'll mean different things to different guests."
+    #is this choice supposed to be on its own?
+    pc "Why don't I say the word, and you tell me how it feels. How YOU feel. Not me telling you."
+    if SaintHumanChoice == "mortal":
+        st "How I feel... as just Catherine. Yes. Go ahead."
+    if SaintHumanChoice == "a saint":
+        st "How I feel... as Saint Catherine of Alexandria. Yes. Go ahead."
+    menu:
+        "Plastic, to keep your stories.":
+            if SaintPersonality == 1:
+                st "Honestly... I love it. It's beautiful. Everyone will see the work we've done together. I'm excited."
+            if SaintPersonality == 0:
+                st "It feels... Tawdry. Like my greater ideals will collapse to single points in time."
+                st "If I were mortal then plastic would work, but that presentation no longer suits me."
+        "Glass, true to tradition.":
+            if SaintPersonality == 0:
+                st "Beautiful. I would feel restored, light in spirit, and fully present with those who need me."
+            if SaintPersonality == 1:
+                st "Well, I... I'd do my best to be a 'proper' saint. Even though we know I'm not."
+                st "But saints start as regular people, right? Maybe that's the miracle, to let the flaws be forgotten."
+    st "That's how I feel. And your vision for the museum is important, too."
+    st "Am I what I was, and still [SaintHumanChoice]?"
+    menu:
+        "Yes, nothing has changed.":
+            pass
+        "No, I was wrong.":
+            pass
+    st "Good. And my repair... what's it to be?"
     menu:
         "Glass.":
             $ st_glass = 1
@@ -214,12 +269,12 @@ label .beat4:
             $ st_glass = 0
             call minigamestart_stainedglass("plastic")
             pass
-    if st_human >= st_saint:
+    if SaintPersonality == 1:
         if st_glass == 0:
             st "This is amazing! I feel like myself again! I remember my friends, the smell of lavender and sage..."
         if st_glass == 1:
             st "It's... A masterpiece. Beautiful. I'll do my best to be equal to this honor."
-    if st_saint >= st_human:
+    if SaintPersonality == 0:
         if st_glass == 0:
             st "Fascinating. A new way to tell an old story. You've done well."
         if st_glass == 1:
@@ -229,6 +284,23 @@ label .beat4:
     st "The view is beautiful from here. I can see everyone. Their sadness... Their joy..."
     st "I'm not lonely anymore."
     st "Thank you."
+    "Following lines play during ending:"
+    if SaintPersonality == 1:
+        if st_glass == 0:
+            st "The saint is a welcoming presence emphasizing the evolving story of art... "
+            st "...including those who protected, restored, and changed the work in the intervening centuries."
+        if st_glass == 1:
+            st "The saint shines down with kindness, evoking the time and place of its manufacture rather than the grand ideals it represents."
+            st "Visitors swear they've seen a girl just like her serving coffee at the diner down the street."
+    if SaintPersonality == 0:
+        if st_glass == 0:
+            st "The saint is a commanding yet jarring presence, almost punk, the juxtaposition of high ideals from base material mirroring and echoing her relationship to artisans and wheelwrights."
+            st "Visitors leave energized to fight for what they believe in."
+        if st_glass == 1:
+            st "The saint shines inspiring light on all. Benches in her gallery space prove comforting place to sit while weighing difficult decisions."
+            st "Visitors leave with the sense that they have been heard and seen, empowered with the right questions to find the answers they seek."
+    #####
+   
     
     ###
     

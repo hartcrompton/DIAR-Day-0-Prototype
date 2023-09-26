@@ -2,9 +2,25 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_SaintCatherine.rpy", line 211: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-                call minigamestart_stainedglass(""")
+File "game/characters/C_SaintCatherine.rpy", line 248: if statement expects a non-empty block.
+    if SaintPersonality == 0:
+                             ^
+
+File "game/characters/C_SaintCatherine.rpy", line 255: menu statement expects a non-empty block.
+    menu:
+        ^
+
+File "game/characters/C_SaintCatherine.rpy", line 256: expected statement.
+    "Yes, nothing has changed.":
+                               ^
+
+File "game/characters/C_SaintCatherine.rpy", line 258: expected statement.
+    "No, I was wrong.":
+                      ^
+
+File "game/characters/C_SaintCatherine.rpy", line 309: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    $ beat_SaintCatherine += 1
+    ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Fri Sep 22 18:01:35 2023
+Tue Sep 26 15:52:40 2023
