@@ -19,7 +19,7 @@ define dd = Character("David D.", image="davidd") #donny
 define gi = Character("Gilgamesh", image="gilgamesh")
 define gl = Character("Glimmer")
 define m = Character("Mona Lisa", image="mona")
-define p = Character("Poster", image="poster")
+define p = Character("Corgi Poster", image="poster")
 define st = Character("St. Catherine", image="saintcatherine")
 define so = Character("Soup", image="soup")
 define su = Character("Sunflowers", image="sunflowers")
