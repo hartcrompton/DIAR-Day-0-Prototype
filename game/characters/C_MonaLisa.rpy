@@ -62,7 +62,7 @@ label .beat1:
     #theo might not make it into the finalversion
     m "Then there's Theodore, one of the most famous faces here, dozens of copies, and he doesn't want to be seen."
     m "And of course Gilgamesh, mighty hero with a mighty voice. Especially when he's crying."
-    m "But now we have you, the [pc_job]. And your talent for [pc_skill]."
+    m "But now we have you, the [pc_work]. And your talent for [pc_skill]."
     menu:
         "How do you know all this?":
             m "I'm over five-hundred years old and famous. That comes with access."
@@ -91,7 +91,7 @@ label .beat1:
             m "If I could move my hands you'd know exactly what I'm trying to say. "
     m "This museum is the last stop on my way home. But I see you're just like the others."
     m "Come back when you're ready to listen, {i}{0}bambino{/0}{1}bambina{/1}{2}bambinə{/2}. Ciao.{/i}"
-    m "She seems upset, but you honestly can't tell."
+    "She seems upset, but you honestly can't tell."
     $ beat_MonaLisa += 1
     #$ if d_MonaLisa < 6: d_MonaLisa + 1
     jump FreeRoam
