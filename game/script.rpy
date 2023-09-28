@@ -26,8 +26,8 @@ define su = Character("Sunflowers", image="sunflowers")
 define ss = Character("Soup & Sunflowers", image="soupandsunflowers")
 
 #side characters
-define ad = Character("Admin")
-define e = Character("Ea-Nasir")
+define ad = Character("Admin", image="admin")
+define e = Character("Ea-Nasir", image="eanasir")
 define n = Character("Nighthawks")
 define sue = Character("Sue")
 define t = Character("Theodore")
