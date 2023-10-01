@@ -9,7 +9,7 @@ label GameIntroduction:
     "So, the interview hadn't gone {i}great{/i}."
     "And your day didn't improve when you missed your bus and the rain chased you into this forlorn museum."
 
-    scene museum bg1 with fade
+    scene foyer bg with fade
     "No job."
     "Wet clothes."
     "Two dollars and thirty-six cents in your pocket."
@@ -17,7 +17,7 @@ label GameIntroduction:
     jump VendingMachineIntro
 
 label DayZero:
-    scene museum bg1
+    scene foyer bg
     "Your sad little snack doesn't last long."
     "Outside, the rain still falls."
     "???" "But do you have to {i}stand{/i} on the head? It's grisly."
@@ -31,7 +31,8 @@ label DayZero:
 
     "???" "It's {i}David{/i} and Goliath not {i}Goliath{/i} and Goliath you oversized buffoon."
 
-    scene museum bg1
+    scene antiquities bg:
+        blur 5
     show davids
     "The voices come from somewhere behind a trio of statues."
     "They're not... coming from the statues, are they?"
@@ -44,8 +45,7 @@ label DayZero:
             "You crouch and prepare to breach the perimeter."
 
     "It feels wrong, like being in a school hallway after hours."
-    scene museum bg1 with hpunch:
-    show davids
+    show davids with hpunch
     #sound effect go here
 
     menu:                                 
@@ -55,17 +55,16 @@ label DayZero:
         "[[Freeze and act small.]":          
             "You're not the first person who tried to get too close to a museum piece."
 
-    scene museum bg1 with hpunch:
-    show davids
+    show davids with hpunch
     "The alarm sounds again and again."
     "With some relief, you realize it's just the phone."
 
-    scene museum bg1 with hpunch:
+    show davids with hpunch
     "It's not stopping either."
 
     #cutesy little phone interaction
     label GetThePhone:
-        scene museum bg1 with hpunch:
+        scene antiquities bg with hpunch:
         call PhoneWaitResponse from _call_PhoneWaitResponse
         menu:                                               
             "[[Answer the phone.]":      
@@ -73,7 +72,7 @@ label DayZero:
             "[phone_wait]":          
                 jump GetThePhone
 
-    show admin excited at right
+    show admin at truecenter
     ad "Charles! Where were you?"
     ad "We need to reprint the brochures. They should not say \"Nickelodeon's\" David."
     "Hold on-"
@@ -88,7 +87,7 @@ label DayZero:
         "I'm sorry, who are you?":
             "On the other end, mental gears grind to a halt."
             ad "Who are {i}you{/i}? Where's Charles?"
-    show admin stressed at right
+    show admin at truecenter
     "The voice goes silent again. You hear furious typing."
     ad "Oh. He resigned."
     #revise
@@ -119,7 +118,7 @@ label PlayerNameInput:
             pc_name = "Player"
 
     pc "I'm [pc_name]."
-    show admin excited at right
+    show admin at truecenter
     "A gasp crackles over the line."
     ad "Are you {i}the{/i} Dr. [pc_name]?"
     ad "We spoke after your last visit."
@@ -144,11 +143,11 @@ label PlayerNameInput:
             ad "Oh, it's just that it's a very rare name."
             ad "I'll connect you to the hiring manager now."
 
-    show admin at right
+    show admin at truecenter
     hide admin
     "There is a clunk as the receiver is set down."
     "A moment later, the same voice answers the phone."
-    show admin at right
+    show admin at truecenter
     ad "Retention and Recruitment, am I speaking with {0}Mr.{/0}{1}Ms.{/1}{2}Mx.{/2} [pc_name]?"
     menu:
         "Who else?":
@@ -238,15 +237,16 @@ label PlayerNameInput:
     ad "Ok, great! Let me look this over while I transfer you back."
     hide admin
     "Once again, they set down the receiver."
-    show admin excited at right
+    show admin at truecenter
     ad "Wonderful, I've heard back from Retention and Recruitment. They've approved!"
     ad "You are officially our new Curator."
     pc "Curator?"
     ad "Now I'm sure you're eager to get started so take the handset and follow along."
 
 label MuseumTour:
-    scene museum bg1 with fade
-    show admin at right
+    scene foyer bg with fade:
+        blur 5
+    show admin at truecenter
     ad "This is the Grand Foyer."
     ad "These are our Davids. Most people don't know they were actually triplets."
     "At first, you think you hear an echo:"
@@ -254,57 +254,61 @@ label MuseumTour:
     show davids at left
     d "I'm David."
     hide davids
-    show davids at center
+    show davids at truecenter
     d "I'm David."
     hide davids
     show davids at right
     d "I'm David."
     hide davids
-    show davids at center
+    show davids at truecenter
     "But as you approach, the echo fractures into three different voices, each one placing more emphasis on claiming identity for the one true David."
     dm "Prithee! I should have said I'm {i}the{/i} David."
     dd "No that's what I'm saying, {i}I'm{/i} the David. "
     db "Fools, you both, for I'm {i}the David{/i}."
     hide davids
-    show admin at right
+    show admin at truecenter
     pc "They sure seem to be talking a lot. Why do we have three of them?"
     ad "Moving on!"
 
-    scene museum bg2 with fade
+    scene antiquities bg with fade:
+        blur 5
     ad "This is the Antiquities wing."
     ad "We're lucky to have a small collection of Sumerian artifacts."
-    show gilgamesh at left
+    show gilgamesh at truecenter:
+        zoom .8
     gi "Nasir, look sharp! Another of the common-folk has come to bask in my glory. Ah to have such an opportunity."
     gi "I'd envy [them] if I didn't pity [them]."
-    show eanasir angry at right
     e "Ugh..."
     hide gilgamesh
     hide eanasir
-    #show sue at center with hpunch
+    #show sue at truecenter with hpunch
     #sue "Roar."
     #pc "Did you just {i}say{/i}, \"Roar\"?"
     #revise
     pc "Can't you hear that?"
-    show admin at right
+    show admin at truecenter
     ad "Try not to fall behind, I have 57 calls waiting!"
 
-    scene museum bg1 with fade
-    show admin at right
+    scene fineart bg with fade:
+        blur 5
+    show admin at truecenter
     ad "This is the Fine Art wing."
-    show arnolfiniw at left
+    hide admin
+    show arnolfini at truecenter:
+        zoom 0.8
+        yoffset -50
     arw "I didn't take it. What makes you think I took it?"
     ad "This is the Arnolfini Portrait, note the lovely detail!"
-    hide admin
-    show arnolfinim at right
     arm "I know you have it! Who else took it? The dog?!"
     ard "You two can't even move, how could something actually be stolen?"
     arw "Shush!"
     arm "Stay out of it!"
-    hide arnolfinim
-    hide arnolfiniw
-    show admin at right
+    hide arnolfini
+    show admin at truecenter
     ad "Often imitated and duplicated, our French collection includes the Mona Lisa!"
-    show monalisa angry at left
+    show monalisa at truecenter:
+        zoom .8
+        yoffset -50
     m "French? I'm Florentine, {i}bischero{/i}. And this sopping [pc_work], alike in dignity with this illustrious institution."
     pc "Hey!"
     m "Water remains the driving force of all nature. When it drives this place into the ground we can all go home."
@@ -312,20 +316,21 @@ label MuseumTour:
     hide monalisa
     ad "Please don't interrupt the tour!"
 
-    scene museum bg2 with fade
-    show admin at right
+    scene mixedmedia bg with fade:
+        blur 5
+    show admin at truecenter
     ad "This is the Mixed Media wing."
-    show sunflowers at left
+    hide admin
+    show soupandsunflowers at truecenter:
+        zoom .8
+        yoffset -50
     #ad "Sunflowers was in the Fine Art wing with the other Van Gogh, until..."
     ad "We've got a couple of Van Goghs in our collection. This one was purchased at a generous discount!"
     su "Say, there's a new face! So nice to meet you. My name is-"
     so "WHAT ARE YOU DOING WANDERING AROUND A STUPID MUSEUM?! THE PLANET IS ON FIRE!"
     su "Sigh..."
-    hide sunflowers
-    show glimmer at left
-    gl "If only we had a lunch special...the finest chicken nuggets and chardonnay. The kids can have bubble tea."
-    hide glimmer
-    show saintcatherine sad at left
+    hide soupandsunflowers
+    show saintcatherine at truecenter
     ad "This is a stained glass of Saint Catherine of Alexandria. It's French. Or Roman? Either way, it's broken."
     st "It's so dark. Where am I?"
     st "Who am I?"
@@ -333,18 +338,24 @@ label MuseumTour:
     pc "Is she alright?"
     ad "Who? Nevermind, one more stop."
 
-    scene museum bg2 with fade
-    show admin at right
+    scene office bg with fade:
+        blur 5
+    show admin at truecenter
     ad "Lastly, this is the Office."
+    hide admin
     "Surely there's nothing in here that can talk."
     p "Good luck!"
     pc "Who just said that?"
-    show poster at left
+    hide admin
+    show corgiposter at truecenter:
+        zoom .5
+        yoffset -110
     "You turn to see an inspirational poster hanging on the wall."
     p "I...I hope you do your best! I'm rooting for you!"
     
-    scene museum bg1 with fade
-    show admin excited at right
+    scene antiquities bg with fade:
+        blur 5
+    show admin at truecenter
     ad "And that's the tour! As you can see, it's all very straightforward."
     pc "No, hold on, they were {i}talking{/i}--"
     ad "Is there anything else...? Oh, I nearly forgot! "
@@ -384,7 +395,7 @@ label MuseumTour:
     v "Anybody with a feel for art is gonna run screaming. No offense."
     pc "Why can I hear them? The Admin couldn't."
     #v "You got it twisted, {0}buddy{/0}{1}girl{/1}{2}buckaroo{/2}."
-    show vendingmachine happy
+    show vendingmachine
     v "{i}All{/i} art can speak, most people just can't {i}listen.{/i}"
     v "They got all these {i}ideas{/i} and {i}thoughts{/i}. What art IS, what it ISN'T."
     v "But art speaks so quiet, they can't hear it over their own thoughts."
@@ -437,11 +448,13 @@ label VendingQuestions:
     v "Re-cycled. But don't worry, it's all the great circle of life."
     v "Now go lock up and get some rest, busy day tomorrow!"
 
-    scene museum bg1 with fade
+    scene foyer bg with fade
     "Four days."
     "Four days to save a dysfunctional gallery of art from itself. And maybe save your job with it."
     "But that can wait for tomorrow."
     "As [pc_name] leaves, someone whispers behind [them], unnoticed. (Or is that somebodies, plural?)"
+    scene foyer bg:
+        blur 5
     show nighthawks at truecenter
     n "Think our new curator is going to make it?"
     n "After THAT first day? Doubtful."

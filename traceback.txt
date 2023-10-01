@@ -1,80 +1,85 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/characters/C_Gilgamesh.rpy", line 221, in script
-    menu:
-  File "game/screens.rpy", line 231, in execute
-    screen choice(items):
-  File "game/screens.rpy", line 231, in execute
-    screen choice(items):
-  File "game/screens.rpy", line 234, in execute
-    vbox:
-  File "game/screens.rpy", line 235, in execute
-    for i in items:
-  File "game/screens.rpy", line 236, in execute
-    textbutton i.caption action i.action
-NameError: Name 'Lie' is not defined.
+While loading <renpy.display.im.Image object ('gui/textbox.png') at 0x00000000048e2b80>:
+  File "game/day_zero.rpy", line 309, in script
+    m "French? I'm Florentine, {i}bischero{/i}. And this sopping [pc_work], alike in dignity with this illustrious institution."
+  File "game/day_zero.rpy", line 309, in script
+    m "French? I'm Florentine, {i}bischero{/i}. And this sopping [pc_work], alike in dignity with this illustrious institution."
+OSError: Couldn't find file 'gui/textbox.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/characters/C_Gilgamesh.rpy", line 221, in script
-    menu:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1922, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1106, in menu
-    rv = renpy.store.menu(new_items)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1345, in display_menu
-    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\main.py", line 670, in main
+    run(restart)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\main.py", line 144, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\execution.py", line 953, in run_context
+    context.run()
+  File "game/day_zero.rpy", line 309, in script
+    m "French? I'm Florentine, {i}bischero{/i}. And this sopping [pc_work], alike in dignity with this illustrious institution."
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 444, in raise_
+  File "game/day_zero.rpy", line 309, in script
+    m "French? I'm Florentine, {i}bischero{/i}. And this sopping [pc_work], alike in dignity with this illustrious institution."
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1473, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1003, in do_display
+    display_say(who,
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 476, in visit_all
-    callback(self)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 487, in per_interact
-    self.update()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 680, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 231, in execute
-    screen choice(items):
-  File "game/screens.rpy", line 231, in execute
-    screen choice(items):
-  File "game/screens.rpy", line 234, in execute
-    vbox:
-  File "game/screens.rpy", line 235, in execute
-    for i in items:
-  File "game/screens.rpy", line 236, in execute
-    textbutton i.caption action i.action
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 988, in _textbutton
-    text = renpy.text.text.Text(label, style=text_style, substitute=substitute, scope=scope, **text_kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\text\text.py", line 1633, in __init__
-    self.set_text(text, scope, substitute) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\text\text.py", line 1763, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 278, in substitute
-    s = formatter.vformat(s, (), kwargs) # type: ignore
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 168, in get_field
-    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 236, in __getitem__
-    raise NameError("Name '{}' is not defined.".format(key))
-NameError: Name 'Lie' is not defined.
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4172, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 2779, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1371, in render
+    back = render(style.background, bw, bh, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 676, in render
+    return cache.get(self, render=True)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 330, in get
+    surf = image.load()
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 803, in load
+    raise e
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 757, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\loader.py", line 833, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'gui/textbox.png'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Thu Sep 28 17:15:53 2023
+Sat Sep 30 22:55:10 2023

@@ -26,7 +26,18 @@ define su = Character("Sunflowers", image="sunflowers")
 define ss = Character("Soup & Sunflowers", image="soupandsunflowers")
 
 #side characters
-define ad = Character("Admin", image="admin")
+define ad = Character("Admin", image="adminlayered")
+layeredimage adminlayered:
+    always:
+        "side_admin"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+image side adminlayered = LayeredImageProxy("adminlayered", Transform(xoffset=0, yoffset=0))
 define e = Character("Ea-Nasir", image="eanasir")
 define n = Character("Nighthawks")
 define sue = Character("Sue")

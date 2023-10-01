@@ -47,10 +47,10 @@ label DayStart:
     elif DayNumber == 4:
         ad "It's the last day!"
 
-    ad "The museum's filthy, so you might want to clean."
+    ad "The museum's filthy, so you should probably clean."
 
     menu:
-        "I'll clean today.":
+        "Yeah OK.":
             jump DailyCleaning
 
 label DailyCleaning:

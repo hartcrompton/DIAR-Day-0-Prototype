@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Gilgamesh.rpy", line 195: expected 'label_name_declare' not found.
-    label 
-         ^
+File "game/day_zero.rpy", line 345: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    hide admin
+    ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Thu Sep 28 16:55:11 2023
+Sat Sep 30 23:15:53 2023
