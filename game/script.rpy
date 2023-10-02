@@ -10,7 +10,9 @@ define pc = Character("[pc_name]")
 #main characters
 define ar = Character("Arnolfini Portrait")
 define arm = Character("Giovanni", image="arnolfiniman") #man
-define arw = Character("Arnolfini Woman", image="arnolfiniwoman") #woman
+define arw = Character("[arwName]", image="arnolfiniwoman") #woman
+default arwName = "The Painted Woman"
+
 define ard = Character("Dog", image="arnolfinidog") #dog
 define d = Character("The Davids")
 define dm = Character("David M.", image="davidm") #mikey

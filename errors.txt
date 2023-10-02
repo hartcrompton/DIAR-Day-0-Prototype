@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day_zero.rpy", line 345: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    hide admin
+File "game/script.rpy", line 42: Line is indented, but the preceding statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    ease .1 yoffset -55
     ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sat Sep 30 23:15:53 2023
+Sun Oct  1 13:04:11 2023

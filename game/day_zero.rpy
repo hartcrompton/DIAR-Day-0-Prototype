@@ -247,7 +247,7 @@ label MuseumTour:
     scene foyer bg with fade:
         blur 5
     show admin at truecenter
-    ad "This is the Grand Foyer."
+    ad happy "This is the Grand Foyer."
     ad "These are our Davids. Most people don't know they were actually triplets."
     "At first, you think you hear an echo:"
     hide admin
@@ -297,10 +297,10 @@ label MuseumTour:
     show arnolfini at truecenter:
         zoom 0.8
         yoffset -50
-    arw "I didn't take it. What makes you think I took it?"
-    ad "This is the Arnolfini Portrait, note the lovely detail!"
-    arm "I know you have it! Who else took it? The dog?!"
-    ard "You two can't even move, how could something actually be stolen?"
+    arw "I didn't take it, Giovanni! What makes you think I did!?"
+    ad "This is the Arnolfini Portrait, note the lovely detail and its depiction of serene, marital bliss!"
+    arm "I know you have it! Who else took it? The dog!?"
+    ard "You two can't even move, how could either of you take anything?"
     arw "Shush!"
     arm "Stay out of it!"
     hide arnolfini
@@ -309,8 +309,8 @@ label MuseumTour:
     show monalisa at truecenter:
         zoom .8
         yoffset -50
-    m "French? I'm Florentine, {i}bischero{/i}. And this sopping [pc_work], alike in dignity with this illustrious institution."
-    pc "Hey!"
+    m "This {i}bischero{/i}. I'm Florentine, not French."
+    m "And what do we have here? A [pc_work]. How prestigious. And rain-soaked."
     m "Water remains the driving force of all nature. When it drives this place into the ground we can all go home."
     #revise
     hide monalisa
@@ -326,12 +326,12 @@ label MuseumTour:
         yoffset -50
     #ad "Sunflowers was in the Fine Art wing with the other Van Gogh, until..."
     ad "We've got a couple of Van Goghs in our collection. This one was purchased at a generous discount!"
-    su "Say, there's a new face! So nice to meet you. My name is-"
-    so "WHAT ARE YOU DOING WANDERING AROUND A STUPID MUSEUM?! THE PLANET IS ON FIRE!"
-    su "Sigh..."
+    su "Say, there’s a new face!"
+    so "Why are they wasting time wandering around a stupid museum? THE PLANET IS ON FIRE!"
+    su "I hope they know a good cleaning service…"
     hide soupandsunflowers
     show saintcatherine at truecenter
-    ad "This is a stained glass of Saint Catherine of Alexandria. It's French. Or Roman? Either way, it's broken."
+    ad "This is where our stained glass of Saint Catherine of Alexandria used to hang. It's French. Or Roman? Either way, it's broken."
     st "It's so dark. Where am I?"
     st "Who am I?"
     st "Please... I know you can't hear me, but I'm here."
@@ -344,14 +344,14 @@ label MuseumTour:
     ad "Lastly, this is the Office."
     hide admin
     "Surely there's nothing in here that can talk."
-    p "Good luck!"
-    pc "Who just said that?"
+    p "Um... uh... good luck!"
+    pc "...who said that!?"
     hide admin
     show corgiposter at truecenter:
         zoom .5
         yoffset -110
-    "You turn to see an inspirational poster hanging on the wall."
-    p "I...I hope you do your best! I'm rooting for you!"
+    "You turn to see an inspirational poster hanging on the wall featuring a cute corgi leaping into the air"
+    p "I...I hope you do your best today! I'm rooting for you!"
     
     scene antiquities bg with fade:
         blur 5
