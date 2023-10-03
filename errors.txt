@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 42: Line is indented, but the preceding statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    ease .1 yoffset -55
-    ^
+File "game/characters/C_Poster.rpy", line 38: expected python code
+    $ 
+      ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sun Oct  1 13:04:11 2023
+Tue Oct  3 14:38:18 2023

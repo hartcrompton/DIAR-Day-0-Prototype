@@ -2,10 +2,25 @@
 
 default beat_Poster = 1
 default p_b3_c1 = 0
+default CorgiPortraitStage = "base"
+image corgiportrait = "/Characters/Poster/corgi base.png"
 
 label conv_Poster:
     scene posterbackground
-    show poster at center
+    if CorgiPortraitStage == "base":
+        show corgi base at truecenter:
+            yoffset -125
+            zoom .9
+    if CorgiPortraitStage == "flag":
+        show corgi flag at truecenter:
+            yoffset -125
+            xoffset -115
+            zoom .9
+    if CorgiPortraitStage == "final":
+        show corgi final at truecenter:
+            yoffset -125
+            xoffset -115
+            zoom .9
     p "You're talking to me, the Poster!"
     menu:
         #"[[Chat a little.]":
@@ -20,6 +35,7 @@ label conv_Poster:
             jump FreeRoam
         "Reset Beats":
             "Beats reset."
+            $ CorgiPortraitStage = "base"
             $ beat_Poster = 1
             jump conv_Poster
 
@@ -49,6 +65,7 @@ label .beat1:
     p "I just need to! I feel like I'm missing something, something that will help me do better."
     pc "What do you need? I don't even know how-"
     p "I'm sure there's something in this room. Can you look around for me? It'd mean the world!"
+    call minigamestart_corgi("1")
     #minigame go here
     #p "I need something that can help me cheer people on"
     #p "Wrong object dialogue"
@@ -56,6 +73,12 @@ label .beat1:
     #p "Wrong object dialogue"
     #p "Wrong object dialogue"
     #p "That's perfect!"
+    $ CorgiPortraitStage = "flag"
+    hide corgi
+    show corgi flag at truecenter:
+        xoffset -115
+        yoffset -125
+        zoom .9
     p "This will help me so much, I mean look at it!"
     "The corgi poster made a grunting noise, seemingly as an attempt to wave the little flag."
     "Wow, look at me! I hope me and my little flag here helps make your day the best it can be! Good luck!"
@@ -107,6 +130,7 @@ label .beat3:
         #p "Splendid job!"
         #p "Yeah, lets go!"
         #p "Cleanup complete! Go you!"
+        
         p "Thank you, that really helped! And you did an amazing job with the cleaning!"
     if p_b2_c1 == "a":
         p "Good morning! I'm thrilled to help you any way I can!"
@@ -127,6 +151,7 @@ label .beat3:
     p "But I feel like I'm still missing something. Can you help?"
     pc "Again?"
     p "Yeah, just one more thing. The flag is great but if I'm going to be out amongst the people, I think I need a little more flair!"
+    call minigamestart_corgi("2")
     #minigame go here
     #p "Wrong item dialogue"
     #p "Wrong item dialogue"
@@ -135,6 +160,12 @@ label .beat3:
     #p "Wrong item dialogue"
     #p "I think that'll work! Yes!"
     #p "This is perfect, thank you! I'm rooting for you!"
+    hide corgi
+    show corgi final at truecenter:
+        xoffset -115
+        yoffset -125
+        zoom .9
+    $ CorgiPortraitStage = "final"
     "The corgi poster seems to indicate its doing something with their new pom-poms. Of course, they don't move, but it's the thought that counts!"
 
     $ beat_Poster += 1
@@ -167,7 +198,7 @@ label .beat4:
     p "Positive!"
     p "You mentioned the [p_b3_c1] - I think I'm ready to be moved out there!"
     p "Do you think I'm ready?"
-    pc "100%!"
+    pc "One-hundred percent!"
     p "Good! I know I am, I just wanted you to confirm it! I've helped you be more confident in yourself too, you know!"
     "You take the poster out to the [p_b3_c1]."
     p "I love it here! Now do your best!"
