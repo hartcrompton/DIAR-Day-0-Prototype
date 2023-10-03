@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Poster.rpy", line 38: expected python code
-    $ 
-      ^
+File "game/minigames/cleaning_minigame_corgi.rpy", line 128: expected an indented block
+                    self.end_delay -= 1
+                     ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Oct  3 14:38:18 2023
+Tue Oct  3 16:12:03 2023

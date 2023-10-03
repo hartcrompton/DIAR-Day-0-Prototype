@@ -1,84 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('/Characters/Poster/PosterPortraitEnd.png') at 0x0000000003adebe0>:
-  File "game/characters/C_Poster.rpy", line 75, in script
-    p "This will help me so much, I mean look at it!"
-  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 69, in _window_show
-    renpy.with_statement(trans)
-OSError: Couldn't find file 'Characters/Poster/PosterPortraitEnd.png'.
+While running game code:
+  File "game/day_zero.rpy", line 68, in script call
+    call PhoneWaitResponse from _call_PhoneWaitResponse
+  File "game/day_zero.rpy", line 484, in script
+    $ phone_wait = renpy.random.sample(["Any minute now.", "Must be on their break.", "Really not my business.", "Wow, just keeps going.", "Isn't it going to go to voicemail?", "Whistle nonchalantly."])
+  File "game/day_zero.rpy", line 484, in <module>
+    $ phone_wait = renpy.random.sample(["Any minute now.", "Must be on their break.", "Really not my business.", "Wow, just keeps going.", "Isn't it going to go to voicemail?", "Whistle nonchalantly."])
+TypeError: sample() missing 1 required positional argument: 'k'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/characters/C_Poster.rpy", line 75, in script
-    p "This will help me so much, I mean look at it!"
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 898, in execute
-    statement_name(stmt_name)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 47, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 69, in _window_show
-    renpy.with_statement(trans)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1757, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 2975, in do_with
-    return self.interact(trans_pause=True,
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4172, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 2779, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\transition.py", line 378, in render
-    bottom = render(self.old_widget, width, height, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\transform.py", line 909, in render
-    return RenderTransform(self).render(width, height, st, at)
-  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
-  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\transform.py", line 909, in render
-    return RenderTransform(self).render(width, height, st, at)
-  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
-  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\image.py", line 513, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\image.py", line 316, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 676, in render
-    return cache.get(self, render=True)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 330, in get
-    surf = image.load()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 803, in load
-    raise e
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 757, in load
-    filelike = renpy.loader.load(self.filename, directory="images")
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\loader.py", line 833, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'Characters/Poster/PosterPortraitEnd.png'.
+  File "game/day_zero.rpy", line 68, in script call
+    call PhoneWaitResponse from _call_PhoneWaitResponse
+  File "game/day_zero.rpy", line 484, in script
+    $ phone_wait = renpy.random.sample(["Any minute now.", "Must be on their break.", "Really not my business.", "Wow, just keeps going.", "Isn't it going to go to voicemail?", "Whistle nonchalantly."])
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/day_zero.rpy", line 484, in <module>
+    $ phone_wait = renpy.random.sample(["Any minute now.", "Must be on their break.", "Really not my business.", "Wow, just keeps going.", "Isn't it going to go to voicemail?", "Whistle nonchalantly."])
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\revertable.py", line 503, in newmethod
+    l = method(*args, **kwargs)
+TypeError: sample() missing 1 required positional argument: 'k'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Tue Oct  3 14:35:09 2023
+Tue Oct  3 15:41:24 2023

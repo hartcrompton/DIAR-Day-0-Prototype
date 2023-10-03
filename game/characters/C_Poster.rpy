@@ -124,13 +124,13 @@ label .beat3:
         p "I mean okay, I guess."
         pc "I have to do some cleaning and could really use the motivation..."
         p "Oh! I think I can help with that. Maybe."
+        call minigamestart_cleaning_corgi
         #minigame go here
         #p "Impressive!"
         #p "No holding back!"
         #p "Splendid job!"
         #p "Yeah, lets go!"
-        #p "Cleanup complete! Go you!"
-        
+        p "Cleanup complete! Go you!"
         p "Thank you, that really helped! And you did an amazing job with the cleaning!"
     if p_b2_c1 == "a":
         p "Good morning! I'm thrilled to help you any way I can!"
