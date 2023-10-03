@@ -280,8 +280,9 @@ label .Beat4:
     arw "I prefer \"discussion with force.\""
     ard "I've seen the PC doing a lot of cleaning, lets see if it can jog you two's memories."
     pc "Hey, it's worth a shot!"
+    call minigamestart_cleaning_arnolfini
     ### minigame go here
-    meta "Clean up various objects that each of the Arnolfini's finds relatable to their interests. Don't know if we have design implementation for specific objects in the minigmae, but I can tailor the writing to what is available if not."
+    #meta "Clean up various objects that each of the Arnolfini's finds relatable to their interests. Don't know if we have design implementation for specific objects in the minigmae, but I can tailor the writing to what is available if not."
     ard "Well anything? Some kind of memory jogged."
     arw "Let me think..."
     arm "...I've got nothing."
