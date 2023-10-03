@@ -122,7 +122,12 @@ init python:
         # runs when you click, checks what you clicked -H
         def event(self, ev, x, y, st):
             if ev.type == pygame.MOUSEBUTTONUP: 
-
+                if self.count_differences() == 0:
+                    self.end_start = -1
+                    if self.end_delay >= 1:
+                        self.end_delay -= 1
+                if self.winner:
+                        return (self.the_score)
             # iterates through all overlaid images and sees if you clicked in bounds -H 
             # Check if one of the items
                 clicked = False
