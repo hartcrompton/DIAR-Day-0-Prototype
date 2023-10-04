@@ -1,32 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/day_zero.rpy", line 68, in script call
-    call PhoneWaitResponse from _call_PhoneWaitResponse
-  File "game/day_zero.rpy", line 484, in script
-    $ phone_wait = renpy.random.sample(["Any minute now.", "Must be on their break.", "Really not my business.", "Wow, just keeps going.", "Isn't it going to go to voicemail?", "Whistle nonchalantly."])
-  File "game/day_zero.rpy", line 484, in <module>
-    $ phone_wait = renpy.random.sample(["Any minute now.", "Must be on their break.", "Really not my business.", "Wow, just keeps going.", "Isn't it going to go to voicemail?", "Whistle nonchalantly."])
-TypeError: sample() missing 1 required positional argument: 'k'
+  File "game/characters/C_Arnolfini.rpy", line 154, in script
+    arw "That'd be nice! Don't you agree, [player]?"
+KeyError: 'player'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/day_zero.rpy", line 68, in script call
-    call PhoneWaitResponse from _call_PhoneWaitResponse
-  File "game/day_zero.rpy", line 484, in script
-    $ phone_wait = renpy.random.sample(["Any minute now.", "Must be on their break.", "Really not my business.", "Wow, just keeps going.", "Isn't it going to go to voicemail?", "Whistle nonchalantly."])
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/day_zero.rpy", line 484, in <module>
-    $ phone_wait = renpy.random.sample(["Any minute now.", "Must be on their break.", "Really not my business.", "Wow, just keeps going.", "Isn't it going to go to voicemail?", "Whistle nonchalantly."])
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\revertable.py", line 503, in newmethod
-    l = method(*args, **kwargs)
-TypeError: sample() missing 1 required positional argument: 'k'
+  File "game/characters/C_Arnolfini.rpy", line 154, in script
+    arw "That'd be nice! Don't you agree, [player]?"
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1473, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1337, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1251, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1231, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 278, in substitute
+    s = formatter.vformat(s, (), kwargs) # type: ignore
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 168, in get_field
+    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
+KeyError: 'player'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Tue Oct  3 15:41:24 2023
+Tue Oct  3 17:44:45 2023

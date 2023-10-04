@@ -6,7 +6,9 @@ default end_Arnolfini = 0
 
 label conv_Arnolfini:
     scene arnolfinibackground
-    show arnolfini at right
+    show arnolfini at truecenter:
+        zoom .7
+        yoffset -100
     ar "You're talking to me, the Arnolfini!"
     menu:
         "Beat [beat_Arnolfini]" if actions > 0 and beat_Arnolfini <= 5:
@@ -149,7 +151,7 @@ label .Beat3:
         arm "Really? Thats nice of you to say"
         arw "Well I don't talk about it enough. You have, dare I say, good taste! I mean your hat!"
         arm "Ooh, I was thinking of adding a feather to it. Or at least imagining a feather."
-        arw "That'd be nice! Don't you agree, [player]?"
+        arw "That'd be nice! Don't you agree, [pc_name]?"
         pc "I agree!"
         arm "...I think a new necklace would look nice on you as well."
         arw "Oh wouldn't it?"
