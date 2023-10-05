@@ -48,6 +48,7 @@ label .use_action:
     #    "No, not really.":
     #        p "Understandable."
     #        jump conv_Poster
+    call advance_time
     jump expression "conv_Poster" + "." + "beat" + "%d" % beat_Poster
 
 label .beat1:
@@ -207,14 +208,14 @@ label .beat4:
     "Even though the poster still is static and unmoving, you feel like its smiler has somehow, someway, gotten bigger."
     p "Hooray!"
 
-    "You have [actions] action(s) left."
     $ beat_Poster += 1
     jump FreeRoam
 
-label .OutcomeA:
-    "The corgi poster enjoyed its new placement out in the museum, constnatly and joyfully shouting words of encouragement to all who passed by, whether they heard it or not."
+label .Outcome:
+    if beat_Poster == 5:
+        "The corgi poster enjoyed its new placement out in the museum, constnatly and joyfully shouting words of encouragement to all who passed by, whether they heard it or not."
+    elif beat_Poster > 1:
+        "The corgi poster was happy to have a new employee to encourage, but were left feeling they could be helpingmore people if they could've just gotten out of the office."
+    else:
+        "The corgi poster sat lonely in the office, wondering why there words of encouragement never reached [pc_name]. Were they not helpful enough?"
     return
-label .OutcomeB:
-    "The corgi poster was happy to have a new employee to encourage, but were left feeling they could be helpingmore people if they could've just gotten out of the office."
-label .OutcomeU:
-    "The corgi poster sat lonely in the office, wondering why there words of encouragement never reached [PC]. Were they not helpful enough?"

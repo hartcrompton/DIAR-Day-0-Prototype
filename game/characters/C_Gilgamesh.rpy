@@ -34,6 +34,7 @@ label .use_action:
     #    "No, not really.":
     #        gi "Understandable."
     #        jump conv_Gilgamesh
+    call advance_time
     jump expression "conv_Gilgamesh" + "." + "beat" + "%d" % beat_Gilgamesh
 
 label .beat1:
@@ -693,3 +694,11 @@ label .beat4:
     "Well, he's still Gilgamesh, but as you walk away, you feel the oppressive atmosphere of the Anitquities Wing recede."
     $ beat_Gilgamesh += 1
     jump FreeRoam
+
+label .Outcome:
+    if beat_Gilgamesh == 5:
+        "Completed ending"
+    elif beat_Gilgamesh > 1:
+        "Unresolved ending"
+    else:
+        "No contact ending"

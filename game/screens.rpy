@@ -4,7 +4,7 @@
 
 init offset = -1
 
-
+default InfiniteActionsToggle = "OFF"
 ################################################################################
 ## Styles
 ################################################################################
@@ -323,7 +323,8 @@ screen navigation():
             textbutton _("Start") action Start()
 
         else:
-
+            textbutton  _("Infinite Actions [InfiniteActionsToggle]") action [SetVariable("InfiniteActions", If(InfiniteActions == 0, 1, 0)), SetVariable("InfiniteActionsToggle", If(InfiniteActions == 1, "OFF", "ON"))]
+            
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")

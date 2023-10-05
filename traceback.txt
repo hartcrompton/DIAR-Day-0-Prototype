@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/characters/C_Arnolfini.rpy", line 154, in script
-    arw "That'd be nice! Don't you agree, [player]?"
-KeyError: 'player'
+  File "game/characters/C_SaintCatherine.rpy", line 45, in script
+    st "I've heard your misgivings, [pc_job]. Can I help in some way?"
+KeyError: 'pc_job'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/characters/C_Arnolfini.rpy", line 154, in script
-    arw "That'd be nice! Don't you agree, [player]?"
+  File "game/characters/C_SaintCatherine.rpy", line 45, in script
+    st "I've heard your misgivings, [pc_job]. Can I help in some way?"
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 930, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1473, in say
@@ -28,9 +28,9 @@ Full traceback:
     obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
   File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
   File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
-KeyError: 'player'
+KeyError: 'pc_job'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Tue Oct  3 17:44:45 2023
+Wed Oct  4 15:37:14 2023

@@ -36,6 +36,7 @@ label conv_SoupAndSunflowers:
             jump conv_SoupAndSunflowers 
 
 label .use_action:
+    call advance_time
     jump expression "conv_SoupAndSunflowers" + "." + "beat" + "%d" % beat_SoupAndSunflowers
     #menu:
     #    p "Whoa, sure you want to use an action?"
@@ -357,6 +358,14 @@ label .beat4:
     label SSEnding:
         $ beat_SoupAndSunflowers += 1
         jump FreeRoam
+label .Outcome:
+    if beat_SoupAndSunflowers == 5:
+        "Completed ending"
+    elif beat_SoupAndSunflowers > 1:
+        "Unresolved ending"
+    else:
+        "No contact ending"
+    return
 
 
 ######

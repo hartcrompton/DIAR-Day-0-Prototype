@@ -29,6 +29,7 @@ label .use_action:
     #    "No, not really.":
     #        m "Understandable."
     #        jump conv_MonaLisa
+    call advance_time
     jump expression "conv_MonaLisa" + "." + "beat" + "%d" % beat_MonaLisa
 
 label .beat1:
@@ -258,21 +259,30 @@ label .beat4:
     #$ if d_MonaLisa < 6: d_MonaLisa + 1
     jump FreeRoam
 
-label .OutcomeN:
-    "The Mona Lisa was too small to notice. But she seems to notice others."
-    "Those who pass by her painting, or mugs, or memes, sense she's laughing at them..."
-    "...and all their secret fumbles committed when they thought no one was watching."
-label .OutcomeU:
-    "The Mona Lisa smiles from the painting, from the gift shop, and from the internet; as though her eyes follow you..."
-    "Everywhere."
-label .OutcomeA:
-    "The Mona Lisa brings cultural, historical, and scientific legitimacy to the exhibit; a diminutive diva starring in an underground gala."
-    "Nothing to do with the mailers in the invitees's homes, gathering intelligence on what rhey want to see. of course not."
-label .OutcomeB:
-    "A dozen enigmatic smiles, a dozen landscapes, the Mona Lisa tells her story..."
-    "...Blending high and low art, the past and the present, and a small museum's place in a larger conversation."
-    "Visitors leave with new perspective on gaze, surveillance, and what it cost us to get here."
-label .OutcomeC:
-    "News outlets light up all over the globe: Miss Mona Missing from Minor Museum!"
-    "Not since Peruggia stole the painting in 1911 have crowds swarmed this spot; now taking selfies with the empty space she left behind."
-    "In the background, a dozen smiles, distant and satisfied, as though some part of her finally returned home."
+label .Outcome:
+    if beat_MonaLisa == 5:
+        #alone
+        if MonaOutcome == 0:
+            "The Mona Lisa brings cultural, historical, and scientific legitimacy to the exhibit; a diminutive diva starring in an underground gala."
+            "Nothing to do with the mailers in the invitees's homes, gathering intelligence on what rhey want to see. of course not."
+        #kitsch
+        if MonaOutcome == 1:
+            "A dozen enigmatic smiles, a dozen landscapes, the Mona Lisa tells her story..."
+            "...Blending high and low art, the past and the present, and a small museum's place in a larger conversation."
+            "Visitors leave with new perspective on gaze, surveillance, and what it cost us to get here."
+        #heist
+        if MonaOutcome == 2:
+            "News outlets light up all over the globe: Miss Mona Missing from Minor Museum!"
+            "Not since Peruggia stole the painting in 1911 have crowds swarmed this spot; now taking selfies with the empty space she left behind."
+            "In the background, a dozen smiles, distant and satisfied, as though some part of her finally returned home."
+        
+    elif beat_MonaLisa > 1:
+        #alksjdf
+        "The Mona Lisa smiles from the painting, from the gift shop, and from the internet; as though her eyes follow you..."
+        "Everywhere."
+    else:
+        "The Mona Lisa was too small to notice. But she seems to notice others."
+        "Those who pass by her painting, or mugs, or memes, sense she's laughing at them..."
+        "...and all their secret fumbles committed when they thought no one was watching."
+        #bad
+    return

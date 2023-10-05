@@ -30,6 +30,7 @@ label .use_action:
     #    "No, not really.":
     #        ar "Understandable."
     #        jump FreeRoam
+    call advance_time
     jump expression "conv_Arnolfini" + "." + "Beat" + "%d" % beat_Arnolfini
 
 label .Beat1:
@@ -296,19 +297,29 @@ label .Beat4:
     ard "I don't think we're getting anywhere with this. Maybe talk to them one-on-one and see if there's any kind of clue?"
     pc "Think that'd work?"
     ard "Yeah, just go with your intution. Come talk to me too, I may remember something."
-    menu:
-        "Speak to Giovanni":
-            $ ar_b4_c1 = "a"
-            pc "Do you remember anything from your past that might help define you two's relationship?"
-            arm "History about what he knows of ArnolfiniWoman leading to conclusion: They're married"
-        "Speak to Gertrude":
-            $ ar_b4_c1 = "b"
-            pc "What can you tell me about your history with Giovanni? Maybe there's something we're missing."
-            arw "History about what she knows of ArnolfiniMan leading to conclusion: They're cousins. Just blood related."
-        "Speak to the Dog":
-            $ ar_b4_c1 = "c"
-            pc "So you said you remembered something?"
-            ard "History about what the dog knows of the two Arnolfinis leading to conclusion: They're related AND married. It was the 1400s."
+    $ SpeakGiovanni = 0
+    $ SpeakWoman = 0
+    $ SpeakDog = 0
+    label ArnolfiniInvestigate:
+        menu:
+            "Speak to Giovanni" if SpeakGiovanni == 0:
+                $ SpeakGiovanni = 1
+                $ ar_b4_c1 = "a"
+                pc "Do you remember anything from your past that might help define you two's relationship?"
+                arm "History about what he knows of ArnolfiniWoman leading to conclusion: They're married"
+                jump ArnolfiniInvestigate
+            "Speak to Gertrude" if SpeakWoman == 0:
+                $ SpeakWoman = 1
+                $ ar_b4_c1 = "b"
+                pc "What can you tell me about your history with Giovanni? Maybe there's something we're missing."
+                arw "History about what she knows of ArnolfiniMan leading to conclusion: They're cousins. Just blood related."
+                jump ArnolfiniInvestigate
+            "Speak to the Dog" if SpeakDog == 0:
+                $ SpeakDog = 1
+                $ ar_b4_c1 = "c"
+                pc "So you said you remembered something?"
+                ard "History about what the dog knows of the two Arnolfinis leading to conclusion: They're related AND married. It was the 1400s."
+                jump ArnolfiniInvestigate
     ard "Alright what do you think?"
     arm "Well?"
     arw "What is it? What are we?"
@@ -376,17 +387,12 @@ label .Beat4:
     jump FreeRoam
 
 #complete
-label .OutcomeA:
-    "The Arnolfinis were a lot happier together. Sure, they still fought a bit, but they started making friends with nearby paintings and actually - finally - enjoyed each other's presence. The dog too!"
-    return
-
-#incomplete
-label .OutcomeB:
-    "The Arnolfinis were getting a long a bit better, but there arguments never ended, annoying all the surrounding pieces of art. If only you could've helped them reconcile..."
-    return
-
-#no contact
-label .OutcomeU:
-    "The Arnolfinis arguments grew more and more irate and every piece of art around them suffered for it, including the dog."
-    "Eventually, the piece tore in two, separating them forever and leaving them all alone. Sure, they weren't arguing anymore, but now they had no one else to talk to."
+label .Outcome:
+    if beat_Arnolfini == 5:
+        "The Arnolfinis were a lot happier together. Sure, they still fought a bit, but they started making friends with nearby paintings and actually - finally - enjoyed each other's presence. The dog too!"
+    elif beat_Arnolfini > 1:
+        "The Arnolfinis were getting a long a bit better, but there arguments never ended, annoying all the surrounding pieces of art. If only you could've helped them reconcile..."
+    else:
+        "The Arnolfinis arguments grew more and more irate and every piece of art around them suffered for it, including the dog."
+        "Eventually, the piece tore in two, separating them forever and leaving them all alone. Sure, they weren't arguing anymore, but now they had no one else to talk to."
     return

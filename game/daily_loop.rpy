@@ -7,6 +7,7 @@
 default DayNumber = 1
 default actions = 4
 default time_of_day = 1
+default InfiniteActions = 0
 
 #the different times of day are just recolored versions of the same background
 image museum_morning:
@@ -91,6 +92,9 @@ label DayEnd:
 
 #this needs to get refactored, TOD uses a conditionswitch now
 label advance_time:
+    if InfiniteActions == 1:
+        $ actions = 4
+        return
     if actions > 0:
         $ actions = actions - 1
     #morning - can be deleted, actions will never equal 4 in this label

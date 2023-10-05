@@ -2,6 +2,7 @@
 
 default beat_Davids = 1
 default BibleResearched = 0
+default DefinitiveDave = "NONE"
 
 label conv_Davids:
     scene davidsbg
@@ -27,6 +28,7 @@ label .use_action:
     #    "No, not really.":
     #        d "Understandable."
     #        jump conv_Davids
+    call advance_time
     jump expression "conv_Davids" + "." + "beat" + "%d" % beat_Davids
 
 label .beat1:
@@ -251,10 +253,13 @@ label .beat4:
         menu:
             pc "From what I remember of the Bible, the definitive David is..."
             "Michelangelo's David":
+                $ DefinitiveDave = "dm"
                 jump MichelangeloTrue
             "Donatello's David":
+                $ DefinitiveDave = "dd"
                 jump DonatelloTrue
             "Bernini's David":
+                $ DefinitiveDave = "db"
                 jump BerniniTrue
 
     label MichelangeloTrue:
@@ -285,6 +290,7 @@ label .beat4:
         jump DavidsEnd
 
     label BibleResearched:
+        $ DefinitiveDave = "all"
         d "Look at you! We knew you'd be back."
         dm "You can read! You can REALLY read!"
         dd "And make it down stairs!"
@@ -308,6 +314,31 @@ label .beat4:
         pc "Oh please. No more tears. I've already had to weather that storm with Gilgamesh."
 
     label DavidsEnd:
-        "You have [actions] action(s) left."
-    $ beat_Davids += 1
+        $ beat_Davids += 1
     jump FreeRoam
+
+label .Outcome:
+    if beat_Davids == 5:
+        if DefinitiveDave == "db":
+            "Bernini's David stands alone underneath a single overhead light, casting light on his twisting torso and long shadows at his feet."
+            "One more line characterizing his exhibit. His banner reads..."
+            "The Hero's Valor"
+        elif DefinitiveDave == "dd":
+            "Donatello's David stands alone, proudly beaming a smile.  Now as the one and true definitive David, the exhibit bears a banner that reads..."
+            "Adolscence Ascending: Ephebic Hero, Future King"
+        elif DefinitiveDave == "dm":
+            "Michelangelo's David has somehow had his pedestal placed on another pedestal, and so stands especially tall, almost out of sight."
+            "What can be discerned on his face is a mixutre of threatening menace, steely resolve, and holy devotion.  The exhibit banner reads..."
+            "Liberated From Stone, Destined for Heaven"
+        elif DefinitiveDave == "NONE":
+            "The Davids lie in a heap of crumbled stone, graveled marble.  Where once stood heroes, now is an undifferentiated heap, on top of which sits a single slingshot."
+        elif DefinitiveDave == "all":
+            "All Davids stand facing outward, having eachother's back, in mutual appreciation. Their banner reads"
+            "Conquered, The Hero's Pride"
+        #asdf
+    elif beat_Davids > 1:
+        #asdf
+        "Unresolved"
+    else:
+        #bad
+        "The Davids lie in a heap of crumbled stone, graveled marble.  Where once stood heroes, now is an undifferentiated heap, on top of which sits a single slingshot."

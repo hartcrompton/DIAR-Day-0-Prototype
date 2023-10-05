@@ -32,18 +32,25 @@ label MuseumSaved:
     "You did it!"
     if beat_Arnolfini == 5:
         ar "Arnolfini complete line!"
+        call conv_Arnolfini.Outcome
     if beat_Davids == 5:
         d "Arnolfini complete line!"
+        call conv_Davids.Outcome
     if beat_Gilgamesh == 5:
         ar "Arnolfini complete line!"
+        call conv_Gilgamesh.Outcome
     if beat_MonaLisa == 5:
         ar "Arnolfini complete line!"
+        call conv_MonaLisa.Outcome
     if beat_SaintCatherine == 5:
         ar "Arnolfini complete line!"
+        call conv_SaintCatherine.Outcome
     if beat_SoupAndSunflowers == 5:
         ar "Arnolfini complete line!"
+        call conv_SoupAndSunflowers.Outcome
     if beat_Poster == 5:
         ar "Arnolfini complete line!"
+        call conv_Poster.Outcome
     ad "Well, you did it."
     menu:
         ad "Think you'll stay on?"
@@ -52,6 +59,17 @@ label MuseumSaved:
         "Hell no.":
             pass
         
+    return
+
+label AllOutcomes:
+    scene AllEndings
+    call conv_Arnolfini.Outcome
+    call conv_Davids.Outcome
+    call conv_Gilgamesh.Outcome
+    call conv_MonaLisa.Outcome
+    call conv_SaintCatherine.Outcome
+    call conv_SoupAndSunflowers.Outcome
+    call conv_Poster.Outcome
     return
 
 label MuseumClosed:

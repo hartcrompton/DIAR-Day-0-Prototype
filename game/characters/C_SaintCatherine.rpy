@@ -32,6 +32,7 @@ label .use_action:
     #    "No, not really.":
     #        st "Understandable."
     #        jump conv_SaintCatherine
+    call advance_time
     jump expression "conv_SaintCatherine" + "." + "beat" + "%d" % beat_SaintCatherine
 
 label .beat1:
@@ -41,7 +42,7 @@ label .beat1:
     #"You open a door marked \"Staff Only.\" The last fluorescent bulb casts cold light on dusty racks."
     "The dull gallery wall peeks out through the holes in the stained glass."
     "Saint Catherine looks dull and dusty with no light behind her."
-    st "I've heard your misgivings, [pc_job]. Can I help in some way?"
+    st "I've heard your misgivings, [pc_work]. Can I help in some way?"
     pc "You heard me?"
     st "Worries, fears, wishes. Prayers. Everything."
     pc "Who are you?"
@@ -369,25 +370,27 @@ label .beat4:
     $ beat_SaintCatherine += 1
     jump FreeRoam
 
-label .OutcomeNC:
-    "The saint is discovered in an unlocked room, leaning against the wall, a sample “untitled, -anonymous” curation plaque discarded on the floor next to her." 
-    "When the odd visitor passing by the saint is overcome with a sense of loss and abandonment, and have difficulty speaking their mind for the next several days."
-    return
-label .OutcomeUR:
-    "The saint enjoys a brief bit of fame as a visitor’s post about her goes viral. Unfortunately, the good and bad faith arguing keep the saint locked in uncertainty. "
-    "At certain angles, tears can be seen on her face; but that may just be a flaw in the glass."
-    return
-label .OutcomeA:
-    #blonde and glass
-    "The saint shines inspiring light on all. Benches in her gallery space prove comforting place to sit while weighing difficult decisions."
-    "Visitors leave with the sense that they have been heard and seen, empowered with the right questions to find the answers they seek."
-    #blonde and plastic
-    "The saint is a commanding yet jarring presence, almost punk, the juxtaposition of high ideals from base material mirroring and echoing her relationship to artisans and wheelwrights."
-    "Visitors leave energized to fight for what they believe in."
-    #brunette and glass
-    "The saint shines down with kindness, evoking the time and place of its manufacture rather than the grand ideals it represents."
-    "Visitors swear they've seen a girl just like her serving coffee at the diner down the street."
-    #brunette and plastic
-    "The saint is a welcoming presence emphasizing the evolving story of art... "
-    "...including those who protected, restored, and changed the work in the intervening centuries."
+label .Outcome:
+    if beat_SaintCatherine == 5:
+        if SaintPersonality == 1:
+            if st_glass == 0:
+                st "The saint is a welcoming presence emphasizing the evolving story of art... "
+                st "...including those who protected, restored, and changed the work in the intervening centuries."
+            if st_glass == 1:
+                st "The saint shines down with kindness, evoking the time and place of its manufacture rather than the grand ideals it represents."
+                st "Visitors swear they've seen a girl just like her serving coffee at the diner down the street."
+        if SaintPersonality == 0:
+            if st_glass == 0:
+                st "The saint is a commanding yet jarring presence, almost punk, the juxtaposition of high ideals from base material mirroring and echoing her relationship to artisans and wheelwrights."
+                st "Visitors leave energized to fight for what they believe in."
+            if st_glass == 1:
+                st "The saint shines inspiring light on all. Benches in her gallery space prove comforting place to sit while weighing difficult decisions."
+                st "Visitors leave with the sense that they have been heard and seen, empowered with the right questions to find the answers they seek."
+    elif beat_SaintCatherine > 1:
+        "The saint enjoys a brief bit of fame as a visitor’s post about her goes viral. Unfortunately, the good and bad faith arguing keep the saint locked in uncertainty. "
+        "At certain angles, tears can be seen on her face; but that may just be a flaw in the glass."
+    else:
+        #bad
+        "The saint is discovered in an unlocked room, leaning against the wall, a sample “untitled, -anonymous” curation plaque discarded on the floor next to her." 
+        "When the odd visitor passing by the saint is overcome with a sense of loss and abandonment, and have difficulty speaking their mind for the next several days."
     return

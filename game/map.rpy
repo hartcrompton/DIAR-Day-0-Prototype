@@ -69,22 +69,26 @@ screen MapUI:
                 spacing 10
                 text "Day [DayNumber] / 4":
                     size 40
-                text "Morning":
-                    size 20
-                    if actions == 4:
-                        size 40
-                text "Noon":
-                    size 20
-                    if actions == 3:
-                        size 40
-                text "Evening":
-                    size 20
-                    if actions == 2:
-                        size 40
-                text "Night":
-                    size 20
-                    if actions == 1:
-                        size 40
+                if InfiniteActions == 0:
+                    text "Morning":
+                        size 20
+                        if actions == 4:
+                            size 40
+                    text "Noon":
+                        size 20
+                        if actions == 3:
+                            size 40
+                    text "Evening":
+                        size 20
+                        if actions == 2:
+                            size 40
+                    text "Night":
+                        size 20
+                        if actions == 1:
+                            size 40
+                if InfiniteActions == 1:
+                    text "INFINITE ACTIONS":
+                        size 20
     textbutton "Stats":
         xalign 1.0
         yalign 0.0
