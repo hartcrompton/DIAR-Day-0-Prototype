@@ -1,19 +1,19 @@
-Wed Oct  4 17:25:21 2023
+Thu Oct  5 15:42:26 2023
 Windows-10-10.0.19045
 Ren'Py 8.1.1.23060707
  
 
 Bootstrap to the start of init.init. took 0.02s
 Early init. took 0.00s
-Loader init. took 0.05s
+Loader init. took 0.03s
 Loading error handling. took 0.02s
 Loading script. took 0.24s
 Loading save slot metadata. took 0.04s
 Loading persistent. took 0.00s
-Running init code. took 0.09s
+Running init code. took 0.10s
 Loading analysis data. took 0.01s
 Analyze and compile ATL. took 0.00s
-Reloading save slot metadata. took 0.03s
+Reloading save slot metadata. took 0.02s
 Index archives took 0.00s
 Dump and make backups. took 0.03s
 Cleaning cache. took 0.00s
@@ -22,9 +22,9 @@ Initial gc. took 0.02s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object. took 0.16s
+Creating interface object. took 0.18s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.02s
 Analyze screens took 0.00s
@@ -34,7 +34,7 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
-Interface start. took 0.14s
+Interface start. took 0.15s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 2560, 1440)
@@ -44,17 +44,15 @@ Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 536.67'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(2560, 1387) drawable=(2560, 1387)
-Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
 Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init. took 271.09s
+Bootstrap to the start of init.init. took 81.09s
 Early init. took 0.00s
 Loader init. took 0.03s
-Loading error handling. took 0.02s
-Loading script. took 0.26s
-Loading save slot metadata. took 0.04s
+Loading error handling. took 0.03s
+Loading script. took 0.27s
+Loading save slot metadata. took 0.03s
 Loading persistent. took 0.00s
 Running init code. took 0.03s
 Loading analysis data. took 0.01s
@@ -66,6 +64,185 @@ Dump and make backups. took 0.04s
 Cleaning cache. took 0.00s
 Making clean stores. took 0.00s
 Initial gc. took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 111.89s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 115.20s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 179.36s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.21s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 202.36s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.18s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
@@ -94,11 +271,56 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
 Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init. took 315.64s
+Bootstrap to the start of init.init. took 246.74s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.25s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 250.05s
 Early init. took 0.00s
 Loader init. took 0.03s
 Loading error handling. took 0.01s
-Loading script. took 0.16s
+Loading script. took 0.22s
 Loading save slot metadata. took 0.03s
 Loading persistent. took 0.00s
 Running init code. took 0.03s
@@ -107,10 +329,189 @@ Analyze and compile ATL. took 0.00s
 Reloading save slot metadata. took 0.02s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.18s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 254.83s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.20s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 258.17s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.20s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
 Dump and make backups. took 0.03s
 Cleaning cache. took 0.00s
 Making clean stores. took 0.00s
-Initial gc. took 0.03s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 264.54s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.23s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.18s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 274.41s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.20s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
@@ -127,6 +528,814 @@ Save bytecode. took 0.01s
 Running _start took 0.00s
 Performance test:
 Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 283.81s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.22s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 297.74s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.23s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 561.20s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.29s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 563.04s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.22s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 583.06s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.23s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 596.98s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.21s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 601.80s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.23s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 608.13s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.22s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 609.96s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 625.42s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.24s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 628.75s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.22s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 630.50s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.01s
+Loading script. took 0.23s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 639.89s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.24s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 641.71s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.24s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 645.05s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.01s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 4786.39s
+Early init. took 0.00s
+Loader init. took 0.12s
+Loading error handling. took 0.02s
+Loading script. took 0.34s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.05s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 4789.92s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.21s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1577, 887) drawable=(1577, 887)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 4806.91s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.26s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 2560, 1440)

@@ -12,8 +12,18 @@ default BeastChoice = 0
 default SongTheme = "NONE"
 
 label conv_Gilgamesh:
-    scene gilgameshbg
-    show gilgamesh at right
+    if beat_Gilgamesh != 3:
+        scene antiquities bg:
+            blur 5
+        show gilgamesh at center:
+            xoffset 0
+        show eanasir at right:
+            xoffset -50
+            zoom .6
+    if beat_Gilgamesh == 3:
+        scene foyer bg:
+            blur 5
+        show admin at truecenter:
     menu:
         "Beat [beat_Gilgamesh]" if actions > 0 and beat_Gilgamesh < 5:
             jump .use_action
@@ -38,7 +48,7 @@ label .use_action:
     jump expression "conv_Gilgamesh" + "." + "beat" + "%d" % beat_Gilgamesh
 
 label .beat1:
-    "The atmosphere of the Antiquites Wing is oppressive."
+    "The atmosphere of the Antiquities Wing is oppressive."
     gi "Well, what are you?"
     #gender neutralify this
     gi "Peasant, or king?"
@@ -62,12 +72,16 @@ label .beat1:
     menu:
         "Who are you two?":
             e "I am Ea-nasir, and this loadmouthed rock is--"
+            hide gilgamesh
+            show gilgamesh at center with hpunch
             gi "GILGAMESH!"
         "The tablet's right, I don't see a throne.":
             gi "True royalty needs no carven throne."
             gi "Nasir, why haven't you announced me yet?"
             e "I'm sure you can do that yourself. Forgive me, I am Ea-nasir."
             gi "And I am..."
+            hide gilgamesh
+            show gilgamesh at center with hpunch
             gi "GILGAMESH!"
     gi "..."
     gi "You're allowed to grovel now."
@@ -152,6 +166,7 @@ label .beat1:
     "ISHTAR killed ENKIDU"
     "GIl went kinda CRAZY and fought to the END OF THE WORLD to find IMMORTALITY"
     "Long story short, HE DIDN'T. But he returned to URUK and found PEACE."
+    "ALSO: Something about Ea-nasir having a past scamming people with shoddy copper"
     $ beat_Gilgamesh += 1
     jump FreeRoam
 label .beat2:
@@ -400,7 +415,9 @@ label .beat3:
         "I think I might know.":
             pass
     ad "The Admin already hung up."
+    scene antiquities flood with fade
     "The antiquities wing is positively {i}flooded{/i}."
+    show eanasir at right
     e "Oh you're back, come to make an even bigger mess?"
     menu:
         "OK, {i}this{/i} is not my fault.":
@@ -421,9 +438,14 @@ label .beat3:
             e "Yes, perhaps you should have stayed away."
     e "At least he seems to have run dry."
     "You sigh. Time to bust out the mop."
-    "MOPPING MINIGAME TIME"
+    call minigamestart_mop
+    scene antiquities bg:
+        blur 5
     "Whew. Still a little damp, but at least there isn't any obvious damage."
+    show gilgamesh at truecenter
     gi "Enkidu, I failed you!"
+    show eanasir at right:
+        zoom .7
     e "Oh good, he's starting again."
     "Gilgamesh is clearly on the verge of another flood of tears."
     menu:
@@ -651,36 +673,71 @@ label .beat4:
                 jump SongChoice
     gi "That settles it then. Nasir, I have little right to ask, but will you translate for our friend?"
     e "Not because you're asking. I just don't want to see their blank stare."
-    "Gilgmesh settles into his song, his voice low and heavy like honey."
-    gi "{i}Mu-ti-in cag-ja mu-lu ki-ig-ga-aj-ju- / Hi-li-zu aj-ze-ba-am lal-am ku-ku-da-{/i}"
-    e "Bridegroom, dear to my heart- / Goodly is your beauty, honeysweet-"
-    gi "Gi-ru cag-ja mu-lu ki-ig-ga-aj-ju- / Hi-li-zu aj-ze-ba-am lal-am ku-ku-da-"
-    e "Lion, dear to my heart- / Goodly is your beauty, honeysweet."
-    gi "Id na-an-ba-al-le id-zu ḫe-me-en-"
-    e "Do not dig a canal... oh my."
-    gi "A-šag na-an-ur-ru a-šag-zu ḫe-me-en-"
-    "You never knew a clay tablet could blush, but Ea-nasir blushes deeply all the same."
-    gi "Mu-un-gar ki duru na-an-kiĝ-kiĝ-e-"
-    e "..."
-    menu:
-        "What's wrong?":
-            pass
-        "What is he singing?":
-            pass
-    e "He is... declaring his love."
-    gi "Ze-ba kal-la-ĝu ki duru-zu ḫe-am-"
-    e "Directly."
-    gi "X-e ab-sin-zu ḫe-am-"
-    e "VERY directly."
-    gi "X tur-tur-me aš-zu ḫe-am-"
-    "Gilgmesh finishes his song. Just in time too, it looked like Ea-nasir was about to crack."
-    gi "Ah... I can only pray Enkidu hears it."
-    e "I would have prayed that {i}only{/i} he could hear it."
-    gi "Ah, young Nasir. I could teach you many songs of... love."
-    e "Eugh, I would sooner shatter."
+    if SongTheme == "romance":
+        "Gilgmesh settles into his song, his voice low and heavy like honey."
+        gi "{i}Mu-ti-in cag-ja mu-lu ki-ig-ga-aj-ju- / Hi-li-zu aj-ze-ba-am lal-am ku-ku-da-{/i}"
+        e "Bridegroom, dear to my heart- / Goodly is your beauty, honeysweet-"
+        gi "Gi-ru cag-ja mu-lu ki-ig-ga-aj-ju- / Hi-li-zu aj-ze-ba-am lal-am ku-ku-da-"
+        e "Lion, dear to my heart- / Goodly is your beauty, honeysweet."
+        gi "Id na-an-ba-al-le id-zu ḫe-me-en-"
+        e "Do not dig a canal... oh my."
+        gi "A-šag na-an-ur-ru a-šag-zu ḫe-me-en-"
+        "You never knew a clay tablet could blush, but Ea-nasir blushes deeply all the same."
+        gi "Mu-un-gar ki duru na-an-kiĝ-kiĝ-e-"
+        e "..."
+        menu:
+            "What's wrong?":
+                pass
+            "What is he singing?":
+                pass
+        e "He is... declaring his love."
+        gi "Ze-ba kal-la-ĝu ki duru-zu ḫe-am-"
+        e "Directly."
+        gi "X-e ab-sin-zu ḫe-am-"
+        e "VERY directly."
+        gi "X tur-tur-me aš-zu ḫe-am-"
+        "Gilgmesh finishes his song. Just in time too, it looked like Ea-nasir was about to crack."
+        gi "Ah... I can only pray Enkidu hears it."
+        e "I would have prayed that {i}only{/i} he could hear it."
+        gi "Ah, young Nasir. I could teach you many songs of... love."
+        e "Eugh, I would sooner shatter."
+    if SongTheme == "battle":
+        #he-zu he-zu-am dnanna li-bi2-in-dug4-ga za-a-kam bi2-in-dug4-ga 
+        #It must be known! It must be known! Nanna has not yet spoken out! He has said, "He is yours!" 
+        gi "An-gin mah-a-za he-zu-am" 
+        e "Be it known that you are lofty as the heavens!"
+        gi "ki-gin dajal-la-za he-zu-am "
+        e "Be it known that you are broad as the earth! "
+        #gi "ki bal gul-gul-lu-za he-zu-am "
+        #e "Be it known that you destroy the rebel lands! "
+        gi "kur-ra gu de2-e-za he-zu-am "
+        e "Be it known that you roar at the foreign lands! "
+        gi "saj jic ra-ra-za he-zu-am "
+        e "Be it known that you crush heads!"
+        gi "ur-gin ad gu-u-za he-zu-am "
+        e "Be it known that you devour corpses like a dog! "
+        menu:
+            "He did what now?":
+                e "It's metaphorical. I hope."
+            "What does that mean?":
+                e "...It was a different time."
+        gi "igi huc-a-za he-zu-am "
+        e "Be it known that your gaze is terrible!"
+        gi "igi huc-bi il-il-i-za he-zu-am "
+        e "Be it known that you lift your terrible gaze! "
+        gi "igi gun-gun-na-za he-zu-am "
+        e "Be it known that you have flashing eyes!"
+        gi "uru-na nu-ce-ga-za he-zu-am "
+        e "Be it known that you are unshakeable and unyielding! "
+        gi "u-ma gub-gub-bu-za he-zu-am "
+        e "Be it known that you always stand triumphant! "
+        "Gilgamesh finishes his song, the final note reverberating through the hall."
+        gi "Ah... I can only pray Enkidu hears it."
     gi "And you, [pc_name], give me your thoughts. Was my song not as great as my legend?"
     menu:
         "It was beautiful.":
+            pass
+        "It was... beautiful?":
             pass
         "I've... never heard anything like it.":
             pass

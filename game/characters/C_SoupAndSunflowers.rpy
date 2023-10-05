@@ -10,9 +10,20 @@ default Day1Side = "NONE"
 default SunflowersWant = "NONE"
 default SoupWant = "NONE"
 default SoupOutcome = "NONE"
+default SSFakeCleanCount = 0
+
+image ssportrait = ConditionSwitch(
+    "SoupOutcome == 'Remain'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png",
+    "SoupOutcome == 'Erase'", "images/Characters/SoupAndSunflowers/sunflowersonly.jpg",
+    "SoupOutcome == 'Detach'", "images/Characters/SoupAndSunflowers/soupandsunflowersdetached.png",
+    "SoupOutcome == 'NONE'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png")
 
 label conv_SoupAndSunflowers:
-    show soup at center
+    scene mixedmedia bg:
+        blur 5
+    show ssportrait at truecenter:
+        zoom .75
+        yoffset -100
     menu:
         "Beat [beat_SoupAndSunflowers]" if actions > 0 and beat_SoupAndSunflowers < 5:
             jump .use_action
@@ -22,6 +33,7 @@ label conv_SoupAndSunflowers:
         "Reset Beats":
             "Beats reset."
             $ beat_SoupAndSunflowers = 1
+            $ SoupOutcome = "NONE"
             jump conv_SoupAndSunflowers
         "Set Current Beat":
             menu:
@@ -58,6 +70,11 @@ label .beat1:
         "I don't want to mess anything up…":
             su "It'll be fine! Quickly now!"
     #minigame go here
+    $ SSFakeCleanCount = 0
+    call call_SSFakeClean
+    show soupandsunflowers at truecenter:
+        zoom .75
+        yoffset -100
     "I didn't know you were, er, alive. Sorry!"
     so "Hey what the fuck!"
     su "Ignore that, it's the wind!"
@@ -307,9 +324,10 @@ label .beat4:
         jump SSEnding
     label MinigamePlaceholder:
         menu:
-            "placeholder for final minigame"
+            "placeholder for final minigame choice"
             "Erase":
                 $ SoupOutcome = "Erase"
+                call minigamestart_soupremoval
             "Detach":
                 $ SoupOutcome = "Detach"
             "Remain":
@@ -370,17 +388,19 @@ label .Outcome:
 
 ######
 label SSFakeCleanDialogue:
+    
     #essentially just bring up an imagemap and every time you click the imagemap you get dialogue
     $ SunflowersCleanFakeString = renpy.random.choice(["Get this soup off me!", "Come on, get rid of it.", "Are you even trying?"])
     $ SoupCleanFakeString = renpy.random.choice(["I'm not going anywhere!", "Hey, stop that!", "I mean something!"])
-    su "[SunflowersCleanFakeString]"
     so "[SoupCleanFakeString]"
+    su "[SunflowersCleanFakeString]"
+    $ SSFakeCleanCount += 1
 
 screen wait_SSFakeClean():
     pass
 
 label call_SSFakeClean():
-    scene museum bg2
+    hide soupandsunflowers
     label .repeat:
     show screen SSFakeClean()
     call screen wait_SSFakeClean()
@@ -398,23 +418,28 @@ transform unfocus:
 
 screen SSFakeClean:
     layer "middle"
-    
 
     modal renpy.get_screen("wait_SSFakeClean") # if you don't need modal, omit this line
     sensitive renpy.get_screen("wait_SSFakeClean")
     imagemap:
-        ground "images/rooms/museum bg1.jpg"
-        hotspot (0, 0, 1920, 1080) action Return("SSFakeCleanDialogue") #call up the appropriate second screen K
+        ground "images/rooms/mixedmedia bg.jpg"
+        if SSFakeCleanCount < 2:
+            hotspot (0, 0, 1920, 1080) action Return("SSFakeCleanDialogue") #call up the appropriate second screen K
+        if SSFakeCleanCount >= 2:
+            hotspot (0, 0, 1920, 1080) action Return("exit") #call up the appropriate second screen K
     frame:
-        xalign .5
-        yalign .5
+        xalign 0
+        yalign 0
         xoffset 0
         yoffset 0
         background None
-        xminimum 450
-        xmaximum 450
-        yminimum 900
-        ymaximum 900    
+        xminimum 1920
+        xmaximum 1920
+        yminimum 1080
+        ymaximum 1080   
         vbox:
-            add "SSFakeCleanPortrait"
+            xalign .5
+            yalign .5
+            add "soupandsunflowers":
+                zoom .8
     

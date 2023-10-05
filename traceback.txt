@@ -1,36 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/characters/C_SaintCatherine.rpy", line 45, in script
-    st "I've heard your misgivings, [pc_job]. Can I help in some way?"
-KeyError: 'pc_job'
+  File "game/characters/C_SoupAndSunflowers.rpy", line 15, in script
+    image ssportrait = ConditionSwitch(
+  File "game/characters/C_SoupAndSunflowers.rpy", line 15, in <module>
+    image ssportrait = ConditionSwitch(
+Exception: ConditionSwitch takes an even number of arguments
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/characters/C_SaintCatherine.rpy", line 45, in script
-    st "I've heard your misgivings, [pc_job]. Can I help in some way?"
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1473, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1337, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1251, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1231, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 278, in substitute
-    s = formatter.vformat(s, (), kwargs) # type: ignore
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 168, in get_field
-    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
-KeyError: 'pc_job'
+  File "game/characters/C_SoupAndSunflowers.rpy", line 15, in script
+    image ssportrait = ConditionSwitch(
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1237, in execute
+    img = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/characters/C_SoupAndSunflowers.rpy", line 15, in <module>
+    image ssportrait = ConditionSwitch(
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1649, in ConditionSwitch
+    raise Exception('ConditionSwitch takes an even number of arguments')
+Exception: ConditionSwitch takes an even number of arguments
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Wed Oct  4 15:37:14 2023
+Thu Oct  5 12:34:35 2023

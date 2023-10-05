@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/map.rpy", line 72: vbox expects a non-empty block.
-    if InfiniteActions == 0:
-                            ^
+File "game/characters/C_Gilgamesh.rpy", line 26: expected 'simple_expression' not found.
+    show admin at 
+                  ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Wed Oct  4 15:40:44 2023
+Thu Oct  5 15:21:13 2023

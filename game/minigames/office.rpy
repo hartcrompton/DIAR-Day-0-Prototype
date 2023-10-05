@@ -237,7 +237,8 @@ label minigamestart_office(gameimage="notdefault"):
     scene monaofficegame
     python:
         diff_items = []
-        diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 183,715,282,175))
+        #diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 183,715,282,175))
+        diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 534,634,278,185))
         diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 534,634,278,185))
         diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 1284,526,258,203))
     if gameimage == "default":
