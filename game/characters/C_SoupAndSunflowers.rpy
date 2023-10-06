@@ -369,7 +369,8 @@ label .beat4:
                         so "I should be grateful I'm still here. But I'm still pissed you pulled the rug out from under me. I won't forget that."
                 if SunflowersWant == SoupOutcome:
                     su "You did just fine, [pc_name]. I'm glad we could talk. Good luck with the museum!"
-                if SunflowersWant == SoupOutcome:
+                if SunflowersWant != SoupOutcome:
+                    #check
                     su "I'm just surprised you chose Soup's wishes over mine, [pc_name]. I hope it was the right choice. So long."
                 "You leave the painting feeling conflicted, but you're pretty sure the vibes are better than before. So that's something."
         jump SSEnding

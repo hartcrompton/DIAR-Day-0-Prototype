@@ -82,41 +82,41 @@ screen ResearchMinigameUI():
     modal renpy.get_screen("wait_for_user") # if you don't need modal, omit this line
     sensitive renpy.get_screen("wait_for_user")
     imagemap:
-        ground "images/minigame/research/ResearchBg1.jpg"
-        hover "images/minigame/research/ResearchBg1Hover.jpg"
+        ground "images/minigame/research/research catalogue base.jpg"
+        hover "images/minigame/research/research catalogue hover.jpg"
 
         #clicking one should call the drawer screen with the appropriate letter
-        hotspot (393, 81, 228, 137) action Call("ResearchMinigameDrawer", "A") #call up the appropriate second screen
-        hotspot (621, 81, 228, 137) action Call("ResearchMinigameDrawer", "B") #call up the appropriate second screen
-        hotspot (848, 81, 228, 137) action Call("ResearchMinigameDrawer", "C")#call up the appropriate second screen
-        hotspot (1076, 81, 228, 137) action Call("ResearchMinigameDrawer", "D")#call up the appropriate second screen
-        hotspot (1304, 81, 228, 137) action Call("ResearchMinigameDrawer", "E")#call up the appropriate second screen
+        hotspot (294,66,261,157) action Call("ResearchMinigameDrawer", "A") #call up the appropriate second screen
+        hotspot (294,224,261,157) action Call("ResearchMinigameDrawer", "B") #call up the appropriate second screen
+        hotspot (294,384,261,157) action Call("ResearchMinigameDrawer", "C")#call up the appropriate second screen
+        hotspot (294,540,261,157) action Call("ResearchMinigameDrawer", "D")#call up the appropriate second screen
+        hotspot (294,699,261,157) action Call("ResearchMinigameDrawer", "E")#call up the appropriate second screen
 
-        hotspot (393, 218, 228, 137) action Call("ResearchMinigameDrawer", "F")#call up the appropriate second screen
-        hotspot (621, 218, 228, 137) action Call("ResearchMinigameDrawer", "G")#call up the appropriate second screen
-        hotspot (848, 218, 228, 137) action Call("ResearchMinigameDrawer", "H")#call up the appropriate second screen
-        hotspot (1076, 218, 228, 137) action Call("ResearchMinigameDrawer", "I")#call up the appropriate second screen
-        hotspot (1304, 218, 228, 137) action Call("ResearchMinigameDrawer", "J")#call up the appropriate second screen
+        hotspot (572,66,261,157) action Call("ResearchMinigameDrawer", "F")#call up the appropriate second screen
+        hotspot (572,224,261,157) action Call("ResearchMinigameDrawer", "G")#call up the appropriate second screen
+        hotspot (572,384,261,157) action Call("ResearchMinigameDrawer", "H")#call up the appropriate second screen
+        hotspot (572,540,261,157) action Call("ResearchMinigameDrawer", "I")#call up the appropriate second screen
+        hotspot (572,699,261,157) action Call("ResearchMinigameDrawer", "J")#call up the appropriate second screen
 
-        hotspot (393, 354, 228, 137) action Return("DrawerStuck") #call up the appropriate second screen K
-        hotspot (621, 354, 228, 137) action Call("ResearchMinigameDrawer", "L")#call up the appropriate second screen
-        hotspot (848, 354, 228, 137) action Call("ResearchMinigameDrawer", "M")#call up the appropriate second screen
-        hotspot (1076, 354, 228, 137) action Call("ResearchMinigameDrawer", "N")#call up the appropriate second screen
-        hotspot (1304, 354, 228, 137) action Call("ResearchMinigameDrawer", "O")#call up the appropriate second screen
+        hotspot (848,66,261,157) action Return("DrawerStuck") #call up the appropriate second screen K
+        hotspot (848,224,261,157) action Call("ResearchMinigameDrawer", "L")#call up the appropriate second screen
+        hotspot (848,384,261,157) action Call("ResearchMinigameDrawer", "M")#call up the appropriate second screen
+        hotspot (848,540,261,157) action Call("ResearchMinigameDrawer", "N")#call up the appropriate second screen
+        hotspot (848,699,261,157) action Call("ResearchMinigameDrawer", "O")#call up the appropriate second screen
 
-        hotspot (393, 491, 228, 137) action Call("ResearchMinigameDrawer", "P")#call up the appropriate second screen
-        hotspot (621, 491, 228, 137) action Call("ResearchMinigameDrawer", "Q")#call up the appropriate second screen
-        hotspot (848, 491, 228, 137) action Call("ResearchMinigameDrawer", "R")#call up the appropriate second screen
-        hotspot (1076, 491, 228, 137) action Call("ResearchMinigameDrawer", "S")#call up the appropriate second screen
-        hotspot (1304, 491, 228, 137) action Call("ResearchMinigameDrawer", "T")#call up the appropriate second screen
+        hotspot (1123,66,261,157) action Call("ResearchMinigameDrawer", "P")#call up the appropriate second screen
+        hotspot (1123,224,261,157) action Call("ResearchMinigameDrawer", "Q")#call up the appropriate second screen
+        hotspot (1123,384,261,157) action Call("ResearchMinigameDrawer", "R")#call up the appropriate second screen
+        hotspot (1123,540,261,157) action Call("ResearchMinigameDrawer", "S")#call up the appropriate second screen
+        hotspot (1123,699,261,157) action Call("ResearchMinigameDrawer", "T")#call up the appropriate second screen
 
-        hotspot (393, 628, 228, 137) action Call("ResearchMinigameDrawer", "U")#call up the appropriate second screen
-        hotspot (621, 628, 228, 137) action Call("ResearchMinigameDrawer", "V")#call up the appropriate second screen
-        hotspot (848, 628, 228, 137) action Call("ResearchMinigameDrawer", "W")#call up the appropriate second screen
-        hotspot (1076, 628, 228, 137) action Call("ResearchMinigameDrawer", "X")#call up the appropriate second screen
-        hotspot (1304, 628, 228, 137) action Call("ResearchMinigameDrawer", "Y")#call up the appropriate second screen
+        hotspot (1399,66,261,157) action Call("ResearchMinigameDrawer", "U")#call up the appropriate second screen
+        hotspot (1399,224,261,157) action Call("ResearchMinigameDrawer", "V")#call up the appropriate second screen
+        hotspot (1399,384,261,157) action Call("ResearchMinigameDrawer", "W")#call up the appropriate second screen
+        hotspot (1399,540,261,157) action Call("ResearchMinigameDrawer", "X")#call up the appropriate second screen
+        hotspot (1399,699,261,157) action Call("ResearchMinigameDrawer", "Y")#call up the appropriate second screen
 
-        hotspot (848, 764, 228, 137) action Call("ResearchMinigameDrawer", "Z")#call up the appropriate second screen
+        hotspot (848,857,261,157) action Call("ResearchMinigameDrawer", "Z")#call up the appropriate second screen
 
 
 label ResearchMinigameDrawer(ResearchLetter="Default"):
