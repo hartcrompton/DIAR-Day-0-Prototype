@@ -12,10 +12,11 @@ default ClosedLine_p = 0
 label final_exhibit:
     meta "It's the final exhibit today!"
     call CalculateOutcome
-    if ExhibitOutcome == 1:
-        jump MuseumSaved
-    if ExhibitOutcome == 0:
-        jump MuseumClosed
+    jump AllOutcomes
+    #if ExhibitOutcome == 1:
+    #    jump MuseumSaved
+    #if ExhibitOutcome == 0:
+    #    jump MuseumClosed
     #call TotalDisposition
     #meta "Current disposition is: [d_Total]"
     #if d_Total >= 0:
@@ -63,6 +64,10 @@ label MuseumSaved:
 
 label AllOutcomes:
     scene AllEndings
+    if ExhibitOutcome == 1:
+        "You did it, the Grand Gala was a success."
+    if ExhibitOutcome == 0:
+        "In spite of your best efforts, the museum closed."
     call conv_Arnolfini.Outcome
     call conv_Davids.Outcome
     call conv_Gilgamesh.Outcome

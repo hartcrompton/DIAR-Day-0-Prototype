@@ -6,8 +6,9 @@ default Card5Title = "Gator"
 default CardTitleVisible = 1
 default CardHovered = 0
 default TempCharacter = "None"
-image card1 = "images/minigame/research/test/card1.png"
-image drawerfront = "images/minigame/research/test/drawerfront.png"
+default ActiveCharacter = "None"
+image card1 = "images/minigame/research/catalogue card.png"
+image drawerfront = "images/minigame/research/research drawer front.png"
 
 init python:
     renpy.add_layer("middle", above="master")
@@ -40,7 +41,9 @@ label call_inventory():
     show layer middle at reset
     jump .repeat
 
-label call_catalogue():
+label call_catalogue(ResearchCharacter="Default"):
+    if ResearchCharacter != "Default":
+        $ ActiveCharacter = ResearchCharacter
     label .repeat:
     show screen ResearchMinigameUI()
     call screen wait_for_user()
@@ -69,10 +72,10 @@ transform CardDown:
 transform CardFirst:
     yoffset 645
 
-label ResearchMinigame(ResearchCharacter="Default"):
+#label ResearchMinigame(ResearchCharacter="Default"):
     #jump ResearchTransition
-    $ TempCharacter = ResearchCharacter
-    jump ResearchTransition
+ #   $ TempCharacter = ResearchCharacter
+  #  jump ResearchTransition
 
 label ResearchTransition:
     call screen ResearchMinigameUI
@@ -159,14 +162,14 @@ screen ResearchMinigameDrawerUI:
         #CardTitle1 = "A5" etc
     
     imagemap:
-        ground "images/minigame/research/test/drawerbghover.jpg"
+        ground "images/minigame/research/research drawer base.jpg"
         #hover "images/minigame/research/ResearchBg2Hover.jpg"
 
         #cards
         hotspot (467, 588, 989, 124) action [NullAction()] hovered [SetVariable("CardHovered", 1)] unhovered [SetVariable("CardHovered", 0)]
         hotspot (507, 515, 906, 69) action [NullAction()] hovered [SetVariable("CardHovered", 2)] unhovered [SetVariable("CardHovered", 0)] 
-        hotspot (548, 442, 823, 73) action [NullAction()] hovered [SetVariable("CardHovered", 3)] unhovered [SetVariable("CardHovered", 0)]
-        hotspot (588, 369, 740, 73) action [NullAction()] hovered [SetVariable("CardHovered", 4)] unhovered [SetVariable("CardHovered", 0)]
+        hotspot (548, 442, 823, 73) action [If(ActiveCharacter=="Gilgamesh", If(ResearchLetter=="G", Jump("GilgameshResearch"), NullAction()), NullAction())] hovered [SetVariable("CardHovered", 3)] unhovered [SetVariable("CardHovered", 0)]
+        hotspot (588, 369, 740, 73) action [If(ActiveCharacter=="Davids", If(ResearchLetter=="D", Jump("DavidsResearch"), NullAction()), NullAction())] hovered [SetVariable("CardHovered", 4)] unhovered [SetVariable("CardHovered", 0)]
         hotspot (628, 293, 658, 73) action [NullAction()] hovered [SetVariable("CardHovered", 5)] unhovered [SetVariable("CardHovered", 0)]
     imagebutton:
         xpos 100
@@ -178,7 +181,7 @@ screen ResearchMinigameDrawerUI:
     frame:
         xalign 0
         yalign 0
-        xoffset 352
+        xoffset 345
         yoffset 0
         background None
         xminimum 1214
@@ -189,10 +192,11 @@ screen ResearchMinigameDrawerUI:
         vbox:
                 xalign 0.5
                 yalign 0
-                yoffset 345
+                yoffset 325
+                #xoffset -7
                 add "card1":
                     yoffset 0
-                    zoom .68
+                    zoom .76
                     if CardHovered == 5:
                         at transform:
                             CardUp
@@ -202,7 +206,7 @@ screen ResearchMinigameDrawerUI:
                 text "{color=#000000}[Card5Title]{/color}":
                     size 40
                     xalign .5
-                    yoffset -390
+                    yoffset -345
                     if CardHovered == 5:
                         at transform:
                             CardUp
@@ -212,10 +216,10 @@ screen ResearchMinigameDrawerUI:
         vbox:
                 xalign 0.5
                 yalign 0
-                yoffset 419
+                yoffset 399
                 add "card1":
                     yoffset 0
-                    zoom .76
+                    zoom .82
                     if CardHovered == 4:
                         at transform:
                             CardUp
@@ -225,7 +229,7 @@ screen ResearchMinigameDrawerUI:
                 text "{color=#000000}[Card4Title]{/color}":
                     size 40
                     xalign .5
-                    yoffset -435
+                    yoffset -380
                     if CardHovered == 4:
                         at transform:
                             CardUp
@@ -235,10 +239,10 @@ screen ResearchMinigameDrawerUI:
         vbox:
                 xalign 0.5
                 yalign 0
-                yoffset 492
+                yoffset 464
                 add "card1":
                     yoffset 0
-                    zoom .84
+                    zoom .88
                     if CardHovered == 3:
                         at transform:
                             CardUp
@@ -248,7 +252,7 @@ screen ResearchMinigameDrawerUI:
                 text "{color=#000000}[Card3Title]{/color}":
                     size 40
                     xalign .5
-                    yoffset -485
+                    yoffset -405
                     if CardHovered == 3:
                         at transform:
                             CardUp
@@ -258,10 +262,10 @@ screen ResearchMinigameDrawerUI:
         vbox:
                 xalign 0.5
                 yalign 0
-                yoffset 565
+                yoffset 537
                 add "card1":
                     yoffset 0
-                    zoom .92
+                    zoom .94
                     if CardHovered == 2:
                         at transform:
                             CardUp
@@ -271,7 +275,7 @@ screen ResearchMinigameDrawerUI:
                 text "{color=#000000}[Card2Title]{/color}":
                     size 40
                     xalign .5
-                    yoffset -530
+                    yoffset -435
                     if CardHovered == 2:
                         at transform:
                             CardUp
@@ -281,7 +285,8 @@ screen ResearchMinigameDrawerUI:
         vbox:
                 xalign 0.5
                 yalign 0
-                yoffset 638
+                yoffset 610
+                #xoffset -7
                 add "card1":
                     yoffset 0
                     if CardHovered == 1:
@@ -293,18 +298,25 @@ screen ResearchMinigameDrawerUI:
                 text "{color=#000000}[Card1Title]{/color}":
                     size 40
                     xalign .5
-                    yoffset -575
+                    yoffset -470
                     if CardHovered == 1:
                         at transform:
                             CardUp
                     else:
                         at transform:
                             CardDown
-        hbox:
-            xalign 0.5
-            yalign 0.85
-            text "{color=#000000}[ResearchLetter]{/color}" size 80
-    add "drawerfront"
+        vbox:
+            #xalign 0.5
+            #yalign 0.85
+            xoffset -350
+            add "drawerfront":
+                xalign 0
+                yalign 0
+            text "{color=#000000}[ResearchLetter]{/color}":
+                size 80
+                xalign .5
+                yoffset -300
+    
     
         
 

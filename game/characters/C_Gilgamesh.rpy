@@ -11,7 +11,7 @@ default UrukChoice = 0
 default BeastChoice = 0
 default SongTheme = "NONE"
 
-label conv_Gilgamesh:
+label conv_Gilgamesh: 
     if beat_Gilgamesh != 3:
         scene antiquities bg:
             blur 5
@@ -158,15 +158,20 @@ label .beat1:
     e "One last thing."
     e "Don't talk about Enkidu."
     e "Gilgamesh is already irritating enough, I'd prefer to leave him in blissful ignorance."
-    "Archive minigame"
-    "Player learns That Gil was KING of URUK"
-    "He was a real pain in the ass until ENKIDU showed up and beat him in a fight"
-    "They became best friends / lovers"
-    "ISHTAR sent the BULL OF HEAVEN to humble them. Gil killed it, which pissed her off even more."
-    "ISHTAR killed ENKIDU"
-    "GIl went kinda CRAZY and fought to the END OF THE WORLD to find IMMORTALITY"
-    "Long story short, HE DIDN'T. But he returned to URUK and found PEACE."
-    "ALSO: Something about Ea-nasir having a past scamming people with shoddy copper"
+    call call_catalogue("Gilgamesh")
+    label GilgameshResearch:
+        scene archives bg
+        hide screen ResearchMinigameDrawerUI
+        hide screen ResearchMinigameUI
+        "Archive minigame"
+        "Player learns That Gil was KING of URUK"
+        "He was a real pain in the ass until ENKIDU showed up and beat him in a fight"
+        "They became best friends / lovers"
+        "ISHTAR sent the BULL OF HEAVEN to humble them. Gil killed it, which pissed her off even more."
+        "ISHTAR killed ENKIDU"
+        "GIl went kinda CRAZY and fought to the END OF THE WORLD to find IMMORTALITY"
+        "Long story short, HE DIDN'T. But he returned to URUK and found PEACE."
+        "ALSO: Something about Ea-nasir having a past scamming people with shoddy copper"
     $ beat_Gilgamesh += 1
     jump FreeRoam
 label .beat2:

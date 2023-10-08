@@ -11,15 +11,15 @@ default InfiniteActions = 0
 
 #the different times of day are just recolored versions of the same background
 image museum_morning:
-    "images/rooms/museum bg1.jpg"
+    "images/rooms/foyer bg.jpg"
     matrixcolor TintMatrix("#ede493")
 image museum_day:
-    "images/rooms/museum bg1.jpg"
+    "images/rooms/foyer bg.jpg"
 image museum_evening:
-    "images/rooms/museum bg1.jpg"
+    "images/rooms/foyer bg.jpg"
     matrixcolor TintMatrix("#c27f02")
 image museum_night:
-    "images/rooms/museum bg1.jpg"
+    "images/rooms/foyer bg.jpg"
     matrixcolor TintMatrix("#546280")
 
 #this image automatically changes appearance based on actions

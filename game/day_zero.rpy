@@ -8,6 +8,12 @@ label GameIntroduction:
     "Hiring Manager" "Yours, unfortunately, does not begin with us."
     "So, the interview hadn't gone {i}great{/i}."
     "And your day didn't improve when you missed your bus and the rain chased you into this forlorn museum."
+    "It feels wrong not to at least sign the guest log."
+    python:
+        pc_name = renpy.input("What is your name?", length=32) #length is maximum length of the string
+        pc_name = pc_name.strip()
+        if not pc_name:
+            pc_name = "Player"    
 
     scene foyer bg with fade
     "No job."
@@ -74,10 +80,18 @@ label DayZero:
 
     show admin at truecenter
     ad "Charles! Where were you?"
+    menu:
+        "Who?":
+            pass
+        "I think you have the wrong person--":
+            pass
     ad "We need to reprint the brochures. They should not say \"Nickelodeon's\" David."
-    "Hold on-"
     ad "Then I need you to get down in the archives and chase the raccoons out again."
-    "I don't think-"
+    menu:
+        "What do you mean, \"again\"?":
+            pass
+        "Why are there raccoons?":
+            pass
     ad "And start putting some names in the visitor log, it doesn't look good to have it empty."
     menu:
         ad "Do you have all that?"
@@ -146,9 +160,9 @@ label PlayerNameInput:
     show admin at truecenter
     hide admin
     "There is a clunk as the receiver is set down."
-    "A moment later, the same voice answers the phone."
     show admin at truecenter
     ad "Retention and Recruitment, am I speaking with {0}Mr.{/0}{1}Ms.{/1}{2}Mx.{/2} [pc_name]?"
+    "It is clearly the same person as before."
     menu:
         "Who else?":
             ad "Wonderful, I've heard great things from the head office so I'm going to fast track you."
@@ -327,7 +341,7 @@ label MuseumTour:
     #ad "Sunflowers was in the Fine Art wing with the other Van Gogh, until..."
     ad "We've got a couple of Van Goghs in our collection. This one was purchased at a generous discount!"
     su "Say, there’s a new face!"
-    so "Why are they wasting time wandering around a stupid museum? THE PLANET IS ON FIRE!"
+    so "Why {0}is{/0}{1}is{/1}{2}are{2} [they] wasting time wandering around a stupid museum? THE PLANET IS ON FIRE!"
     su "I hope they know a good cleaning service…"
     hide soupandsunflowers
     show saintcatherine at truecenter
@@ -336,7 +350,7 @@ label MuseumTour:
     st "Who am I?"
     st "Please... I know you can't hear me, but I'm here."
     pc "Is she alright?"
-    ad "Who? Nevermind, one more stop."
+    ad "Who? Pay attention, one more stop."
 
     scene office bg with fade:
         blur 5
@@ -422,7 +436,7 @@ label VendingQuestions:
             $ VendingGala = 1
             jump VendingQuestions
         "What happened to the last curator?" if VendingCurator != 1:
-            v "Dude was a bit of a hodad tee-bee-haitch."
+            v "Dude was a bit of a hodad TBH."
             v "Had all these ideas about lighting, layout, merch."
             v "No {i}soul{/i}. Couldn't {i}listen{/i} to the art."
             v "One too many glares from Mona and he called it quits."

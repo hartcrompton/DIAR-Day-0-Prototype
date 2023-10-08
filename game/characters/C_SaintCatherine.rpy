@@ -8,6 +8,12 @@ default st_plastic = 0
 # 0 is Saint, 1 is Human
 default SaintPersonality = 0
 default SaintHumanChoice = "NONE"
+#figure out the timing and flags for this
+image SaintPortrait = ConditionSwitch(
+    "SoupOutcome == 'Remain'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png",
+    "SoupOutcome == 'Erase'", "images/Characters/SoupAndSunflowers/sunflowersonly.jpg",
+    "SoupOutcome == 'Detach'", "images/Characters/SoupAndSunflowers/soupandsunflowersdetached.png",
+    "SoupOutcome == 'NONE'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png")
 
 label conv_SaintCatherine:
     scene saintbackground

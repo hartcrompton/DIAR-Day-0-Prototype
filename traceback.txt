@@ -1,17 +1,19 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 After initialization, but before game start.
-  File "game/minigames/research.rpy", line 80, in prepare_screen
-    screen ResearchMinigameUI():
-  File "game/minigames/research.rpy", line 80, in prepare
-    screen ResearchMinigameUI():
-  File "game/minigames/research.rpy", line 84, in prepare
-    imagemap:
-  File "game/minigames/research.rpy", line 84, in prepare
-    imagemap:
-  File "game/minigames/research.rpy", line 101, in prepare
-    hotspot (,66,261,157) action Return("DrawerStuck") #call up the appropriate second screen K
-SyntaxError: invalid syntax (game/minigames/research.rpy, line 101)
+  File "game/minigames/research.rpy", line 154, in prepare_screen
+    screen ResearchMinigameDrawerUI:
+  File "game/minigames/research.rpy", line 154, in prepare
+    screen ResearchMinigameDrawerUI:
+  File "game/minigames/research.rpy", line 181, in prepare
+    frame:
+  File "game/minigames/research.rpy", line 181, in prepare
+    frame:
+  File "game/minigames/research.rpy", line 192, in prepare
+    vbox:
+  File "game/minigames/research.rpy", line 192, in prepare
+    vbox:
+SyntaxError: unexpected EOF while parsing (game/minigames/research.rpy, line 195)
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -24,16 +26,18 @@ Full traceback:
     renpy.display.screen.prepare_screens()
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 1003, in prepare_screens
     s.ast.prepare_screen()
-  File "game/minigames/research.rpy", line 80, in prepare_screen
-    screen ResearchMinigameUI():
-  File "game/minigames/research.rpy", line 80, in prepare
-    screen ResearchMinigameUI():
-  File "game/minigames/research.rpy", line 84, in prepare
-    imagemap:
-  File "game/minigames/research.rpy", line 84, in prepare
-    imagemap:
-  File "game/minigames/research.rpy", line 101, in prepare
-    hotspot (,66,261,157) action Return("DrawerStuck") #call up the appropriate second screen K
+  File "game/minigames/research.rpy", line 154, in prepare_screen
+    screen ResearchMinigameDrawerUI:
+  File "game/minigames/research.rpy", line 154, in prepare
+    screen ResearchMinigameDrawerUI:
+  File "game/minigames/research.rpy", line 181, in prepare
+    frame:
+  File "game/minigames/research.rpy", line 181, in prepare
+    frame:
+  File "game/minigames/research.rpy", line 192, in prepare
+    vbox:
+  File "game/minigames/research.rpy", line 192, in prepare
+    vbox:
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\py3analysis.py", line 808, in ast_eval
     return self.ast_eval_literal(expr)[0]
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\py3analysis.py", line 790, in ast_eval_literal
@@ -44,9 +48,9 @@ Full traceback:
     raise orig_e
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1027, in py_compile
     tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/minigames/research.rpy, line 101)
+SyntaxError: unexpected EOF while parsing (game/minigames/research.rpy, line 195)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Thu Oct  5 17:48:35 2023
+Sun Oct  8 00:38:32 2023

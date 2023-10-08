@@ -217,6 +217,12 @@ label .beat3:
                 "research minigame in the archive"
                 $ BibleResearched = 1
                 #minigame go here
+                call call_catalogue("Davids")
+                label DavidsResearch:
+                    scene archives bg
+                    hide screen ResearchMinigameDrawerUI
+                    hide screen ResearchMinigameUI
+                    "The player reads the relevant Bible passage."
     #######
     $ beat_Davids += 1
     jump FreeRoam

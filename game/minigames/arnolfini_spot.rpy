@@ -33,7 +33,7 @@ init python:
             
             self.the_score = 0
             self.end_start = None
-            self.end_delay = 0
+            self.end_delay = 3
             # The winner.
             self.winner = False
             
@@ -54,7 +54,7 @@ init python:
             self.width = self.width * zoomfactor
             self.height = self.height * zoomfactor
             # Offsets to center the images -H
-            self.x_offset = 0
+            self.x_offset = 960 - (self.width / 2)
             self.y_offset = (height/2 - self.height/2)
 
             # Create the render we will return.
@@ -235,30 +235,59 @@ label TestArnolfiniLines():
 
 
 label minigamestart_arnolfini(gameimage="notdefault"):
-    python:
-        diff_items = []
-        diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniSpot1Overlay.jpg", 596,498,106,118))
-        diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniSpot1Overlay.jpg", 1210,409,122,126))
-    if gameimage == "default":
-        return
-    python:
-        #time and score may not really be relevant to us -H
-        starttime = renpy.time.time()
-        the_score = 0
-        renpy.block_rollback()
-        #we need to be able to input an argument here
-        difference_image = ArnolfiniSpot("images/minigame/Arnolfini/ArnolfiniSpot1Base.jpg", diff_items)
-        difference_image.randomizeItems(2)
-        #TempCleaningBackground = difference_image
-        ui.add(difference_image)
-        #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
-        winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
-        winner = difference_image.the_score
-        elapsed = round(renpy.time.time() - starttime)
-        the_score += winner
-        renpy.block_rollback()
+    if gameimage == 1:
+        python:
+            diff_items = []
+            diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniSpot1Overlay.jpg", 596,498,106,118))
+            diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniSpot1Overlay.jpg", 1210,409,122,126))
+        if gameimage == "default":
+            return
+        python:
+            #time and score may not really be relevant to us -H
+            starttime = renpy.time.time()
+            the_score = 0
+            renpy.block_rollback()
+            #we need to be able to input an argument here
+            difference_image = ArnolfiniSpot("images/minigame/Arnolfini/ArnolfiniSpot1Base.jpg", diff_items)
+            difference_image.randomizeItems(2)
+            #TempCleaningBackground = difference_image
+            ui.add(difference_image)
+            #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
+            winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
+            winner = difference_image.the_score
+            elapsed = round(renpy.time.time() - starttime)
+            the_score += winner
+            renpy.block_rollback()
 
-    if (difference_image.count_differences() == 0):
-        $ timebonus = int(100 * max((1.0 - ((elapsed - 20.0)/40.0)),0.0))
-        $ the_score += timebonus
-    return
+        if (difference_image.count_differences() == 0):
+            $ timebonus = int(100 * max((1.0 - ((elapsed - 20.0)/40.0)),0.0))
+            $ the_score += timebonus
+        return
+    if gameimage == 2:
+        python:
+            diff_items = []
+            diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniGame2Overlay.jpg", 69,151,210,450))
+            diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniGame2Overlay.jpg", 443,148,193,264))
+        if gameimage == "default":
+            return
+        python:
+            #time and score may not really be relevant to us -H
+            starttime = renpy.time.time()
+            the_score = 0
+            renpy.block_rollback()
+            #we need to be able to input an argument here
+            difference_image = ArnolfiniSpot("images/minigame/Arnolfini/ArnolfiniGame2Base.jpg", diff_items)
+            difference_image.randomizeItems(2)
+            #TempCleaningBackground = difference_image
+            ui.add(difference_image)
+            #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
+            winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
+            winner = difference_image.the_score
+            elapsed = round(renpy.time.time() - starttime)
+            the_score += winner
+            renpy.block_rollback()
+
+        if (difference_image.count_differences() == 0):
+            $ timebonus = int(100 * max((1.0 - ((elapsed - 20.0)/40.0)),0.0))
+            $ the_score += timebonus
+        return

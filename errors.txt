@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Gilgamesh.rpy", line 26: expected 'simple_expression' not found.
-    show admin at 
-                  ^
+File "game/characters/C_Gilgamesh.rpy", line 55: reached end of line when expecting ':'.
+    if 
+       ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Thu Oct  5 15:21:13 2023
+Sun Oct  8 00:35:11 2023

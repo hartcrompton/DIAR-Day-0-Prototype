@@ -120,6 +120,7 @@ init python:
                 #add a background image to the line here
                 #use the blit function to render some sort of text bubble or whatever at the same coordinates (or I guess offset)
                 render.blit(score_img,(self.score_bubble.x,self.score_bubble.y))
+                render.blit(score_img,(5,5))
                 if (self.score_bubble.st  > self.score_bubble.duration):
                     self.score_bubble = None
             

@@ -79,13 +79,18 @@ init python:
             if (self.score_bubble):
                 if (self.score_bubble.start == None) :
                     self.score_bubble.start = st
-                self.score_bubble.st = st-self.score_bubble.start
+                self.score_bubble.st = st-self.score_bubble.start - 1
                 myalpha = max(1.0 - self.score_bubble.st / self.score_bubble.duration, 0.0)
                 #self.score_bubble.y -= self.score_bubble.st/2
                 
                 score_bubble_img = Transform(child=self.score_bubble.myimage, alpha=myalpha)
+                textbox_img = Transform(text_overlay, alpha=myalpha)
                 score_img = renpy.render(score_bubble_img, width, height,  st, at)
-                render.blit(score_img,(self.score_bubble.x,self.score_bubble.y))
+                #render.blit(score_img,(self.score_bubble.x,self.score_bubble.y))
+                #text_overlay = TextRender("images/minigame/corgi/textbox_minigame.png")
+                textbox_overlay = renpy.render(textbox_img, width, height,  st, at)
+                render.blit(textbox_overlay, (0,0))
+                render.blit(score_img,(400,900))
                 if (self.score_bubble.st  > self.score_bubble.duration):
                     self.score_bubble = None
             
@@ -179,6 +184,60 @@ init python:
                 #i.right = not i.left
                 iterations += 1
     
+    class TextRender(renpy.Displayable):
+
+        def __init__(self, child, **kwargs):
+
+            # Pass additional properties on to the renpy.Displayable
+            # constructor.
+            super(TextRender, self).__init__(**kwargs)
+
+            self.child = renpy.displayable(child)
+
+            # The width and height of us, and our child.
+            #I think this just resets the values between each run -H
+            self.width = 0
+            self.height = 0
+            self.width_offset = 0
+            self.height_offset = 0
+            
+            #gap between images -H
+            self.gutter = 5
+            
+            self.the_score = 0
+            self.end_start = None
+            self.end_delay = 3
+            # The winner.
+            self.winner = False
+            
+            
+            #self.score_bubble = None
+
+        def render(self, width, height, st, at):
+
+            # Create a render from the child.
+            # Render is the thing to be drawn, Blit is the function that actually draws it -H
+            child_render = renpy.render(self.child, width, height, st, at)
+            
+            # Gets the size of the render from the input image -H
+            self.width, self.height = child_render.get_size()
+            # zoomfactor is used here to adjust the scale of the images, trickles down to anything else using these values -H
+            self.width = self.width * zoomfactor
+            self.height = self.height * zoomfactor
+            # Offsets to center the images -H
+            self.x_offset = 960 - (self.width / 2)
+            self.y_offset = (height/2 - self.height/2)
+
+            # Create the render we will return.
+            render = renpy.Render(self.width, self.height)
+            render.zoom(zoomfactor,zoomfactor)
+
+            # Blit (draw) the child's render to our render.
+            #These draw the two background images, left and right -H
+            render.blit(child_render, (0, 790))
+            #render.blit(child_render, (self.width+self.gutter + self.x_offset, 0 + self.y_offset))
+            return render
+
     #final image that displays after game ends -H
     class afterImage(renpy.Displayable):
         def __init__(self, child, diff_items, **kwargs):
@@ -256,8 +315,10 @@ label minigamestart_cleaning_corgi(gameimage="notdefault"):
         #we need to be able to input an argument here
         difference_image = MinigameCleaningCorgi("images/minigame/cleaning/cleaning_ph.png", diff_items)
         difference_image.randomizeItems(5)
+        text_overlay = TextRender("images/minigame/corgi/textbox_minigame.png")
         #TempCleaningBackground = difference_image
         ui.add(difference_image)
+        #ui.add(text_overlay)
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
         winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
         winner = difference_image.the_score
