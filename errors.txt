@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Nighthawks.rpy", line 84: if statement expects a non-empty block.
-    if ar_b4_c2 == "a":
-                       ^
+File "game/characters/C_MonaLisa.rpy", line 166: end of line expected.
+    m "The first time I was "stolen" the press found out and I was sent back to the Louvre. "
+                             ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Oct 10 23:51:50 2023
+Wed Oct 11 13:34:43 2023

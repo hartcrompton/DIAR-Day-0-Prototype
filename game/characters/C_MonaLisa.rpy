@@ -163,7 +163,7 @@ label .beat2:
         "Shipping error. Clever.":
             m "My options are limited when I can't move."
             pass
-    m "The first time I was "stolen" the press found out and I was sent back to the Louvre. "
+    m "The first time I was \"stolen\" the press found out and I was sent back to the Louvre. "
     m "From gift shops, I hear other artworks; but from the news, I can see into people's homes."
     menu:
         "You see out from the TV? Creepy.":
@@ -307,7 +307,7 @@ label .beat4:
                     m "Heist and scandal. Clever, {i}{0}bambino{/0}{1}bambina{/1}{2}bambinə{/2}{/i}. I knew I saw a little Peruggia in you. Don't break the deal like he did."
                 "Let me reconsider.":
                     jump MonaOutcomeChoice
-   m "This will be easy. Let's make it happen."
+    m "This will be easy. Let's make it happen."
     pc "One last question before I set it up…"
     pc "How did you avoid getting in trouble after the theft?"
     m "{i}{0}bambino{/0}{1}bambina{/1}{2}bambinə{/2}{/i}…Isn't it obvious?"

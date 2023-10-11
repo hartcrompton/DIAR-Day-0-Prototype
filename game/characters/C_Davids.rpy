@@ -117,8 +117,10 @@ label .beat2:
     dd "The shephard boy who combined bravery and skill."
     db "… The one who slew Goliath."
     menu:
-        "Ok so you were a kid soldier… or something?"
-        "So you're an important king from the Bible."
+        "Ok so you were a kid soldier… or something?":
+            pass
+        "So you're an important king from the Bible.":
+            pass
     dm "Not only the Bible. From history. Important texts contain the stories of important people."
     dd "Yes! David was brave from childhood, and an important king!"
     menu:
@@ -301,16 +303,16 @@ label .beat4:
 
     label DavidsIntact:
         d "Well well, look who it is!"
-    dm "Here to administer your final judgement, I see."
-    dd "Can't believe you can memorize a whole book, let alone the good book itself."
-    db "That's no mean feat, kid. Impressive stuff."
-    pc "Yeah… erm… well…"
-    dm "Once you settle this once and for all, this museum can claim to house the definitive David. "
-    dm "I can't wait to see how impressed museum goers will be with me."
-    dd "Puh-leeee-sssuhh! [pc_name] is going to be choosing me anyways. "
-    db "Nobody in their right mind will choose either of you two. This is a hero's exhibit, not Biblical cosplaying."
-    d "So, using that memory of yours, who's it going to be? Who's the definitive David?"
-    pc "From what I remember of the Bible, the definitive David is…"
+        dm "Here to administer your final judgement, I see."
+        dd "Can't believe you can memorize a whole book, let alone the good book itself."
+        db "That's no mean feat, kid. Impressive stuff."
+        pc "Yeah… erm… well…"
+        dm "Once you settle this once and for all, this museum can claim to house the definitive David. "
+        dm "I can't wait to see how impressed museum goers will be with me."
+        dd "Puh-leeee-sssuhh! [pc_name] is going to be choosing me anyways. "
+        db "Nobody in their right mind will choose either of you two. This is a hero's exhibit, not Biblical cosplaying."
+        d "So, using that memory of yours, who's it going to be? Who's the definitive David?"
+        pc "From what I remember of the Bible, the definitive David is…"
         menu:
             "Michelangelo's David.":
                 $ DefinitiveDave = "dm"

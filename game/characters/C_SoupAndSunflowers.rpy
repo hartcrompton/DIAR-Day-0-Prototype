@@ -11,6 +11,7 @@ default SunflowersWant = "NONE"
 default SoupWant = "NONE"
 default SoupOutcome = "NONE"
 default SSFakeCleanCount = 0
+default SSMerged = 0
 
 image ssportrait = ConditionSwitch(
     "SoupOutcome == 'Remain'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png",
@@ -299,6 +300,7 @@ label .beat4:
         "I'm going to leave you as you are. Because you're no longer two separate works of art - you're one brand new one." if MergeCounter >= 2:
             jump SSMerge
     label SSMerge:
+        $ SSMerged = 1
         su "We're… one work of art? "
         so "Yes… Not simply a stain raging against climate change."
         su "And not simply one still-life of flowers among many others…"
@@ -380,11 +382,35 @@ label .beat4:
         jump FreeRoam
 label .Outcome:
     if beat_SoupAndSunflowers == 5:
-        "Completed ending"
+        if SSMerge == 1:
+            "In a bold choice from the curator, Van Gogh’s {i}Sunflowers{/i} (F454) is on display with the soup stain not only present, but seemingly one with the art."
+            "Was the stain given a protective coating? Is it a recreation using paint oil? Or is the presentation a bold enough statement to be its own artistic choice?"
+            "Whatever the curator did, the piece feels bold and contemporary. The piece itself is in-your-face, yet inspiring in its shameless display."
+            "While the curator of course didn’t paint Sunflowers, nor did they toss the soup, the presentation of this bold statement is its own artistic choice."
+            "Vandalism has become art. And curator has become artist. How magnificent!"
+            return
+        elif SoupOutcome == "Detach":
+            "Intriguingly, Van Gogh’s {i}Sunflowers{/i} (F454) is on display with a new frame, yet the original soup-stained frame is displayed next to it."
+            "This implies comparable respect for Van Gogh and the environmental protestors–or their message, at least. A bold choice, to be sure!"
+        elif SoupOutcome == "Remain":
+            "Viewers were shocked to find Van Gogh’s {i}Sunflowers{/i} (F454) on display inside its still-stained frame–a clearly deliberate choice from the new curator."
+            "Is the display disrespectful to Van Gogh? Does it give undue legitimacy to the environmental protestors? One thing’s for sure–it’s got people talking!"
+        #neither happy
+        if ((SoupWant != SoupOutcome) and (SunflowersWant != SoupOutcome)):
+            "Yet the display feels {i}off{/i}. Discordant. Viewers were visibly repelled, and none could explain why. But the fault probably doesn’t lie with Van Gogh…"
+        #both happy
+        elif ((SoupWant == SoupOutcome) and (SunflowersWant == SoupOutcome)):
+            "Most are in agreement that the display just {i}feels{/i} right. Harmonious, even. The new curator rose to the challenge, and the museum is better for it."
+        else:
+            "Some disagreed with how the curator treated the vandalized piece. But perhaps a love it or hate it result was inevitable. You can’t please everyone!"
     elif beat_SoupAndSunflowers > 1:
-        "Unresolved ending"
+        "One gets the sense that the curator simply didn’t know what to do with the soup-stained painting of Van Gogh’s {i}Sunflowers{/i} (F454)."
+        "It must have been a deliberate choice to present the painting in its vandalized state. Except nothing about it {i}feels{/i} deliberate."
+        "Some audiences pitied the abandoned-looking display. Others were simply confused by its inclusion. But it got people talking, for better or worse…"
     else:
-        "No contact ending"
+        "There has been no change to Van Gogh’s {i}Sunflowers{/i} (F454), which climate activists vandalized with tomato soup more than a year ago. "
+        "Perhaps it never caught the curator’s eye. One can almost see dust coating the stained frame. "
+        "It feels forgotten. Forgettable. And the audience agreed, politely ignoring the unorthodox display despite the attention it drew to itself. "
     return
 
 
