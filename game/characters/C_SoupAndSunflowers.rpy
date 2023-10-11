@@ -425,8 +425,8 @@ screen SSFakeClean:
     sensitive renpy.get_screen("wait_SSFakeClean")
     imagemap:
         ground "images/rooms/mixedmedia bg.jpg"
-        if SSFakeCleanCount < 2:
-            hotspot (0, 0, 1920, 1080) action Return("SSFakeCleanDialogue") #call up the appropriate second screen K
+        #if SSFakeCleanCount < 2:
+        #    hotspot (0, 0, 1920, 1080) action Return("SSFakeCleanDialogue") #call up the appropriate second screen K
         if SSFakeCleanCount >= 2:
             hotspot (0, 0, 1920, 1080) action Return("exit") #call up the appropriate second screen K
     frame:
