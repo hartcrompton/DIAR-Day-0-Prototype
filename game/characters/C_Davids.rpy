@@ -3,6 +3,7 @@
 default beat_Davids = 1
 default BibleResearched = 0
 default DefinitiveDave = "NONE"
+default b2_DefinitiveDave = "NONE"
 
 label conv_Davids:
     scene davidsbg
@@ -140,14 +141,17 @@ label .beat2:
     pc "So after first introductions and impressions I'm feeling that the definitive David so far is"
     menu:
         "Michelangelo's David":
+            $ b2_DefinitiveDave = "Michelangelo's"
             dm "I knew it! You knew it. We all knew it."
             dd "Change your answer!"
             db "This can't be right."
-        "Donnatello's David":
+        "Donatello's David":
+            $ b2_DefinitiveDave = "Donatello's"
             dm "Oh no! Your vision is cloud and imagination dull!"
             dd "Let's goooooooo!"
             db "You can't be for real? The kid?"
         "Bernini's David":
+            $ b2_DefinitiveDave = "Bernini's"
             dm "Oh no, not him. Hardly any one knows him!"
             dd "That dude? He hasn't even slayed Goliath yet! Got no goodies to show for it."
             db "That a way there, newbie.  Now people can see what a hero is. "

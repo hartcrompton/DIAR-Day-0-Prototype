@@ -152,7 +152,11 @@ label OutOfActions:
             jump DayEnd
 
 label NighthawksDaily:
-    n "We'll say something about the player actions here."
+    show nighthawks at truecenter:
+        zoom .65
+        yoffset -125
+    call conv_Nighthawks.Poster
+    call conv_Nighthawks.MonaLisa
     jump DayEnd
 
 label DayEnd:    

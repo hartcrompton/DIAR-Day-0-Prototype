@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Gilgamesh.rpy", line 163: expected statement.
-    renpy.set_return_stack([])
-                              ^
+File "game/characters/C_Nighthawks.rpy", line 84: if statement expects a non-empty block.
+    if ar_b4_c2 == "a":
+                       ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Oct 10 17:52:20 2023
+Tue Oct 10 23:51:50 2023

@@ -120,13 +120,13 @@ label start:
     $ StoryCompletedTotal = 0
     scene museum bg1
     call pronounselection from _call_pronounselection
-    menu:
-        "Skip to beats":
-            jump FreeRoam
-        "Skip to tour.":
-            jump MuseumTour
-        "Continue":
-            pass
+    #menu:
+    #    "Skip to beats":
+    #        jump FreeRoam
+    #    "Skip to tour.":
+    #        jump MuseumTour
+    #    "Continue":
+    #        pass
 
     scene museum bg1
     #will need to make this changeable through the preferences menu too

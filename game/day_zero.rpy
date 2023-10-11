@@ -28,12 +28,12 @@ label GameIntroduction:
     "Empty. Not even a receptionist."
     #"Funny, you'd never even thought to visit this museum before."
     "The guest log is {i}very{/i} empty."
-    "It feels wrong not to at least sign it."
-    python:
-        pc_name = renpy.input("What is your name?", length=32) #length is maximum length of the string
-        pc_name = pc_name.strip()
-        if not pc_name:
-            pc_name = "Player"    
+    #"It feels wrong not to at least sign it."
+    #python:
+    #    pc_name = renpy.input("What is your name?", length=32) #length is maximum length of the string
+    #    pc_name = pc_name.strip()
+    #    if not pc_name:
+    #        pc_name = "Player"    
 
     
     "No job."
