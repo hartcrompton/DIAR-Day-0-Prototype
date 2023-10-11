@@ -32,7 +32,7 @@ init python:
             
             self.the_score = 0
             self.end_start = None
-            self.end_delay = 3
+            self.end_delay = 2
             # The winner.
             self.winner = False
             
@@ -237,8 +237,8 @@ label minigamestart_office(gameimage="notdefault"):
     scene monaofficegame
     python:
         diff_items = []
-        #diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 183,715,282,175))
-        diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 534,634,278,185))
+        diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 183,715,282,175))
+        #diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 534,634,278,185))
         diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 534,634,278,185))
         diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 1284,526,258,203))
     if gameimage == "default":

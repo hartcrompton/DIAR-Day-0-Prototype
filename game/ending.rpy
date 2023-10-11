@@ -63,19 +63,74 @@ label MuseumSaved:
     return
 
 label AllOutcomes:
-    scene AllEndings
+    scene foyer bg:
+        blur 5
+    ad "Today's the day!"
+    show admin at truecenter:
+        zoom .8
+    menu:
+        "You sound happy.":
+            ad "I'm not! But if I stop smiling the stress will catch up!"
+        "Wish me luck.":
+            ad "I'm sure you've done your best!"
+        "Are you nervous?":
+            ad "Not at all! I just have that thing where I feel like my stomach is going inside out."
+    ad "Oh, big donor on the other line, I hope the Gala goes well!"
+    hide admin
+    "Anyway, it's out of your hands now."
+    "Through the window, you already see press and caterers arriving."
+    "Nothing left to do but open the doors and let the Grand Gala begin."
+    scene black with fade
+    #SOUND EFFECTS HERE OF CROWD, DRINKS, PHOTOS, ETC.
     if StoryCompletedTotal >= 3:
-        "You did it, the Grand Gala was a success."
+        "The Grand Gala was a blur."
+        "But somehow, you managed it."
+        "The artworks were compelling, filled with renewed energy and meaning."
+        "Guests, donors, historians, and more were enthralled by the collection."
     else:
-        "In spite of your best efforts, the museum closed."
+        "The day was a blur."
+        "And--in spite of your best efforts--the Grand Gala was a mess."
+        "The art was disjointed and unfulfilled."
+        "The donors were unimpressed, to say the least."
+        "Even the catering was uneven, with some guests trying their luck with out-of-date candy from the vending machine."
+    scene fineart bg with fade:
+        blur 5
     call conv_Arnolfini.Outcome
+
+    scene foyer bg with fade:
+        blur 5
     call conv_Davids.Outcome
+
+    scene antiquities bg with fade:
+        blur 5
     call conv_Gilgamesh.Outcome
+
+    scene fineart bg with fade:
+        blur 5
     call conv_MonaLisa.Outcome
+
+    scene window bg with fade:
+        blur 5
     call conv_SaintCatherine.Outcome
+
+    scene mixedmedia bg with fade:
+        blur 5
     call conv_SoupAndSunflowers.Outcome
+
+    scene foyer bg with fade:
+        blur 5
     call conv_Poster.Outcome
-    "Line go here."
+    if StoryCompletedTotal >= 3:
+        "In the wake of the Gala, you've already received several emails from collectors and interviewers, all eager to meet the new curator."
+        "That is, if you decide to stay on."
+    scene black with fade
+    "Credits" "NARRATIVE DESIGNERS: Summer Fletcher, Kyle Hubbard, Shane O’Neal, Will Ridenour, Brian Urrutia"
+    "Credits" "PRODUCERS: Bella Bell, Will Ridenour"
+    "Credits" "ART: Bella Bell, Hart Crompton, Kyle Hubbard, Colin Kiddine, Shane O’Neal"
+    "Credits" "ADDITIONAL WRITING: Zora Rosenberg, Will Hinz, Shara Tran, Brandon Suzuki"
+    "Credits" "PROOFREADING: Summer Fletcher, Hart Crompton"
+    "Credits" "DESIGN & NARRATIVE LEAD: Hart Crompton"
+    $ renpy.set_return_stack([])
     return
 
 label MuseumClosed:

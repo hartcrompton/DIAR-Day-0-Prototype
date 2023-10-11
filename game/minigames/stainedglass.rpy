@@ -221,10 +221,10 @@ label minigamestart_stainedglass(materialchoice="default"):
     #image difference_image_img = afterImage("images/mona.png", diff_items)
     if materialchoice == "glass":
         show saintcatherineglass at cc
-        meta "Repaired with [materialchoice]."
+        #meta "Repaired with [materialchoice]."
     if materialchoice == "plastic":
         show saintcatherineplastic at cc
-        meta "Repaired with [materialchoice]."
+        #meta "Repaired with [materialchoice]."
     #if (difference_image.count_differences() == 0):
         #$ timebonus = int(100 * max((1.0 - ((elapsed - 20.0)/40.0)),0.0))
         #$ the_score += timebonus

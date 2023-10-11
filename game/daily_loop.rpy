@@ -35,9 +35,11 @@ image museumtod = ConditionSwitch(
         "actions == 0", "museum_night")
 
 label DayStart:
+    scene black with fade
+    "Day [DayNumber]"
     $ actions = 4
     show screen gameUI
-    scene museumtod
+    scene museumtod with fade
     $ days_remaining = 4 - DayNumber
     #meta "It is day [DayNumber]."
     #ad "Good morning! Hope you slept well, you have [days_remaining] days left before the exhibit."
@@ -144,9 +146,10 @@ label FreeRoam:
 #pull up map
 #
 label OutOfActions:
-    pc "Wow I'm really tired, I must be out of ACTIONS for the day."
+    "Phew, another day over."
+    "On your way out, you overhear the Nighthawks."
     menu:
-        "Listen to the Nighthawks.":
+        "Listen in.":
             jump NighthawksDaily
         "Go Home":
             jump DayEnd
@@ -160,10 +163,11 @@ label NighthawksDaily:
     jump DayEnd
 
 label DayEnd:    
-    meta "That's the end of day [DayNumber]"
+    #meta "That's the end of day [DayNumber]"
     if DayNumber == 4:
         jump final_exhibit
     $ DayNumber = DayNumber + 1
+    scene black with fade
     jump DayStart
 
 #this needs to get refactored, TOD uses a conditionswitch now

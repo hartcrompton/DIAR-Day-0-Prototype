@@ -1,110 +1,25 @@
-Wed Oct 11 13:33:10 2023
+Wed Oct 11 17:37:18 2023
 Windows-10-10.0.19045
 Ren'Py 8.1.1.23060707
  
 
 Bootstrap to the start of init.init. took 0.02s
 Early init. took 0.00s
-Loader init. took 0.11s
-Loading error handling. took 0.03s
-Loading script. took 1.14s
-Loading save slot metadata. took 0.14s
-Loading persistent. took 0.00s
-
-File "game/characters/C_Davids.rpy", line 119: Menu does not contain any choices.
-    menu:
-         ^
-
-File "game/characters/C_Davids.rpy", line 314: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    menu:
-    ^
-
-File "game/characters/C_MonaLisa.rpy", line 310: Indentation mismatch.
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start. took 0.32s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 2560, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 536.67'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(2560, 1387) drawable=(2560, 1387)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init. took 79.61s
-Early init. took 0.00s
-Loader init. took 0.03s
+Loader init. took 0.04s
 Loading error handling. took 0.02s
-Loading script. took 0.34s
-Loading save slot metadata. took 0.04s
+Loading script. took 0.33s
+Loading save slot metadata. took 0.05s
 Loading persistent. took 0.00s
-
-File "game/characters/C_MonaLisa.rpy", line 310: Indentation mismatch.
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start. took 0.20s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 2560, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 536.67'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(2560, 1387) drawable=(2560, 1387)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init. took 92.60s
-Early init. took 0.00s
-Loader init. took 0.02s
-Loading error handling. took 0.01s
-Loading script. took 0.24s
-Loading save slot metadata. took 0.04s
-Loading persistent. took 0.00s
-
-File "game/characters/C_MonaLisa.rpy", line 166: end of line expected.
-    m "The first time I was "stolen" the press found out and I was sent back to the Louvre. "
-                             ^
-DPI scale factor: 1.000000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start. took 0.21s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 2560, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 536.67'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(2560, 1387) drawable=(2560, 1387)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init. took 106.20s
-Early init. took 0.00s
-Loader init. took 0.02s
-Loading error handling. took 0.01s
-Loading script. took 0.28s
-Loading save slot metadata. took 0.03s
-Loading persistent. took 0.00s
-Running init code. took 0.08s
-Loading analysis data. took 0.02s
+Running init code. took 0.04s
+Loading analysis data. took 0.01s
 Analyze and compile ATL. took 0.00s
-Reloading save slot metadata. took 0.11s
+Reloading save slot metadata. took 0.04s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
-Dump and make backups. took 0.06s
+Dump and make backups. took 0.04s
 Cleaning cache. took 0.00s
 Making clean stores. took 0.00s
-Initial gc. took 0.03s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
@@ -117,7 +32,80 @@ Analyze screens took 0.01s
 Save screen analysis took 0.02s
 Prepare screens took 0.04s
 Save pyanalysis. took 0.01s
-Save bytecode. took 0.01s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.15s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1387) drawable=(2560, 1387)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/daily_loop.rpy", line 39, in script
+    "Day [day_number]"
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1473, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1337, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1251, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1231, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 278, in substitute
+    s = formatter.vformat(s, (), kwargs) # type: ignore
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 168, in get_field
+    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
+KeyError: 'day_number'
+
+While running game code:
+  File "game/daily_loop.rpy", line 39, in script
+    "Day [day_number]"
+KeyError: 'day_number'
+Resetting cache.
+Bootstrap to the start of init.init. took 43.48s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.02s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Hart\\AppData\\Roaming/RenPy/backups\\DIAR Museum Game':
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
 Interface start. took 0.04s
@@ -132,3 +120,98 @@ Version: b'4.6.0 NVIDIA 536.67'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(2560, 1387) drawable=(2560, 1387)
 Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 626.41s
+Early init. took 0.00s
+Loader init. took 0.05s
+Loading error handling. took 0.02s
+Loading script. took 0.26s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.01s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Dump and make backups. took 0.03s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1387) drawable=(2560, 1387)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 692.30s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.27s
+Loading save slot metadata. took 0.05s
+Loading persistent. took 0.00s
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.01s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Dump and make backups. took 0.04s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 3080/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 536.67'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(2560, 1387) drawable=(2560, 1387)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s

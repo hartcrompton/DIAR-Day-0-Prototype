@@ -1,82 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/map.rpy", line 7, in script
-    call screen MapUI
-  File "renpy/common/000statements.rpy", line 670, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/map.rpy", line 39, in execute
-    screen MapUI:
-  File "game/map.rpy", line 39, in execute
-    screen MapUI:
-  File "game/map.rpy", line 140, in execute
-    frame:
-  File "game/map.rpy", line 287, in execute
-    frame:
-  File "game/map.rpy", line 310, in execute
-    add "BeatProgressFull":
-  File "game/map.rpy", line 310, in keywords
-    add "BeatProgressFull":
-  File "game/map.rpy", line 311, in keywords
-    if beat_Gilgamesh == 1:
-  File "game/map.rpy", line 311, in <module>
-    if beat_Gilgamesh == 1:
-NameError: name 'beat_Gilgamesh' is not defined
+  File "game/daily_loop.rpy", line 39, in script
+    "Day [day_number]"
+KeyError: 'day_number'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/map.rpy", line 7, in script
-    call screen MapUI
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 2259, in execute
-    self.call("execute")
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 2241, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\statements.py", line 342, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 670, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 3345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 476, in visit_all
-    callback(self)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in <lambda>
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 487, in per_interact
-    self.update()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 680, in update
-    self.screen.function(**self.scope)
-  File "game/map.rpy", line 39, in execute
-    screen MapUI:
-  File "game/map.rpy", line 39, in execute
-    screen MapUI:
-  File "game/map.rpy", line 140, in execute
-    frame:
-  File "game/map.rpy", line 287, in execute
-    frame:
-  File "game/map.rpy", line 310, in execute
-    add "BeatProgressFull":
-  File "game/map.rpy", line 310, in keywords
-    add "BeatProgressFull":
-  File "game/map.rpy", line 311, in keywords
-    if beat_Gilgamesh == 1:
-  File "game/map.rpy", line 311, in <module>
-    if beat_Gilgamesh == 1:
-NameError: name 'beat_Gilgamesh' is not defined
+  File "game/daily_loop.rpy", line 39, in script
+    "Day [day_number]"
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1473, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1337, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1251, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1231, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 278, in substitute
+    s = formatter.vformat(s, (), kwargs) # type: ignore
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 168, in get_field
+    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
+KeyError: 'day_number'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Tue Oct 10 18:42:05 2023
+Wed Oct 11 17:37:48 2023

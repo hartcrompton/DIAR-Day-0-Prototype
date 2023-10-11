@@ -5,21 +5,23 @@ default d_ArnolfiniLabel = "DEFAULT LABEL"
 default end_Arnolfini = 0
 
 label conv_Arnolfini:
-    scene arnolfinibackground
+    scene fineart bg:
+        blur 5
     show arnolfini at truecenter:
         zoom .7
         yoffset -100
-    ar "You're talking to me, the Arnolfini!"
-    menu:
-        "Beat [beat_Arnolfini]" if actions > 0 and beat_Arnolfini <= 5:
-            jump .use_action
-        "Bye":
-            ar "See ya"
-            jump FreeRoam
-        "Reset Beats":
-            "Beats reset."
-            $ beat_Arnolfini = 1
-            jump conv_Arnolfini
+    jump .use_action
+    #ar "You're talking to me, the Arnolfini!"
+    #menu:
+    #    "Beat [beat_Arnolfini]" if actions > 0 and beat_Arnolfini <= 5:
+    #        jump .use_action
+    #    "Bye":
+    #        ar "See ya"
+    #        jump FreeRoam
+    #    "Reset Beats":
+    #        "Beats reset."
+    #        $ beat_Arnolfini = 1
+    #        jump conv_Arnolfini
 
 label .use_action:
     #menu:
@@ -117,7 +119,11 @@ label .Beat1:
     arm "I'd appreciate it more."
     #minigame go here
     call minigamestart_arnolfini(1)
-
+    scene fineart bg:
+        blur 5
+    show arnolfini at truecenter:
+        zoom .7
+        yoffset -100
     arw "My brooch! Oh, thank you, thank you, thank you!"
     arm "Yes, thank you!"
     arm "…"
@@ -263,7 +269,7 @@ label .Beat3:
         arm "Really? Thats nice of you to say"
         arw "Well I don't talk about it enough. You have, dare I say, good taste! I mean your hat!"
         arm "Ooh, I was thinking of adding a feather to it. Or at least imagining a feather."
-        arw "That'd be nice! Don't you agree, [player]?"
+        arw "That'd be nice! Don't you agree, [pc_name]?"
         pc "I agree!"
         arm "...I think a new necklace would look nice on you as well."
         arw "Oh wouldn't it?"
@@ -426,6 +432,11 @@ label .Beat3:
     arm "Fine. What about a feature for my hat? Can you find these things for us?"
     arw "I'm sure they can! They have to be around here somewhere."
     call minigamestart_arnolfini(2)
+    scene fineart bg:
+        blur 5
+    show arnolfini at truecenter:
+        zoom .7
+        yoffset -100
     arw "Oh thank you, this is just lovely!"
     arm "Yes, thank you!"
     ard "Thank you SO MUCH! Finally! Some peace!"
@@ -468,7 +479,7 @@ label .Beat3:
 
 ####
     $ beat_Arnolfini += 1
-    jump conv_Arnolfini
+    jump FreeRoam
 
 label .Beat4:
     ard "Hi again! These two have been...eerily silent."
@@ -490,6 +501,11 @@ label .Beat4:
     ard "Maybe there's an answer outside of the painting?"
     pc "Hey, it's worth a shot!"
     call minigamestart_cleaning_arnolfini
+    scene fineart bg:
+        blur 5
+    show arnolfini at truecenter:
+        zoom .7
+        yoffset -100
     #Dialogue	ArnolfiniMan	Ah, food! I've always wanted to try it! That reminds me of the time we had some at...I want to say a party?				Bag of Chips
     #Dialogue	ArnolfiniWoman	What were we celebrating, i wonder?				Bag of Chips
     #Dialogue	ArnolfiniWoman	A drink vessel! Rather plain, isn't it?				Bottle
@@ -598,6 +614,7 @@ label .Beat4:
         arm "Yes, thank you!"
         arw "We won't forget this!"
     pc "Well no matter what, it looks like you two— Giovanni and-"
+    $ arwName = "Carlotta"
     arw "It's Carlotta now. I'm workshopping it. I'm actually circling back on Ethel, maybe."
     pc "Giovanni and Carlotta-"
     ard "*Ahem*"
@@ -614,7 +631,7 @@ label .Beat4:
         "...never mind.":
             arw "Well, whatever you say!"
             arm "Yes, yes. Well now what do we do?"
-        "Forget i said anything. Look! You aren't arguing as much!":
+        "Forget I said anything. Look! You aren't arguing as much!":
             arw "Yes, its nice not to be so aggrieved all the time for once."
             arm "Ooh, I like that word! Well now what do we do?"
 

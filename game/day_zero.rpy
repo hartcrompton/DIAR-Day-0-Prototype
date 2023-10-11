@@ -11,7 +11,7 @@ label GameIntroduction:
     #leaving the interview, missed bus, chased by the rain into an empty museum.
     #storm audio
     play music "music/Day0LoopSadBella.wav"
-    play audio "music/RainLong.mp3"
+    #play audio "music/RainLong.mp3"
     "Hiring Manager" "Dear Applicant,"
     "Hiring Manager" "Every journey begins somewhere."
     "Hiring Manager" "Yours, unfortunately, does not begin with us."
@@ -587,14 +587,14 @@ label MuseumTour:
     if NameLie == 0:
         n3 "Like watching a slow-moving car crash. I mean, choosing {i}honesty{/i}? Everyone knows lying in interviews is a sacred and time-honored practice."
     n4 "I'd be shocked if [they] even come[s] back tomorrow."
-
-    menu:
-        "Daily Loop - VERY Work-In-Progress":
-            jump DayStart
-        "Restart Tour":
-            jump MuseumTour
-        "Main Menu":
-            return
+    jump DayStart
+    #menu:
+    #    "Daily Loop - VERY Work-In-Progress":
+    #        jump DayStart
+    #    "Restart Tour":
+    #        jump MuseumTour
+    #    "Main Menu":
+    #        return
 
     return
     #jump DayStart

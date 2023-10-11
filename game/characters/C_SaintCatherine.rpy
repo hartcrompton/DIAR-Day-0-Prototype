@@ -8,26 +8,33 @@ default st_plastic = 0
 # 0 is Saint, 1 is Human
 default SaintPersonality = 0
 default SaintHumanChoice = "NONE"
+default SaintHair = 0
+default SaintRepaired = 0
 #figure out the timing and flags for this
 image SaintPortrait = ConditionSwitch(
-    "SoupOutcome == 'Remain'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png",
-    "SoupOutcome == 'Erase'", "images/Characters/SoupAndSunflowers/sunflowersonly.jpg",
-    "SoupOutcome == 'Detach'", "images/Characters/SoupAndSunflowers/soupandsunflowersdetached.png",
-    "SoupOutcome == 'NONE'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png")
+    "(SaintHair == 1) and (SaintRepaired == 0)", "images/Characters/SaintCatherine/saintbrunettebroken.png",
+    "(SaintHair == 0) and (SaintRepaired == 0)", "images/Characters/SaintCatherine/saintblondebroken.png",
+    "(SaintHair == 0) and (SaintRepaired == 1) and (st_glass == 0)", "images/Characters/SaintCatherine/saintblondeplastic.png",
+    "(SaintHair == 0) and (SaintRepaired == 1) and (st_glass == 1)", "images/Characters/SaintCatherine/saintblondeglass.png",
+    "(SaintHair == 1) and (SaintRepaired == 1) and (st_glass == 0)", "images/Characters/SaintCatherine/saintbrunetteplastic.png",
+    "(SaintHair == 1) and (SaintRepaired == 1) and (st_glass == 1)", "images/Characters/SaintCatherine/saintbrunetteglass.png")
 
 label conv_SaintCatherine:
-    scene saintbackground
-    show saintcatherine at right
-    menu:
-        "Beat [beat_SaintCatherine]" if actions > 0 and beat_SaintCatherine < 5:
-            jump .use_action
-        "Bye":
-            st "See ya"
-            jump FreeRoam
-        "Reset Beats":
-            "Beats reset."
-            $ beat_SaintCatherine = 1
-            jump conv_SaintCatherine
+    scene storage bg
+    show SaintPortrait at truecenter:
+        zoom .8
+        yoffset -100
+    jump .use_action
+    #menu:
+    #    "Beat [beat_SaintCatherine]" if actions > 0 and beat_SaintCatherine < 5:
+    #        jump .use_action
+    #    "Bye":
+    #        st "See ya"
+    #        jump FreeRoam
+    #    "Reset Beats":
+    #        "Beats reset."
+    #        $ beat_SaintCatherine = 1
+    #        jump conv_SaintCatherine
 
 label .use_action:
     #menu:
@@ -45,10 +52,10 @@ label .beat1:
     $ SaintHuman = 0
     $ SaintSaintly = 0
     #"The dull gallery wall peeks out through the holes in the stained glass."
-    #"You open a door marked \"Staff Only.\" The last fluorescent bulb casts cold light on dusty racks."
+    "You open a door marked \"Staff Only.\""
     "The dull gallery wall peeks out through the holes in the stained glass."
     "Saint Catherine looks dull and dusty with no light behind her."
-    st "I've heard your misgivings, [pc_job]. Can I help in some way?"
+    st "I've heard your misgivings, [pc_work]. Can I help in some way?"
     pc "You heard me?"
     st "Worries, fears, wishes. Prayers. Everything."
     pc "Who are you?"
@@ -213,6 +220,7 @@ label .beat3:
             $ SaintHumanChoice = "human"
             $ SaintPersonality = 1
             $ SaintHuman += 1
+            $ SaintHair = 1
             st "The glass artist. He'd never seen the saint, so he made her in my likeness."
             pc "Wait, so you're not a saint from Alexandria, you're a random French girl the artist was in love with?"
             st "I didn't mean to deceive you. I don't think he did, either."
@@ -220,6 +228,7 @@ label .beat3:
             $ SaintHumanChoice = "a saint"
             $ SaintPersonality = 0
             $ SaintSaintly += 1
+            $ SaintHair = 0
             st "Yes…I remember. An amalgam of great women; the strength of their ideas. I feel them all."
             st "Hypatia, or St. Dorothea of Alexandria. All of us, philosophers. We reflect each other."
     st "I remain…Catherine."
@@ -329,6 +338,10 @@ label .beat4:
             $ SaintTemp = SaintSaintly
             $ SaintSaintly = SaintHuman
             $ SaintHuman = SaintTemp
+            if SaintHair == 0:
+                $ SaintHair = 1
+            else:
+                $ SaintHair = 0
             st "You've reflected on your views. I admire that. "
             pass
     st "And my repair…what's it to be?"
@@ -344,6 +357,10 @@ label .beat4:
             $ st_glass = 0
             call minigamestart_stainedglass("plastic")
             pass
+    $ SaintRepaired = 1
+    scene storage bg
+    show SaintPortrait at truecenter:
+        zoom .8
     "The artwork has been repaired."
     if SaintSaintly > SaintHuman:
         if st_glass == 0:
@@ -357,6 +374,9 @@ label .beat4:
             st "My friend, you are a miracle. I remember my purpose, the smell of aromatic frankincense…"
     st "I'm ready to take my place among the others."
     "You hang the stained glass over a window. She casts colors all over."
+    scene window bg
+    show SaintPortrait at truecenter:
+        zoom .8
     st "The view is beautiful from here. I can see everyone. Their sadness…Their joy…"
     st "I'm not lonely anymore."
     st "Thank you."

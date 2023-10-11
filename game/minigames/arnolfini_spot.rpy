@@ -33,7 +33,7 @@ init python:
             
             self.the_score = 0
             self.end_start = None
-            self.end_delay = 3
+            self.end_delay = 1
             # The winner.
             self.winner = False
             
@@ -235,6 +235,8 @@ label TestArnolfiniLines():
 
 
 label minigamestart_arnolfini(gameimage="notdefault"):
+    scene fineart bg:
+        blur 5
     if gameimage == 1:
         python:
             diff_items = []

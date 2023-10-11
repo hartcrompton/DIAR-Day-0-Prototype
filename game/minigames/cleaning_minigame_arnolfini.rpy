@@ -79,13 +79,16 @@ init python:
             if (self.score_bubble):
                 if (self.score_bubble.start == None) :
                     self.score_bubble.start = st
-                self.score_bubble.st = st-self.score_bubble.start
+                self.score_bubble.st = st-self.score_bubble.start -1
                 myalpha = max(1.0 - self.score_bubble.st / self.score_bubble.duration, 0.0)
                 #self.score_bubble.y -= self.score_bubble.st/2
                 
                 score_bubble_img = Transform(child=self.score_bubble.myimage, alpha=myalpha)
+                textbox_img = Transform(text_overlay, alpha=myalpha)
                 score_img = renpy.render(score_bubble_img, width, height,  st, at)
-                render.blit(score_img,(self.score_bubble.x,self.score_bubble.y))
+                textbox_overlay = renpy.render(textbox_img, width, height,  st, at)
+                render.blit(textbox_overlay, (0,0))
+                render.blit(score_img,(400,850))
                 if (self.score_bubble.st  > self.score_bubble.duration):
                     self.score_bubble = None
             
@@ -233,6 +236,7 @@ init python:
 
 
 label minigamestart_cleaning_arnolfini(gameimage="notdefault"):
+    scene cleaning bg
     python:
         diff_items = []
         diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 182,5,316,406))
@@ -256,6 +260,7 @@ label minigamestart_cleaning_arnolfini(gameimage="notdefault"):
         #we need to be able to input an argument here
         difference_image = MinigameCleaningArnolfini("images/minigame/cleaning/cleaning_ph.png", diff_items)
         difference_image.randomizeItems(5)
+        text_overlay = TextRender("images/minigame/corgi/textbox_minigame.png")
         #TempCleaningBackground = difference_image
         ui.add(difference_image)
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)

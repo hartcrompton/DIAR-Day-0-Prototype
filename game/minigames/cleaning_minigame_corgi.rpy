@@ -297,6 +297,7 @@ init python:
 
 
 label minigamestart_cleaning_corgi(gameimage="notdefault"):
+    scene cleaning bg
     python:
         diff_items = []
         diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 182,5,316,406))

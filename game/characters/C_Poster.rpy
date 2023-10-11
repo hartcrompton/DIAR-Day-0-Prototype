@@ -6,7 +6,7 @@ default CorgiPortraitStage = "base"
 image corgiportrait = "/Characters/Poster/corgi base.png"
 
 label conv_Poster:
-    scene posterbackground
+    scene office bg
     if CorgiPortraitStage == "base":
         show corgi base at truecenter:
             yoffset -125
@@ -21,23 +21,23 @@ label conv_Poster:
             yoffset -125
             xoffset -115
             zoom .9
-    p "You're talking to me, the Poster!"
-    menu:
-        #"[[Chat a little.]":
+    jump .use_action
+    #menu:
+    #    #"[[Chat a little.]":
         #    p "We're chatting a little now!"
         #    pc "We sure are."
         #    jump conv_Poster
-        "Beat [beat_Poster]" if actions > 0 and beat_Poster < 5:
+    #    "Beat [beat_Poster]" if actions > 0 and beat_Poster < 5:
             #p "Whoa, sure you want to use an action?"
-            jump .use_action
-        "Bye":
-            p "See ya"
-            jump FreeRoam
-        "Reset Beats":
-            "Beats reset."
-            $ CorgiPortraitStage = "base"
-            $ beat_Poster = 1
-            jump conv_Poster
+    #        jump .use_action
+    #    "Bye":
+    #        p "See ya"
+    #        jump FreeRoam
+    #    "Reset Beats":
+    #        "Beats reset."
+    #        $ CorgiPortraitStage = "base"
+    #        $ beat_Poster = 1
+    #        jump conv_Poster
 
 label .use_action:
     #menu:
@@ -156,8 +156,8 @@ label .beat3:
     p "Sure..."
     pc "Well what if I have something to help cheer you up?"
     p "...what is it?"
-    $ AnotherFlag == 0
-    $ AnotherPat == 0
+    $ AnotherFlag = 0
+    $ AnotherPat = 0
     label CheerYouUp:
         menu:
             "Do you want another flag?" if AnotherFlag == 0:
@@ -169,10 +169,26 @@ label .beat3:
                 "The corgi sadly whines a bit. Pets are nice but clearly that's not the solution here."
                 jump CheerYouUp
             "What if I got you out of this room for a little bit?":
-                "I mean okay, I guess."
+                p "I mean okay, I guess."
     pc "I need to do some cleaning and I really think you could motivate me to do my best!"
     p "Oh! I think I can help with that!"   
     call minigamestart_cleaning_corgi
+    scene office bg:
+        blur 5
+    if CorgiPortraitStage == "base":
+        show corgi base at truecenter:
+            yoffset -125
+            zoom .9
+    if CorgiPortraitStage == "flag":
+        show corgi flag at truecenter:
+            yoffset -125
+            xoffset -115
+            zoom .9
+    if CorgiPortraitStage == "final":
+        show corgi final at truecenter:
+            yoffset -125
+            xoffset -115
+            zoom .9
     p "Thank you, that really helped! And you did an amazing job with the cleaning!"
     pc "Good to hear!"
     p "I was thinking, remember when I said I wanted to motivate this entire place? The art place? This artsy building place?"
@@ -197,6 +213,8 @@ label .beat3:
     pc "Again?"
     p "Yeah, just one more thing. The flag is great but if I'm going to be out amongst the people, I think I need a little more flair!"
     call minigamestart_corgi("2")
+    scene office bg:
+        blur 5
     #Ooh still not sure that'll work. Did you clean it yet? I feel like the fuzzy things are getting bigger.
     #The wire on that looks busted. Not exactly inspiring. More flammable than anything.
     #I really dont like that thing. Those teeth? They'd hurt my little paws!
@@ -268,7 +286,7 @@ label .beat4:
     p "Positive!"
     p "You mentioned the (CHOICE A/B/C from Beat 4) - I think I'm ready to be moved out there!"
     p "Do you think I'm ready?"
-    pc "100%!"
+    pc "One-hundred percent!"
     p "Good! I know I am, I just wanted you to confirm it! I've helped you be more confident in yourself too, you know!"
     if p_b3_c1 == "Museum Entrance":
         p "Now I'm ready to motivate the people as they walk into this place!"
@@ -281,12 +299,30 @@ label .beat4:
         p "TO THE RESTROOMS!!!"
     "You take the poster out to the [p_b3_c1]"
     if p_b3_c1 == "Museum Entrance":
+        scene foyer bg:
+            blur 5
+        show corgi final at truecenter:
+            xoffset -115
+            yoffset -125
+            zoom .9
         p "I love it here! Ooh I can see outside too!"
         p "Now do your best! I'll be seeing you everyday first thing as you walk in!"
     if p_b3_c1 == "Ticket Counter":
+        scene foyer bg:
+            blur 5
+        show corgi final at truecenter:
+            xoffset -115
+            yoffset -125
+            zoom .9
         p "Ooh this is perfect! I'm sure there'll be lots of hustle and bustle!"
         p "It might get busy, but I'll always keep an eye out for you, so do your best!"
     if p_b3_c1 == "Restroom":
+        scene foyer bg:
+            blur 5
+        show corgi final at truecenter:
+            xoffset -115
+            yoffset -125
+            zoom .9
         p "Oh, this is a fun spot! That's an interesting smell, what is that?"
         p "No matter! People will be coming in and out of here and I'm sure they'll really need the motivation to get their business done!"
         p "Now do your best! I'm sure I'll see you around here too. I see the things you eat when you're not doing much."

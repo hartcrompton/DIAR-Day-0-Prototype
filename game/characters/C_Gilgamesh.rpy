@@ -12,6 +12,7 @@ default BeastChoice = 0
 default SongTheme = "NONE"
 
 label conv_Gilgamesh: 
+    
     if beat_Gilgamesh != 3:
         scene antiquities bg:
             blur 5
@@ -24,16 +25,17 @@ label conv_Gilgamesh:
         scene foyer bg:
             blur 5
         show admin at truecenter:
-    menu:
-        "Beat [beat_Gilgamesh]" if actions > 0 and beat_Gilgamesh < 5:
-            jump .use_action
-        "Bye":
-            gi "See ya"
-            jump FreeRoam
-        "Reset Beats":
-            "Beats reset."
-            $ beat_Gilgamesh = 1
-            jump conv_Gilgamesh
+    jump .use_action
+    #menu:
+    #    "Beat [beat_Gilgamesh]" if actions > 0 and beat_Gilgamesh < 5:
+    #        jump .use_action
+    #    "Bye":
+    #        gi "See ya"
+    #        jump FreeRoam
+    #    "Reset Beats":
+    #        "Beats reset."
+    #        $ beat_Gilgamesh = 1
+    #        jump conv_Gilgamesh
 
 label .use_action:
     #menu:
@@ -164,7 +166,7 @@ label .beat1:
         scene archives bg
         hide screen ResearchMinigameDrawerUI
         hide screen ResearchMinigameUI
-        "Archive minigame"
+        show epicofgilgamesh bg
         "Player learns That Gil was KING of URUK"
         "He was a real pain in the ass until ENKIDU showed up and beat him in a fight"
         "They became best friends / lovers"
@@ -337,22 +339,22 @@ label .beat2:
     gi "Nasir, enough with your porcine prose."
     gi "Now tell me, what was hard?"
     menu:
-        "When, you know...":
+        "[[Gently] When, you know...":
             gi "Yes?"
             e "Stop it."
             menu:
-                "I mean, when Enkidu...":
+                "[[Gently] I mean, when Enkidu...":
                     e "I warned you."
                     gi "Enkidu's glories are as numerous as my own, you'll have to be specific."
                     menu:
-                        "So, after the Bull of Heaven...":
+                        "[[Gently] So, after the Bull of Heaven...":
                             gi "A noble opponent."
                             menu:
-                                "And Ishtar was upset...":
+                                "[[Gently] And Ishtar was upset...":
                                     gi "Hah, she was always one for grudges."
                                     e "I told you. He doesn't know."
                                     menu:
-                                        "And she... She killed him.":
+                                        "[[Gently] And she... She killed him.":
                                             gi "..."
                                             gi "She killed who?"
                                             pc "Enkidu. Ishtar cursed him."
@@ -388,6 +390,10 @@ label .beat2:
                 "For a clay tablet, Ea-nasir does a remarkable job of looking at everything except you."
         gi "I..."
         gi "You need to leave."
+        show gilgamesh at left with move:
+            xoffset 200
+            ease .2 zoom .6
+        show eanasir at truecenter with move
         e "I did warn you."
         menu:
             "He would have found out sooner or later.":
@@ -421,7 +427,7 @@ label .beat3:
             pass
         "I think I might know.":
             pass
-    ad "The Admin already hung up."
+    "The Admin already hung up."
     scene antiquities flood with fade
     "The antiquities wing is positively {i}flooded{/i}."
     show eanasir at right
@@ -446,7 +452,7 @@ label .beat3:
     e "At least he seems to have run dry."
     "You sigh. Time to bust out the mop."
     call minigamestart_mop
-    scene antiquities bg:
+    scene antiquities bg with fade:
         blur 5
     "Whew. Still a little damp, but at least there isn't any obvious damage."
     show gilgamesh at truecenter
@@ -520,15 +526,17 @@ label .beat3:
     gi "At least my heart beats blood and not venom."
     menu:
         "[[Slap Ea-nasir]":
-            e "What was that for?"
+            e "What was that for?!"
         "[[Slap Gilgamesh]":
             gi "How dare you!"
         "[[Slap both of them]":
-            e "What was that for?"
+            e "What was that for?!"
             gi "How dare you!"
         "[[Slap both of them and yourself for good measure]":
-            gi "Uh...."
-            e "What...?"
+            gi "How dare you!"
+            e "What was that for?!"
+            pc "Ow!"
+            "You're not sure why you included yourself."
     menu:
         "Gil, you need to get over yourself.":
             pc "You feel bad for something you did four-thousand years ago."
@@ -622,8 +630,11 @@ label .beat3:
         "Come on, what are you? Peasant, or King?":
             "Gilgamesh laughs and gives you a soft smile."
             gi "I'll allow that this once."
-    gi "For now though, I need to think how best to honor Enkidu."
-    gi "Come back again later."
+    if SongA > SongB:
+        gi "All this talk of battle, you've inspired me. I may have a way to honor Enkidu."
+    if SongA < SongB:
+        gi "But you've reminded me what it means to be a ruler. I may have a way to honor Enkidu."
+    gi "Return later, I must think."
     "Ea-nasir throws a sharp glance at Gilgamesh."
     gi "Please. If you would."
     $ beat_Gilgamesh += 1
@@ -687,59 +698,49 @@ label .beat4:
         gi "Gi-ru cag-ja mu-lu ki-ig-ga-aj-ju- / Hi-li-zu aj-ze-ba-am lal-am ku-ku-da-"
         e "Lion, dear to my heart- / Goodly is your beauty, honeysweet."
         gi "Id na-an-ba-al-le id-zu ḫe-me-en-"
-        e "Do not dig a canal... oh my."
+        e "Do not dig a canal, let me be your canal... Oh my."
         gi "A-šag na-an-ur-ru a-šag-zu ḫe-me-en-"
+        e "Do not plough a field, plough--"
         "You never knew a clay tablet could blush, but Ea-nasir blushes deeply all the same."
-        gi "Mu-un-gar ki duru na-an-kiĝ-kiĝ-e-"
-        e "..."
         menu:
             "What's wrong?":
                 pass
             "What is he singing?":
                 pass
         e "He is... declaring his love."
-        gi "Ze-ba kal-la-ĝu ki duru-zu ḫe-am-"
         e "Directly."
-        gi "X-e ab-sin-zu ḫe-am-"
         e "VERY directly."
         gi "X tur-tur-me aš-zu ḫe-am-"
         "Gilgmesh finishes his song. Just in time too, it looked like Ea-nasir was about to crack."
         gi "Ah... I can only pray Enkidu hears it."
         e "I would have prayed that {i}only{/i} he could hear it."
-        gi "Ah, young Nasir. I could teach you many songs of... love."
+        gi "Ah, young Nasir. I could share many more songs of devotion."
         e "Eugh, I would sooner shatter."
     if SongTheme == "battle":
         #he-zu he-zu-am dnanna li-bi2-in-dug4-ga za-a-kam bi2-in-dug4-ga 
         #It must be known! It must be known! Nanna has not yet spoken out! He has said, "He is yours!" 
-        gi "An-gin mah-a-za he-zu-am" 
-        e "Be it known that you are lofty as the heavens!"
-        gi "ki-gin dajal-la-za he-zu-am "
-        e "Be it known that you are broad as the earth! "
+        gi "An-gin mah-a-za he-zu-am / ki-gin dajal-la-za he-zu-am!" 
+        e "Be it known that you are lofty as the heavens! As broad as the earth!"
         #gi "ki bal gul-gul-lu-za he-zu-am "
         #e "Be it known that you destroy the rebel lands! "
         gi "kur-ra gu de2-e-za he-zu-am "
-        e "Be it known that you roar at the foreign lands! "
-        gi "saj jic ra-ra-za he-zu-am "
-        e "Be it known that you crush heads!"
+        e "Be it known that you roar in distant lands! That you crush heads!"
         gi "ur-gin ad gu-u-za he-zu-am "
         e "Be it known that you devour corpses like a dog! "
         menu:
-            "He did what now?":
+            "He did {i}what?{/i}":
                 e "It's metaphorical. I hope."
             "What does that mean?":
                 e "...It was a different time."
-        gi "igi huc-a-za he-zu-am "
-        e "Be it known that your gaze is terrible!"
-        gi "igi huc-bi il-il-i-za he-zu-am "
-        e "Be it known that you lift your terrible gaze! "
-        gi "igi gun-gun-na-za he-zu-am "
-        e "Be it known that you have flashing eyes!"
-        gi "uru-na nu-ce-ga-za he-zu-am "
-        e "Be it known that you are unshakeable and unyielding! "
-        gi "u-ma gub-gub-bu-za he-zu-am "
-        e "Be it known that you always stand triumphant! "
+        #gi "igi huc-a-za he-zu-am "
+        #e "Be it known that your gaze is terrible!"
+        #gi "igi huc-bi il-il-i-za he-zu-am "
+        #e "Be it known that you lift your terrible gaze! "
+        gi "igi gun-gun-na-za he-zu-am / u-ma gub-gub-bu-za he-zu-am "
+        e "Be it known that you have flashing eyes! That you always stand triumphant!"
         "Gilgamesh finishes his song, the final note reverberating through the hall."
         gi "Ah... I can only pray Enkidu hears it."
+        e "I'd be surprised if {i}anyone{/i} couldn't hear it."
     gi "And you, [pc_name], give me your thoughts. Was my song not as great as my legend?"
     menu:
         "It was beautiful.":
@@ -763,7 +764,16 @@ label .beat4:
 label .Outcome:
     if beat_Gilgamesh == 5:
         "Completed ending"
+        if SongA > SongB:
+            "Under the steady gaze of Gilgamesh, the Antiquities Wing is warm and welcoming."
+            "Several vistors catch themselves humming--even singing--out of fashion love songs."
+        else:
+            "Under the fierce gaze of Gilgamesh, visitors leave the Antiquities Wing energized with a new fervor for life."
+            "Several find themselves eager to take take up ill-advised hobbies such as mountain-climbing and novel-writing."
     elif beat_Gilgamesh > 1:
-        "Unresolved ending"
+        "Visitors find themselves staring at the carving of Gilgamesh, looking for something that should be there, but isn't."
+        "Eventually, they wander out of the Antiquities Wing feeling that they've just forgotten something."
     else:
-        "No contact ending"
+        "Like still air in deep summer, the Antiquities Wing remains oppressive."
+        "The few visitors that trickle in turn away in discomfort and disappointment."
+        "The plaque next to Gilgamesh describes his epic deeds, but the statue hardly lives up to the legend."

@@ -25,28 +25,29 @@ label conv_SoupAndSunflowers:
     show ssportrait at truecenter:
         zoom .75
         yoffset -100
-    menu:
-        "Beat [beat_SoupAndSunflowers]" if actions > 0 and beat_SoupAndSunflowers < 5:
-            jump .use_action
-        "Bye":
-            d "See ya"
-            jump FreeRoam
-        "Reset Beats":
-            "Beats reset."
-            $ beat_SoupAndSunflowers = 1
-            $ SoupOutcome = "NONE"
-            jump conv_SoupAndSunflowers
-        "Set Current Beat":
-            menu:
-                "1":
-                    $ beat_SoupAndSunflowers = 1
-                "2":
-                    $ beat_SoupAndSunflowers = 2
-                "3":
-                    $ beat_SoupAndSunflowers = 3
-                "4":
-                    $ beat_SoupAndSunflowers = 4
-            jump conv_SoupAndSunflowers 
+    jump .use_action
+    #menu:
+    #    "Beat [beat_SoupAndSunflowers]" if actions > 0 and beat_SoupAndSunflowers < 5:
+    #        jump .use_action
+    #    "Bye":
+    #        d "See ya"
+    #        jump FreeRoam
+    #    "Reset Beats":
+    #        "Beats reset."
+    #        $ beat_SoupAndSunflowers = 1
+    #        $ SoupOutcome = "NONE"
+    #        jump conv_SoupAndSunflowers
+    #    "Set Current Beat":
+    #        menu:
+    #            "1":
+    #                $ beat_SoupAndSunflowers = 1
+    #            "2":
+    #                $ beat_SoupAndSunflowers = 2
+    #            "3":
+    #                $ beat_SoupAndSunflowers = 3
+    #            "4":
+    #                $ beat_SoupAndSunflowers = 4
+    #        jump conv_SoupAndSunflowers 
 
 label .use_action:
     call advance_time
@@ -76,8 +77,8 @@ label .beat1:
     show soupandsunflowers at truecenter:
         zoom .75
         yoffset -100
-    "I didn't know you were, er, alive. Sorry!"
     so "Hey what the fuck!"
+    "I didn't know you were, er, alive. Sorry!"
     su "Ignore that, it's the wind!"
     so "You're trying to kill me just like you're killing the planet!"
     su "Oh don't be so dramatic."
@@ -453,8 +454,7 @@ screen SSFakeClean:
         ground "images/rooms/mixedmedia bg.jpg"
         #if SSFakeCleanCount < 2:
         #    hotspot (0, 0, 1920, 1080) action Return("SSFakeCleanDialogue") #call up the appropriate second screen K
-        if SSFakeCleanCount >= 2:
-            hotspot (0, 0, 1920, 1080) action Return("exit") #call up the appropriate second screen K
+        hotspot (0, 0, 1920, 1080) action Return("exit") #call up the appropriate second screen K
     frame:
         xalign 0
         yalign 0

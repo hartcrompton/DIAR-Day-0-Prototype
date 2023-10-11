@@ -6,19 +6,24 @@ default DefinitiveDave = "NONE"
 default b2_DefinitiveDave = "NONE"
 
 label conv_Davids:
-    scene davidsbg
-    show davids at right
-    d "You're talking to me, the Davids!"
-    menu:
-        "Beat [beat_Davids]" if actions > 0 and beat_Davids < 5:
-            jump .use_action
-        "Bye":
-            d "See ya"
-            jump FreeRoam
-        "Reset Beats":
-            "Beats reset."
-            $ beat_Davids = 1
-            jump conv_Davids
+    scene foyer bg:
+        blur 5
+    show davids at center
+    if (actions > 0) and (beat_Davids < 5):
+        jump .use_action
+    else:
+        return
+    #d "You're talking to me, the Davids!"
+    #menu:
+    #    "Beat [beat_Davids]" if actions > 0 and beat_Davids < 5:
+    #        jump .use_action
+    #    "Bye":
+    #        d "See ya"
+    #        jump FreeRoam
+    #    "Reset Beats":
+    #        "Beats reset."
+    #        $ beat_Davids = 1
+    #        jump conv_Davids
 
 label .use_action:
     #menu:
@@ -276,7 +281,10 @@ label .beat3:
                     scene archives bg
                     hide screen ResearchMinigameDrawerUI
                     hide screen ResearchMinigameUI
-                    "The player reads the relevant Bible passage."
+                    show archivebiblescreen at center
+                    "1 Samuel 17:38-40" "Then Saul dressed David in his own tunic. He put a coat of armor on him and a bronze helmet on his head."
+                    "1 Samuel 17:38-40" "David fastened on his sword over the tunic and tried walking around, because he was not used to them. \"I cannot go in these,\" he said to Saul, \"because I am not used to them.\" So he took them off."
+                    "1 Samuel 17:38-40" "Then he took his staff in his hand, chose five smooth stones from the stream, put them in the pouch of his shepherd's bag and, with his sling in his hand, approached the Philistine."
     #######
     $ beat_Davids += 1
     jump FreeRoam

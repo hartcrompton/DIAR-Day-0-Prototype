@@ -6,19 +6,23 @@ default MonaOnly = 0
 default MonaOutcome = 0
 
 label conv_MonaLisa:
-    scene monalisabackground
-    show monalisa at right
-    menu:
-        "Beat [beat_MonaLisa]" if actions > 0 and beat_MonaLisa < 5:
-            #m "Whoa, sure you want to use an action?"
-            jump .use_action
-        "Bye":
-            m "See ya"
-            jump FreeRoam
-        "Reset Beats":
-            "Beats reset."
-            $ beat_MonaLisa = 1
-            jump conv_MonaLisa
+    scene fineart bg:
+        blur 5
+    show monalisa at truecenter:
+        zoom .8
+        yoffset -75
+    jump .use_action
+    #menu:
+    #    "Beat [beat_MonaLisa]" if actions > 0 and beat_MonaLisa < 5:
+    #        #m "Whoa, sure you want to use an action?"
+    #        jump .use_action
+    #    "Bye":
+    #        m "See ya"
+    #        jump FreeRoam
+    #    "Reset Beats":
+    #        "Beats reset."
+    #        $ beat_MonaLisa = 1
+    #        jump conv_MonaLisa
 
 label .use_action:
     #menu:
@@ -245,6 +249,11 @@ label .beat3:
     m "Remember what I said about PR and spin? The right promotion at the right time. That's what we need."
     m "{i}Vai, vai{/i}, go uncover my eyes in the office like a good little [pc_work] so I can see what's happening in there."
     call minigamestart_office
+    scene fineart bg:
+        blur 5
+    show monalisa at truecenter:
+        zoom .8
+        yoffset -75
     pc "It's done, I found all of them. You. Er, the copies."
     menu:
         "Is there anything we need to change?":

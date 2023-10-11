@@ -65,13 +65,13 @@ screen MapUI:
         #sunflowers
         #hotspot (217, 12,143,266) action Jump("conv_SoupAndSunflowers")
         #saintcatherine
-        hotspot (345,650,97,97) action [Jump("conv_SaintCatherine")] hovered [SetVariable("TokenHovered", "st")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (582,580,97,97) action [Jump("conv_SoupAndSunflowers")] hovered [SetVariable("TokenHovered", "ss")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (806,518,97,97) action [Jump("conv_Davids")] hovered [SetVariable("TokenHovered", "d")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (495,408,97,97) action [Jump("conv_Gilgamesh")] hovered [SetVariable("TokenHovered", "gi")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (760,405,97,97) action [Jump("conv_Arnolfini")] hovered [SetVariable("TokenHovered", "ar")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (582,224,97,97) action [Jump("conv_MonaLisa")] hovered [SetVariable("TokenHovered", "m")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (301,251,97,97) action [Jump("conv_Poster")] hovered [SetVariable("TokenHovered", "p")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (345,650,97,97) action [If(beat_SaintCatherine < 5, Jump("conv_SaintCatherine"), NullAction())] hovered [SetVariable("TokenHovered", "st")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (582,580,97,97) action [If(beat_SoupAndSunflowers < 5, Jump("conv_SoupAndSunflowers"), NullAction())] hovered [SetVariable("TokenHovered", "ss")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (806,518,97,97) action [If(beat_Davids < 5, Jump("conv_Davids"), NullAction())] hovered [SetVariable("TokenHovered", "d")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (495,408,97,97) action [If(beat_Gilgamesh < 5, Jump("conv_Gilgamesh"), NullAction())] hovered [SetVariable("TokenHovered", "gi")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (760,405,97,97) action [If(beat_Arnolfini < 5, Jump("conv_Arnolfini"), NullAction())] hovered [SetVariable("TokenHovered", "ar")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (582,224,97,97) action [If(beat_MonaLisa < 5, Jump("conv_MonaLisa"), NullAction())] hovered [SetVariable("TokenHovered", "m")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (301,251,97,97) action [If(beat_Poster < 5, Jump("conv_Poster"), NullAction())] hovered [SetVariable("TokenHovered", "p")] unhovered [SetVariable("TokenHovered", "NONE")]
         #gilgamesh
         #hotspot (544,174,144,288) action Jump("conv_Gilgamesh")
         #sue

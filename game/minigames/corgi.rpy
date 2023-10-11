@@ -79,13 +79,16 @@ init python:
             if (self.score_bubble):
                 if (self.score_bubble.start == None) :
                     self.score_bubble.start = st
-                self.score_bubble.st = st-self.score_bubble.start
+                self.score_bubble.st = st-self.score_bubble.start -1
                 myalpha = max(1.0 - self.score_bubble.st / self.score_bubble.duration, 0.0)
                 self.score_bubble.y -= self.score_bubble.st/2
                 
                 score_bubble_img = Transform(child=self.score_bubble.myimage, alpha=myalpha)
+                textbox_img = Transform(text_overlay, alpha=myalpha)
                 score_img = renpy.render(score_bubble_img, width, height,  st, at)
-                render.blit(score_img,(self.score_bubble.x,self.score_bubble.y))
+                textbox_overlay = renpy.render(textbox_img, width, height,  st, at)
+                render.blit(textbox_overlay, (0,0))
+                render.blit(score_img,(400,900))
                 if (self.score_bubble.st  > self.score_bubble.duration):
                     self.score_bubble = None
             
@@ -140,7 +143,7 @@ init python:
                                 self.score_bubble = Bubble_Text("That's the one!", "#ffffff",72,3, x-5, y-5)
                                 self.end_start = -1
                             else:
-                                self.score_bubble = Bubble_Text("Hm, not quite.", "#ffffff",72,3, x-5, y-5)
+                                self.score_bubble = Bubble_Text("Hm, not quite.", "#ffffff",40,3, x-5, y-5)
                             i.left = i.right
                             clicked = True
                             break
@@ -277,6 +280,7 @@ label minigamestart_corgi(gameimage="notdefault"):
         #we need to be able to input an argument here
         difference_image = MinigameCorgi("images/minigame/Corgi/CorgiOfficeBase.jpg", diff_items)
         difference_image.randomizeItems(5)
+        text_overlay = TextRender("images/minigame/corgi/textbox_minigame.png")
         #TempCleaningBackground = difference_image
         ui.add(difference_image)
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
