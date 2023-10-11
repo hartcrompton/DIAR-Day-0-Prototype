@@ -254,7 +254,7 @@ label .beat4:
         "News outlets light up all over the globe: Miss Mona Missing from Minor Museum!"
         "Not since Peruggia stole the painting in 1911 have crowds swarmed this spot; now taking selfies with the empty space she left behind."
         "In the background, a dozen smiles, distant and satisfied, as though some part of her finally returned home."
-
+    $ StoryCompletedTotal += 1
     $ beat_MonaLisa += 1
     #$ if d_MonaLisa < 6: d_MonaLisa + 1
     jump FreeRoam

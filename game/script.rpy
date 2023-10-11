@@ -42,9 +42,15 @@ layeredimage adminlayered:
 image side adminlayered = LayeredImageProxy("adminlayered", Transform(xoffset=0, yoffset=0))
 define e = Character("Ea-Nasir", image="eanasir")
 define n = Character("Nighthawks")
+define n1 = Character("The Regular", image="nighthawks1")
+define n2 = Character("The Tailor", image="nighthawks2")
+define n3 = Character("The Singer", image="nighthawks3")
+define n4 = Character("The Barman", image="nighthawks4")
 define sue = Character("Sue")
 define t = Character("Theodore")
-define v = Character("Vending Machine")
+define v = Character("Vending Machine", image="vendingmachine")
+
+default StoryCompletedTotal = 0
 
 #utility characters
 define meta = Character("") #deprecated, no use
@@ -111,6 +117,7 @@ default d_Label = d_LabelFromValue()
 
 # start label is the first bit of game code that gets read
 label start:
+    $ StoryCompletedTotal = 0
     scene museum bg1
     call pronounselection from _call_pronounselection
     menu:
@@ -123,10 +130,10 @@ label start:
 
     scene museum bg1
     #will need to make this changeable through the preferences menu too
-    "You picked [selectedpronouns], right on."
-    "[they!c] [are] eating [their] apple."
-    "[they!c] eat[s] [their] apple."
-    "The apple is [theirs]."
+    #"You picked [selectedpronouns], right on."
+    #"[they!c] [are] eating [their] apple."
+    #"[they!c] eat[s] [their] apple."
+    #"The apple is [theirs]."
 
     jump GameIntroduction
 

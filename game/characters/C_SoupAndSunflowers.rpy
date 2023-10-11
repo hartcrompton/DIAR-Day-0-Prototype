@@ -375,6 +375,7 @@ label .beat4:
                 "You leave the painting feeling conflicted, but you're pretty sure the vibes are better than before. So that's something."
         jump SSEnding
     label SSEnding:
+        $ StoryCompletedTotal += 1
         $ beat_SoupAndSunflowers += 1
         jump FreeRoam
 label .Outcome:

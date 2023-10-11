@@ -382,7 +382,7 @@ label .Beat4:
     arw "Well I don't see why not!"
     arm "Who are you again?"
     ard "...we'll work on it."
-
+    $ StoryCompletedTotal += 1
     $ beat_Arnolfini += 1
     jump FreeRoam
 

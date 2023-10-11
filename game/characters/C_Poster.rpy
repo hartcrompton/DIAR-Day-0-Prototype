@@ -207,7 +207,7 @@ label .beat4:
     pc "I will, with support from you!"
     "Even though the poster still is static and unmoving, you feel like its smiler has somehow, someway, gotten bigger."
     p "Hooray!"
-
+    $ StoryCompletedTotal += 1
     $ beat_Poster += 1
     jump FreeRoam
 

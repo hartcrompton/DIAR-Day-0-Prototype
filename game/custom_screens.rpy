@@ -14,7 +14,7 @@ style style_OtherDay is text:
         size 20
 
 screen gameUI:
-    textbutton "Stats":
+    textbutton "":
         xalign 1.0
         yalign 0.0
         xoffset -30

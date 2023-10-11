@@ -8,6 +8,10 @@ default DayNumber = 1
 default actions = 4
 default time_of_day = 1
 default InfiniteActions = 0
+default CleanAntiquities = 0
+default CleanFineArt = 0
+default CleanFoyer = 0
+default CleanMixedMedia = 0
 
 #the different times of day are just recolored versions of the same background
 image museum_morning:
@@ -35,34 +39,102 @@ label DayStart:
     show screen gameUI
     scene museumtod
     $ days_remaining = 4 - DayNumber
-    meta "It is day [DayNumber]."
-    show admin at right
-    ad "Good morning! Hope you slept well, you have [days_remaining] days left before the exhibit."
+    #meta "It is day [DayNumber]."
+    #ad "Good morning! Hope you slept well, you have [days_remaining] days left before the exhibit."
 
     if DayNumber == 1:
-        ad "Since it's your first day, let me tell you what to do."
+        "Well, here it is, your first day on the job."
+        show admin at AdminPortrait
+        ad "Good morning, [pc_name]!"
+        ad "Everything is {i}fine{/i}. Just wanted to remind you that the Grand Gala is in four days."
+        ad "Good luck cleaning and organizing!"
+        hide admin
+        "The Admin's right, this place is a mess."
     elif DayNumber == 2:
-        ad "It's your second day!"
+        show admin at AdminPortrait
+        ad "[pc_name], hi! I actually went outside yesterday. Did you know grass and trees are, like, alive? Anyway, how are you?"
+        ad "But I'm sure you've got LOTS to do, so I'll let you go."
+        hide admin
     elif DayNumber == 3:
-        ad "It's your third day!"
+        show admin at AdminPortrait
+        ad "Hello [pc_name], it's time for your performance review!"
+        ad "How do you like working at the museum?"
+        menu:
+            "Did you know the art can talk?":
+                pass
+            "Everything is {i}very{/i} normal.":
+                pass
+        ad "Great to hear!"
+        "You doubt the Admin heard you at all."
+        ad "Let's put a pin in this, talk tomorrow!"
+        hide admin
     elif DayNumber == 4:
-        ad "It's the last day!"
+        show admin at AdminPortrait
+        ad "Hi, [pc_name], I hope things are going well."
+        ad "I'm sure you don't need me to remind you the Grand Gala is tomorrow."
+        ad "Since this might be your last day, we'd better finish that performance review!"
+        ad "How is your manager doing, on a scale of one to ten?"
+        menu:
+            "By manager, do you mean you?":
+                pass
+            "You're the best. No complaints":
+                pass
+            "You're never here, and you never help":
+                pass
+        ad "The form just asks for a number."
+        menu:
+            "I dunno... seven?":
+                pass
+            "Nine-hundred and twelve.":
+                pass
+            "One. The loneliest number.":
+                pass
+        ad "Perfect, let me write that down."
+        menu:
+            "I get the sense you're not listening to me.":
+                pass
+            "Is everything ok?":
+                pass
+            "Was there a point to all this?":
+                pass
+        ad "What? I don't -- well, now that you mention it..."
+        ad "I love the museum, and I love our community! But I keep hearing about this thing called flow..."
+        ad "Where everything goes smoothly, and you're filled with a sense of purpose..."
+        ad "Sometimes I wonder what I'm doing here."
+        menu:
+            "You're a crucial part of the team. The museum needs you.":
+                ad "Aw, thanks [pc_name]. You're the best! Another call coming in, talk soon!"
+            "Have you ever wanted to, uh, take a class? Or something?":
+                ad "A class? A class! Yes, I could... I guess I could do anything! Thanks, [pc_name]. Another call, please hold!"
+        "The call drops."
+        hide admin
 
-    ad "The museum's filthy, so you should probably clean."
+
+    #ad "The museum's filthy, so you should probably clean."
 
     menu:
-        "Yeah OK.":
+        "[[Clean the Antiquities wing]" if CleanAntiquities == 0:
+            $ CleanAntiquities = 1
+            jump DailyCleaning
+        "[[Clean the Fine Art wing]" if CleanFineArt == 0:
+            $ CleanFineArt = 1
+            jump DailyCleaning
+        "[[Clean the Foyer]" if CleanFoyer == 0:
+            $ CleanFoyer = 1
+            jump DailyCleaning
+        "[[Clean the Mixed Media wing]" if CleanMixedMedia == 0:
+            $ CleanMixedMedia = 1
             jump DailyCleaning
 
 label DailyCleaning:
-    scene museum bg1
+    scene museumtod
     call minigamestart_cleaning("cleaning") from _call_minigamestart_cleaning
     
-    meta "Now you're free to roam around the museum"
+    #meta "Now you're free to roam around the museum"
     jump FreeRoam
 
 label FreeRoam:
-    scene mapbg
+    scene museumtod
     show screen gameUI
     if actions == 0:
         jump OutOfActions

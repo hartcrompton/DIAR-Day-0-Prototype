@@ -372,7 +372,7 @@ label .beat4:
    
     
     ###
-    
+    $ StoryCompletedTotal += 1
     $ beat_SaintCatherine += 1
     jump FreeRoam
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Gilgamesh.rpy", line 55: reached end of line when expecting ':'.
-    if 
-       ^
+File "game/characters/C_Gilgamesh.rpy", line 163: expected statement.
+    renpy.set_return_stack([])
+                              ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sun Oct  8 00:35:11 2023
+Tue Oct 10 17:52:20 2023

@@ -1,56 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/minigames/research.rpy", line 154, in prepare_screen
-    screen ResearchMinigameDrawerUI:
-  File "game/minigames/research.rpy", line 154, in prepare
-    screen ResearchMinigameDrawerUI:
-  File "game/minigames/research.rpy", line 181, in prepare
-    frame:
-  File "game/minigames/research.rpy", line 181, in prepare
-    frame:
-  File "game/minigames/research.rpy", line 192, in prepare
-    vbox:
-  File "game/minigames/research.rpy", line 192, in prepare
-    vbox:
-SyntaxError: unexpected EOF while parsing (game/minigames/research.rpy, line 195)
+While running game code:
+  File "game/characters/C_Gilgamesh.rpy", line 161, in script call
+    call call_catalogue("Gilgamesh")
+  File "game/minigames/research.rpy", line 49, in script call
+    call screen wait_for_user()
+  File "game/minigames/research.rpy", line 58, in script call
+    call expression _return
+  File "game/characters/C_Gilgamesh.rpy", line 161, in script call
+    call call_catalogue("Gilgamesh")
+  File "game/minigames/research.rpy", line 49, in script call
+    call screen wait_for_user()
+  File "game/minigames/research.rpy", line 58, in script call
+    call expression _return
+ScriptError: could not find label 'None'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\bootstrap.py", line 275, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\main.py", line 670, in main
-    run(restart)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\main.py", line 93, in run
-    renpy.display.screen.prepare_screens()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 1003, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/minigames/research.rpy", line 154, in prepare_screen
-    screen ResearchMinigameDrawerUI:
-  File "game/minigames/research.rpy", line 154, in prepare
-    screen ResearchMinigameDrawerUI:
-  File "game/minigames/research.rpy", line 181, in prepare
-    frame:
-  File "game/minigames/research.rpy", line 181, in prepare
-    frame:
-  File "game/minigames/research.rpy", line 192, in prepare
-    vbox:
-  File "game/minigames/research.rpy", line 192, in prepare
-    vbox:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\py3analysis.py", line 808, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\py3analysis.py", line 790, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1088, in py_compile
-    raise e
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1034, in py_compile
-    raise orig_e
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1027, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: unexpected EOF while parsing (game/minigames/research.rpy, line 195)
+  File "game/characters/C_Gilgamesh.rpy", line 161, in script call
+    call call_catalogue("Gilgamesh")
+  File "game/minigames/research.rpy", line 49, in script call
+    call screen wait_for_user()
+  File "game/minigames/research.rpy", line 58, in script call
+    call expression _return
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1725, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+  File "game/characters/C_Gilgamesh.rpy", line 161, in script call
+    call call_catalogue("Gilgamesh")
+  File "game/minigames/research.rpy", line 49, in script call
+    call screen wait_for_user()
+  File "game/minigames/research.rpy", line 58, in script call
+    call expression _return
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\script.py", line 1013, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'None'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Day 0 Prototype 1.0
-Sun Oct  8 00:38:32 2023
+Tue Oct 10 17:49:36 2023

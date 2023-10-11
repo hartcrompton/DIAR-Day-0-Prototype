@@ -219,6 +219,7 @@ label .beat3:
                 #minigame go here
                 call call_catalogue("Davids")
                 label DavidsResearch:
+                    $ renpy.set_return_stack([])
                     scene archives bg
                     hide screen ResearchMinigameDrawerUI
                     hide screen ResearchMinigameUI
@@ -318,7 +319,7 @@ label .beat4:
         pc "I means sure individually you each beat a David, but together in an exhibit, you can beat the greatest challenge you heros face: pride."
         "The Davids start to cry."
         pc "Oh please. No more tears. I've already had to weather that storm with Gilgamesh."
-
+    $ StoryCompletedTotal += 1
     label DavidsEnd:
         $ beat_Davids += 1
     jump FreeRoam

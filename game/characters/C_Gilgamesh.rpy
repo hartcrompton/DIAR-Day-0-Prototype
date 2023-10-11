@@ -160,6 +160,7 @@ label .beat1:
     e "Gilgamesh is already irritating enough, I'd prefer to leave him in blissful ignorance."
     call call_catalogue("Gilgamesh")
     label GilgameshResearch:
+        $ renpy.set_return_stack([])
         scene archives bg
         hide screen ResearchMinigameDrawerUI
         hide screen ResearchMinigameUI
@@ -172,6 +173,7 @@ label .beat1:
         "GIl went kinda CRAZY and fought to the END OF THE WORLD to find IMMORTALITY"
         "Long story short, HE DIDN'T. But he returned to URUK and found PEACE."
         "ALSO: Something about Ea-nasir having a past scamming people with shoddy copper"
+        #return
     $ beat_Gilgamesh += 1
     jump FreeRoam
 label .beat2:
@@ -755,6 +757,7 @@ label .beat4:
     gi "Of course you will, who could look away?"
     "Well, he's still Gilgamesh, but as you walk away, you feel the oppressive atmosphere of the Anitquities Wing recede."
     $ beat_Gilgamesh += 1
+    $ StoryCompletedTotal += 1
     jump FreeRoam
 
 label .Outcome:

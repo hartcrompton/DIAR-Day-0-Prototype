@@ -22,24 +22,24 @@ screen inventory():
     add Solid("#244")
     modal renpy.get_screen("wait_for_user") # if you don't need modal, omit this line
     sensitive renpy.get_screen("wait_for_user")
-    textbutton "Item" action Return("DrawerStuck") align (.5, .5)
-    textbutton "Return" action Return("exit") align (.5, .6)
+    #textbutton "Item" action Return("DrawerStuck") align (.5, .5)
+    #textbutton "Return" action Return("exit") align (.5, .6)
 #this doesn't change
 screen wait_for_user():
     pass
 #this is what should call the catalogue up
-label call_inventory():
-    label .repeat:
-    show screen inventory()
-    call screen wait_for_user()
-    if _return == "exit":
-        hide screen inventory
-        return
-
-    show layer middle at unfocus
-    call expression _return from _call_expression
-    show layer middle at reset
-    jump .repeat
+#label call_inventory():
+#    label .repeat:
+#    show screen inventory()
+#    call screen wait_for_user()
+#    if _return == "exit":
+#        hide screen inventory
+#        return
+#
+#    show layer middle at unfocus
+ #   call expression _return from _call_expression
+#    show layer middle at reset
+ #   jump .repeat
 
 label call_catalogue(ResearchCharacter="Default"):
     if ResearchCharacter != "Default":
@@ -50,9 +50,14 @@ label call_catalogue(ResearchCharacter="Default"):
     if _return == "exit":
         hide screen ResearchMinigameUI
         return
-
+    if _return == "GilgameshResearch":
+        hide screen ResearchMinigameUI
+        jump GilgameshResearch
     show layer middle at unfocus
-    call expression _return from _call_expression_1
+    if _return:
+        call expression _return
+    else:
+        return
     show layer middle at reset
     jump .repeat
 

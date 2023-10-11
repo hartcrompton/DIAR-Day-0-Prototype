@@ -11,7 +11,7 @@ default ClosedLine_p = 0
 
 label final_exhibit:
     meta "It's the final exhibit today!"
-    call CalculateOutcome
+    #call CalculateOutcome
     jump AllOutcomes
     #if ExhibitOutcome == 1:
     #    jump MuseumSaved
@@ -64,9 +64,9 @@ label MuseumSaved:
 
 label AllOutcomes:
     scene AllEndings
-    if ExhibitOutcome == 1:
+    if StoryCompletedTotal >= 3:
         "You did it, the Grand Gala was a success."
-    if ExhibitOutcome == 0:
+    else:
         "In spite of your best efforts, the museum closed."
     call conv_Arnolfini.Outcome
     call conv_Davids.Outcome
@@ -75,6 +75,7 @@ label AllOutcomes:
     call conv_SaintCatherine.Outcome
     call conv_SoupAndSunflowers.Outcome
     call conv_Poster.Outcome
+    "Line go here."
     return
 
 label MuseumClosed:
