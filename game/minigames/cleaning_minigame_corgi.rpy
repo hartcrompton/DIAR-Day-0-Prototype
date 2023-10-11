@@ -158,6 +158,11 @@ init python:
                 if (clicked):
                     self.score_bubble = Bubble_Text(renpy.random.choice(["Impressive!", "No holding back!", "Splendid job!", "Yeah, lets go!"]), "ffffff",48,3, x-15, y-5)
                     #renpy.call_in_new_context("TestPosterLines")
+                    #Impressive!
+                    #No holding back!
+                    #Splendid job!
+                    #Yeah, lets go!
+                    #Cleanup complete! Gooooooo you!
                     self.the_score += 20  
                 elif (self.x_offset <= x <= self.width*2 + self.x_offset) and (self.y_offset <= y <= self.height + self.y_offset):
                     #self.score_bubble = Bubble_Text("-5", "#f00",72,3, x-5, y-5)

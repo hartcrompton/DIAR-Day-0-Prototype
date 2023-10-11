@@ -144,7 +144,13 @@ init python:
                             i.left = i.right
                             clicked = True
                             break
-                            
+                        #I need something that can help me cheer people on!			Hint for the right object
+                        #No, that's not it. Though I bet you could something delicious in that!			Mug selected
+                        #Watch out for any fuzzy bits, though. It's been sitting there awhile.			Mug selected
+                        #That won't work. Though I've seen it make tasty snacks before that'll be sure to give you energy!			Toaster selected
+                        #I've seen that can be useful for various things, but no, not for cheering. Please don't use that on me!			Stapler
+                        #Definitely not, unfortunately. I think I've seen something scurrying in and out of that lately. Careful!			Bag of Chips
+                        #That's perfect!			Right object selected (small flag)
     
                         #right side
                         #elif (i.x * zoomfactor + self.x_offset + self.width+self.gutter <= x <= i.x * zoomfactor + self.width + i.w * zoomfactor + self.x_offset+self.gutter) and (i.y * zoomfactor <= y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):   
