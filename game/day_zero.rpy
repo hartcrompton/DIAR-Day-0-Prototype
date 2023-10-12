@@ -301,7 +301,7 @@ label MuseumTour:
         matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
     ad happy "This is the Grand Foyer."
-    ad "These are our Davids. Most people don't know they were actually triplets."
+    ad "And these… are our Davids."
     "At first, you think you hear an echo:"
     #fix up the echo
     hide admin
@@ -334,14 +334,15 @@ label MuseumTour:
         xoffset -300
         yoffset 200
     "But as you approach, the echo fractures into three different voices, each one placing more emphasis on claiming identity for the one true David."
-    dm "Prithee! I should have said I'm {i}the{/i} David."
-    dd "No that's what I'm saying, {i}I'm{/i} the David. "
-    db "Fools, you both, for I'm {i}the David{/i}."
+    dm "It's preposterous that either of you could be the David. It's clearly me."
+    dd "No way, {i}I'm{/i} the David. You're just a couple of posers!"
+    db "Neither of you weaklings could possibly be {/i}the{/i} David. I am!."
     
     menu:
         "They're... talking?":
             pass
-        "Why do we have three?":
+        "There's three of them? Don't we only need one?":
+            ad "What an insightful question! Can't wait to hear how you solve this problem."
             pass
     #pc "They sure seem to be talking a lot. Why do we have three of them?"
     show admin at AdminPortrait
