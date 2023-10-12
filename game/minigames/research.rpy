@@ -62,7 +62,7 @@ label call_catalogue(ResearchCharacter="Default"):
     jump .repeat
 
 label DrawerStuck:
-    "Drawer stuck!"
+    "It won't budge."
     return
 
 transform unfocus:

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/ending.rpy", line 124: Line is indented, but the preceding call statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    "You've already received several emails from collectors and interviewers, eager to meet the new curator."
-    ^
+File "game/characters/C_Gilgamesh.rpy", line 163: expected 'image_name_component' not found.
+    hide 
+         ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Wed Oct 11 17:13:53 2023
+Wed Oct 11 18:05:06 2023

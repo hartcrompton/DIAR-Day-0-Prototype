@@ -160,6 +160,9 @@ label .beat1:
     e "One last thing."
     e "Don't talk about Enkidu."
     e "Gilgamesh is already irritating enough, I'd prefer to leave him in blissful ignorance."
+    hide gilgamesh
+    hide easnasir
+    "Let's see what the archive has on Gilgamesh."
     call call_catalogue("Gilgamesh")
     label GilgameshResearch:
         $ renpy.set_return_stack([])

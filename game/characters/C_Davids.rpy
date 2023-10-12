@@ -275,6 +275,8 @@ label .beat3:
                 $ BibleResearched = 1
                 #minigame go here
                 #will probably need some player response lines
+                hide davids
+                "Let's see what the archive has on Davids."
                 call call_catalogue("Davids")
                 label DavidsResearch:
                     $ renpy.set_return_stack([])
