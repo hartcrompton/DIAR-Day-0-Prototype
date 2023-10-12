@@ -10,7 +10,7 @@ label GameIntroduction:
     scene museumexteriorrain
     #leaving the interview, missed bus, chased by the rain into an empty museum.
     #storm audio
-    play music "music/Day0LoopSadBella.wav"
+    #play music "music/Day0LoopSadBella.wav"
     #play audio "music/RainLong.mp3"
     "Hiring Manager" "Dear Applicant,"
     "Hiring Manager" "Every journey begins somewhere."
@@ -117,7 +117,7 @@ label DayZero:
                 jump GetThePhone
 
     show admin at AdminPortrait with vpunch
-    play music "music/Day0AdminCallBella.wav"
+    #play music "music/Day0AdminCallBella.wav"
     ad "Charles! Where were you?"
     menu:
         "Who?":
