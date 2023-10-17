@@ -1,46 +1,62 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/characters/C_Poster.rpy", line 178, in script call
-    call minigamestart_cleaning_corgi from _call_minigamestart_cleaning_corgi
-  File "game/minigames/cleaning_minigame_corgi.rpy", line 336, in script
-    python:
-  File "game/minigames/cleaning_minigame_corgi.rpy", line 349, in <module>
-    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
-  File "game/minigames/cleaning_minigame_arnolfini.rpy", line 181, in event
-    self.score_bubble = Bubble_Text(arnolfini_barks[9], "#ffffff",30,3, x, y)
-NameError: name 'arnolfini_barks' is not defined
+While processing the color property of anonymous style:
+  File "game/characters/C_Davids.rpy", line 42, in script
+    d "You're wrong! It can only be me! There's one David in the story, and one David out here!"
+IndexError: string index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/characters/C_Poster.rpy", line 178, in script call
-    call minigamestart_cleaning_corgi from _call_minigamestart_cleaning_corgi
-  File "game/minigames/cleaning_minigame_corgi.rpy", line 336, in script
-    python:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/minigames/cleaning_minigame_corgi.rpy", line 349, in <module>
-    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
+  File "game/characters/C_Davids.rpy", line 42, in script
+    d "You're wrong! It can only be me! There's one David in the story, and one David out here!"
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1473, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1003, in do_display
+    display_say(who,
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4540, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1177, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1177, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1177, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "game/minigames/cleaning_minigame_arnolfini.rpy", line 181, in event
-    self.score_bubble = Bubble_Text(arnolfini_barks[9], "#ffffff",30,3, x, y)
-NameError: name 'arnolfini_barks' is not defined
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 481, in visit_all
+    self.child.visit_all(callback, seen=None)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 683, in visit_all
+    callback(self)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\text\text.py", line 1792, in per_interact
+    if self.style.slow_abortable:
+  File "gen3-static/styleclass.pxi", line 533, in renpy.styledata.styleclass.Style.slow_abortable.__get__
+  File "style.pyx", line 493, in renpy.style.StyleCore._get
+  File "style.pyx", line 710, in renpy.style.build_style
+  File "style.pyx", line 707, in renpy.style.build_style
+  File "gen3-static/style_functions.pyx", line 323, in style_functions.color_property
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\color.py", line 143, in __new__
+    if c[0] == '#':
+IndexError: string index out of range
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Beta 1 1.0
-Mon Oct 16 20:13:38 2023
+Tue Oct 17 15:22:53 2023

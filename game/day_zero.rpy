@@ -5,19 +5,25 @@ transform AdminPortrait:
     yalign 0.5
     zoom .75
     yoffset -100
+transform Rumble:
+    ease .05 xoffset 15
+    ease .05 xoffset -15
+    ease .05 xoffset 25
+    ease .05 xoffset -25
+    ease .05 xoffset 0
 default NameLie = 0
 label GameIntroduction:
     scene museumexteriorrain
     #leaving the interview, missed bus, chased by the rain into an empty museum.
     #storm audio
     #play music "<from 5>music/Day0LoopSadBella.wav"
-    play audio "<from 10>music/RainLong.mp3" volume .2
-    "Hiring Manager" "Dear Applicant,"
-    "Hiring Manager" "Every journey begins somewhere."
-    $ renpy.music.set_volume(.1, delay=1, channel="audio") 
-    "Hiring Manager" "Yours, unfortunately, does not begin with us."
+    #play audio "<from 10>music/RainLong.mp3" volume .2
+    "Hiring Manager" "{i}Dear Applicant,{/i}"
+    "Hiring Manager" "{i}Every journey begins somewhere.{/i}"
+    #$ renpy.music.set_volume(.1, delay=1, channel="audio") 
+    "Hiring Manager" "{i}Yours, unfortunately, does not begin with us.{/i}"
     "So, the interview hadn't gone {i}great{/i}."
-    play audio "<from 10>music/RainLong.mp3" volume 1.0 fadein 1
+    #play audio "<from 10>music/RainLong.mp3" volume 1.0 fadein 1
     #"And your day didn't improve when you missed your bus and the rain chased you into this forlorn museum."
     "Then you missed your bus."
     #exterior shot
@@ -27,7 +33,7 @@ label GameIntroduction:
     #"With nothing better to do, you wait out the rain in the museum."
     scene foyer bg with fade:
         matrixcolor TintMatrix("#7d91c7")
-    "Empty. Not even a receptionist."
+    "Deserted. Not even a receptionist."
     #"Funny, you'd never even thought to visit this museum before."
     "The guest log is {i}very{/i} empty."
     #"It feels wrong not to at least sign it."
@@ -36,8 +42,15 @@ label GameIntroduction:
     #    pc_name = pc_name.strip()
     #    if not pc_name:
     #        pc_name = "Player"    
-
-    
+    menu:
+        "[[Sign your name]":
+            "Somehow, a single name seems even sadder."
+            pass
+        "{i}Almost seems haunted.{/i}":
+            pass
+        "{i}It doesn't seem like this place is doing well.{/i}":
+            pass
+    "Just like you."
     "No job."
     "Wet clothes." 
     "$2.36 in your pocket."
@@ -88,7 +101,7 @@ label DayZero:
     
     "It feels wrong, like being in a school hallway after hours."
     stop music
-    play sound "sfx/PhoneRing.mp3"
+    play sound "sfx/PhoneRing.mp3" if_changed
     show davids with hpunch
     #phone ring here
     "An alarm blares through the museum."
@@ -98,18 +111,18 @@ label DayZero:
         "[[Freeze and act small]":          
             "You're not the first person who tried to get too close to a museum piece."
 
-    play sound "sfx/PhoneRing.mp3"
+    play sound "sfx/PhoneRing.mp3" if_changed
     show davids with hpunch
     "The alarm sounds again and again."
     "With some relief, you realize it's just the phone."
 
-    play sound "sfx/PhoneRing.mp3"
+    play sound "sfx/PhoneRing.mp3" if_changed
     show davids with hpunch
     "It's not stopping either."
 
     #cutesy little phone interaction
     label GetThePhone:
-        play sound "sfx/PhoneRing.mp3"
+        play sound "sfx/PhoneRing.mp3" if_changed
         scene antiquities bg with hpunch:
             matrixcolor TintMatrix("#7d91c7")
         call PhoneWaitResponse from _call_PhoneWaitResponse
@@ -233,10 +246,10 @@ label PlayerNameInput:
             ad "Wonderful! Portraits, landscapes?"
             pc "Mostly houses. A few boats, some propane tanks."
             ad "That's... OK, great!"
-        "I um, I've {i}procured{/i} art from private clients.":     
+        "I, um, I've {i}procured{/i} art from private clients.":     
             $ pc_work = "\"procurer\"" 
-            ad "Do you mean 'for'?"
-            pc "No."
+            ad "You mean you procured art {i}for{/i} clients?"
+            pc "No, mostly {i}from{/i}."
         "I mean, not really?":     
             $ pc_work = "layabout" 
             ad "That's... well it's not too important."
@@ -303,7 +316,7 @@ label MuseumTour:
         blur 5
         matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
-    ad happy "This is the Grand Foyer."
+    ad happy "I left the cordless phone in the grand foyer, so you're probably there right now!"
     ad "And these… are our Davids."
     "At first, you think you hear an echo:"
     #fix up the echo
@@ -345,8 +358,10 @@ label MuseumTour:
         "They're... talking?":
             pass
         "There's three of them? Don't we only need one?":
+            show admin at AdminPortrait
             ad "What an insightful question! Can't wait to hear how you solve this problem."
             pass
+    hide admin
     #pc "They sure seem to be talking a lot. Why do we have three of them?"
     show admin at AdminPortrait
     ad "Moving on!"
@@ -399,7 +414,7 @@ label MuseumTour:
     show monalisa at truecenter:
         zoom .8
         yoffset -50
-    m "This {i}bischero{/i}. I'm Florentine, not French."
+    m "This {i}bischerə{/i}. I'm Florentine, not French."
     m "And what do we have here? A [pc_work]. How prestigious. And rain-soaked."
     m "Water remains the driving force of all nature. When it drives this place into the ground we can all go home."
     #revise
@@ -458,7 +473,7 @@ label MuseumTour:
     show corgiposter at truecenter:
         zoom .8
         yoffset -110
-    "You turn to see an inspirational poster hanging on the wall featuring a cute corgi leaping into the air"
+    "You turn to see an inspirational poster hanging on the wall featuring a cute corgi leaping into the air."
     p "I... I hope you do your best today! I'm rooting for you!"
     
     scene foyer bg with fade:
@@ -495,13 +510,16 @@ label MuseumTour:
     "Its lights flicker conspiratorially."
     v "You the new{0} guy{/0}{1} gal{/1}{2}bie{/2}?"
     v "Right on. Let me get you the keys."
+    hide vendingmachine
+    show vendingmachine at Rumble:
+        xalign 0.5
     "The machine {i}kachunks{/i} and {i}grinds{/i}. A heavy key ring flies out of the change door."
     menu:
         "Thanks?":
             v "De nada, {0}bro{/0}{1}sis{/1}{2}friendo{/2}."
         "Why do you have these?":
             v "Gotta stay prepped."
-    v "So you're the new curator? Really diving into the deep end."
+    v "Congrats on your new gig, Curator [pc_name]! Really diving into the deep end."
     v "Worst case, you only need to last a week."
     #pc "Yeah, the Admin mentioned that. Why is the museum closing?"
     $ WhyClosing = 0
@@ -553,14 +571,13 @@ label MuseumTour:
                 $ VendingCurator = 1
                 jump VendingQuestions
             "About the Admin..." if VendingAdmin != 1:
-                v "Sure."
                 pc "What's wrong with them?"
                 v "Beats me. Keep too many plates spinning too long, maybe your head starts to spin too."
                 $ VendingAdmin = 1
                 jump VendingQuestions
     v "I'll be honest. I've seen a lot of curators come through here."
     v "They all thought a few lights and some marketing could save this place."
-    v "But you can {i}listen{/i}, feel the current. You're the first one I think who has a chance."
+    v "But you can {i}listen{/i}, feel the current. You're the first one I think has a chance."
     pc "What if I don't?"
     v "No stress. All these jokers are on loan. If the museum closes, they just get shipped back."
     pc "What about you?"
@@ -568,14 +585,15 @@ label MuseumTour:
     v "Straight to the dump."
     v "Crushed."
     v "Cubed."
+    v "{i}Recycled.{/i}"
     "The Vending Machine shivers."
-    v "Re-cycled. But don't worry, it's all the great circle of life."
+    v "But don't worry, it's all the great circle of life."
     v "Now go lock up and get some rest, busy day tomorrow!"
 
     scene foyer bg with fade:
         matrixcolor TintMatrix("#7d91c7")
     "Four days."
-    "Four days to save a dysfunctional gallery of art from itself. And maybe save your job with it."
+    "Just four days to save a dysfunctional gallery of art from itself. And maybe save your job with it."
     "But that can wait for tomorrow."
     "As you leave, someone whispers behind you, unnoticed. (Or is that somebodies, plural?)"
     scene foyer bg:
@@ -587,7 +605,7 @@ label MuseumTour:
     n1 "Think our new curator is going to make it?"
     n2 "After THAT first day? Doubtful."
     if NameLie == 1:
-        n3 "Like watching a slow-moving car crash. I mean, everyone knows the REAL Dr. [pc_name] is currently summering in the Hamptons with Banksy."
+        n3 "Like watching a slow-moving car crash. I mean, everyone knows the REAL Dr. [pc_name] is summering in the Hamptons with Banksy."
     if NameLie == 0:
         n3 "Like watching a slow-moving car crash. I mean, choosing {i}honesty{/i}? Everyone knows lying in interviews is a sacred and time-honored practice."
     n4 "I'd be shocked if [they] even come[s] back tomorrow."

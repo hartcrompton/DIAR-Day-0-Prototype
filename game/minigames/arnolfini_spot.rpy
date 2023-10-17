@@ -240,8 +240,8 @@ label minigamestart_arnolfini(gameimage="notdefault"):
     if gameimage == 1:
         python:
             diff_items = []
-            diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniSpot1Overlay.jpg", 596,498,106,118))
-            diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniSpot1Overlay.jpg", 1210,409,122,126))
+            diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniGame1Overlay.jpg", 76, 854, 189, 169))
+            diff_items.append(STD_Item("images/minigame/Arnolfini/ArnolfiniGame1Overlay.jpg", 667, 787, 107, 117))
         if gameimage == "default":
             return
         python:
@@ -250,7 +250,7 @@ label minigamestart_arnolfini(gameimage="notdefault"):
             the_score = 0
             renpy.block_rollback()
             #we need to be able to input an argument here
-            difference_image = ArnolfiniSpot("images/minigame/Arnolfini/ArnolfiniSpot1Base.jpg", diff_items)
+            difference_image = ArnolfiniSpot("images/minigame/Arnolfini/ArnolfiniGame1Base.jpg", diff_items)
             difference_image.randomizeItems(2)
             #TempCleaningBackground = difference_image
             ui.add(difference_image)

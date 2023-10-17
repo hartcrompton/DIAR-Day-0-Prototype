@@ -12,6 +12,7 @@ default CleanAntiquities = 0
 default CleanFineArt = 0
 default CleanFoyer = 0
 default CleanMixedMedia = 0
+default CleaningRoom = "NONE"
 
 #the different times of day are just recolored versions of the same background
 image museum_morning:
@@ -117,20 +118,24 @@ label DayStart:
     menu:
         "[[Clean the Antiquities wing]" if CleanAntiquities == 0:
             $ CleanAntiquities = 1
+            $ CleaningRoom =  "antiquities"
             jump DailyCleaning
         "[[Clean the Fine Art wing]" if CleanFineArt == 0:
             $ CleanFineArt = 1
+            $ CleaningRoom =  "fineart"
             jump DailyCleaning
         "[[Clean the Foyer]" if CleanFoyer == 0:
             $ CleanFoyer = 1
+            $ CleaningRoom =  "foyer"
             jump DailyCleaning
         "[[Clean the Mixed Media wing]" if CleanMixedMedia == 0:
             $ CleanMixedMedia = 1
+            $ CleaningRoom =  "mixedmedia"
             jump DailyCleaning
 
 label DailyCleaning:
     scene museumtod
-    call minigamestart_cleaning("cleaning") from _call_minigamestart_cleaning
+    call minigamestart_cleaning(CleaningRoom) from _call_minigamestart_cleaning
     
     #meta "Now you're free to roam around the museum"
     jump FreeRoam
@@ -160,6 +165,11 @@ label NighthawksDaily:
         yoffset -125
     call conv_Nighthawks.Poster
     call conv_Nighthawks.MonaLisa
+    call conv_Nighthawks.Davids
+    call conv_Nighthawks.Gilgamesh
+    call conv_Nighthawks.SaintCatherine
+    call conv_Nighthawks.SoupAndSunflowers
+    call conv_Nighthawks.Arnolfini
     jump DayEnd
 
 label DayEnd:    

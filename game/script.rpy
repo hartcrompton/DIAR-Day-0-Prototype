@@ -9,23 +9,23 @@ define pc = Character("[pc_name]")
 
 #main characters
 define ar = Character("Arnolfini Portrait")
-define arm = Character("Giovanni", image="arnolfiniman") #man
-define arw = Character("[arwName]", image="arnolfiniwoman") #woman
+define arm = Character("Giovanni", image="arnolfiniman", color="#96528d") #man
+define arw = Character("[arwName]", image="arnolfiniwoman", color="#48750b") #woman
 default arwName = "The Painted Woman"
+define ard = Character("Dog", image="arnolfinidog", color="#844016") #dog
 
-define ard = Character("Dog", image="arnolfinidog") #dog
-define d = Character("The Davids")
-define dm = Character("David M.", image="davidm") #mikey
-define db = Character("David B.", image="davidb") #bernini
-define dd = Character("David D.", image="davidd") #donny
-define gi = Character("Gilgamesh", image="gilgamesh")
+define d = Character("The Davids", color = "#ffffff")
+define dm = Character("David M.", image="davidm", color="#ccc9c5") #mikey
+define db = Character("David B.", image="davidb", color="#9d9797") #bernini
+define dd = Character("David D.", image="davidd", color="#f3f1ed") #donny
+define gi = Character("Gilgamesh", image="gilgamesh", color="#c39566")
 define gl = Character("Glimmer")
-define m = Character("Mona Lisa", image="mona")
-define p = Character("Corgi Poster", image="poster")
-define st = Character("St. Catherine", image="saintcatherine")
-define so = Character("Soup", image="soup")
-define su = Character("Sunflowers", image="sunflowers")
-define ss = Character("Soup & Sunflowers", image="soupandsunflowers")
+define m = Character("Mona Lisa", image="mona", color="#df8003")
+define p = Character("Corgi Poster", image="poster", color="#cb7b39")
+define st = Character("St. Catherine", image="saintcatherine", color="#f1d264")
+define so = Character("Soup", image="soup", color="#f08204")
+define su = Character("Sunflowers", image="sunflowers", color="#ebe184")
+define ss = Character("Soup & Sunflowers", image="soupandsunflowers", color="#fdd203")
 
 #side characters
 define ad = Character("Admin", image="adminlayered")
@@ -40,12 +40,12 @@ layeredimage adminlayered:
         attribute sad:
             "sad"
 image side adminlayered = LayeredImageProxy("adminlayered", Transform(xoffset=0, yoffset=0))
-define e = Character("Ea-Nasir", image="eanasir")
+define e = Character("Ea-Nasir", image="eanasir", color="#edc7a1")
 define n = Character("Nighthawks")
-define n1 = Character("Nighthawks", image="nighthawks1")
-define n2 = Character("Nighthawks", image="nighthawks2")
-define n3 = Character("Nighthawks", image="nighthawks3")
-define n4 = Character("Nighthawks", image="nighthawks4")
+define n1 = Character("Nighthawks", image="nighthawks1", color="#659274")
+define n2 = Character("Nighthawks", image="nighthawks2", color="#659274")
+define n3 = Character("Nighthawks", image="nighthawks3", color="#659274")
+define n4 = Character("Nighthawks", image="nighthawks4", color="#659274")
 define sue = Character("Sue")
 define t = Character("Theodore")
 define v = Character("Vending Machine", image="vendingmachine")

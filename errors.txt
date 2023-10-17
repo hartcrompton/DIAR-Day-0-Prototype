@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Nighthawks.rpy", line 349: elif clause expects a non-empty block.
-    elif SoupOutcome == "Detach":
-                                 ^
-
-File "game/characters/C_Nighthawks.rpy", line 350: expected statement.
-    else:
-        ^
+File "game/minigames/cleaning_minigame.rpy", line 282: if statement expects a non-empty block.
+    if gameimage == "foyer":
+                            ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Oct 17 14:40:25 2023
+Tue Oct 17 16:10:53 2023

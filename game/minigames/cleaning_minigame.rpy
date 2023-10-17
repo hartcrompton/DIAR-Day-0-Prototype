@@ -231,21 +231,70 @@ label TestPosterLines():
 
 
 label minigamestart_cleaning(gameimage="notdefault"):
-    python:
-        diff_items = []
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 8,908,101,168))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 274,864,196,126))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 698,691,124,116))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 1083,662,48,68))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 905,956,194,107))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 1105,743,167,110))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 1339,862,182,164))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 1516,770,119,56))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 1420,652,116,69))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 1301,664,79,53))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 1244,545,67,72))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 1441,51,194,274))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.jpg", 668,21,275,236))
+    if gameimage == "antiquities":
+        python:
+            diff_items = []
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 41, 863, 110, 210))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 361, 951, 217, 120))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 813, 907, 173, 122))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 1128, 886, 179, 107))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 1438, 831, 211, 174))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 487, 529, 60, 77))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 496, 635, 121, 62))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 646, 699, 148, 108))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 796, 598, 128, 77))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 1019, 583, 83, 108))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 1288, 668, 107, 93))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 383, 65, 270, 190))
+            difference_image = MinigameCleaning("images/minigame/cleaning/cleaning antiquities bg.jpg", diff_items)
+    if gameimage == "fineart":
+        python:
+            diff_items = []
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 41, 863, 110, 210))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 361, 951, 217, 120))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 813, 907, 173, 122))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1128, 886, 179, 107))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1438, 831, 211, 174))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 487, 529, 60, 77))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 496, 635, 121, 62))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 646, 699, 148, 108))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 796, 598, 128, 77))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1019, 583, 83, 108))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1288, 668, 107, 93))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 383, 65, 270, 190))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 767, 112, 295, 186))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1690, 0, 230, 550))
+            difference_image = MinigameCleaning("images/minigame/cleaning/cleaning fineart bg.jpg", diff_items)
+    if gameimage == "mixedmedia":
+        python:
+            diff_items = []
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 42, 881, 103, 194))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 273, 923, 205, 100))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 695, 739, 109, 109))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 721, 889, 193, 113))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 1120, 684, 79, 98))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 1261, 898, 202, 112))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 1673, 896, 195, 168))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 1410, 762, 79, 56))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 1477, 696, 102, 62))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 1632, 654, 62, 70))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 1682, 0, 238, 494))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 851, 34, 328, 187))
+            difference_image = MinigameCleaning("images/minigame/cleaning/cleaning mixedmedia bg.jpg", diff_items)
+    if gameimage == "foyer":
+        python:
+            diff_items = []
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 82, 910, 84, 136))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 460, 979, 250, 95))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 797, 891, 235, 148))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 1320, 849, 201, 112))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 1649, 879, 214, 189))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 1393, 698, 100, 73))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 1614, 184, 225, 541))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 1012, 392, 122, 159))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 767, 29, 465, 263))
+            diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 384, 605, 83, 88))
+            difference_image = MinigameCleaning("images/minigame/cleaning/cleaning foyer bg.jpg", diff_items)
     if gameimage == "default":
         return
     python:
@@ -254,8 +303,8 @@ label minigamestart_cleaning(gameimage="notdefault"):
         the_score = 0
         renpy.block_rollback()
         #we need to be able to input an argument here
-        difference_image = MinigameCleaning("images/minigame/cleaning/cleaning fineart bg.jpg", diff_items)
-        difference_image.randomizeItems(5)
+        
+        difference_image.randomizeItems(7)
         #TempCleaningBackground = difference_image
         ui.add(difference_image)
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
