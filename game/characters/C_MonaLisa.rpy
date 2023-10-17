@@ -330,38 +330,32 @@ label .beat4:
     jump FreeRoam
 
 label .Outcome:
-    scene fineart bg with fade:
-        blur 2
     if beat_MonaLisa == 5:
         #alone
         if MonaOutcome == 0:
-            show monalisa at truecenter:
-                zoom .8
-                yoffset -75
+            scene mona end alone with fade
             "The Mona Lisa brings cultural, historical, and scientific legitimacy to the exhibit; a diminutive diva starring in an underground gala."
             "It had nothing to do with the mailers in the invitees’ homes, gathering intelligence on what they wanted to see."
         #kitsch
         if MonaOutcome == 1:
+            scene mona end kitsch with fade
             "A dozen enigmatic smiles, a dozen landscapes, the Mona Lisa tells her story…"
             "…Blending high and low art, the past and the present, and a small museum's place in a larger conversation."
             "Visitors leave with new perspectives on gaze, surveillance, and what it cost us to get here."
         #heist
         if MonaOutcome == 2:
+            scene mona end heist with fade
             "News outlets light up all over the globe: Miss Mona Missing from Minor Museum!"
             "Not since Peruggia stole the painting in 1911 have crowds swarmed this spot; now taking selfies with the empty space she left behind."
             "In the background, a dozen smiles, distant and satisfied, as though some part of her finally returned home."
         
     elif beat_MonaLisa > 1:
         #alksjdf
-        show monalisa at truecenter:
-                zoom .8
-                yoffset -75
+        scene mona end alone with fade
         "The Mona Lisa smiles from the painting, from the gift shop, and from the internet; as though her eyes follow you…"
         "Everywhere."
     else:
-        show monalisa at truecenter:
-                zoom .4
-                yoffset -75
+        scene mona end alone with fade
         "The Mona Lisa was too small to notice. But she seems to notice others."
         "Those who pass by her painting, or mugs, or memes, sense she's laughing at them…"
         "…and all their secret fumbles committed when they thought no one was watching."

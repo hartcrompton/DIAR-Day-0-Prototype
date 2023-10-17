@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_MonaLisa.rpy", line 338: expected 'image_name_component' not found.
-    show
+File "game/characters/C_Nighthawks.rpy", line 349: elif clause expects a non-empty block.
+    elif SoupOutcome == "Detach":
+                                 ^
+
+File "game/characters/C_Nighthawks.rpy", line 350: expected statement.
+    else:
         ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Mon Oct 16 20:33:55 2023
+Tue Oct 17 14:40:25 2023

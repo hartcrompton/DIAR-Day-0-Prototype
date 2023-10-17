@@ -150,6 +150,36 @@ label .Davids:
     return
 
 label .Gilgamesh:
+    if (beat_Gilgamesh == 2) and (b1_GiLines == 0):
+        $ b1_GiLines = 1
+        n1 "Did you hear [pc_name] talking to Gilgamesh earlier?"
+        n2 "Of course we heard. Gil’s many things – King of Kings, Master of Beasts, whatever other ridiculous title – but QUIET? Hardly."
+        n3 "Do you think they talked about dearly depart–"
+        n4 "Hush, now! Don’t spoil the fun. What else?"
+    if (beat_Gilgamesh == 3) and (b2_GiLines == 0):
+        $ b2_GiLines = 1
+        n1 "Our new curator has loose lips, it seems. Told Gilgamesh what happened to you-know-who."
+        n2 "Oooh, drama! How fun."
+        n3 "For us, you mean…and possibly Ea-Nasir. Probably not for old Gil."
+        n4 "Oh, CERTAINLY not for him...anything else noteworthy happen today?"
+    if (beat_Gilgamesh == 4) and (b3_GiLines == 0):
+        $ b3_GiLines = 1
+        n1 "Antiquities wing. Inexplicable flooding. Need I say more?"
+        n2 "Best if you don’t. Gil might start crying again if he hears us talking about him."
+        n3 "I doubt that. His conversation with the curator seems to bring him back to his senses...maybe this time he'll finally be able to grieve properly. "
+        n4 "Grieving for King Gilgamesh...I shudder to think what that looks like. What else?"
+    if (beat_Gilgamesh == 5) and (b4_GiLines == 0):
+        $ b4_GiLines = 1
+        if SongA > SongB:
+            n1 "Did anyone hear a...SONG, coming from Antiquities?"
+            n2 "It was Gil, if you can believe it! What do we think he was singing? I don't speak Sumerian, but it certainly sounded...amorous."
+            n3 "You know what? Good for him! Wherever he is, I hope Enkidu was listening."
+            n4 "I as well. Even if it was...smutty. Anything else?"
+        else:
+            n1 "Did anyone hear a...SONG, coming from Antiquities?"
+            n2 "It was Gil, if you can believe it! What do we think he was singing? I don't speak Sumerian, but it certainly sounded...bloodthirsty."
+            n3 "You know what? Good for him! Wherever he is, I hope Enkidu was listening."
+            n4 "I as well. An energized Gil is a happy Gil...though I doubt he will be any quieter. Anything else?"
     return
 
 label .MonaLisa:
@@ -267,16 +297,62 @@ label .SaintCatherine:
     return
 
 label .SoupAndSunflowers:
-    return
-
-
-
-    if beat_ > 1:
-        return
-    if beat_ > 2:
-        return
-    if beat_ > 3:
-        return
-    if beat_ > 4:
-        return
+    if (beat_SoupAndSunflowers == 2) and (b1_SSLines == 0):
+        $ b1_SSLines = 1
+        n1 "Did you hear? Sunflowers tried to trick our dear curator into getting rid of Soup."
+        n2 "Wouldn’t you? If you were stuck with a stain who also YELLS constantly..."
+        n3 "I doubt the ‘stain’ is happy either. Sunflowers isn’t exactly famous for their sparkly conversation."
+        n4 "Unlike us, you mean? Don’t answer that. What else is happening?"
+    if (beat_SoupAndSunflowers == 3) and (b2_SSLines == 0):
+        $ b2_SSLines = 1
+        if SoloChoice == "Soup":
+            n1 "The curator spoke with Soup. Alone."
+            n2 "You mean Sunflowers pretended not to hear. How’d it go? Did [they] convince the activist to play nice?"
+            n3 "Well, [they] certainly convinced Soup of SOMETHING. All that remains to be seen is if [pc_name] follows through."
+            n4 "We’ll see…what else?"
+        if SoloChoice == "Sunflowers":
+            n1 "The curator spoke with Sunflowers. Alone."
+            n2 "You mean Soup pretended not to hear. How’d it go? Did [they] convince the wallflower to play nice?"
+            n3 "Well, [they] certainly convinced Sunflowers of SOMETHING. All that remains to be seen is if [pc_name] follows through."
+            n4 "We’ll see…what else?"
+    if (beat_SoupAndSunflowers == 4) and (b3_SSLines == 0):
+        $ b3_SSLines = 1
+        if SoloChoice == "Soup":
+            n1 "The curator spoke with Soup. Alone."
+            n2 "You mean Sunflowers pretended not to hear. How’d it go? Did [they] convince the activist to play nice?"
+            n3 "Well, [they] certainly convinced Soup of SOMETHING. All that remains to be seen is if [pc_name] follows through."
+            n4 "We’ll see…what else?"
+        if SoloChoice == "Sunflowers":
+            n1 "The curator spoke with Sunflowers. Alone."
+            n2 "You mean Soup pretended not to hear. How’d it go? Did [they] convince the wallflower to play nice?"
+            n3 "Well, [they] certainly convinced Sunflowers of SOMETHING. All that remains to be seen is if [pc_name] follows through."
+            n4 "We’ll see…what else?"
+    if (beat_SoupAndSunflowers == 5) and (b4_SSLines == 0):
+        $ b4_SSLines = 1
+        #merge
+        if SSMerged == 1:
+            n1 "Soup and Sunflowers are now one and the same!"
+            n2 "Multiple characters in the same artwork, coming together to tell a common story…what a novel concept, eh, Nighthawks?"
+            n3 "Very funny. But honestly…I’m glad. Soup and Sunflowers have a powerful message together."
+            n4 "Agreed. Anything else going on, besides some much-needed self-actualization?"
+        elif SoupOutcome == "Remain":
+            n1 "Soup remains with Sunflowers. I’m…not sure how to feel about that."
+            n2 "Oh, god. Does this mean we have to listen to more of their bickering?"
+            n3 "Well…them staying together, even if they're unhappy, is probably better than the alternatives. Maybe?"
+            n4 "Only time will tell. What else is happening?"
+        #remain
+        elif SoupOutcome == "Erase":
+            n1 "Soup is gone. The curator has cut through the red tape and administrivia and simply…cleaned off the frame."
+            n2 "Ah. THAT’S why it seems so quiet today."
+            n3 "I’m going to miss the little miscreant. At least they had something to say."
+            n4 "Far be it for us to question the wisdom of our curator…within [their] hearing, that is. What else?"
+        elif SoupOutcome == "Detach":
+            n1 "Like two children squabbling over a toy, Soup and Sunflowers have been separated."
+            n2 "Is that why there’s a frame with a stain on display? What an…interesting choice."
+            n3 "They each have their own message, I suppose. Perhaps this is for the best."
+            n4 "Perhaps…what else?"
+        else:
+            return
+        #erase
+        #separate
     return

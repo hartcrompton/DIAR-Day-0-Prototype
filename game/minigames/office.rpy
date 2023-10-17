@@ -167,7 +167,7 @@ init python:
                 i.left = renpy.random.choice([True, False])
                 
             #must be array size
-            iterations = 2
+            iterations = 3
             #while self.count_differences() < difference_count and iterations < 100:
             while iterations >= 0:
                 i = diff_items[iterations]
@@ -237,10 +237,10 @@ label minigamestart_office(gameimage="notdefault"):
     scene monaofficegame
     python:
         diff_items = []
-        diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 183,715,282,175))
-        #diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 534,634,278,185))
-        diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 534,634,278,185))
-        diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 1284,526,258,203))
+        diff_items.append(STD_Item("images/minigame/MonaLisa/mona office overlay.jpg", 130,366,260,167))
+        diff_items.append(STD_Item("images/minigame/MonaLisa/mona office overlay.jpg", 804,455,249,190))
+        diff_items.append(STD_Item("images/minigame/MonaLisa/mona office overlay.jpg", 1181,803,295,221))
+        diff_items.append(STD_Item("images/minigame/MonaLisa/mona office overlay.jpg", 1526,269,328,542))
     if gameimage == "default":
         return
     python:
@@ -249,8 +249,8 @@ label minigamestart_office(gameimage="notdefault"):
         the_score = 0
         renpy.block_rollback()
         #we need to be able to input an argument here
-        difference_image = MinigameOffice("images/minigame/office/MonaOfficeBase.jpg", diff_items)
-        difference_image.randomizeItems(3)
+        difference_image = MinigameOffice("images/minigame/MonaLisa/mona office base.jpg", diff_items)
+        difference_image.randomizeItems(4)
         #TempCleaningBackground = difference_image
         ui.add(difference_image)
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)

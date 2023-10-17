@@ -168,7 +168,7 @@ init python:
                 i.left = renpy.random.choice([True, False])
                 
             #must be array size
-            iterations = 3
+            iterations = 4
             #while self.count_differences() < difference_count and iterations < 100:
             while iterations >= 0:
                 i = diff_items[iterations]
@@ -192,25 +192,30 @@ label minigamestart_stainedglass(materialchoice="default"):
     if materialchoice == "glass":
         python:
             diff_items = []
-            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintGlass.png", 37,23,89,118))
-            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintGlass.png", 205,105,124,69))
-            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintGlass.png", 35,343,65,155))
-            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintGlass.png", 163,280,95,125))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair glass.png", 36, 110, 162, 419))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair glass.png", 80, 667, 244, 410))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair glass.png", 246, 481, 190, 183))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair glass.png", 485, 54, 126, 146))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair glass.png", 419, 857, 186, 180))
     if materialchoice == "plastic":
         python:
             diff_items = []
-            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintPlastic.png", 37,23,89,118))
-            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintPlastic.png", 205,105,124,69))
-            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintPlastic.png", 35,343,65,155))
-            diff_items.append(STD_Item("images/minigame/StainedGlass/SaintPlastic.png", 163,280,95,125))
-        #time and score may not really be relevant to us -H
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair plastic.png", 36, 110, 162, 419))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair plastic.png", 80, 667, 244, 410))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair plastic.png", 246, 481, 190, 183))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair plastic.png", 485, 54, 126, 146))
+            diff_items.append(STD_Item("images/minigame/StainedGlass/saint repair plastic.png", 419, 857, 186, 180))
     python:
         starttime = renpy.time.time()
         the_score = 0
         renpy.block_rollback()
         #we need to be able to input an argument here
-        difference_image = StainedGlassRepair("images/minigame/StainedGlass/SaintBroken.png", diff_items)
-        difference_image.randomizeItems(4)
+        if SaintHair == 0:
+            difference_image = StainedGlassRepair("images/minigame/StainedGlass/saintBlonde broken.png", diff_items)
+        if SaintHair == 1:
+            difference_image = StainedGlassRepair("images/minigame/StainedGlass/saintBrunette broken.png", diff_items)
+
+        difference_image.randomizeItems(5)
         ui.add(difference_image)
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
         winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
@@ -221,10 +226,12 @@ label minigamestart_stainedglass(materialchoice="default"):
 
     #image difference_image_img = afterImage("images/mona.png", diff_items)
     if materialchoice == "glass":
-        show saintcatherineglass at cc
+        $ SaintRepaired = 1
+        show SaintPortrait at center
         #meta "Repaired with [materialchoice]."
     if materialchoice == "plastic":
-        show saintcatherineplastic at cc
+        $ SaintRepaired = 1
+        show SaintPortrait at center
         #meta "Repaired with [materialchoice]."
     #if (difference_image.count_differences() == 0):
         #$ timebonus = int(100 * max((1.0 - ((elapsed - 20.0)/40.0)),0.0))
