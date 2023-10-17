@@ -277,7 +277,7 @@ label TestCorgiLines():
 
 
 label minigamestart_corgi(gameimage="notdefault"):
-    scene monaofficegame
+    scene office bg
     if gameimage == "1":
         python:
             #barks
