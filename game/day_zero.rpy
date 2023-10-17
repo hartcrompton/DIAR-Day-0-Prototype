@@ -10,12 +10,14 @@ label GameIntroduction:
     scene museumexteriorrain
     #leaving the interview, missed bus, chased by the rain into an empty museum.
     #storm audio
-    #play music "music/Day0LoopSadBella.wav"
-    #play audio "music/RainLong.mp3"
+    #play music "<from 5>music/Day0LoopSadBella.wav"
+    play audio "<from 10>music/RainLong.mp3" volume .2
     "Hiring Manager" "Dear Applicant,"
     "Hiring Manager" "Every journey begins somewhere."
+    $ renpy.music.set_volume(.1, delay=1, channel="audio") 
     "Hiring Manager" "Yours, unfortunately, does not begin with us."
     "So, the interview hadn't gone {i}great{/i}."
+    play audio "<from 10>music/RainLong.mp3" volume 1.0 fadein 1
     #"And your day didn't improve when you missed your bus and the rain chased you into this forlorn museum."
     "Then you missed your bus."
     #exterior shot
@@ -46,6 +48,7 @@ label DayZero:
     scene foyer bg:
         matrixcolor TintMatrix("#7d91c7")
     #munch munch SFX
+    
     "Your sad little snack doesn't last long."
     #"Outside, the rain still falls."
     #music start here
@@ -63,7 +66,7 @@ label DayZero:
     "???" "It's {i}David{/i} and Goliath not {i}Goliath{/i} and Goliath you oversized buffoon."
 
     #put the velvet rope hre
-    scene antiquities bg:
+    scene foyer bg:
         blur 5
         matrixcolor TintMatrix("#7d91c7")
     show davids
@@ -336,7 +339,7 @@ label MuseumTour:
     "But as you approach, the echo fractures into three different voices, each one placing more emphasis on claiming identity for the one true David."
     dm "It's preposterous that either of you could be the David. It's clearly me."
     dd "No way, {i}I'm{/i} the David. You're just a couple of posers!"
-    db "Neither of you weaklings could possibly be {/i}the{/i} David. I am!."
+    db "Neither of you weaklings could possibly be {i}the{/i} David. I am!."
     
     menu:
         "They're... talking?":
@@ -458,7 +461,7 @@ label MuseumTour:
     "You turn to see an inspirational poster hanging on the wall featuring a cute corgi leaping into the air"
     p "I... I hope you do your best today! I'm rooting for you!"
     
-    scene antiquities bg with fade:
+    scene foyer bg with fade:
         blur 5
         matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait

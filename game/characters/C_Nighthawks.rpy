@@ -1,4 +1,4 @@
-#Nighthawks
+#NighthawksMLines
 
 #arnolfini
 default b1_ArLines = 0
@@ -153,26 +153,26 @@ label .Gilgamesh:
     return
 
 label .MonaLisa:
-    if (beat_MonaLisa == 2) and (b1_Mlines == 0):
-        $ b1_Mlines = 1
+    if (beat_MonaLisa == 2) and (b1_MLines == 0):
+        $ b1_MLines = 1
         n1 "Our curator had the pleasure of speaking with the most famous face ever painted."
         n2 "Ahh, Mona Lisa, so mean, so cold-hearted…I ADORE her."
         n3 "Same. To have the opportunity to talk shit with La Gioconda…truly the highest of honors."
         n4 "Be that as it may…she still can’t sit with us. What else?"
-    if (beat_MonaLisa == 3) and (b2_Mlines == 0):
-        $ b2_Mlines = 1
+    if (beat_MonaLisa == 3) and (b2_MLines == 0):
+        $ b2_MLines = 1
         n1 "Did you hear? Mona Lisa wants to return home."
         n2 "Get some new news – Mona’s wanted that for centuries. What makes today any different?"
         n3 "Because NOW she finally has someone to listen to her."
         n4 "Well…we must wait and see if [pc_name] truly changes anything. What else?"
-    if (beat_MonaLisa == 4) and (b3_Mlines == 0):
-        $ b3_Mlines = 1
+    if (beat_MonaLisa == 4) and (b3_MLines == 0):
+        $ b3_MLines = 1
         n1 "Mona convinced the curator to restore her eyes in the office."
         n2 "Ah, to be able to see so freely…I mean, we can see Chicago, of course. But imagine having the eyes of a Mona Lisa?"
         n3 "I shudder to think what she’ll do with this restored power."
         n4 "Now, now, I’m sure [pc_name] will convince her to use it for good…probably. What else?"
-    if (beat_MonaLisa == 5) and (b4_Mlines == 0):
-        $ b4_Mlines = 1
+    if (beat_MonaLisa == 5) and (b4_MLines == 0):
+        $ b4_MLines = 1
         #alone
         if MonaOutcome == 0:
             n1 "The curator has convinced Mona to remain, it seems."

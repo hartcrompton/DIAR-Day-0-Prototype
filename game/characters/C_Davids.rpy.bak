@@ -34,7 +34,7 @@ label .use_action:
     #    "No, not really.":
     #        d "Understandable."
     #        jump conv_Davids
-    call advance_time from _call_advance_time_1
+    call advance_time
     jump expression "conv_Davids" + "." + "beat" + "%d" % beat_Davids
 
 label .beat1:
@@ -277,7 +277,7 @@ label .beat3:
                 #will probably need some player response lines
                 hide davids
                 "Let's see what the archive has on Davids."
-                call call_catalogue("Davids") from _call_call_catalogue
+                call call_catalogue("Davids")
                 label DavidsResearch:
                     $ renpy.set_return_stack([])
                     scene archives bg
@@ -393,38 +393,30 @@ label .beat4:
     jump FreeRoam
 
 label .Outcome:
-    scene foyer bg with fade:
-        blur 2
     if beat_Davids == 5:
         if DefinitiveDave == "db":
-            show davidb at center
             "Bernini's David stands underneath a single overhead light, casting light on his twisting torso and long shadows at his feet."
             "The soldier before the battlefield. His banner reads…"
             "The Hero's Valor"
         elif DefinitiveDave == "dd":
-            show davidd at center
             "Donatello's David stands alone, proudly beaming a smile."
             "Now as the one and true definitive David, the exhibit bears a banner that reads…"
             "Adolscence Ascending: Ephebic Hero, Future King"
         elif DefinitiveDave == "dm":
-            show davidm at center
             "Michelangelo's David has somehow had his pedestal placed on another pedestal, and so stands especially tall, almost out of sight."
             "What can be discerned on his face is a mixutre of threatening menace, steely resolve, and holy devotion."
             "The exhibit banner reads…"
             "Liberated From Stone, Destined for Heaven"
         elif DefinitiveDave == "NONE":
-            show davids destroyed at center
             "The Davids lie in a heap of crumbled stone, graveled marble.  Where once stood heroes, now is an undifferentiated heap, on top of which sits a single slingshot."
         elif DefinitiveDave == "all":
-            show davids at center
             "All Davids stand facing outward, having eachother's back, in mutual appreciation. Their banner reads…"
             "Conquered, The Hero's Pride"
     elif beat_Davids > 1:
         #need an unresolved line
-        "Davids Unresolved"
+        "Unresolved"
     else:
         #bad
-        show davids destroyed at center
         "The Davids lie in a heap of crumbled stone, graveled marble."
         "Where once stood heroes, now is an undifferentiated heap."
         "On top of which sits a single stone, what could be used in a slingshot."

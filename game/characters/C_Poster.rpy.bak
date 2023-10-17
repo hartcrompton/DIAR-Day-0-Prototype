@@ -6,22 +6,21 @@ default CorgiPortraitStage = "base"
 image corgiportrait = "/Characters/Poster/corgi base.png"
 
 label conv_Poster:
-    scene office bg:
-        blur 2
+    scene office bg
     if CorgiPortraitStage == "base":
         show corgi base at truecenter:
             yoffset -125
-            zoom .8
+            zoom .9
     if CorgiPortraitStage == "flag":
         show corgi flag at truecenter:
             yoffset -125
             xoffset -115
-            zoom .8
+            zoom .9
     if CorgiPortraitStage == "final":
         show corgi final at truecenter:
             yoffset -125
             xoffset -115
-            zoom .8
+            zoom .9
     jump .use_action
     #menu:
     #    #"[[Chat a little.]":
@@ -49,7 +48,7 @@ label .use_action:
     #    "No, not really.":
     #        p "Understandable."
     #        jump conv_Poster
-    call advance_time from _call_advance_time_4
+    call advance_time
     jump expression "conv_Poster" + "." + "beat" + "%d" % beat_Poster
 
 label .beat1:
@@ -85,15 +84,13 @@ label .beat1:
     p "There's a lot of things lying around here, I'm sure you can find something!"
     pc "Sure, I can look around."
 
-    call minigamestart_corgi("1") from _call_minigamestart_corgi
+    call minigamestart_corgi("1")
     $ CorgiPortraitStage = "flag"
-    #hide corgi
-    scene office bg with fade:
-        blur 2
+    hide corgi
     show corgi flag at truecenter:
         xoffset -115
         yoffset -125
-        zoom .8
+        zoom .9
     p "Now there's some tape nearby...can you help me out?"
     p "This will help me so much, I mean look at it!"
     "The corgi poster makes a grunting noise, seemingly as an attempt to wave the little flag."
@@ -175,23 +172,23 @@ label .beat3:
                 p "I mean okay, I guess."
     pc "I need to do some cleaning and I really think you could motivate me to do my best!"
     p "Oh! I think I can help with that!"   
-    call minigamestart_cleaning_corgi from _call_minigamestart_cleaning_corgi
-    scene office bg with fade:
-        blur 2
+    call minigamestart_cleaning_corgi
+    scene office bg:
+        blur 5
     if CorgiPortraitStage == "base":
         show corgi base at truecenter:
             yoffset -125
-            zoom .85
+            zoom .9
     if CorgiPortraitStage == "flag":
         show corgi flag at truecenter:
             yoffset -125
             xoffset -115
-            zoom .85
+            zoom .9
     if CorgiPortraitStage == "final":
         show corgi final at truecenter:
             yoffset -125
             xoffset -115
-            zoom .85
+            zoom .9
     p "Thank you, that really helped! And you did an amazing job with the cleaning!"
     pc "Good to hear!"
     p "I was thinking, remember when I said I wanted to motivate this entire place? The art place? This artsy building place?"
@@ -215,7 +212,7 @@ label .beat3:
     p "But I feel like I'm still missing something. Can you help?"
     pc "Again?"
     p "Yeah, just one more thing. The flag is great but if I'm going to be out amongst the people, I think I need a little more flair!"
-    call minigamestart_corgi("2") from _call_minigamestart_corgi_1
+    call minigamestart_corgi("2")
     scene office bg:
         blur 5
     #Ooh still not sure that'll work. Did you clean it yet? I feel like the fuzzy things are getting bigger.
@@ -287,7 +284,7 @@ label .beat4:
     p "I love helping you, but I think I'm ready to support more people with my cheering!"
     pc "You sure?"
     p "Positive!"
-    p "You mentioned the [p_b3_c1] - I think I'm ready to be moved out there!"
+    p "You mentioned the (CHOICE A/B/C from Beat 4) - I think I'm ready to be moved out there!"
     p "Do you think I'm ready?"
     pc "One-hundred percent!"
     p "Good! I know I am, I just wanted you to confirm it! I've helped you be more confident in yourself too, you know!"
@@ -345,40 +342,12 @@ label .beat4:
 
 label .Outcome:
     if beat_Poster == 5:
-        scene foyer bg:
-            blur 5
-        show corgi final at truecenter:
-            xoffset -115
-            yoffset -125
-            zoom .9
         "The corgi poster enjoyed its new placement out in the museum."
         "They constantly and joyfully kept shouting words of encouragement to all who passed by, even though people couldn't hear them."
     elif beat_Poster > 1:
-        scene office bg:
-            blur 2
-        if CorgiPortraitStage == "base":
-            show corgi base at truecenter:
-                yoffset -125
-                zoom .8
-        if CorgiPortraitStage == "flag":
-            show corgi flag at truecenter:
-                yoffset -125
-                xoffset -115
-                zoom .8
         "The corgi poster was happy to have a new employee to encourage."
         "However, they were left feeling they could be helping more people if they could've just gotten out of the office."
     else:
-        scene office bg:
-            blur 2
-        if CorgiPortraitStage == "base":
-            show corgi base at truecenter:
-                yoffset -125
-                zoom .8
-        if CorgiPortraitStage == "flag":
-            show corgi flag at truecenter:
-                yoffset -125
-                xoffset -115
-                zoom .8
         "The corgi poster sat lonely in the office, wondering why there words of encouragement never reached [pc_name]."
         "Were they just not helpful enough? Could they really not be heard. I guess they'll never know."
     return

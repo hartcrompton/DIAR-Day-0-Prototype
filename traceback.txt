@@ -1,36 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/daily_loop.rpy", line 39, in script
-    "Day [day_number]"
-KeyError: 'day_number'
+  File "game/characters/C_Poster.rpy", line 178, in script call
+    call minigamestart_cleaning_corgi from _call_minigamestart_cleaning_corgi
+  File "game/minigames/cleaning_minigame_corgi.rpy", line 336, in script
+    python:
+  File "game/minigames/cleaning_minigame_corgi.rpy", line 349, in <module>
+    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
+  File "game/minigames/cleaning_minigame_arnolfini.rpy", line 181, in event
+    self.score_bubble = Bubble_Text(arnolfini_barks[9], "#ffffff",30,3, x, y)
+NameError: name 'arnolfini_barks' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/daily_loop.rpy", line 39, in script
-    "Day [day_number]"
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 930, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1473, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1337, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1251, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1231, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 278, in substitute
-    s = formatter.vformat(s, (), kwargs) # type: ignore
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\substitutions.py", line 168, in get_field
-    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
-KeyError: 'day_number'
+  File "game/characters/C_Poster.rpy", line 178, in script call
+    call minigamestart_cleaning_corgi from _call_minigamestart_cleaning_corgi
+  File "game/minigames/cleaning_minigame_corgi.rpy", line 336, in script
+    python:
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/minigames/cleaning_minigame_corgi.rpy", line 349, in <module>
+    winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4540, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1177, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1177, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1177, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "game/minigames/cleaning_minigame_arnolfini.rpy", line 181, in event
+    self.score_bubble = Bubble_Text(arnolfini_barks[9], "#ffffff",30,3, x, y)
+NameError: name 'arnolfini_barks' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
-DIAR Day 0 Prototype 1.0
-Wed Oct 11 17:37:48 2023
+DIAR Beta 1 1.0
+Mon Oct 16 20:13:38 2023

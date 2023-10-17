@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/characters/C_Gilgamesh.rpy", line 163: expected 'image_name_component' not found.
-    hide 
-         ^
+File "game/characters/C_MonaLisa.rpy", line 338: expected 'image_name_component' not found.
+    show
+        ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Wed Oct 11 18:05:06 2023
+Mon Oct 16 20:33:55 2023

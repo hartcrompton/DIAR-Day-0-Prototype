@@ -33,7 +33,7 @@ label .use_action:
     #    "No, not really.":
     #        m "Understandable."
     #        jump conv_MonaLisa
-    call advance_time from _call_advance_time_3
+    call advance_time
     jump expression "conv_MonaLisa" + "." + "beat" + "%d" % beat_MonaLisa
 
 label .beat1:
@@ -248,7 +248,7 @@ label .beat3:
     m "With my network of informants, and your general ability to move, we can guarantee the gala's success."
     m "Remember what I said about PR and spin? The right promotion at the right time. That's what we need."
     m "{i}Vai, vai{/i}, go uncover my eyes in the office like a good little [pc_work] so I can see what's happening in there."
-    call minigamestart_office from _call_minigamestart_office
+    call minigamestart_office
     scene fineart bg:
         blur 5
     show monalisa at truecenter:
@@ -330,14 +330,9 @@ label .beat4:
     jump FreeRoam
 
 label .Outcome:
-    scene fineart bg with fade:
-        blur 2
     if beat_MonaLisa == 5:
         #alone
         if MonaOutcome == 0:
-            show monalisa at truecenter:
-                zoom .8
-                yoffset -75
             "The Mona Lisa brings cultural, historical, and scientific legitimacy to the exhibit; a diminutive diva starring in an underground gala."
             "It had nothing to do with the mailers in the invitees’ homes, gathering intelligence on what they wanted to see."
         #kitsch
@@ -353,15 +348,9 @@ label .Outcome:
         
     elif beat_MonaLisa > 1:
         #alksjdf
-        show monalisa at truecenter:
-                zoom .8
-                yoffset -75
         "The Mona Lisa smiles from the painting, from the gift shop, and from the internet; as though her eyes follow you…"
         "Everywhere."
     else:
-        show monalisa at truecenter:
-                zoom .4
-                yoffset -75
         "The Mona Lisa was too small to notice. But she seems to notice others."
         "Those who pass by her painting, or mugs, or memes, sense she's laughing at them…"
         "…and all their secret fumbles committed when they thought no one was watching."

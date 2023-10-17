@@ -160,6 +160,11 @@ label NighthawksDaily:
         yoffset -125
     call conv_Nighthawks.Poster
     call conv_Nighthawks.MonaLisa
+    call conv_Nighthawks.Davids
+    call conv_Nighthawks.Gilgamesh
+    call conv_Nighthawks.SaintCatherine
+    call conv_Nighthawks.SoupAndSunflowers
+    call conv_Nighthawks.Arnolfini
     jump DayEnd
 
 label DayEnd:    

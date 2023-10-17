@@ -33,25 +33,25 @@ label MuseumSaved:
     "You did it!"
     if beat_Arnolfini == 5:
         ar "Arnolfini complete line!"
-        call conv_Arnolfini.Outcome from _call_conv_Arnolfini_Outcome
+        call conv_Arnolfini.Outcome
     if beat_Davids == 5:
         d "Arnolfini complete line!"
-        call conv_Davids.Outcome from _call_conv_Davids_Outcome
+        call conv_Davids.Outcome
     if beat_Gilgamesh == 5:
         ar "Arnolfini complete line!"
-        call conv_Gilgamesh.Outcome from _call_conv_Gilgamesh_Outcome
+        call conv_Gilgamesh.Outcome
     if beat_MonaLisa == 5:
         ar "Arnolfini complete line!"
-        call conv_MonaLisa.Outcome from _call_conv_MonaLisa_Outcome
+        call conv_MonaLisa.Outcome
     if beat_SaintCatherine == 5:
         ar "Arnolfini complete line!"
-        call conv_SaintCatherine.Outcome from _call_conv_SaintCatherine_Outcome
+        call conv_SaintCatherine.Outcome
     if beat_SoupAndSunflowers == 5:
         ar "Arnolfini complete line!"
-        call conv_SoupAndSunflowers.Outcome from _call_conv_SoupAndSunflowers_Outcome
+        call conv_SoupAndSunflowers.Outcome
     if beat_Poster == 5:
         ar "Arnolfini complete line!"
-        call conv_Poster.Outcome from _call_conv_Poster_Outcome
+        call conv_Poster.Outcome
     ad "Well, you did it."
     menu:
         ad "Think you'll stay on?"
@@ -93,19 +93,33 @@ label AllOutcomes:
         "The art was disjointed and unfulfilled."
         "The donors were unimpressed, to say the least."
         "Even the catering was uneven, with some guests trying their luck with out-of-date candy from the vending machine."
-    call conv_Arnolfini.Outcome from _call_conv_Arnolfini_Outcome_1
+    scene fineart bg with fade:
+        blur 5
+    call conv_Arnolfini.Outcome
 
-    call conv_Davids.Outcome from _call_conv_Davids_Outcome_1
+    scene foyer bg with fade:
+        blur 5
+    call conv_Davids.Outcome
 
-    call conv_Gilgamesh.Outcome from _call_conv_Gilgamesh_Outcome_1
+    scene antiquities bg with fade:
+        blur 5
+    call conv_Gilgamesh.Outcome
 
-    call conv_MonaLisa.Outcome from _call_conv_MonaLisa_Outcome_1
+    scene fineart bg with fade:
+        blur 5
+    call conv_MonaLisa.Outcome
 
-    call conv_SaintCatherine.Outcome from _call_conv_SaintCatherine_Outcome_1
+    scene window bg with fade:
+        blur 5
+    call conv_SaintCatherine.Outcome
 
-    call conv_SoupAndSunflowers.Outcome from _call_conv_SoupAndSunflowers_Outcome_1
+    scene mixedmedia bg with fade:
+        blur 5
+    call conv_SoupAndSunflowers.Outcome
 
-    call conv_Poster.Outcome from _call_conv_Poster_Outcome_1
+    scene foyer bg with fade:
+        blur 5
+    call conv_Poster.Outcome
     if StoryCompletedTotal >= 3:
         "In the wake of the Gala, you've already received several emails from collectors and interviewers, all eager to meet the new curator."
         "That is, if you decide to stay on."

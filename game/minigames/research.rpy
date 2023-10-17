@@ -55,7 +55,7 @@ label call_catalogue(ResearchCharacter="Default"):
         jump GilgameshResearch
     show layer middle at unfocus
     if _return:
-        call expression _return
+        call expression _return from _call_expression_1
     else:
         return
     show layer middle at reset

@@ -79,16 +79,19 @@ init python:
             if (self.score_bubble):
                 if (self.score_bubble.start == None) :
                     self.score_bubble.start = st
-                self.score_bubble.st = st-self.score_bubble.start -1
+                self.score_bubble.st = st-self.score_bubble.start -2
                 myalpha = max(1.0 - self.score_bubble.st / self.score_bubble.duration, 0.0)
-                self.score_bubble.y -= self.score_bubble.st/2
-                
+                #self.score_bubble.y -= self.score_bubble.st/2
+                if (self.score_bubble.x > 945):
+                    self.score_bubble.x = 945
+                if (self.score_bubble.y > 892):
+                    self.score_bubble.y = 892
                 score_bubble_img = Transform(child=self.score_bubble.myimage, alpha=myalpha)
                 textbox_img = Transform(text_overlay, alpha=myalpha)
                 score_img = renpy.render(score_bubble_img, width, height,  st, at)
                 textbox_overlay = renpy.render(textbox_img, width, height,  st, at)
-                render.blit(textbox_overlay, (0,0))
-                render.blit(score_img,(400,900))
+                render.blit(textbox_overlay, (self.score_bubble.x,self.score_bubble.y -785))
+                render.blit(score_img,(self.score_bubble.x + 194,self.score_bubble.y + 33))
                 if (self.score_bubble.st  > self.score_bubble.duration):
                     self.score_bubble = None
             
@@ -139,13 +142,34 @@ init python:
                         #left side
                         #zoomfactor needed to make sure the clickable bounds match the visible images -H
                         if (i.x * zoomfactor + self.x_offset-self.gutter <= x <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset) :  
-                            if (i.x * zoomfactor + self.x_offset-self.gutter <= 1146 <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= 430 <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):
-                                self.score_bubble = Bubble_Text("That's the one!", "#ffffff",72,3, x-5, y-5)
-                                self.end_start = -1
+                            #if (gameimage == "1"):
+                            if (i.x * zoomfactor + self.x_offset-self.gutter <= diff_items[0].x <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= diff_items[0].y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):
+                                self.score_bubble = Bubble_Text(corgi_barks[0], "#ffffff",30,3, x, y)
+                                if gameimage == "1":
+                                    self.end_start = -1
+                            elif (i.x * zoomfactor + self.x_offset-self.gutter <= diff_items[1].x <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= diff_items[1].y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):
+                                self.score_bubble = Bubble_Text(corgi_barks[1], "#ffffff",30,3, x, y)
+                            elif (i.x * zoomfactor + self.x_offset-self.gutter <= diff_items[2].x <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= diff_items[2].y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):
+                                self.score_bubble = Bubble_Text(corgi_barks[2], "#ffffff",30,3, x, y)
+                                
+                            elif (i.x * zoomfactor + self.x_offset-self.gutter <= diff_items[3].x <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= diff_items[3].y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):
+                                self.score_bubble = Bubble_Text(corgi_barks[3], "#ffffff",30,3, x, y)
+                                if gameimage == "2":
+                                    self.end_start = -1
+                            elif (i.x * zoomfactor + self.x_offset-self.gutter <= diff_items[4].x <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= diff_items[4].y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):
+                                self.score_bubble = Bubble_Text(corgi_barks[4], "#ffffff",30,3, x, y)
+                            elif (i.x * zoomfactor + self.x_offset-self.gutter <= diff_items[5].x <= i.x * zoomfactor + i.w * zoomfactor + self.x_offset-self.gutter) and (i.y * zoomfactor + self.y_offset <= diff_items[5].y <= i.y * zoomfactor + i.h * zoomfactor + self.y_offset):
+                                self.score_bubble = Bubble_Text(corgi_barks[5], "#ffffff",30,3, x, y)
                             else:
-                                self.score_bubble = Bubble_Text("Hm, not quite.", "#ffffff",40,3, x-5, y-5)
+                                self.score_bubble = Bubble_Text("Keep looking!", "#ffffff",30,3, x, y)
                             i.left = i.right
                             clicked = True
+                            #item 1
+                            #item 2
+                            #item 3
+                            #item 4
+                            #item 5
+                            #item 6
                             break
                         #I need something that can help me cheer people on!			Hint for the right object
                         #No, that's not it. Though I bet you could something delicious in that!			Mug selected
@@ -186,7 +210,7 @@ init python:
                 i.left = renpy.random.choice([True, False])
                 
             #must be array size
-            iterations = 4
+            iterations = 5
             #while self.count_differences() < difference_count and iterations < 100:
             while iterations >= 0:
                 i = diff_items[iterations]
@@ -256,20 +280,53 @@ label minigamestart_corgi(gameimage="notdefault"):
     scene monaofficegame
     if gameimage == "1":
         python:
+            #barks
+            corgi_barks = []
+            corgi_barks.append("That's perfect!")
+            corgi_barks.append("No, that's not it. Though I bet you could something\ndelicious in that!")
+            corgi_barks.append("Definitely not, unfortunately. I think I've seen\nsomething scurrying in and out of that lately. Careful!")
+            corgi_barks.append("That won't work. Though I've seen it make tasty \nsnacks before that'll be sure to give you energy!")
+            corgi_barks.append("I've seen that can be useful for various things,\nbut no, not for cheering. Please don't use that on me!")
+            corgi_barks.append("Watch out for any fuzzy bits, though.\nIt's been sitting there awhile.")
+            #overlaid objects
+            # __________________
+            #|                  |
+            #|  1    2    3     |
+            #|                  |
+            #|    4    5    6   |
+            #|__________________|
             diff_items = []
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 235, 529, 137, 115))
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 448, 754, 157, 249))
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 811, 283, 81, 224))
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 1146, 430, 168, 152))
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 1348, 713, 300, 208))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 57, 316, 325, 208))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 823, 452, 213, 181))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 1268, 467, 155, 156))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 470, 770, 287, 300))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 1240, 731, 268, 204))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay1.jpg", 1610, 835, 222, 207))
     if gameimage == "2":
         python:
+            #barks
+            corgi_barks = []
+            # mug toaster stapler staples chips pompom
+            corgi_barks.append("The wire on that looks busted. Not exactly inspiring.\nMore flammable than anything.")
+            corgi_barks.append("Ooh still not sure that'll work. Did you clean it yet?\nI feel like the fuzzy things are getting bigger.")
+            corgi_barks.append("I saw that thing crawling out of there earlier today.\nI'm naming it Geoffrey.")
+            corgi_barks.append("Oh those will be perfect! Yes! Let's get the tape!")
+            corgi_barks.append("{i}shudder{/i} Keep that away from me, please!")
+            corgi_barks.append("I really dont like that thing. Those teeth?\nThey'd hurt my little paws!")
+            #overlaid objects
+            # __________________
+            #|                  |
+            #|  1    2    3     |
+            #|                  |
+            #|    4    5    6   |
+            #|__________________|
             diff_items = []
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 235, 529, 137, 115))
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 448, 754, 157, 249))
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 811, 283, 81, 224))
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 1146, 430, 168, 152))
-            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 1348, 713, 300, 208))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 57, 316, 325, 208))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 823, 452, 213, 181))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 1268, 467, 155, 156))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 470, 770, 287, 300))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 1240, 731, 268, 204))
+            diff_items.append(STD_Item("images/minigame/Corgi/CorgiOfficeOverlay2.jpg", 1610, 835, 222, 207))
     if gameimage == "default":
         return
     python:
@@ -280,7 +337,7 @@ label minigamestart_corgi(gameimage="notdefault"):
         #we need to be able to input an argument here
         difference_image = MinigameCorgi("images/minigame/Corgi/CorgiOfficeBase.jpg", diff_items)
         difference_image.randomizeItems(5)
-        text_overlay = TextRender("images/minigame/corgi/textbox_minigame.png")
+        text_overlay = TextRender("images/minigame/corgi/CorgiBarkOverlay.png")
         #TempCleaningBackground = difference_image
         ui.add(difference_image)
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)

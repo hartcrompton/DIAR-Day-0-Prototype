@@ -50,7 +50,7 @@ label conv_SoupAndSunflowers:
     #        jump conv_SoupAndSunflowers 
 
 label .use_action:
-    call advance_time from _call_advance_time_6
+    call advance_time
     jump expression "conv_SoupAndSunflowers" + "." + "beat" + "%d" % beat_SoupAndSunflowers
     #menu:
     #    p "Whoa, sure you want to use an action?"
@@ -73,7 +73,7 @@ label .beat1:
             su "It'll be fine! Quickly now!"
     #minigame go here
     $ SSFakeCleanCount = 0
-    call call_SSFakeClean from _call_call_SSFakeClean
+    call call_SSFakeClean
     show soupandsunflowers at truecenter:
         zoom .75
         yoffset -100
@@ -330,7 +330,7 @@ label .beat4:
             "placeholder for final minigame choice"
             "Erase":
                 $ SoupOutcome = "Erase"
-                call minigamestart_soupremoval from _call_minigamestart_soupremoval
+                call minigamestart_soupremoval
             "Detach":
                 $ SoupOutcome = "Detach"
             "Remain":
@@ -382,13 +382,8 @@ label .beat4:
         $ beat_SoupAndSunflowers += 1
         jump FreeRoam
 label .Outcome:
-    scene mixedmedia bg:
-        blur 5
-    show ssportrait at truecenter:
-        zoom .75
-        yoffset -100
     if beat_SoupAndSunflowers == 5:
-        if SSMerged == 1:
+        if SSMerge == 1:
             "In a bold choice from the curator, Van Gogh’s {i}Sunflowers{/i} (F454) is on display with the soup stain not only present, but seemingly one with the art."
             "Was the stain given a protective coating? Is it a recreation using paint oil? Or is the presentation a bold enough statement to be its own artistic choice?"
             "Whatever the curator did, the piece feels bold and contemporary. The piece itself is in-your-face, yet inspiring in its shameless display."
@@ -443,7 +438,7 @@ label call_SSFakeClean():
         return
 
     show layer middle
-    call expression _return from _call_expression
+    call expression _return
     show layer middle at reset
     jump .repeat
 

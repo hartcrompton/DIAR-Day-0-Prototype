@@ -8,6 +8,8 @@ init python:
 
     # Value that determines zoom level -H
     zoomfactor = 1
+    global BarkCounter
+    BarkCounter = 0
     
     #Main game-running function -H
     class MinigameCleaningCorgi(renpy.Displayable):
@@ -82,15 +84,18 @@ init python:
                 self.score_bubble.st = st-self.score_bubble.start - 1
                 myalpha = max(1.0 - self.score_bubble.st / self.score_bubble.duration, 0.0)
                 #self.score_bubble.y -= self.score_bubble.st/2
-                
+                if (self.score_bubble.x > 945):
+                    self.score_bubble.x = 945
+                if (self.score_bubble.y > 892):
+                    self.score_bubble.y = 892
                 score_bubble_img = Transform(child=self.score_bubble.myimage, alpha=myalpha)
                 textbox_img = Transform(text_overlay, alpha=myalpha)
                 score_img = renpy.render(score_bubble_img, width, height,  st, at)
                 #render.blit(score_img,(self.score_bubble.x,self.score_bubble.y))
                 #text_overlay = TextRender("images/minigame/corgi/textbox_minigame.png")
                 textbox_overlay = renpy.render(textbox_img, width, height,  st, at)
-                render.blit(textbox_overlay, (0,0))
-                render.blit(score_img,(400,900))
+                render.blit(textbox_overlay, (self.score_bubble.x,self.score_bubble.y -785))
+                render.blit(score_img,(self.score_bubble.x + 230,self.score_bubble.y + 60))
                 if (self.score_bubble.st  > self.score_bubble.duration):
                     self.score_bubble = None
             
@@ -156,7 +161,11 @@ init python:
                 #plays sound effects on click -H
                 #renpy.random.choice(["Impressive!", "No holding back!", "Splendid job!", "Yeah, lets go!"])
                 if (clicked):
-                    self.score_bubble = Bubble_Text(renpy.random.choice(["Impressive!", "No holding back!", "Splendid job!", "Yeah, lets go!"]), "ffffff",48,3, x-15, y-5)
+                    global BarkCounter
+                    self.score_bubble = Bubble_Text(corgi_barks[BarkCounter], "ffffff",48,3, x-15, y-5)
+                    BarkCounter += 1
+                    if BarkCounter > 3:
+                        BarkCounter = 0
                     #renpy.call_in_new_context("TestPosterLines")
                     #Impressive!
                     #No holding back!
@@ -297,20 +306,31 @@ init python:
 
 
 label minigamestart_cleaning_corgi(gameimage="notdefault"):
+    $ BarkCounter = 0
     scene cleaning bg
     python:
+        corgi_barks = []
+        corgi_barks.append("Impressive!")
+        corgi_barks.append("No holding back!")
+        corgi_barks.append("Splendid job!")
+        corgi_barks.append("Yeah, lets go!")
         diff_items = []
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 182,5,316,406))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 154,888,124,72))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 498,775,121,107))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 726,976,128,96))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 1233,887,133,70))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 1670,954,188,121))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 1188,618,115,123))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 493,618,118,58))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 692,5,512,290))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 1303,5,311,465))
-        diff_items.append(STD_Item("images/minigame/cleaning/cleaning_overlay_ph.png", 1699,385,96,155))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 383, 65, 270, 150))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 767, 112, 295, 186))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1690, 0, 230, 550))
+        #chips
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 487, 529, 60, 77))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 643, 699, 148, 108))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1438, 831, 211, 174))
+        #socks
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 796, 598, 128, 77))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 361, 951, 217, 120))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1128, 886, 179, 107))
+        #bottles
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 496, 635, 121, 62))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1019, 583, 83, 108))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 813, 907, 173, 122))
+        diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1288, 668, 107, 93))
     if gameimage == "default":
         return
     python:
@@ -319,9 +339,9 @@ label minigamestart_cleaning_corgi(gameimage="notdefault"):
         the_score = 0
         renpy.block_rollback()
         #we need to be able to input an argument here
-        difference_image = MinigameCleaningCorgi("images/minigame/cleaning/cleaning_ph.png", diff_items)
-        difference_image.randomizeItems(5)
-        text_overlay = TextRender("images/minigame/corgi/textbox_minigame.png")
+        difference_image = MinigameCleaningCorgi("images/minigame/cleaning/cleaning fineart bg.jpg", diff_items)
+        difference_image.randomizeItems(7)
+        text_overlay = TextRender("images/minigame/corgi/CorgiBarkOverlay.png")
         #TempCleaningBackground = difference_image
         ui.add(difference_image)
         #ui.add(text_overlay)

@@ -46,7 +46,7 @@ label .use_action:
     #    "No, not really.":
     #        gi "Understandable."
     #        jump conv_Gilgamesh
-    call advance_time from _call_advance_time_2
+    call advance_time
     jump expression "conv_Gilgamesh" + "." + "beat" + "%d" % beat_Gilgamesh
 
 label .beat1:
@@ -163,30 +163,21 @@ label .beat1:
     hide gilgamesh
     hide easnasir
     "Let's see what the archive has on Gilgamesh."
-    call call_catalogue("Gilgamesh") from _call_call_catalogue_1
+    call call_catalogue("Gilgamesh")
     label GilgameshResearch:
         $ renpy.set_return_stack([])
         scene archives bg
         hide screen ResearchMinigameDrawerUI
         hide screen ResearchMinigameUI
         show epicofgilgamesh bg
-        "The Epic of Gilgamesh" "Gilgamesh was the king of the great city, Uruk."
-        "The Epic of Gilgamesh" "In his boredom, he tormented his people until a man named Enkidu challenged him."
-        "The Epic of Gilgamesh" "Born from clay, Enkidu nonetheless fought Gilgamesh to a standstill."
-        "The Epic of Gilgamesh" "Recognizing each other's strength, they became fast friends and lovers."
-        "The Epic of Gilgamesh" "Irritated with the duo's hubris, the goddess Ishtar send the Bull of Heaven to humble them."
-        "The Epic of Gilgamesh" "Gilgamesh slew the bull, and in a rage, Ishtar cursed Enkidu to die."
-        "The Epic of Gilgamesh" "Unable to accept his lover's death, Gilgamesh ventured to the ends of the earth to find immortality."
-        "The Epic of Gilgamesh" "He failed, but upon returning to Uruk, he found a sort of peace within himself."
-        "There also seems to be an index card stuck to the book."
-        menu:
-            "I hope it's more interesting than this.":
-                pass
-            "[[Unstick the card.]":
-                pass
-        "The card seems to be a note from the previous curator."
-        "Charles" "The \"Sumerian Exhibit\" is a joke. One statue and a clay tablet that's basically just a complaint letter."
-        "Charles" "Gilgamesh is a great piece, I wish the Admin had gotten something a little better than a disreputable copper merchant to accompany it. "
+        "Player learns That Gil was KING of URUK"
+        "He was a real pain in the ass until ENKIDU showed up and beat him in a fight"
+        "They became best friends / lovers"
+        "ISHTAR sent the BULL OF HEAVEN to humble them. Gil killed it, which pissed her off even more."
+        "ISHTAR killed ENKIDU"
+        "GIl went kinda CRAZY and fought to the END OF THE WORLD to find IMMORTALITY"
+        "Long story short, HE DIDN'T. But he returned to URUK and found PEACE."
+        "ALSO: Something about Ea-nasir having a past scamming people with shoddy copper"
         #return
     $ beat_Gilgamesh += 1
     jump FreeRoam
@@ -463,7 +454,7 @@ label .beat3:
             e "Yes, perhaps you should have stayed away."
     e "At least he seems to have run dry."
     "You sigh. Time to bust out the mop."
-    call minigamestart_mop from _call_minigamestart_mop
+    call minigamestart_mop
     scene antiquities bg with fade:
         blur 5
     "Whew. Still a little damp, but at least there isn't any obvious damage."
@@ -774,13 +765,6 @@ label .beat4:
     jump FreeRoam
 
 label .Outcome:
-    scene antiquities bg with fade:
-        blur 5
-    show gilgamesh at center:
-        xoffset 0
-    show eanasir at right:
-        xoffset -50
-        zoom .6
     if beat_Gilgamesh == 5:
         "Completed ending"
         if SongA > SongB:
