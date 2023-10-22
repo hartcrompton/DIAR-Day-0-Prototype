@@ -1,22 +1,35 @@
 #map
 default TokenHovered = "NONE"
+image TimeOfDayBG = ConditionSwitch(
+    "DayNumber == 1", "tod bg day1",
+    "DayNumber == 2", "tod bg day2",
+    "DayNumber == 3", "tod bg day3",
+    "DayNumber == 4", "tod bg day4")
 
+image TimeOfDayOverlay = ConditionSwitch(
+    "actions == 4", "tod morning",
+    "actions == 3", "tod noon",
+    "actions == 2", "tod evening",
+    "actions == 1", "tod night",
+    "actions == 0", "tod night")
+
+image MapOverlay = "UI/Map/map bg.png"
 
 label call_mapUI:
     $ TokenHovered = "NONE"
     call screen MapUI
     #show screen gameUI
 
-image SaintToken = "Characters/SideImages/side saintcatherine.png"
-image GilgameshToken = "Characters/SideImages/side gilgamesh.png"
+image SaintToken = "Characters/SideImages/side_saintcatherine.png"
+image GilgameshToken = "Characters/SideImages/side_gilgamesh.png"
 default giX = 495
 
 
-image CorgiToken = "Characters/SideImages/side poster.png"
-image SSToken = "Characters/SideImages/side soupandsunflowers.png"
-image MonaToken = "Characters/SideImages/side mona.png"
-image DavidsToken = "Characters/SideImages/side davids.png"
-image ArnolfiniToken = "Characters/SideImages/side arnolfinimap.png"
+image CorgiToken = "Characters/SideImages/side_poster.png"
+image SSToken = "Characters/SideImages/side_soupandsunflowers.png"
+image MonaToken = "Characters/SideImages/side_mona.png"
+image DavidsToken = "Characters/SideImages/side_davids.png"
+image ArnolfiniToken = "Characters/SideImages/side_arnolfinimap.png"
 image BeatProgressEmpty = "map/BeatProgressPips.png"
 image BeatProgressFull = "map/BeatProgressPipsFilled.png"
 
@@ -57,7 +70,7 @@ screen MapUI:
     imagemap:
         xalign 0.5
         yalign 0.5
-        ground "map/map_new.png"
+        ground "MapOverlay"
         #hover "newmap/museum_map_hover.jpg"
 
         #glimmer
@@ -95,41 +108,46 @@ screen MapUI:
         #Admin
         #hotspot (1732,595,151,283) action Jump("conv_Admin")
     frame:
-        xalign 0
-        yalign 1.0
+        xalign .15
+        yalign .85
         xoffset 10
         yoffset -10
         xminimum 300
         xmaximum 300
         yminimum 300
         ymaximum 300
-        hbox:
-            box_wrap True
-            spacing 40
-            vbox:
-                spacing 10
-                text "Day [DayNumber] / 4":
-                    size 40
-                if InfiniteActions == 0:
-                    text "Morning":
-                        size 20
-                        if actions == 4:
-                            size 40
-                    text "Noon":
-                        size 20
-                        if actions == 3:
-                            size 40
-                    text "Evening":
-                        size 20
-                        if actions == 2:
-                            size 40
-                    text "Night":
-                        size 20
-                        if actions == 1:
-                            size 40
-                if InfiniteActions == 1:
-                    text "INFINITE ACTIONS":
-                        size 20
+        background None
+        #hbox:
+        #    box_wrap True
+        #    spacing 40
+        #    vbox:
+        #        spacing 10
+        #        text "Day [DayNumber] / 4":
+        #            size 40
+        #        if InfiniteActions == 0:
+        #            text "Morning":
+        #                size 20
+        #                if actions == 4:
+        #                    size 40
+        #            text "Noon":
+        #                size 20
+        #                if actions == 3:
+        #                    size 40
+        #            text "Evening":
+        #                size 20
+        #                if actions == 2:
+        #                    size 40
+        #            text "Night":
+        #                size 20
+        #                if actions == 1:
+        #                    size 40
+        #        if InfiniteActions == 1:
+        #            text "INFINITE ACTIONS":
+        #                size 20
+        add "TimeOfDayBG":
+            zoom .4
+        add "TimeOfDayOverlay":
+            zoom .4
     #textbutton "Stats":
     #    xalign 1.0
     #    yalign 0.0
@@ -141,10 +159,10 @@ screen MapUI:
         xalign 0.5
         yalign 0.5
         background None
-        xminimum 1062
-        xmaximum 1062
-        yminimum 982
-        ymaximum 982
+        xminimum 1175
+        xmaximum 1175
+        yminimum 988
+        ymaximum 988
         #Saint
         frame:
             xminimum 97
@@ -155,7 +173,7 @@ screen MapUI:
             xoffset 345
             yoffset 650
             add "SaintToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "st":
                     at transform:
                         TokenHover
@@ -201,7 +219,7 @@ screen MapUI:
             xoffset 582
             yoffset 580
             add "SSToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "ss":
                     at transform:
                         TokenHover
@@ -247,7 +265,7 @@ screen MapUI:
             xoffset 806
             yoffset 518
             add "DavidsToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "d":
                     at transform:
                         TokenHover
@@ -293,7 +311,7 @@ screen MapUI:
             xoffset 495
             yoffset 408
             add "GilgameshToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "gi":
                     at transform:
                         TokenHover
@@ -340,7 +358,7 @@ screen MapUI:
             xoffset 760
             yoffset 405
             add "ArnolfiniToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "ar":
                     at transform:
                         TokenHover
@@ -386,7 +404,7 @@ screen MapUI:
             xoffset 582
             yoffset 224
             add "MonaToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "m":
                     at transform:
                         TokenHover
@@ -432,7 +450,7 @@ screen MapUI:
             xoffset 301
             yoffset 251
             add "CorgiToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "p":
                     at transform:
                         TokenHover

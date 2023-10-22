@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigames/cleaning_minigame.rpy", line 282: if statement expects a non-empty block.
-    if gameimage == "foyer":
-                            ^
+File "game/map.rpy", line 17: Line is indented, but the preceding image statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    zoom .5
+    ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Oct 17 16:10:53 2023
+Sat Oct 21 17:55:21 2023

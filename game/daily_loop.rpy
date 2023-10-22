@@ -28,16 +28,29 @@ image museum_night:
     matrixcolor TintMatrix("#546280")
 
 #this image automatically changes appearance based on actions
+#foyer
 image museumtod = ConditionSwitch(
         "actions == 4", "museum_morning",
         "actions == 3", "museum_day",
         "actions == 2", "museum_evening",
         "actions == 1", "museum_night",
         "actions == 0", "museum_night")
+image day_countdown = ConditionSwitch(
+        "DayNumber == 1", "day countdown 1",
+        "DayNumber == 2", "day countdown 2",
+        "DayNumber == 3", "day countdown 3",
+        "DayNumber == 4", "day countdown 4",
+        "DayNumber == 5", "day countdown 5")
+#antiquities
+#fineart
+#mixedmedia
+#office - this will just be a tint matrix
 
 label DayStart:
     scene black with fade
-    "Day [DayNumber]"
+    show day_countdown at truecenter with fade
+    $ renpy.pause(3.0)
+    #"Day [DayNumber]"
     $ actions = 4
     show screen gameUI
     scene museumtod with fade
@@ -141,7 +154,7 @@ label DailyCleaning:
     jump FreeRoam
 
 label FreeRoam:
-    scene museumtod
+    scene museumtod with fade
     show screen gameUI
     if actions == 0:
         jump OutOfActions
@@ -175,6 +188,7 @@ label NighthawksDaily:
 label DayEnd:    
     #meta "That's the end of day [DayNumber]"
     if DayNumber == 4:
+        $ DayNumber = DayNumber + 1
         jump final_exhibit
     $ DayNumber = DayNumber + 1
     scene black with fade

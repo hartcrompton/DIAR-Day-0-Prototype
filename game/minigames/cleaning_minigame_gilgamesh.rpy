@@ -237,12 +237,11 @@ label minigamestart_mop(gameimage="notdefault"):
     scene antiquities flood
     python:
         diff_items = []
-        #diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 183,715,282,175))
-        diff_items.append(STD_Item("images/minigame/Mop/mopping_overlay.jpg", 360,559,567,367))
-        diff_items.append(STD_Item("images/minigame/Mop/mopping_overlay.jpg", 1015,823,655,257))
-        diff_items.append(STD_Item("images/minigame/Mop/mopping_overlay.jpg", 1185,537,523,271))
-        diff_items.append(STD_Item("images/minigame/Mop/mopping_overlay.jpg", 1003,287,364,246))
-        diff_items.append(STD_Item("images/minigame/Mop/mopping_overlay.jpg", 1414,135,205,190))
+        diff_items.append(STD_Item("images/minigame/Gilgamesh/WaterOverlay.png", 353,687,546,98))
+        diff_items.append(STD_Item("images/minigame/Gilgamesh/WaterOverlay.png", 415,804,761,243))
+        diff_items.append(STD_Item("images/minigame/Gilgamesh/WaterOverlay.png", 1128,647,263,51))
+        diff_items.append(STD_Item("images/minigame/Gilgamesh/WaterOverlay.png", 1193,735,390,103))
+        diff_items.append(STD_Item("images/minigame/Gilgamesh/WaterOverlay.png", 1229,902,442,151))
     if gameimage == "default":
         return
     python:
@@ -250,8 +249,8 @@ label minigamestart_mop(gameimage="notdefault"):
         starttime = renpy.time.time()
         the_score = 0
         renpy.block_rollback()
-        #we need to be able to input an argument here
-        difference_image = MinigameGilgameshMop("images/minigame/Mop/mopping_base.jpg", diff_items)
+        #TOD
+        difference_image = MinigameGilgameshMop("images/rooms/antiquities bg.jpg", diff_items)
         difference_image.randomizeItems(5)
         #TempCleaningBackground = difference_image
         ui.add(difference_image)

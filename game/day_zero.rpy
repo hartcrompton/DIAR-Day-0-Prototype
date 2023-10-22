@@ -316,7 +316,7 @@ label MuseumTour:
         blur 5
         matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
-    ad happy "I left the cordless phone in the grand foyer, so you're probably there right now!"
+    ad "I left the cordless phone in the grand foyer, so you're probably there right now!"
     ad "And these… are our Davids."
     "At first, you think you hear an echo:"
     #fix up the echo

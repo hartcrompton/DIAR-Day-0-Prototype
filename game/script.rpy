@@ -9,25 +9,753 @@ define pc = Character("[pc_name]")
 
 #main characters
 define ar = Character("Arnolfini Portrait")
-define arm = Character("Giovanni", image="arnolfiniman", color="#96528d") #man
-define arw = Character("[arwName]", image="arnolfiniwoman", color="#48750b") #woman
+define arm = Character("Giovanni", image="armlayered", color="#96528d") #man
+layeredimage armlayered:
+    always:
+        "side_arnolfiniman"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side armlayered = LayeredImageProxy("armlayered", Transform(xoffset=0, yoffset=0))
+
+define arw = Character("[arwName]", image="arwlayered", color="#48750b") #woman
 default arwName = "The Painted Woman"
-define ard = Character("Dog", image="arnolfinidog", color="#844016") #dog
+layeredimage arwlayered:
+    always:
+        "side_arnolfiniwoman"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side arwlayered = LayeredImageProxy("arwlayered", Transform(xoffset=0, yoffset=0))
+
+define ard = Character("Dog", image="ardlayered", color="#844016") #dog
+layeredimage ardlayered:
+    always:
+        "side_arnolfinimdog"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side ardlayered = LayeredImageProxy("ardlayered", Transform(xoffset=0, yoffset=0))
 
 define d = Character("The Davids", color = "#ffffff")
-define dm = Character("David M.", image="davidm", color="#ccc9c5") #mikey
-define db = Character("David B.", image="davidb", color="#9d9797") #bernini
-define dd = Character("David D.", image="davidd", color="#f3f1ed") #donny
-define gi = Character("Gilgamesh", image="gilgamesh", color="#c39566")
-define gl = Character("Glimmer")
-define m = Character("Mona Lisa", image="mona", color="#df8003")
-define p = Character("Corgi Poster", image="poster", color="#cb7b39")
-define st = Character("St. Catherine", image="saintcatherine", color="#f1d264")
-define so = Character("Soup", image="soup", color="#f08204")
-define su = Character("Sunflowers", image="sunflowers", color="#ebe184")
-define ss = Character("Soup & Sunflowers", image="soupandsunflowers", color="#fdd203")
 
-#side characters
+define dm = Character("David M.", image="dmlayered", color="#ccc9c5") #mikey
+layeredimage dmlayered:
+    always:
+        "side_davidm"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side dmlayered = LayeredImageProxy("dmlayered", Transform(xoffset=0, yoffset=0))
+
+define db = Character("David B.", image="dblayered", color="#9d9797") #bernini
+layeredimage dblayered:
+    always:
+        "side_davidb"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side dblayered = LayeredImageProxy("dblayered", Transform(xoffset=0, yoffset=0))
+
+define dd = Character("David D.", image="ddlayered", color="#f3f1ed") #donny
+layeredimage ddlayered:
+    always:
+        "side_davidd"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side ddlayered = LayeredImageProxy("ddlayered", Transform(xoffset=0, yoffset=0))
+
+define gi = Character("Gilgamesh", image="gilayered", color="#c39566")
+layeredimage gilayered:
+    always:
+        "side_gilgamesh"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side gilayered = LayeredImageProxy("gilayered", Transform(xoffset=0, yoffset=0))
+
+#deprecated
+define gl = Character("Glimmer")
+
+define m = Character("Mona Lisa", image="mlayered", color="#df8003")
+layeredimage mlayered:
+    always:
+        "side_mona"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side mlayered = LayeredImageProxy("mlayered", Transform(xoffset=0, yoffset=0))
+
+define p = Character("Corgi Poster", image="playered", color="#cb7b39")
+layeredimage playered:
+    always:
+        "side_poster"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side playered = LayeredImageProxy("playered", Transform(xoffset=0, yoffset=0))
+
+define st = Character("St. Catherine", image="stlayered", color="#f1d264")
+layeredimage stlayered:
+    always:
+        "side_saintcatherine"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side stlayered = LayeredImageProxy("stlayered", Transform(xoffset=0, yoffset=0))
+
+define so = Character("Soup", image="solayered", color="#f08204")
+layeredimage solayered:
+    always:
+        "side_soup"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side solayered = LayeredImageProxy("solayered", Transform(xoffset=0, yoffset=0))
+
+define su = Character("Sunflowers", image="sulayered", color="#ebe184")
+layeredimage sulayered:
+    always:
+        "side_sunflowers"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side sulayered = LayeredImageProxy("sulayered", Transform(xoffset=0, yoffset=0))
+
+define ss = Character("Soup & Sunflowers", image="sslayered", color="#fdd203")
+layeredimage sslayered:
+    always:
+        "side_soupandsunflowers"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side sslayered = LayeredImageProxy("sslayered", Transform(xoffset=0, yoffset=0))
+
 define ad = Character("Admin", image="adminlayered")
 layeredimage adminlayered:
     always:
@@ -39,16 +767,398 @@ layeredimage adminlayered:
             "happy"
         attribute sad:
             "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
 image side adminlayered = LayeredImageProxy("adminlayered", Transform(xoffset=0, yoffset=0))
-define e = Character("Ea-Nasir", image="eanasir", color="#edc7a1")
+
+define e = Character("Ea-Nasir", image="elayered", color="#edc7a1")
+layeredimage elayered:
+    always:
+        "side_eanasir"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side elayered = LayeredImageProxy("elayered", Transform(xoffset=0, yoffset=0))
+
 define n = Character("Nighthawks")
-define n1 = Character("Nighthawks", image="nighthawks1", color="#659274")
-define n2 = Character("Nighthawks", image="nighthawks2", color="#659274")
-define n3 = Character("Nighthawks", image="nighthawks3", color="#659274")
-define n4 = Character("Nighthawks", image="nighthawks4", color="#659274")
+
+define n1 = Character("Nighthawks", image="n1layered", color="#659274")
+layeredimage n1layered:
+    always:
+        "side_nighthawks1"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side n1layered = LayeredImageProxy("n1layered", Transform(xoffset=0, yoffset=0))
+
+define n2 = Character("Nighthawks", image="n2layered", color="#659274")
+layeredimage n2layered:
+    always:
+        "side_nighthawks2"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side n2layered = LayeredImageProxy("n2layered", Transform(xoffset=0, yoffset=0))
+
+define n3 = Character("Nighthawks", image="n3layered", color="#659274")
+layeredimage n3layered:
+    always:
+        "side_nighthawks3"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side n3layered = LayeredImageProxy("n3layered", Transform(xoffset=0, yoffset=0))
+
+define n4 = Character("Nighthawks", image="n4layered", color="#659274")
+layeredimage n4layered:
+    always:
+        "side_nighthawks4"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side n4layered = LayeredImageProxy("n4layered", Transform(xoffset=0, yoffset=0))
+
+define v = Character("Vending Machine", image="vlayered")
+layeredimage vlayered:
+    always:
+        "side_vendingmachine"
+    group emotion:
+        attribute neutral default:
+            "neutral"
+        attribute happy:
+            "happy"
+        attribute sad:
+            "sad"
+        #laugh
+        attribute laugh:
+            "laugh"
+        #bulb
+        attribute bulb:
+            "bulb"
+        #question
+        attribute question:
+            "question"
+        #questions
+        attribute questions:
+            "questions"
+        #sigh
+        attribute sigh:
+            "sigh"
+        #sparkle
+        attribute sparkle:
+            "sparkle"
+        #sparkles
+        attribute sparkles:
+            "sparkles"
+        #surprise
+        attribute surprise:
+            "surprise"
+        #surprises
+        attribute surprises:
+            "surprises"
+        #panic
+        attribute panic:
+            "panic"
+        #sweat
+        attribute sweat:
+            "sweat"
+        #angry
+        attribute angry:
+            "angry"
+        #dots
+        attribute dots:
+            "dots"
+        #exclaim
+        attribute exclaim:
+            "exclaim"
+        attribute confused:
+            "confused"
+image side vlayered = LayeredImageProxy("vlayered", Transform(xoffset=0, yoffset=0))
+
 define sue = Character("Sue")
 define t = Character("Theodore")
-define v = Character("Vending Machine", image="vendingmachine")
 
 default StoryCompletedTotal = 0
 
