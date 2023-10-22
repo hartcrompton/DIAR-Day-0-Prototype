@@ -37,10 +37,10 @@ default b3_StLines = 0
 default b4_StLines = 0
 
 #soup and sunflowers
-default b1_SsLines = 0
-default b2_SsLines = 0
-default b3_SsLines = 0
-default b4_SsLines = 0
+default b1_SSLines = 0
+default b2_SSLines = 0
+default b3_SSLines = 0
+default b4_SSLines = 0
 
 label conv_Nighthawks:
     scene foyer bg
@@ -96,12 +96,12 @@ label .Davids:
     if (beat_Davids == 2) and (b1_DLines == 0):
         $ b1_DLines = 1
         n1 "Well, I heard the curator spoke with David."
-        n2 "That’s not all. They ALSO spoke with David."
-        n3 "Oh, and don’t forget, they ALSO ALSO spoke with –"
+        n2 "That’s not all. [They] ALSO spoke with David."
+        n3 "Oh, and don’t forget, [they] ALSO ALSO spoke with –"
         n4 "Yes, yes – you’re all very funny. Let’s move on."
     if (beat_Davids == 3) and (b2_DLines == 0):
         $ b2_DLines = 1
-        n1 "Our dear curator made a CRITICAL mistake – they called [b2_DefinitiveDave] the REAL David."
+        n1 "Our dear curator made a CRITICAL mistake – [they] called [b2_DefinitiveDave] the REAL David."
         n2 "Oof. Rookie mistake."
         n3 "Bets on which of the other two Davids is going to ‘accidentally’ tip over and crush [pc_name] flat?"
         n4 "No betting in the diner! We’ve been over this…what else?"
@@ -218,7 +218,7 @@ label .MonaLisa:
         #heist
         if MonaOutcome == 2:
             n1 "Oh, just a daring heist…a scandal to last generations. Nothing terribly exciting."
-            n2 "I’ll give our curator this, they certainly take RISKS. But will getting rid of the Mona Lisa pay off – or has this museum just lost its crown jewel?"
+            n2 "I’ll give our curator this, [they] certainly take[s] RISKS. But will getting rid of the Mona Lisa pay off – or has this museum just lost its crown jewel?"
             n3 "We won’t have to wait long. The gala  is just around the corner..."
             n4 "No, now, don’t jump to the end so quickly! What else is going on?"
 
@@ -226,25 +226,25 @@ label .MonaLisa:
 
 label .Poster:
     if (beat_Poster == 2) and (b1_PLines == 0):
-        $ b1_Plines = 1
+        $ b1_PLines = 1
         n1 "Our dear curator spent a lot of time in the office today. Shirking duties, perhaps?"
         n2 "I can’t think of any other reason to be in there. Except that –"
         n3 "Oh, don’t mention THEM. ‘Motivational art’? Sure. Motivate me to leave the museum."
         n4 "Enough gatekeeping. It’s not attractive. What else is happening?"
     if (beat_Poster == 3) and (b2_PLines == 0):
-        $ b2_Plines = 1
+        $ b2_PLines = 1
         n1 "More time in the office for dear [pc_name]. Getting ‘motivated’."
         n2 "Honestly. All this fine, priceless art, and [they] choose[s] to spend [their] time chatting with a dollar store poster?"
         n3 "You’re going to eat those elitist words of yours. The corgi has a FLAG now."
         n4 "God, the world will never be the same. What else?"
     if (beat_Poster == 4) and (b3_PLines == 0):
-        $ b3_Plines = 1
+        $ b3_PLines = 1
         n1 "I mean, there IS the fact [pc_name] has chosen to –"
         n2 "Ugh, I beg you, don’t say it again. It was hard enough to hear the first time that our illustrious, underqualified curator is putting a POSTER out on display."
         n3 "Well, I for one support the idea. Things were getting a little stuffy around here."
         n4 "We’ll see. What else?"
     if (beat_Poster == 5) and (b4_PLines == 0):
-        $ b4_Plines = 1
+        $ b4_PLines = 1
         n1 "Well, I can’t help but feel quite MOTIVATED for some reason…"
         n2 "You joke, but I think displaying the motivational poster in the museum WORKS. I can’t tell if it’s the second flag, or –"
         n3 "No, no. It’s the…SINCERITY of it all. Sometimes it’s good to be reminded that not everything needs to be buried under three layers of jaded pretension."
