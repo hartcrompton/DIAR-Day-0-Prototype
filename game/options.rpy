@@ -64,6 +64,9 @@ define config.has_voice = True
 
 # define config.main_menu_music = "main-menu-theme.ogg"
 
+## Mouse Cursor ****************************
+define config.mouse = { }
+define config.mouse['default'] = [ ( "gui/pointer.png", 0, 0) ]
 
 ## Transitions #################################################################
 ##

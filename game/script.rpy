@@ -7,6 +7,7 @@
 #player character
 define pc = Character("[pc_name]")
 
+
 #main characters
 define ar = Character("Arnolfini Portrait")
 define arm = Character("Giovanni", image="armlayered", color="#96528d") #man

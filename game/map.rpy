@@ -173,7 +173,7 @@ screen MapUI:
             xoffset 345
             yoffset 650
             add "SaintToken":
-                zoom .33
+                zoom .275
                 if TokenHovered == "st":
                     at transform:
                         TokenHover
@@ -219,7 +219,7 @@ screen MapUI:
             xoffset 582
             yoffset 580
             add "SSToken":
-                zoom .33
+                zoom .275
                 if TokenHovered == "ss":
                     at transform:
                         TokenHover
@@ -265,7 +265,7 @@ screen MapUI:
             xoffset 806
             yoffset 518
             add "DavidsToken":
-                zoom .33
+                zoom .275
                 if TokenHovered == "d":
                     at transform:
                         TokenHover
@@ -311,7 +311,7 @@ screen MapUI:
             xoffset 495
             yoffset 408
             add "GilgameshToken":
-                zoom .33
+                zoom .275
                 if TokenHovered == "gi":
                     at transform:
                         TokenHover
@@ -358,7 +358,7 @@ screen MapUI:
             xoffset 760
             yoffset 405
             add "ArnolfiniToken":
-                zoom .33
+                zoom .275
                 if TokenHovered == "ar":
                     at transform:
                         TokenHover
@@ -404,7 +404,7 @@ screen MapUI:
             xoffset 582
             yoffset 224
             add "MonaToken":
-                zoom .33
+                zoom .275
                 if TokenHovered == "m":
                     at transform:
                         TokenHover
@@ -450,7 +450,7 @@ screen MapUI:
             xoffset 301
             yoffset 251
             add "CorgiToken":
-                zoom .33
+                zoom .275
                 if TokenHovered == "p":
                     at transform:
                         TokenHover
