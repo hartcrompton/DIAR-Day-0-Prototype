@@ -234,6 +234,8 @@ init python:
 
 
 label minigamestart_soupremoval(gameimage="notdefault"):
+    scene mixedmedia_tod:
+        blur 3
     python:
         diff_items = []
         #diff_items.append(STD_Item("images/minigame/office/MonaOfficeOverlay.jpg", 183,715,282,175))

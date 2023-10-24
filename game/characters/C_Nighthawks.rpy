@@ -43,7 +43,7 @@ default b3_SSLines = 0
 default b4_SSLines = 0
 
 label conv_Nighthawks:
-    scene foyer bg
+    scene foyer_tod
     show nighthawks at truecenter
     #p "You're talking to me, the Nighthawks! I'm a side character!"
     menu:
@@ -96,7 +96,7 @@ label .Davids:
     if (beat_Davids == 2) and (b1_DLines == 0):
         $ b1_DLines = 1
         n1 "Well, I heard the curator spoke with David."
-        n2 "That’s not all. [They] ALSO spoke with David."
+        n2 "That’s not all. [they!c] ALSO spoke with David."
         n3 "Oh, and don’t forget, [they] ALSO ALSO spoke with –"
         n4 "Yes, yes – you’re all very funny. Let’s move on."
     if (beat_Davids == 3) and (b2_DLines == 0):

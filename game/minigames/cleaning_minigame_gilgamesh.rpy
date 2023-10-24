@@ -234,7 +234,7 @@ init python:
 
 
 label minigamestart_mop(gameimage="notdefault"):
-    scene antiquities flood
+    scene antiquities_tod
     python:
         diff_items = []
         diff_items.append(STD_Item("images/minigame/Gilgamesh/WaterOverlay.png", 353,687,546,98))
@@ -250,7 +250,7 @@ label minigamestart_mop(gameimage="notdefault"):
         the_score = 0
         renpy.block_rollback()
         #TOD
-        difference_image = MinigameGilgameshMop("images/rooms/antiquities bg.jpg", diff_items)
+        difference_image = MinigameGilgameshMop("antiquities_tod", diff_items)
         difference_image.randomizeItems(5)
         #TempCleaningBackground = difference_image
         ui.add(difference_image)

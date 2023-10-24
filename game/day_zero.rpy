@@ -18,10 +18,10 @@ label GameIntroduction:
     #storm audio
     #play music "<from 5>music/Day0LoopSadBella.wav"
     #play audio "<from 10>music/RainLong.mp3" volume .2
-    "Hiring Manager" "{i}Dear Applicant,{/i}"
-    "Hiring Manager" "{i}Every journey begins somewhere.{/i}"
+    hm "{i}Dear Applicant,{/i}"
+    hm "{i}Every journey begins somewhere.{/i}"
     #$ renpy.music.set_volume(.1, delay=1, channel="audio") 
-    "Hiring Manager" "{i}Yours, unfortunately, does not begin with us.{/i}"
+    hm "{i}Yours, unfortunately, does not begin with us.{/i}"
     "So, the interview hadn't gone {i}great{/i}."
     #play audio "<from 10>music/RainLong.mp3" volume 1.0 fadein 1
     #"And your day didn't improve when you missed your bus and the rain chased you into this forlorn museum."
@@ -31,8 +31,8 @@ label GameIntroduction:
     "Rain soaked, an hour from home, you decide to wait out the storm in the nearby museum."
     #interior transition
     #"With nothing better to do, you wait out the rain in the museum."
-    scene foyer bg with fade:
-        matrixcolor TintMatrix("#7d91c7")
+    scene foyer night with fade:
+        ##matrixcolor TintMatrix("#7d91c7")
     "Deserted. Not even a receptionist."
     #"Funny, you'd never even thought to visit this museum before."
     "The guest log is {i}very{/i} empty."
@@ -58,15 +58,15 @@ label GameIntroduction:
     jump VendingMachineIntro
 
 label DayZero:
-    scene foyer bg:
-        matrixcolor TintMatrix("#7d91c7")
+    scene foyer night:
+        ##matrixcolor TintMatrix("#7d91c7")
     #munch munch SFX
     
     "Your sad little snack doesn't last long."
     #"Outside, the rain still falls."
     #music start here
-    scene foyer bg with hpunch:
-        matrixcolor TintMatrix("#7d91c7")
+    scene foyer night with hpunch:
+        ##matrixcolor TintMatrix("#7d91c7")
     "???" "But do you have to {i}stand{/i} on the head? It's grisly."
     "A voice echoes through the empty hall."
 
@@ -79,9 +79,9 @@ label DayZero:
     "???" "It's {i}David{/i} and Goliath not {i}Goliath{/i} and Goliath you oversized buffoon."
 
     #put the velvet rope hre
-    scene foyer bg:
+    scene foyer night:
         blur 5
-        matrixcolor TintMatrix("#7d91c7")
+        ##matrixcolor TintMatrix("#7d91c7")
     show davids
     show VelvetRopeOverlay at truecenter:
         yoffset 450
@@ -123,8 +123,8 @@ label DayZero:
     #cutesy little phone interaction
     label GetThePhone:
         play sound "sfx/PhoneRing.mp3" if_changed
-        scene antiquities bg with hpunch:
-            matrixcolor TintMatrix("#7d91c7")
+        scene foyer night with hpunch:
+            #matrixcolor TintMatrix("#7d91c7")
         call PhoneWaitResponse from _call_PhoneWaitResponse
         menu:                                               
             "[[Answer the phone.]":      
@@ -312,9 +312,9 @@ label PlayerNameInput:
     ad "Now I'm sure you're eager to get started so take the handset and follow along."
 
 label MuseumTour:
-    scene foyer bg with fade:
+    scene foyer night with fade:
         blur 5
-        matrixcolor TintMatrix("#7d91c7")
+        #matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
     ad "I left the cordless phone in the grand foyer, so you're probably there right now!"
     ad "And these… are our Davids."
@@ -366,9 +366,9 @@ label MuseumTour:
     show admin at AdminPortrait
     ad "Moving on!"
 
-    scene antiquities bg with fade:
+    scene antiquities night with fade:
         blur 5
-        matrixcolor TintMatrix("#7d91c7")
+        #matrixcolor TintMatrix("#7d91c7")
     ad "This is the Antiquities wing."
     ad "We're lucky to have a small collection of Sumerian artifacts."
     show gilgamesh at truecenter:
@@ -392,9 +392,9 @@ label MuseumTour:
     pc "Can't you hear that?"
     ad "Try not to fall behind, I have 57 calls waiting!"
 
-    scene fineart bg with fade:
+    scene fineart night with fade:
         blur 5
-        matrixcolor TintMatrix("#7d91c7")
+        #matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
     ad "This is the Fine Art wing."
     hide admin
@@ -426,9 +426,9 @@ label MuseumTour:
             pass
     ad "Please don't interrupt the tour!"
 
-    scene mixedmedia bg with fade:
+    scene mixedmedia night with fade:
         blur 5
-        matrixcolor TintMatrix("#7d91c7")
+        #matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
     ad "This is the Mixed Media wing."
     hide admin
@@ -458,7 +458,7 @@ label MuseumTour:
 
     scene office bg with fade:
         blur 5
-        matrixcolor TintMatrix("#7d91c7")
+        #matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
     ad "Lastly, this is the Office."
     hide admin
@@ -476,11 +476,11 @@ label MuseumTour:
     "You turn to see an inspirational poster hanging on the wall featuring a cute corgi leaping into the air."
     p "I... I hope you do your best today! I'm rooting for you!"
     
-    scene foyer bg with fade:
+    scene foyer night with fade:
         blur 5
-        matrixcolor TintMatrix("#7d91c7")
+        #matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
-    ad "And that's the tour! As you can see, it's all very straightforward."
+    ad "And that's the tour! As you can see, it's all very straightforward. Really, all you need to do is clean."
     menu:
         "Uh huh. Totally.":
             pass
@@ -514,13 +514,20 @@ label MuseumTour:
     show vendingmachine at Rumble:
         xalign 0.5
     "The machine {i}kachunks{/i} and {i}grinds{/i}. A heavy key ring flies out of the change door."
+    v "Congrats on the curator gig, [pc_name]! Really diving into the deep end."
     menu:
-        "Thanks?":
-            v "De nada, {0}bro{/0}{1}sis{/1}{2}friendo{/2}."
-        "Why do you have these?":
-            v "Gotta stay prepped."
-    v "Congrats on your new gig, Curator [pc_name]! Really diving into the deep end."
-    v "Worst case, you only need to last a week."
+    #    "Thanks?":
+    #        v "De nada, {0}bro{/0}{1}sis{/1}{2}friendo{/2}."
+    #    "Why do you have these?":
+    #        v "Gotta stay prepped."
+        "Am I really on my own?":
+            v "Nah, don't be silly."
+            v "You've got me!"
+        "Why is this place so... crappy?":
+            v "Whoa, throwin' shade!" 
+            v "A little scrubbing, a little sweeping, this place could be as beautiful as the day it opened."
+            v "It's the art that's the real mess."
+    v "And it looks like you've got a busy week coming up."
     #pc "Yeah, the Admin mentioned that. Why is the museum closing?"
     $ WhyClosing = 0
     $ WhyHear = 0
@@ -528,8 +535,9 @@ label MuseumTour:
         menu:
             "Why is the museum closing?" if WhyClosing == 0:
                 $ WhyClosing = 1
-                v "You met the reasons."
-                v "Anybody with a feel for art is gonna run screaming. No offense."
+                v "You met the reasons. The whole vibe here is rancid."
+                v "Back in the day, we'd have lines out the door. I'd get restocked three, maybe four times a day."
+                v "Now, anybody with a feel for art is gonna run screaming. No offense."
                 jump WhyAndArt
         #v "They've been twisted up inside themselves so long, even they don't know what they're about."
             "Why can I hear the art? The Admin couldn't." if WhyHear == 0:
@@ -541,6 +549,7 @@ label MuseumTour:
                 "The Vending Machine pauses with an electric hum."
                 v "I guess you know how to keep your head clear."
                 jump WhyAndArt
+
     #v "You got it twisted, {0}buddy{/0}{1}girl{/1}{2}buckaroo{/2}."
     
     #"Or empty."
@@ -564,41 +573,58 @@ label MuseumTour:
                 jump VendingQuestions
             "What happened to the last curator?" if VendingCurator != 1:
                 v "Charles?"
-                v "Dude was a bit high-strung, TBH."
+                v "Dude tried, but was a bit high-strung TBH."
                 v "Had all these ideas about lighting, layout, merch."
                 v "No {i}soul{/i}. Couldn't {i}listen{/i} to the art."
                 v "One too many glares from Mona and he called it quits."
                 $ VendingCurator = 1
                 jump VendingQuestions
-            "About the Admin..." if VendingAdmin != 1:
-                pc "What's wrong with them?"
-                v "Beats me. Keep too many plates spinning too long, maybe your head starts to spin too."
+            "Why can {i}you{/i} talk? " if VendingAdmin != 1:
+                #v "Beats me. Keep too many plates spinning too long, maybe your head starts to spin too."
+                v "Maybe the world of art is wider and weirder than people think."
+                v "Maybe I'm just good at picking up new tricks."
                 $ VendingAdmin = 1
                 jump VendingQuestions
-    v "I'll be honest. I've seen a lot of curators come through here."
+    v "I've seen a lot of curators come through here."
     v "They all thought a few lights and some marketing could save this place."
     v "But you can {i}listen{/i}, feel the current. You're the first one I think has a chance."
-    pc "What if I don't?"
-    v "No stress. All these jokers are on loan. If the museum closes, they just get shipped back."
-    pc "What about you?"
-    show vendingmachine
-    v "Straight to the dump."
-    v "Crushed."
-    v "Cubed."
-    v "{i}Recycled.{/i}"
-    "The Vending Machine shivers."
-    v "But don't worry, it's all the great circle of life."
+    menu:
+        "What if I don't?":
+            pass
+        "I hope you're right.":
+            pass
+    v "Listen, these jokers weren't always this miserable."
+    v "Most of them just spent too much time being looked at, not enough time being heard."
+    v "I mean, you think Saint Cathy {i}likes{/i} being in a cupboard?"
+    v "Even the Arnolfinis used to play nice."
+    v "But going into storage or getting auctioned off won't help anything."
+    menu: 
+        "What happens to you if the museum closes?":
+            v "Straight to the dump."
+            v "Crushed."
+            v "Cubed."
+            v "{i}Recycled.{/i}"
+            "The Vending Machine shivers."
+            v "But try not to worry about that."
+        "How can I help?":
+            v "Just talk to 'em, {0}bro{/0}{1}sis{/1}{2}champ{/2}!"
+            v "Won't matter how clean this place is if the art's still a mess."
+            v "Just don't get spread thin."
+    #v "But don't worry, it's all the great circle of life."
+    v "They've probably got more problems than you have time."
+    v "Sometimes, the best way to help everyone is to {i}not{/i} help everyone. Feel me?"
     v "Now go lock up and get some rest, busy day tomorrow!"
 
-    scene foyer bg with fade:
-        matrixcolor TintMatrix("#7d91c7")
+    scene foyer night with fade:
+        #matrixcolor TintMatrix("#7d91c7")
     "Four days."
     "Just four days to save a dysfunctional gallery of art from itself. And maybe save your job with it."
     "But that can wait for tomorrow."
-    "As you leave, someone whispers behind you, unnoticed. (Or is that somebodies, plural?)"
-    scene foyer bg:
+    #"As you leave, someone whispers behind you, unnoticed. (Or is that somebodies, plural?)"
+    "After you leave, a new voice echoes through the Foyer."
+    scene foyer night:
         blur 5
-        matrixcolor TintMatrix("#7d91c7")
+        #matrixcolor TintMatrix("#7d91c7")
     show nighthawks at truecenter:
         zoom .65
         yoffset -125

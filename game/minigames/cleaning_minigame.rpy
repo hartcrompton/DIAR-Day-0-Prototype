@@ -246,7 +246,7 @@ label minigamestart_cleaning(gameimage="notdefault"):
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 1019, 583, 83, 108))
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 1288, 668, 107, 93))
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning antiquities overlay.png", 383, 65, 270, 190))
-            difference_image = MinigameCleaning("images/minigame/cleaning/cleaning antiquities bg.jpg", diff_items)
+            difference_image = MinigameCleaning("antiquities_tod", diff_items)
     if gameimage == "fineart":
         python:
             diff_items = []
@@ -264,7 +264,7 @@ label minigamestart_cleaning(gameimage="notdefault"):
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 383, 65, 270, 190))
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 767, 112, 295, 186))
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 1690, 0, 230, 550))
-            difference_image = MinigameCleaning("images/minigame/cleaning/cleaning fineart bg.jpg", diff_items)
+            difference_image = MinigameCleaning("fineart_tod", diff_items)
     if gameimage == "mixedmedia":
         python:
             diff_items = []
@@ -280,7 +280,7 @@ label minigamestart_cleaning(gameimage="notdefault"):
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 1632, 654, 62, 70))
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 1682, 0, 238, 494))
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning mixedmedia overlay.png", 851, 34, 328, 187))
-            difference_image = MinigameCleaning("images/minigame/cleaning/cleaning mixedmedia bg.jpg", diff_items)
+            difference_image = MinigameCleaning("mixedmedia_tod", diff_items)
     if gameimage == "foyer":
         python:
             diff_items = []
@@ -294,7 +294,7 @@ label minigamestart_cleaning(gameimage="notdefault"):
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 1012, 392, 122, 159))
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 767, 29, 465, 263))
             diff_items.append(STD_Item("images/minigame/cleaning/cleaning foyer overlay.png", 384, 605, 83, 88))
-            difference_image = MinigameCleaning("images/minigame/cleaning/cleaning foyer bg.jpg", diff_items)
+            difference_image = MinigameCleaning("foyer_tod", diff_items)
     if gameimage == "default":
         return
     python:

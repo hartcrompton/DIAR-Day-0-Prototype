@@ -12,6 +12,7 @@ default SoupWant = "NONE"
 default SoupOutcome = "NONE"
 default SSFakeCleanCount = 0
 default SSMerged = 0
+default SSTimeout = 0
 
 image ssportrait = ConditionSwitch(
     "SoupOutcome == 'Remain'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png",
@@ -20,7 +21,7 @@ image ssportrait = ConditionSwitch(
     "SoupOutcome == 'NONE'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png")
 
 label conv_SoupAndSunflowers:
-    scene mixedmedia bg:
+    scene mixedmedia_tod:
         blur 5
     show ssportrait at truecenter:
         zoom .75
@@ -50,7 +51,8 @@ label conv_SoupAndSunflowers:
     #        jump conv_SoupAndSunflowers 
 
 label .use_action:
-    call advance_time from _call_advance_time_6
+    #call advance_time from _call_advance_time_6
+    $ SSTimeout = 1
     jump expression "conv_SoupAndSunflowers" + "." + "beat" + "%d" % beat_SoupAndSunflowers
     #menu:
     #    p "Whoa, sure you want to use an action?"
@@ -327,10 +329,13 @@ label .beat4:
         jump SSEnding
     label MinigamePlaceholder:
         menu:
-            "placeholder for final minigame choice"
+            #"placeholder for final minigame choice"
             "Erase":
                 $ SoupOutcome = "Erase"
                 call minigamestart_soupremoval from _call_minigamestart_soupremoval
+                show ssportrait at truecenter:
+                    zoom .75
+                    yoffset -100
             "Detach":
                 $ SoupOutcome = "Detach"
             "Remain":
@@ -382,7 +387,7 @@ label .beat4:
         $ beat_SoupAndSunflowers += 1
         jump FreeRoam
 label .Outcome:
-    scene mixedmedia bg:
+    scene mixedmedia_tod:
         blur 5
     show ssportrait at truecenter:
         zoom .75
@@ -456,7 +461,7 @@ screen SSFakeClean:
     modal renpy.get_screen("wait_SSFakeClean") # if you don't need modal, omit this line
     sensitive renpy.get_screen("wait_SSFakeClean")
     imagemap:
-        ground "images/rooms/mixedmedia bg.jpg"
+        ground "mixedmedia_tod"
         #if SSFakeCleanCount < 2:
         #    hotspot (0, 0, 1920, 1080) action Return("SSFakeCleanDialogue") #call up the appropriate second screen K
         hotspot (0, 0, 1920, 1080) action Return("exit") #call up the appropriate second screen K

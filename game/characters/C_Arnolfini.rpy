@@ -3,9 +3,10 @@
 default beat_Arnolfini = 1
 default d_ArnolfiniLabel = "DEFAULT LABEL"
 default end_Arnolfini = 0
+default ArnolfiniTimeout = 0
 
 label conv_Arnolfini:
-    scene fineart bg:
+    scene fineart_tod:
         blur 5
     show arnolfini at truecenter:
         zoom .7
@@ -32,7 +33,8 @@ label .use_action:
     #    "No, not really.":
     #        ar "Understandable."
     #        jump FreeRoam
-    call advance_time from _call_advance_time
+    #call advance_time from _call_advance_time
+    $ ArnolfiniTimeout = 1
     jump expression "conv_Arnolfini" + "." + "Beat" + "%d" % beat_Arnolfini
 
 label .Beat1:
@@ -119,7 +121,7 @@ label .Beat1:
     arm "I'd appreciate it more."
     #minigame go here
     call minigamestart_arnolfini(1) from _call_minigamestart_arnolfini
-    scene fineart bg:
+    scene fineart_tod:
         blur 5
     show arnolfini at truecenter:
         zoom .7
@@ -432,7 +434,7 @@ label .Beat3:
     arm "Fine. What about a feature for my hat? Can you find these things for us?"
     arw "I'm sure they can! They have to be around here somewhere."
     call minigamestart_arnolfini(2) from _call_minigamestart_arnolfini_1
-    scene fineart bg:
+    scene fineart_tod:
         blur 5
     show arnolfini at truecenter:
         zoom .7
@@ -501,7 +503,7 @@ label .Beat4:
     ard "Maybe there's an answer outside of the painting?"
     pc "Hey, it's worth a shot!"
     call minigamestart_cleaning_arnolfini from _call_minigamestart_cleaning_arnolfini
-    scene fineart bg:
+    scene fineart_tod:
         blur 5
     show arnolfini at truecenter:
         zoom .7
@@ -652,7 +654,7 @@ label .Beat4:
 #complete
 label .Outcome:
     if beat_Arnolfini == 5:
-        scene fineart bg:
+        scene fineart_tod:
             blur 5
         show arnolfini at truecenter:
             zoom .7
@@ -661,7 +663,7 @@ label .Outcome:
         "Sure, they still fought a bit, but they started making friends with nearby paintings and actually - finally - enjoyed each other's presence."
         "The dog too!"
     elif beat_Arnolfini > 1:
-        scene fineart bg:
+        scene fineart_tod:
             blur 5
         show arnolfini at truecenter:
             zoom .7
@@ -669,7 +671,7 @@ label .Outcome:
         "The Arnolfinis were getting a long a bit better, but there arguments never ended, annoying all the surrounding pieces of art."
         "If only you could've helped them reconcile..."
     else:
-        scene fineart bg:
+        scene fineart_tod:
             blur 5
         show arnolfini at truecenter:
             zoom .7

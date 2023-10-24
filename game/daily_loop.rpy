@@ -29,12 +29,33 @@ image museum_night:
 
 #this image automatically changes appearance based on actions
 #foyer
-image museumtod = ConditionSwitch(
-        "actions == 4", "museum_morning",
-        "actions == 3", "museum_day",
-        "actions == 2", "museum_evening",
-        "actions == 1", "museum_night",
-        "actions == 0", "museum_night")
+image foyer_tod = ConditionSwitch(
+        "actions == 4", "foyer morning",
+        "actions == 3", "foyer noon",
+        "actions == 2", "foyer evening",
+        "actions == 1", "foyer night",
+        "actions == 0", "foyer night")
+image fineart_tod = ConditionSwitch(
+        "actions == 4", "fineart morning",
+        "actions == 3", "fineart noon",
+        "actions == 2", "fineart evening",
+        "actions == 1", "fineart night",
+        "actions == 0", "fineart night")
+image antiquities_tod = ConditionSwitch(
+        "actions == 4", "antiquities morning",
+        "actions == 3", "antiquities noon",
+        "actions == 2", "antiquities evening",
+        "actions == 1", "antiquities night",
+        "actions == 0", "antiquities night")
+image mixedmedia_tod = ConditionSwitch(
+        "actions == 4", "mixedmedia morning",
+        "actions == 3", "mixedmedia noon",
+        "actions == 2", "mixedmedia evening",
+        "actions == 1", "mixedmedia night",
+        "actions == 0", "mixedmedia night")
+
+
+#day transition countdown
 image day_countdown = ConditionSwitch(
         "DayNumber == 1", "day countdown 1",
         "DayNumber == 2", "day countdown 2",
@@ -53,7 +74,7 @@ label DayStart:
     #"Day [DayNumber]"
     $ actions = 4
     show screen gameUI
-    scene museumtod with fade
+    scene foyer_tod with fade
     $ days_remaining = 4 - DayNumber
     #meta "It is day [DayNumber]."
     #ad "Good morning! Hope you slept well, you have [days_remaining] days left before the exhibit."
@@ -147,14 +168,18 @@ label DayStart:
             jump DailyCleaning
 
 label DailyCleaning:
-    scene museumtod
+    scene foyer_tod
     call minigamestart_cleaning(CleaningRoom) from _call_minigamestart_cleaning
     
     #meta "Now you're free to roam around the museum"
-    jump FreeRoam
+    jump FreeRoam_FromCleaning
 
 label FreeRoam:
-    scene museumtod with fade
+    scene black with fade
+    call advance_time
+    scene foyer_tod with fade
+label FreeRoam_FromCleaning:
+    #scene foyer_tod with fade
     show screen gameUI
     if actions == 0:
         jump OutOfActions
@@ -167,9 +192,9 @@ label OutOfActions:
     "Phew, another day over."
     "On your way out, you overhear the Nighthawks."
     menu:
-        "Listen in.":
+        "[[Listen in]":
             jump NighthawksDaily
-        "Go Home":
+        "[[Go Home]":
             jump DayEnd
 
 label NighthawksDaily:
@@ -187,6 +212,13 @@ label NighthawksDaily:
 
 label DayEnd:    
     #meta "That's the end of day [DayNumber]"
+    $ SSTimeout = 0
+    $ MonaTimeout = 0
+    $ GilgameshTimeout = 0
+    $ SaintTimeout = 0
+    $ PosterTimeout = 0
+    $ ArnolfiniTimeout = 0
+    $ DavidsTimeout = 0
     if DayNumber == 4:
         $ DayNumber = DayNumber + 1
         jump final_exhibit
@@ -196,46 +228,76 @@ label DayEnd:
 
 #this needs to get refactored, TOD uses a conditionswitch now
 label advance_time:
+    #clear timeouts
+    if SSTimeout >= 2:
+        $ SSTimeout = 0
+    elif SSTimeout == 1:
+        $ SSTimeout += 1
+    if MonaTimeout >= 2:
+        $ MonaTimeout = 0
+    elif MonaTimeout == 1:
+        $ MonaTimeout += 1
+    if GilgameshTimeout >= 2:
+        $ GilgameshTimeout = 0
+    elif GilgameshTimeout == 1:
+        $ GilgameshTimeout += 1
+    if SaintTimeout >= 2:
+        $ SaintTimeout = 0
+    elif SaintTimeout == 1:
+        $ SaintTimeout += 1
+    if PosterTimeout >= 2:
+        $ PosterTimeout = 0
+    elif PosterTimeout == 1:
+        $ PosterTimeout += 1
+    if ArnolfiniTimeout >= 2:
+        $ ArnolfiniTimeout = 0
+    elif ArnolfiniTimeout == 1:
+        $ ArnolfiniTimeout += 1
+    if DavidsTimeout >= 2:
+        $ DavidsTimeout = 0
+    elif DavidsTimeout == 1:
+        $ DavidsTimeout += 1
+
     if InfiniteActions == 1:
         $ actions = 4
         return
     if actions > 0:
         $ actions = actions - 1
     #morning - can be deleted, actions will never equal 4 in this label
-    if actions == 4:
-        image background1:
-            "images/rooms/museum bg1.jpg"
-            matrixcolor TintMatrix("#ede493")
-        image background2:
-            "images/rooms/museum bg2.jpg"
-            matrixcolor TintMatrix("#ede493")
-    #noon
-    if actions == 3:
-        image background1:
-            "images/rooms/museum bg1.jpg"
-        image background2:
-            "images/rooms/museum bg2.jpg"
-    #evening
-    if actions == 2:
-        image background1:
-            "images/rooms/museum bg1.jpg"
-            matrixcolor TintMatrix("#c27f02")
-        image background2:
-            "images/rooms/museum bg2.jpg"
-            matrixcolor TintMatrix("#c27f02")
-    #night
-    if actions == 1:
-        image background1:
-            "images/rooms/museum bg1.jpg"
-            matrixcolor TintMatrix("#546280")
-        image background2:
-            "images/rooms/museum bg2.jpg"
-            matrixcolor TintMatrix("#546280")
-    if actions == 0:
-        image background1:
-            "images/rooms/museum bg1.jpg"
-            matrixcolor TintMatrix("#546280")
-        image background2:
-            "images/rooms/museum bg2.jpg"
-            matrixcolor TintMatrix("#546280")
+    #if actions == 4:
+    #    image background1:
+    #        "images/rooms/museum bg1.jpg"
+    #        matrixcolor TintMatrix("#ede493")
+    #    image background2:
+    #        "images/rooms/museum bg2.jpg"
+    #        matrixcolor TintMatrix("#ede493")
+    ##noon
+    #if actions == 3:
+    #    image background1:
+    #        "images/rooms/museum bg1.jpg"
+    #    image background2:
+    #        "images/rooms/museum bg2.jpg"
+    ##evening
+    #if actions == 2:
+    #    image background1:
+    #        "images/rooms/museum bg1.jpg"
+    #        matrixcolor TintMatrix("#c27f02")
+    #    image background2:
+    #        "images/rooms/museum bg2.jpg"
+    #        matrixcolor TintMatrix("#c27f02")
+    ##night
+    #if actions == 1:
+    #    image background1:
+    #        "images/rooms/museum bg1.jpg"
+    #        matrixcolor TintMatrix("#546280")
+    #    image background2:
+    #        "images/rooms/museum bg2.jpg"
+    #        matrixcolor TintMatrix("#546280")
+    #if actions == 0:
+    #    image background1:
+    #        "images/rooms/museum bg1.jpg"
+    #        matrixcolor TintMatrix("#546280")
+    #    image background2:
+    #        "images/rooms/museum bg2.jpg"
+    #        matrixcolor TintMatrix("#546280")
     return

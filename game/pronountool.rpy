@@ -347,7 +347,7 @@ screen pronounoptions():
 label pronounselection:
 
     menu:
-        "Please select your pronouns."
+        "Which pronouns would you like?"
         "[pronounlist[0]!t]":
             $ pronoun = 0
         "[pronounlist[1]!t]":

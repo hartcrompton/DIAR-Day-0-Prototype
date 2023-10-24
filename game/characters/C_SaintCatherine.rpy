@@ -10,6 +10,7 @@ default SaintPersonality = 0
 default SaintHumanChoice = "NONE"
 default SaintHair = 0
 default SaintRepaired = 0
+default SaintTimeout = 0
 #figure out the timing and flags for this
 image SaintPortrait = ConditionSwitch(
     "(SaintHair == 1) and (SaintRepaired == 0)", "images/Characters/SaintCatherine/saintbrunettebroken.png",
@@ -46,7 +47,8 @@ label .use_action:
     #    "No, not really.":
     #        st "Understandable."
     #        jump conv_SaintCatherine
-    call advance_time from _call_advance_time_5
+    #call advance_time from _call_advance_time_5
+    $ SaintTimeout = 1
     jump expression "conv_SaintCatherine" + "." + "beat" + "%d" % beat_SaintCatherine
 
 label .beat1:

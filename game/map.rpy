@@ -20,32 +20,71 @@ label call_mapUI:
     call screen MapUI
     #show screen gameUI
 
-image SaintToken = "Characters/SideImages/side_saintcatherine.png"
-image GilgameshToken = "Characters/SideImages/side_gilgamesh.png"
-default giX = 495
+image SaintTimeoutToken:
+    "Characters/SideImages/side_saintcatherine.png"
+    matrixcolor SaturationMatrix(0)
+image SaintToken = ConditionSwitch(
+    "SaintTimeout == 0", "Characters/SideImages/side_saintcatherine.png",
+    "SaintTimeout >= 1", "SaintTimeoutToken")
 
+image GilgameshTimeoutToken:
+    "Characters/SideImages/side_gilgamesh.png"
+    matrixcolor SaturationMatrix(0)
+image GilgameshToken = ConditionSwitch(
+    "GilgameshTimeout == 0", "Characters/SideImages/side_gilgamesh.png",
+    "GilgameshTimeout >= 1", "GilgameshTimeoutToken")
 
-image CorgiToken = "Characters/SideImages/side_poster.png"
-image SSToken = "Characters/SideImages/side_soupandsunflowers.png"
-image MonaToken = "Characters/SideImages/side_mona.png"
-image DavidsToken = "Characters/SideImages/side_davids.png"
-image ArnolfiniToken = "Characters/SideImages/side_arnolfinimap.png"
+image CorgiTimeoutToken:
+    "Characters/SideImages/side_poster.png"
+    matrixcolor SaturationMatrix(0)
+image CorgiToken = ConditionSwitch(
+    "PosterTimeout == 0", "Characters/SideImages/side_poster.png",
+    "PosterTimeout >= 1", "CorgiTimeoutToken")
+
+image SSTimeoutToken:
+    "Characters/SideImages/side_soupandsunflowers.png"
+    matrixcolor SaturationMatrix(0)
+image SSToken = ConditionSwitch(
+    "SSTimeout == 0", "Characters/SideImages/side_soupandsunflowers.png",
+    "SSTimeout >= 1", "SSTimeoutToken")
+
+image MonaTimeoutToken:
+    "Characters/SideImages/side_mona.png"
+    matrixcolor SaturationMatrix(0)
+image MonaToken = ConditionSwitch(
+    "MonaTimeout == 0", "Characters/SideImages/side_mona.png",
+    "MonaTimeout >= 1", "MonaTimeoutToken")
+
+image DavidsTimeoutToken:
+    "Characters/SideImages/side_davids.png"
+    matrixcolor TintMatrix("#6b6b6b")
+image DavidsToken = ConditionSwitch(
+    "DavidsTimeout == 0", "Characters/SideImages/side_davids.png",
+    "DavidsTimeout >= 1", "DavidsTimeoutToken")
+
+image ArnolfiniTimeoutToken:
+    "Characters/SideImages/side_arnolfinimap.png"
+    matrixcolor SaturationMatrix(0)
+image ArnolfiniToken = ConditionSwitch(
+    "ArnolfiniTimeout == 0", "Characters/SideImages/side_arnolfinimap.png",
+    "ArnolfiniTimeout >= 1", "ArnolfiniTimeoutToken")
+
 image BeatProgressEmpty = "map/BeatProgressPips.png"
 image BeatProgressFull = "map/BeatProgressPipsFilled.png"
 
 transform TokenHover:
-    ease .1 yoffset -10
+    ease .15 yoffset -30
 
 transform TokenUnhover:
-    ease .1 yoffset 0
+    ease .15 yoffset 0
 
 transform PipHover:
-    xoffset 12
+    xoffset 24
     yoffset 85
     ease .1 alpha 1.0
 
 transform PipUnhover:
-    xoffset 12
+    xoffset 24
     yoffset 85
     ease .1 alpha 0.0
 
@@ -78,13 +117,13 @@ screen MapUI:
         #sunflowers
         #hotspot (217, 12,143,266) action Jump("conv_SoupAndSunflowers")
         #saintcatherine
-        hotspot (345,650,97,97) action [If(beat_SaintCatherine < 5, Jump("conv_SaintCatherine"), NullAction())] hovered [SetVariable("TokenHovered", "st")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (582,580,97,97) action [If(beat_SoupAndSunflowers < 5, Jump("conv_SoupAndSunflowers"), NullAction())] hovered [SetVariable("TokenHovered", "ss")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (806,518,97,97) action [If(beat_Davids < 5, Jump("conv_Davids"), NullAction())] hovered [SetVariable("TokenHovered", "d")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (495,408,97,97) action [If(beat_Gilgamesh < 5, Jump("conv_Gilgamesh"), NullAction())] hovered [SetVariable("TokenHovered", "gi")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (760,405,97,97) action [If(beat_Arnolfini < 5, Jump("conv_Arnolfini"), NullAction())] hovered [SetVariable("TokenHovered", "ar")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (582,224,97,97) action [If(beat_MonaLisa < 5, Jump("conv_MonaLisa"), NullAction())] hovered [SetVariable("TokenHovered", "m")] unhovered [SetVariable("TokenHovered", "NONE")]
-        hotspot (301,251,97,97) action [If(beat_Poster < 5, Jump("conv_Poster"), NullAction())] hovered [SetVariable("TokenHovered", "p")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (345,650,116,116) action [If((beat_SaintCatherine < 5) and (SaintTimeout == 0), Jump("conv_SaintCatherine"), NullAction())] hovered [SetVariable("TokenHovered", "st")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (582,580,116,116) action [If((beat_SoupAndSunflowers < 5) and (SSTimeout == 0), Jump("conv_SoupAndSunflowers"), NullAction())] hovered [SetVariable("TokenHovered", "ss")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (856,518,116,116) action [If((beat_Davids < 5) and (DavidsTimeout == 0), Jump("conv_Davids"), NullAction())] hovered [SetVariable("TokenHovered", "d")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (495,408,116,116) action [If((beat_Gilgamesh < 5) and (GilgameshTimeout == 0), Jump("conv_Gilgamesh"), NullAction())] hovered [SetVariable("TokenHovered", "gi")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (710,405,116,116) action [If((beat_Arnolfini < 5) and (ArnolfiniTimeout == 0), Jump("conv_Arnolfini"), NullAction())] hovered [SetVariable("TokenHovered", "ar")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (582,224,116,116) action [If((beat_MonaLisa < 5) and (MonaTimeout == 0), Jump("conv_MonaLisa"), NullAction())] hovered [SetVariable("TokenHovered", "m")] unhovered [SetVariable("TokenHovered", "NONE")]
+        hotspot (301,251,116,116) action [If((beat_Poster < 5) and (PosterTimeout == 0), Jump("conv_Poster"), NullAction())] hovered [SetVariable("TokenHovered", "p")] unhovered [SetVariable("TokenHovered", "NONE")]
         #gilgamesh
         #hotspot (544,174,144,288) action Jump("conv_Gilgamesh")
         #sue
@@ -165,15 +204,15 @@ screen MapUI:
         ymaximum 988
         #Saint
         frame:
-            xminimum 97
-            xmaximum 97
-            yminimum 97
-            ymaximum 97
+            xminimum 116
+            xmaximum 116
+            yminimum 116
+            ymaximum 116
             background None
             xoffset 345
             yoffset 650
             add "SaintToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "st":
                     at transform:
                         TokenHover
@@ -211,15 +250,15 @@ screen MapUI:
                         PipUnhover
         #SoupAndSunflowers
         frame:
-            xminimum 97
-            xmaximum 97
-            yminimum 97
-            ymaximum 97
+            xminimum 116
+            xmaximum 116
+            yminimum 116
+            ymaximum 116
             background None
             xoffset 582
             yoffset 580
             add "SSToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "ss":
                     at transform:
                         TokenHover
@@ -257,15 +296,15 @@ screen MapUI:
                         PipUnhover
         #davids
         frame:
-            xminimum 97
-            xmaximum 97
-            yminimum 97
-            ymaximum 97
+            xminimum 116
+            xmaximum 116
+            yminimum 116
+            ymaximum 116
             background None
-            xoffset 806
+            xoffset 856
             yoffset 518
             add "DavidsToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "d":
                     at transform:
                         TokenHover
@@ -303,15 +342,15 @@ screen MapUI:
                         PipUnhover
         #gilgamesh
         frame:
-            xminimum 97
-            xmaximum 97
-            yminimum 97
-            ymaximum 97
+            xminimum 116
+            xmaximum 116
+            yminimum 116
+            ymaximum 116
             background None
             xoffset 495
             yoffset 408
             add "GilgameshToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "gi":
                     at transform:
                         TokenHover
@@ -350,15 +389,15 @@ screen MapUI:
 
         #arnolfini
         frame:
-            xminimum 97
-            xmaximum 97
-            yminimum 97
-            ymaximum 97
+            xminimum 116
+            xmaximum 116
+            yminimum 116
+            ymaximum 116
             background None
-            xoffset 760
+            xoffset 710
             yoffset 405
             add "ArnolfiniToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "ar":
                     at transform:
                         TokenHover
@@ -396,15 +435,15 @@ screen MapUI:
                         PipUnhover
                     
         frame:
-            xminimum 97
-            xmaximum 97
-            yminimum 97
-            ymaximum 97
+            xminimum 116
+            xmaximum 116
+            yminimum 116
+            ymaximum 116
             background None
             xoffset 582
             yoffset 224
             add "MonaToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "m":
                     at transform:
                         TokenHover
@@ -442,15 +481,15 @@ screen MapUI:
                         PipUnhover
 
         frame:
-            xminimum 97
-            xmaximum 97
-            yminimum 97
-            ymaximum 97
+            xminimum 116
+            xmaximum 116
+            yminimum 116
+            ymaximum 116
             background None
             xoffset 301
             yoffset 251
             add "CorgiToken":
-                zoom .275
+                zoom .33
                 if TokenHovered == "p":
                     at transform:
                         TokenHover

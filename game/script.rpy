@@ -9,6 +9,7 @@ define pc = Character("[pc_name]")
 
 
 #main characters
+define hm = Character("Hiring Manager", color="#ffd65c")
 define ar = Character("Arnolfini Portrait")
 define arm = Character("Giovanni", image="armlayered", color="#96528d") #man
 layeredimage armlayered:
@@ -128,7 +129,7 @@ image side arwlayered = LayeredImageProxy("arwlayered", Transform(xoffset=0, yof
 define ard = Character("Dog", image="ardlayered", color="#844016") #dog
 layeredimage ardlayered:
     always:
-        "side_arnolfinimdog"
+        "side_arnolfinidog"
     group emotion:
         attribute neutral default:
             "neutral"
@@ -185,6 +186,10 @@ image side ardlayered = LayeredImageProxy("ardlayered", Transform(xoffset=0, yof
 define d = Character("The Davids", color = "#ffffff")
 
 define dm = Character("David M.", image="dmlayered", color="#ccc9c5") #mikey
+image davidm = ConditionSwitch (
+    "(DavidsNude == 0)", "images/Characters/Davids/DavidM_nonnude.png",
+    "(DavidsNude == 1)", "images/Characters/Davids/DavidM_nude.png"
+)
 layeredimage dmlayered:
     always:
         "side_davidm"
@@ -299,6 +304,10 @@ layeredimage dblayered:
 image side dblayered = LayeredImageProxy("dblayered", Transform(xoffset=0, yoffset=0))
 
 define dd = Character("David D.", image="ddlayered", color="#f3f1ed") #donny
+image davidd = ConditionSwitch (
+    "(DavidsNude == 0)", "images/Characters/Davids/DavidD_nonnude.png",
+    "(DavidsNude == 1)", "images/Characters/Davids/DavidD_nude.png"
+)
 layeredimage ddlayered:
     always:
         "side_davidd"
@@ -1231,6 +1240,14 @@ label start:
     $ StoryCompletedTotal = 0
     scene museum bg1
     call pronounselection from _call_pronounselection
+    menu:
+        "Are you okay with a little (artistic) nudity?"
+        "No nudity, please.":
+            $ DavidsNude = 0
+            pass
+        "I don't mind nudity.":
+            $ DavidsNude = 1
+            pass
     #menu:
     #    "Skip to beats":
     #        jump FreeRoam

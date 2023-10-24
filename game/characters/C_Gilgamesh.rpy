@@ -10,11 +10,12 @@ default WhatOfEnkiduLoop = 0
 default UrukChoice = 0
 default BeastChoice = 0
 default SongTheme = "NONE"
+default GilgameshTimeout = 0
 
 label conv_Gilgamesh: 
     
     if beat_Gilgamesh != 3:
-        scene antiquities bg:
+        scene antiquities_tod:
             blur 5
         show gilgamesh at center:
             xoffset 0
@@ -46,7 +47,8 @@ label .use_action:
     #    "No, not really.":
     #        gi "Understandable."
     #        jump conv_Gilgamesh
-    call advance_time from _call_advance_time_2
+    #call advance_time from _call_advance_time_2
+    $ GilgameshTimeout = 1
     jump expression "conv_Gilgamesh" + "." + "beat" + "%d" % beat_Gilgamesh
 
 label .beat1:
@@ -166,14 +168,16 @@ label .beat1:
     call call_catalogue("Gilgamesh") from _call_call_catalogue_1
     label GilgameshResearch:
         $ renpy.set_return_stack([])
-        scene archives bg
+        scene archives bg:
+            blur 5
         hide screen ResearchMinigameDrawerUI
         hide screen ResearchMinigameUI
-        show epicofgilgamesh bg
+        show book overlay
+        #scene archives bg
         "The Epic of Gilgamesh" "Gilgamesh was the king of the great city, Uruk."
         "The Epic of Gilgamesh" "In his boredom, he tormented his people until a man named Enkidu challenged him."
         "The Epic of Gilgamesh" "Born from clay, Enkidu nonetheless fought Gilgamesh to a standstill."
-        "The Epic of Gilgamesh" "Recognizing each other's strength, they became fast friends and lovers."
+        "The Epic of Gilgamesh" "Recognizing each other's strength, they became inseparable."
         "The Epic of Gilgamesh" "Irritated with the duo's hubris, the goddess Ishtar send the Bull of Heaven to humble them."
         "The Epic of Gilgamesh" "Gilgamesh slew the bull, and in a rage, Ishtar cursed Enkidu to die."
         "The Epic of Gilgamesh" "Unable to accept his lover's death, Gilgamesh ventured to the ends of the earth to find immortality."
@@ -440,7 +444,8 @@ label .beat3:
         "I think I might know.":
             pass
     "The Admin already hung up."
-    scene antiquities flood with fade
+    scene antiquities_tod with fade
+    show wateroverlay
     "The antiquities wing is positively {i}flooded{/i}."
     show eanasir at right
     e "Oh you're back, come to make an even bigger mess?"
@@ -464,7 +469,7 @@ label .beat3:
     e "At least he seems to have run dry."
     "You sigh. Time to bust out the mop."
     call minigamestart_mop from _call_minigamestart_mop
-    scene antiquities bg with fade:
+    scene antiquities_tod with fade:
         blur 5
     "Whew. Still a little damp, but at least there isn't any obvious damage."
     show gilgamesh at truecenter
@@ -774,7 +779,7 @@ label .beat4:
     jump FreeRoam
 
 label .Outcome:
-    scene antiquities bg with fade:
+    scene antiquities_tod with fade:
         blur 5
     show gilgamesh at center:
         xoffset 0

@@ -4,6 +4,7 @@ default beat_Poster = 1
 default p_b3_c1 = 0
 default CorgiPortraitStage = "base"
 image corgiportrait = "/Characters/Poster/corgi base.png"
+default PosterTimeout = 0
 
 label conv_Poster:
     scene office bg:
@@ -49,7 +50,8 @@ label .use_action:
     #    "No, not really.":
     #        p "Understandable."
     #        jump conv_Poster
-    call advance_time from _call_advance_time_4
+    #call advance_time from _call_advance_time_4
+    $ PosterTimeout = 1
     jump expression "conv_Poster" + "." + "beat" + "%d" % beat_Poster
 
 label .beat1:

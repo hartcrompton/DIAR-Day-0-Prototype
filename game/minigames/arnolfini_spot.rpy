@@ -235,7 +235,7 @@ label TestArnolfiniLines():
 
 
 label minigamestart_arnolfini(gameimage="notdefault"):
-    scene fineart bg:
+    scene fineart_tod:
         blur 5
     if gameimage == 1:
         python:

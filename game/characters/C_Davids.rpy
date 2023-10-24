@@ -4,9 +4,15 @@ default beat_Davids = 1
 default BibleResearched = 0
 default DefinitiveDave = "NONE"
 default b2_DefinitiveDave = "NONE"
+default DavidsTimeout = 0
+default DavidsNude = 0
+image davids = ConditionSwitch (
+    "(DavidsNude == 0)", "images/Characters/Davids/davids_nonnude.png",
+    "(DavidsNude == 1)", "images/Characters/Davids/davids_nude.png"
+)
 
 label conv_Davids:
-    scene foyer bg:
+    scene foyer_tod:
         blur 5
     show davids at center
     if (actions > 0) and (beat_Davids < 5):
@@ -34,7 +40,8 @@ label .use_action:
     #    "No, not really.":
     #        d "Understandable."
     #        jump conv_Davids
-    call advance_time from _call_advance_time_1
+    #call advance_time from _call_advance_time_1
+    $ DavidsTimeout = 1
     jump expression "conv_Davids" + "." + "beat" + "%d" % beat_Davids
 
 label .beat1:
@@ -283,7 +290,8 @@ label .beat3:
                     scene archives bg
                     hide screen ResearchMinigameDrawerUI
                     hide screen ResearchMinigameUI
-                    show archivebiblescreen at center
+                    show bible overlay
+                    show book overlay
                     "1 Samuel 17:38-40" "Then Saul dressed David in his own tunic. He put a coat of armor on him and a bronze helmet on his head."
                     "1 Samuel 17:38-40" "David fastened on his sword over the tunic and tried walking around, because he was not used to them. \"I cannot go in these,\" he said to Saul, \"because I am not used to them.\" So he took them off."
                     "1 Samuel 17:38-40" "Then he took his staff in his hand, chose five smooth stones from the stream, put them in the pouch of his shepherd's bag and, with his sling in his hand, approached the Philistine."
@@ -393,7 +401,7 @@ label .beat4:
     jump FreeRoam
 
 label .Outcome:
-    scene foyer bg with fade:
+    scene foyer_tod with fade:
         blur 2
     if beat_Davids == 5:
         if DefinitiveDave == "db":

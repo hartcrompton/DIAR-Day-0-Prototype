@@ -4,9 +4,10 @@ default beat_MonaLisa = 1
 default MonaHeist = 0
 default MonaOnly = 0
 default MonaOutcome = 0
+default MonaTimeout = 0
 
 label conv_MonaLisa:
-    scene fineart bg:
+    scene fineart_tod:
         blur 5
     show monalisa at truecenter:
         zoom .8
@@ -33,7 +34,8 @@ label .use_action:
     #    "No, not really.":
     #        m "Understandable."
     #        jump conv_MonaLisa
-    call advance_time from _call_advance_time_3
+    #call advance_time from _call_advance_time_3
+    $ MonaTimeout = 1
     jump expression "conv_MonaLisa" + "." + "beat" + "%d" % beat_MonaLisa
 
 label .beat1:
@@ -249,7 +251,7 @@ label .beat3:
     m "Remember what I said about PR and spin? The right promotion at the right time. That's what we need."
     m "{i}Vai, vai{/i}, go uncover my eyes in the office like a good little [pc_work] so I can see what's happening in there."
     call minigamestart_office from _call_minigamestart_office
-    scene fineart bg:
+    scene fineart_tod:
         blur 5
     show monalisa at truecenter:
         zoom .8

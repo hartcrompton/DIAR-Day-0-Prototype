@@ -337,7 +337,7 @@ label minigamestart_cleaning_arnolfini(gameimage="notdefault"):
         the_score = 0
         renpy.block_rollback()
         #we need to be able to input an argument here
-        difference_image = MinigameCleaningArnolfini("images/minigame/cleaning/cleaning fineart bg.jpg", diff_items)
+        difference_image = MinigameCleaningArnolfini("fineart_tod", diff_items)
         difference_image.randomizeItems(9)
         text_overlay_arm = TextRender("images/minigame/Arnolfini/ARMBarkOverlay.png")
         text_overlay_arw = TextRender("images/minigame/Arnolfini/ARWBarkOverlay.png")
