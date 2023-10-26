@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/characters/C_Davids.rpy", line 9, in script
-    image davids = ConditionSwitch (
-  File "game/characters/C_Davids.rpy", line 9, in <module>
-    image davids = ConditionSwitch (
-Exception: ConditionSwitch takes an even number of arguments
+  File "game/day_zero.rpy", line 342, in script
+    d neutral "I'm David."
+Exception: Say has image attributes ('neutral',), but there's no image tag associated with the speaking character.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/characters/C_Davids.rpy", line 9, in script
-    image davids = ConditionSwitch (
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1237, in execute
-    img = renpy.python.py_eval_bytecode(self.code.bytecode)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/characters/C_Davids.rpy", line 9, in <module>
-    image davids = ConditionSwitch (
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1649, in ConditionSwitch
-    raise Exception('ConditionSwitch takes an even number of arguments')
-Exception: ConditionSwitch takes an even number of arguments
+  File "game/day_zero.rpy", line 342, in script
+    d neutral "I'm David."
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 930, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 1473, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1290, in __call__
+    old_attr_state = self.handle_say_attributes(False, interact)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1109, in handle_say_attributes
+    if self.resolve_say_attributes(predicting, attrs):
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\character.py", line 1035, in resolve_say_attributes
+    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
+Exception: Say has image attributes ('neutral',), but there's no image tag associated with the speaking character.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Beta 2 0.2
-Tue Oct 24 13:08:47 2023
+Thu Oct 26 11:21:15 2023

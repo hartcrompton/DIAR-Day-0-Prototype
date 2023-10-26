@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day_zero.rpy", line 552: choice menuitem expects a non-empty block.
-    "Why is this place so... crappy?":
-                                      ^
+File "game/day_zero.rpy", line 623: choice menuitem expects a non-empty block.
+    "Whoa, that's awesome.":
+                            ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Tue Oct 24 14:27:30 2023
+Thu Oct 26 10:58:41 2023

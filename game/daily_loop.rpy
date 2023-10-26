@@ -82,18 +82,25 @@ label DayStart:
     if DayNumber == 1:
         "Well, here it is, your first day on the job."
         show admin at AdminPortrait
+        play music "music/Admin_ZY_02.wav" volume 0.6
         ad "Good morning, [pc_name]!"
         ad "Everything is {i}fine{/i}. Just wanted to remind you that the Grand Gala is in four days."
         ad "Good luck cleaning and organizing!"
+        play sound "sfx/AdminHangup.wav"
+        stop music fadeout 0.3
         hide admin
         "The Admin's right, this place is a mess."
     elif DayNumber == 2:
         show admin at AdminPortrait
+        play music "music/Admin_ZY_02.wav" volume 0.6
         ad "[pc_name], hi! I actually went outside yesterday. Did you know grass and trees are, like, alive? Anyway, how are you?"
         ad "But I'm sure you've got LOTS to do, so I'll let you go."
+        play sound "sfx/AdminHangup.wav"
+        stop music fadeout 0.3
         hide admin
     elif DayNumber == 3:
         show admin at AdminPortrait
+        play music "music/Admin_ZY_02.wav" volume 0.6
         ad "Hello [pc_name], it's time for your performance review!"
         ad "How do you like working at the museum?"
         menu:
@@ -104,9 +111,12 @@ label DayStart:
         ad "Great to hear!"
         "You doubt the Admin heard you at all."
         ad "Let's put a pin in this, talk tomorrow!"
+        play sound "sfx/AdminHangup.wav"
+        stop music fadeout 0.3
         hide admin
     elif DayNumber == 4:
         show admin at AdminPortrait
+        play music "music/Admin_ZY_02.wav" volume 0.6
         ad "Hi, [pc_name], I hope things are going well."
         ad "I'm sure you don't need me to remind you the Grand Gala is tomorrow."
         ad "Since this might be your last day, we'd better finish that performance review!"
@@ -114,9 +124,9 @@ label DayStart:
         menu:
             "By manager, do you mean you?":
                 pass
-            "You're the best. No complaints":
+            "You're the best. No complaints.":
                 pass
-            "You're never here, and you never help":
+            "You're never here, and you never help.":
                 pass
         ad "The form just asks for a number."
         menu:
@@ -143,6 +153,8 @@ label DayStart:
                 ad "Aw, thanks [pc_name]. You're the best! Another call coming in, talk soon!"
             "Have you ever wanted to, uh, take a class? Or something?":
                 ad "A class? A class! Yes, I could... I guess I could do anything! Thanks, [pc_name]. Another call, please hold!"
+        play sound "sfx/AdminHangup.wav"
+        stop music fadeout 0.3
         "The call drops."
         hide admin
 
@@ -151,23 +163,28 @@ label DayStart:
 
     menu:
         "[[Clean the Antiquities wing]" if CleanAntiquities == 0:
+            play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
             $ CleanAntiquities = 1
             $ CleaningRoom =  "antiquities"
             jump DailyCleaning
         "[[Clean the Fine Art wing]" if CleanFineArt == 0:
+            play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
             $ CleanFineArt = 1
             $ CleaningRoom =  "fineart"
             jump DailyCleaning
         "[[Clean the Foyer]" if CleanFoyer == 0:
+            play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
             $ CleanFoyer = 1
             $ CleaningRoom =  "foyer"
             jump DailyCleaning
         "[[Clean the Mixed Media wing]" if CleanMixedMedia == 0:
+            play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
             $ CleanMixedMedia = 1
             $ CleaningRoom =  "mixedmedia"
             jump DailyCleaning
 
 label DailyCleaning:
+    play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
     scene foyer_tod
     call minigamestart_cleaning(CleaningRoom) from _call_minigamestart_cleaning
     
@@ -176,7 +193,7 @@ label DailyCleaning:
 
 label FreeRoam:
     scene black with fade
-    call advance_time
+    call advance_time from _call_advance_time
     scene foyer_tod with fade
 label FreeRoam_FromCleaning:
     #scene foyer_tod with fade
@@ -189,25 +206,37 @@ label FreeRoam_FromCleaning:
 #pull up map
 #
 label OutOfActions:
-    "Phew, another day over."
-    "On your way out, you overhear the Nighthawks."
-    menu:
-        "[[Listen in]":
-            jump NighthawksDaily
-        "[[Go Home]":
-            jump DayEnd
-
-label NighthawksDaily:
+    stop music fadeout 1.0
+    play sfx2 "sfx/InteriorSound.wav" volume 0.4 fadein 0.5
+    play music "music/Nighthawks_ZU_01.wav" fadein 0.4 volume 0.4
     show nighthawks at truecenter:
         zoom .65
         yoffset -125
+    "Phew, another day over."
+    #"On your way out, you overhear the Nighthawks."
+    if DayNumber == 1:
+        call conv_Nighthawks.beat1 from _call_conv_Nighthawks_beat1
+    if DayNumber == 2:
+        call conv_Nighthawks.beat2 from _call_conv_Nighthawks_beat2
+    if DayNumber == 3:
+        call conv_Nighthawks.beat3 from _call_conv_Nighthawks_beat3
+    if DayNumber == 4:
+        call conv_Nighthawks.beat4 from _call_conv_Nighthawks_beat4
+    jump DayEnd
+
+#depcreated, see OutOfActions and c_Nighthawks.rpy
+label NighthawksDaily:
+    play music "music/Nighthawks_ZU_01.wav" fadein 0.4 volume 0.4
+    show nighthawks at truecenter:
+        zoom .65
+        yoffset -125
+    call conv_Nighthawks.Arnolfini from _call_conv_Nighthawks_Arnolfini
     call conv_Nighthawks.Poster from _call_conv_Nighthawks_Poster
     call conv_Nighthawks.MonaLisa from _call_conv_Nighthawks_MonaLisa
     call conv_Nighthawks.Davids from _call_conv_Nighthawks_Davids
     call conv_Nighthawks.Gilgamesh from _call_conv_Nighthawks_Gilgamesh
     call conv_Nighthawks.SaintCatherine from _call_conv_Nighthawks_SaintCatherine
     call conv_Nighthawks.SoupAndSunflowers from _call_conv_Nighthawks_SoupAndSunflowers
-    call conv_Nighthawks.Arnolfini from _call_conv_Nighthawks_Arnolfini
     jump DayEnd
 
 label DayEnd:    

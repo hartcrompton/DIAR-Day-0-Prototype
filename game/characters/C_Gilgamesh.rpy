@@ -13,7 +13,7 @@ default SongTheme = "NONE"
 default GilgameshTimeout = 0
 
 label conv_Gilgamesh: 
-    
+    play music "music/B14_W_02.wav" fadein 0.4 volume 0.4
     if beat_Gilgamesh != 3:
         scene antiquities_tod:
             blur 5
@@ -53,9 +53,9 @@ label .use_action:
 
 label .beat1:
     "The atmosphere of the Antiquities Wing is oppressive."
-    gi "Well, what are you?"
+    gi dots "Well, what are you?"
     #gender neutralify this
-    gi "Peasant, or king?"
+    gi neutral "Peasant, or king?"
     menu:
         "King? Let's go with king.":
             gi "Doubtful, a true king needn't announce it."
@@ -72,37 +72,37 @@ label .beat1:
             pass
     "Gilgamesh rocks with laughter."
     gi "You stand before my throne and pretend not to know me?"
-    e "Throne? You're just standing around."
+    e angry "Throne? You're just standing around."
     menu:
         "Who are you two?":
-            e "I am Ea-nasir, and this loadmouthed rock is--"
+            e neutral "I am Ea-nasir, and this loadmouthed rock is--"
             hide gilgamesh
             show gilgamesh at center with hpunch
             gi "GILGAMESH!"
         "The tablet's right, I don't see a throne.":
             gi "True royalty needs no carven throne."
             gi "Nasir, why haven't you announced me yet?"
-            e "I'm sure you can do that yourself. Forgive me, I am Ea-nasir."
+            e neutral "I'm sure you can do that yourself. Forgive me, I am Ea-nasir."
             gi "And I am..."
             hide gilgamesh
             show gilgamesh at center with hpunch
             gi "GILGAMESH!"
-    gi "..."
-    gi "You're allowed to grovel now."
+    gi dots "..."
+    gi neutral "You're allowed to grovel now."
     menu:
         "Who?":
             gi "Come now, don't play coy. You surely know me."
             e "Not everyone knows you."
             gi "Oh, don't be absurd."
         "Were you some king?":
-            gi "... Some king?"
-            gi "KING of kings. "
-            gi "Son of Ninsun and Lugalbanda!"
+            gi dots "... Some king?"
+            gi angry "KING of kings. "
+            gi neutral "Son of Ninsun and Lugalbanda!"
             gi "Heir to Uruk and its thousand palaces!"
             gi "Slayer of beasts and subduer of GODS!"
         "Why are you holding a lion?":
-            gi "What?!"
-            gi "Because I am Master of Beasts!"
+            gi angry "What?!"
+            gi neutral "Because I am Master of Beasts!"
             gi "Heir to divinity and royalty!"
             gi "I pick my teeth with the bones of the Bull of Heaven!"
     menu:
@@ -110,21 +110,21 @@ label .beat1:
             pass
         "I'm new here, so...":
             pass
-    gi "Nasir! Be this another of your tricks?"
-    e "Sadly no, though I enjoy it all the same."
-    gi "Eugh. Even a viper would have to bow its head to gaze upon you."
+    gi surprise "Nasir! Be this another of your tricks?"
+    e happy "Sadly no, though I enjoy it all the same."
+    gi neutral "Eugh. Even a viper would have to bow its head to gaze upon you."
     menu:
         "OK, you're up HERE. I need you down HERE.":
-            e "..."
-            gi "..."
-            gi "How dare you!"
+            e dots "..."
+            gi dots "..."
+            gi angry "How dare you!"
         "I see why nobody visits this wing.":
-            gi "They should be so lucky as to even glimpse me!"
-    gi "Your kings today must be fat and lax."
+            gi angry "They should be so lucky as to even glimpse me!"
+    gi neutral "Your kings today must be fat and lax."
     pc "We don't really have kings."
-    e "Oh?"
-    gi "No! This is worse than I feared."
-    gi "But ignorance is what one must expect from peasants."
+    e neutral "Oh?"
+    gi sad "No! This is worse than I feared."
+    gi neutral "But ignorance is what one must expect from peasants."
     gi "Heed me: In the vaults of this place is a tome."
     gi "A record of my royal deeds."
     gi "Read it, and you will understand."
@@ -178,7 +178,7 @@ label .beat1:
         "The Epic of Gilgamesh" "In his boredom, he tormented his people until a man named Enkidu challenged him."
         "The Epic of Gilgamesh" "Born from clay, Enkidu nonetheless fought Gilgamesh to a standstill."
         "The Epic of Gilgamesh" "Recognizing each other's strength, they became inseparable."
-        "The Epic of Gilgamesh" "Irritated with the duo's hubris, the goddess Ishtar send the Bull of Heaven to humble them."
+        "The Epic of Gilgamesh" "Irritated with the duo's hubris, the goddess Ishtar sent the Bull of Heaven to humble them."
         "The Epic of Gilgamesh" "Gilgamesh slew the bull, and in a rage, Ishtar cursed Enkidu to die."
         "The Epic of Gilgamesh" "Unable to accept his lover's death, Gilgamesh ventured to the ends of the earth to find immortality."
         "The Epic of Gilgamesh" "He failed, but upon returning to Uruk, he found a sort of peace within himself."
@@ -196,41 +196,41 @@ label .beat1:
     jump FreeRoam
 label .beat2:
     pc "Well, I read it."
-    gi "..."
+    gi dots "..."
     pc "..."
-    gi "..."
+    gi dots "..."
     menu:
         "Are you waiting for something?":
-            gi "Astonishment, awe, the usual."
+            gi neutral "Astonishment, awe, the usual."
         "I said I read your book.":
-            gi "{i}Epic{/i}. But yes, good."
+            gi neutral "{i}Epic{/i}. But yes, good."
     gi "Now come, you've beheld the truth."
     gi "All my accomplishments and accolades."
-    gi "Am I not true royalty? The king of kings?"
+    gi sparkles "Am I not true royalty? The king of kings?"
     menu:
         "There have been a {i}lot{/i} of kings.":
-            gi "Don't be coy. We both know a crown does not a king make."
+            gi neutral "Don't be coy. We both know a crown does not a king make."
         "I'll admit it, I was impressed.":
-            gi "Observe, Nasir. Deference is its own reward."
+            gi neutral "Observe, Nasir. Deference is its own reward."
         "You were a royal pain in the ass.":
-            gi "Impudent as before, but what should I have expected."
+            gi neutral "Impudent as before, but what should I have expected."
     menu:
         "So, you'll behave for the exhibit now?":
             gi "Perhaps. But what proof do I have you kept your word?"
         "I read it, OK. Can you at least relax for the week?":
             gi "And what proof is there, hm?"
     gi "I've grown familiar with honey-tongued lies from being next to this charlatan."
-    e "At least {i}I{/i} don't nauseate guests with my mere presence."
+    e angry "At least {i}I{/i} don't nauseate guests with my mere presence."
     menu:
         "Nasir, what is he talking about?":
-            e "Just simple mistakes."
-            gi "Mistakes? Even now he lies. He was a cheat and swindler."
+            e neutral "Just simple mistakes."
+            gi laugh "Mistakes? Even now he lies. He was a cheat and swindler."
             e "Yes, you {i}do{/i} like to remind me of my failings."
         "Is this gossip? I love gossip.":
             gi "No, merely the truth."
             gi "He was a cheat and swindler. He took good coin and returned trash."
-            e "Yes, I'm sorry I didn't kill anyone. Then I'd at least be remembered fondly."
-    gi "But enough of our deceitful companion."
+            e neutral "Yes, I'm sorry I didn't kill anyone. Then I'd at least be remembered fondly."
+    gi neutral "But enough of our deceitful companion."
     gi "Tell me of my adventures."
     $ UrukChoice = 0
     $ BeastChoice = 0
@@ -258,16 +258,16 @@ label .beat2:
                     "Humbaba.":
                         gi "Ah yes, the beast of cedars."
                         pc "How many terrors did he have again?"
-                        gi "I- well, of course {i}I{/i} know. Why don't {i}you{/i} tell me?"
+                        gi panic "I- well, of course {i}I{/i} know. Why don't {i}you{/i} tell me?"
                         menu:
                             "Seven.":
-                                gi "No, that can't be, I'm sure it was more."
+                                gi neutral "No, that can't be, I'm sure it was more."
                             "[[Lie] Seventy.":
-                                gi "Yes. Truly a terrible foe."
+                                gi neutral "Yes. Truly a terrible foe."
                             "[[Lie] Seven-hundred.":
-                                gi "Yes. Truly a terrible foe."
+                                gi neutral "Yes. Truly a terrible foe."
                     "The Bull of Heaven.":
-                        gi "Ah yes, sent by Enki to test me."
+                        gi neutral "Ah yes, sent by Enki to test me."
                         menu:
                             "Pretty sure it was Ishtar who sent it.":
                                 gi "What? Oh, of course. That was... just a little test for you."
@@ -298,15 +298,15 @@ label .beat2:
                                 $ Beast2 = "of Negation"
                                 pass
                         pc "I loved your battle against [Beast1] [Beast2]."
-                        gi "Uh - yes, of course."
-                        gi "The terrible - um - sky-scourge. Sent by Ninlil of the south wind."
+                        gi "Uh-yes, of course."
+                        gi "The terrible-um-sky-scourge. Sent by Ninlil of the south wind."
                         menu:
                             "Uh-huh. Whatever you say.":
                                 pass
                             "I made that one up.":
-                                gi "Ah, but you see- the thing is- that was... merely another test!"
+                                gi sweat "Ah, but you see- the thing is- that was... merely another test!"
                 jump AdventureChoice
-    gi "But of course, my story is more than my own."
+    gi neutral "But of course, my story is more than my own."
     gi "What of my truest friend, what of Enkidu?"
     "Ea-nasir gives you a {i}look{/i}."
     $ WhatOfEnkiduLoop = 0
@@ -332,14 +332,14 @@ label .beat2:
     gi "We fought through the streets."
     gi "We shattered the gates."
     gi "We brought down the very temples."
-    gi "And at last we grasped each other, all our strength laid bare."
+    gi sparkle "And at last we grasped each other, all our strength laid bare."
     menu:
         "It sounds like you two were close.":
             e "Hard to imagine anyone who could stomach his company, let alone love him."
         "Did you love him?":
             e "I doubt he could love anyone as he loves himself."
-    gi "{i}Love?{/i} You dare invoke such miniscule sentiment?"
-    gi "A goddess loves her worshippers."
+    gi angry "{i}Love?{/i} You dare invoke such miniscule sentiment?"
+    gi neutral "A goddess loves her worshippers."
     gi "A king loves his people."
     gi "But Enkidu? I did not {i}love{/i} him..."
     gi "He was my heart."
@@ -386,7 +386,7 @@ label .beat2:
         "It must have been hard when Ishtar killed him.":
             jump EnkiduDied
     label EnkiduDied:
-        gi "..."
+        gi sad "..."
         e "{i}This{/i} is on you."
         menu:
             "It happened thousands of years ago. You can't be surprised.":
@@ -396,7 +396,7 @@ label .beat2:
             "Actually, it was kind of your fault.":
                 pass
         gi "No, no he would have fallen in battle."
-        gi "There must have been some insurmountable foe."
+        gi surprise "There must have been some insurmountable foe."
         menu:
             "It's all written down.":
                 pass
@@ -404,7 +404,7 @@ label .beat2:
                 pass
             "[[Look to Ea-nasir for help.]":
                 "For a clay tablet, Ea-nasir does a remarkable job of looking at everything except you."
-        gi "I..."
+        gi neutral "I..."
         gi "You need to leave."
         show gilgamesh at left with move:
             xoffset 200
@@ -427,14 +427,14 @@ label .beat2:
                 e "Not you specifically."
             "You're just bitter.":
                 e "I prefer \"realistic\"."
-        gi "LEAVE!"
+        gi angry "LEAVE!"
         "He probably just needs some time with his thoughts. Surely, this will be for the best."
     $ beat_Gilgamesh += 1
     jump FreeRoam
 label .beat3:
-    ad "Hi, how are you, how are things?"
+    ad sparkles "Hi, how are you, how are things?"
     pc "Well I-"
-    ad "That's great! Hey, no big deal, but it looks like the water alarm is going off in the Antiquities Wing."
+    ad neutral "That's great! Hey, no big deal, but it looks like the water alarm is going off in the Antiquities Wing."
     ad "Do you think you could maybe see what that's about?"
     menu:
         "Sure.":
@@ -448,7 +448,7 @@ label .beat3:
     show wateroverlay
     "The antiquities wing is positively {i}flooded{/i}."
     show eanasir at right
-    e "Oh you're back, come to make an even bigger mess?"
+    e neutral "Oh you're back, come to make an even bigger mess?"
     menu:
         "OK, {i}this{/i} is not my fault.":
             pass
@@ -473,16 +473,16 @@ label .beat3:
         blur 5
     "Whew. Still a little damp, but at least there isn't any obvious damage."
     show gilgamesh at truecenter
-    gi "Enkidu, I failed you!"
+    gi sweat "Enkidu, I failed you!"
     show eanasir at right:
         zoom .7
     e "Oh good, he's starting again."
     "Gilgamesh is clearly on the verge of another flood of tears."
     menu:
         "Hey champ, how're you doing?":
-            gi "{i}You{/i}. The prodigal specter, come to haunt me again?"
+            gi angry "{i}You{/i}. The prodigal specter, come to haunt me again?"
         "Gil, I need you to hold it together for me.":
-            gi "Was it not enough to torment me, you would even deny me my grief?"
+            gi angry "Was it not enough to torment me, you would even deny me my grief?"
         "[[Hit Gilgamesh with the mop.]":
             "The mop slaps loudly against the statue. He hardly seems to notice."
     pc "Any ideas, Nasir?"
@@ -492,7 +492,7 @@ label .beat3:
             pass
         "OK, he's a {i}little{/i} childish, but we still need to fix this.":
             pass
-    e "Oh {i}forgive{/i} me. The world must stop for the crocodile tears of a dead king."
+    e neutral "Oh {i}forgive{/i} me. The world must stop for the crocodile tears of a dead king."
     menu:
         "What's your problem?":
             e "Gilgamesh, as always."
@@ -517,8 +517,8 @@ label .beat3:
         "At least I'm not out to sabotage us!":
             pass
     e "How about you stop \"helping\" and just let this dump close?"
-    gi "ENOUGH!!!"
-    gi "Am I not permitted even a {i}moment{/i} of peace to grieve?"
+    gi angry "ENOUGH!!!"
+    gi neutral "Am I not permitted even a {i}moment{/i} of peace to grieve?"
     menu:
         "Don't worry, I've got a lot to say to you too.":
             pass

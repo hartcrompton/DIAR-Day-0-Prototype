@@ -264,22 +264,22 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+    #if quick_menu:
+#
+    #    hbox:
+    #        style_prefix "quick"
+#
+    #        xalign 0.5
+    #        yalign 1.0
+#
+    #        textbutton _("Back") action Rollback()
+    #        textbutton _("History") action ShowMenu('history')
+    #        textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+    #        textbutton _("Auto") action Preference("auto-forward", "toggle")
+    #        textbutton _("Save") action ShowMenu('save')
+    #        textbutton _("Q.Save") action QuickSave()
+    #        textbutton _("Q.Load") action QuickLoad()
+    #        textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -308,51 +308,74 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
-screen navigation():
+image MainMenuBG = "images/UI/MainMenu/mm bg.jpg"
+image MainMenuBG crop = im.Crop("images/UI/MainMenu/mm bg.jpg", (0, 0, 100, 307))
 
-    vbox:
-        style_prefix "navigation"
-
-        xpos gui.navigation_xpos
+screen main_menu_navigation():
+    imagemap:
+        xalign 0.5
         yalign 0.5
+        ground "MainMenuBG"
+        hover "mm overlay"
+        #start
+        hotspot (893,500,134,92) action Start()
+        #load
+        hotspot (891,595,144,68) action ShowMenu("load")
+        #settings
+        hotspot (849,689,227,88) action ShowMenu("preferences")
+        #credits
+        hotspot (854,786,220,72) action Start("MainMenuCredits")
+        #quit
+        hotspot (874,885,168,85) action Quit(confirm=not main_menu)
 
-        spacing gui.navigation_spacing
+screen navigation():
+    #if main_menu:
 
-        if main_menu:
+    if not main_menu:
+        vbox:
+            style_prefix "navigation"
 
-            textbutton _("Start") action Start()
+            xpos gui.navigation_xpos
+            yalign 0.5
 
-        else:
-            textbutton  _("Infinite Actions [InfiniteActionsToggle]") action [SetVariable("InfiniteActions", If(InfiniteActions == 0, 1, 0)), SetVariable("InfiniteActionsToggle", If(InfiniteActions == 1, "OFF", "ON"))]
-            
-            textbutton _("History") action ShowMenu("history")
+            spacing gui.navigation_spacing
 
-            textbutton _("Save") action ShowMenu("save")
+            if main_menu:
+                pass
+                #textbutton _("Start") action Start()
 
-        textbutton _("Load") action ShowMenu("load")
+            else:
+                #textbutton  _("Infinite Actions [InfiniteActionsToggle]") action [SetVariable("InfiniteActions", If(InfiniteActions == 0, 1, 0)), SetVariable("InfiniteActionsToggle", If(InfiniteActions == 1, "OFF", "ON"))]
+                
+                textbutton _("History") action ShowMenu("history")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+                textbutton _("Save") action ShowMenu("save")
 
-        if _in_replay:
+                textbutton _("Load") action ShowMenu("load")
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+                textbutton _("Settings") action ShowMenu("preferences")
 
-        elif not main_menu:
+            if _in_replay:
 
-            textbutton _("Main Menu") action MainMenu()
+                textbutton _("End Replay") action EndReplay(confirm=True)
 
-        textbutton _("About") action ShowMenu("about")
+            elif not main_menu:
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+                textbutton _("Main Menu") action MainMenu()
 
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+                textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc"):
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+                ## Help isn't necessary or relevant to mobile devices.
+                if not main_menu:
+                    textbutton _("Help") action ShowMenu("help")
+
+        #if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+        #    textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -377,11 +400,12 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
+    #add gui.main_menu_background
+    use main_menu_navigation
 
     ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
+    #frame:
+    #    style "main_menu_frame"
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
@@ -392,11 +416,11 @@ screen main_menu():
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            text "[config.name!t]"
+            #    style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            text "[config.version]"
+            #    style "main_menu_version"
 
 
 style main_menu_frame is empty

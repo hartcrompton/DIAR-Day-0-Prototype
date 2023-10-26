@@ -1208,7 +1208,7 @@ default d_Total = 0
 
 #function to return disposition label from value - deprecated, to be removed
 init python:
-
+    renpy.music.register_channel("sfx2", "music")
     class d_LabelFromValue():
 
         def __init__(self):
@@ -1236,7 +1236,12 @@ default d_Label = d_LabelFromValue()
 
 
 # start label is the first bit of game code that gets read
-label start:
+label start(show_credits=0):
+    if show_credits == 1:
+        scene black with fade
+        show credits end at truecenter with fade
+        $ renpy.pause(30.0)
+        return
     $ StoryCompletedTotal = 0
     scene museum bg1
     call pronounselection from _call_pronounselection
@@ -1283,3 +1288,9 @@ label testing:
                 "Plastic":
                     call minigamestart_stainedglass("plastic") from _call_minigamestart_stainedglass_1
                     jump testing
+
+label MainMenuCredits:
+    show credits end at truecenter with fade
+    $ renpy.pause(30.0)
+    return
+
