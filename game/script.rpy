@@ -6,7 +6,7 @@
 #when character names start with the same letter, all are given 2-letter abbreviations
 #player character
 define pc = Character("[pc_name]")
-
+define config.rollback_enabled = False
 
 #main characters
 define hm = Character("Hiring Manager", color="#ffd65c")

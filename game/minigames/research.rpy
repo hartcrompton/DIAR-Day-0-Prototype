@@ -97,7 +97,7 @@ screen ResearchMinigameUI():
         hotspot (294,66,261,157) action Call("ResearchMinigameDrawer", "A") #call up the appropriate second screen
         hotspot (294,224,261,157) action Call("ResearchMinigameDrawer", "B") #call up the appropriate second screen
         hotspot (294,384,261,157) action Call("ResearchMinigameDrawer", "C")#call up the appropriate second screen
-        hotspot (294,540,261,157) action Call("ResearchMinigameDrawer", "D")#call up the appropriate second screen
+        hotspot (1123,66,261,157) action Call("ResearchMinigameDrawer", "D")#call up the appropriate second screen
         hotspot (294,699,261,157) action Call("ResearchMinigameDrawer", "E")#call up the appropriate second screen
 
         hotspot (572,66,261,157) action Call("ResearchMinigameDrawer", "F")#call up the appropriate second screen
@@ -112,7 +112,8 @@ screen ResearchMinigameUI():
         hotspot (848,540,261,157) action Call("ResearchMinigameDrawer", "N")#call up the appropriate second screen
         hotspot (848,699,261,157) action Call("ResearchMinigameDrawer", "O")#call up the appropriate second screen
 
-        hotspot (1123,66,261,157) action Call("ResearchMinigameDrawer", "P")#call up the appropriate second screen
+        
+        hotspot (294,540,261,157) action Call("ResearchMinigameDrawer", "P")#call up the appropriate second screen
         hotspot (1123,224,261,157) action Call("ResearchMinigameDrawer", "Q")#call up the appropriate second screen
         hotspot (1123,384,261,157) action Call("ResearchMinigameDrawer", "R")#call up the appropriate second screen
         hotspot (1123,540,261,157) action Call("ResearchMinigameDrawer", "S")#call up the appropriate second screen

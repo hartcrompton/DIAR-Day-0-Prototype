@@ -47,7 +47,7 @@ label .use_action:
 
 label .beat1:
     "You hear the sounds of infighting, again…"
-    d neutral "You're wrong! It can only be me! There's one David in the story, and one David out here!"
+    d "You're wrong! It can only be me! There's one David in the story, and one David out here!"
     dm neutral "The true David would have a form to match the legacy of King David himself!"
     dd neutral "At seventeen feet you're more like {i}the Goliath{/i} than {i}the David{/i}."
     db neutral "The form is that of a shepherd. Strong, agile, and mortal. The true David is obviously me."
@@ -108,7 +108,7 @@ label .beat1:
     jump FreeRoam
 
 label .beat2:
-    d neutral "Over here!"
+    d "Over here!"
     dm neutral "[pc_name], you've returned!"
     dd neutral "All right, [pc_name] is back!"
     db neutral "You've got gumption. I'll give you that. "
@@ -211,13 +211,13 @@ label .beat2:
     db neutral "Is there…"
     dm neutral "… Anyone who knows us better…"
     dd neutral "… than we know ourselves?"
-    d dots "…"
-    d neutral "Come back later, we'll think on it."
+    d "…"
+    d "Come back later, we'll think on it."
     ###
     $ beat_Davids += 1
     jump FreeRoam
 label .beat3:
-    d neutral "But that's what I've been saying!"
+    d "But that's what I've been saying!"
     pc  "Oh, God. You three again. Well, you've had the night to think. What do you got?"
     dm neutral "Indeed, indeed, my dear, [pc_name]. Yes, yes, this time I have a–"
     db neutral "He means \"we.\""
@@ -225,8 +225,8 @@ label .beat3:
     menu:
         "Consult an expert like myself?":
             "You beam a smile."
-            d neutral "Not {i}an{/i} expert… {i}the{/i} expert."
-            d neutral "THE SOURCE!"
+            d "Not {i}an{/i} expert… {i}the{/i} expert."
+            d "THE SOURCE!"
     menu:
         "The what?":
             pass
@@ -236,14 +236,14 @@ label .beat3:
     dd neutral "Aloud and silently!"
     db neutral "And that you can make it down stairwells no problem."
     dm neutral "There are rumors that beneath our very feet, hidden in the shelves of archives, is a copy of…"
-    d surprise "The Bible!"
-    d neutral "{i}Our{/i} source!"
+    d "The Bible!"
+    d "{i}Our{/i} source!"
     menu:
         "Oh God…":
             pass
         "Of course. How could I not see this coming?":
             pass
-    d neutral "Exactly!"
+    d "Exactly!"
     db neutral "Kid, if you could let us know what the original passage says about us taking out that old Philistenian oaf, Goliath…"
     dd neutral "This old lug I got at my feet right here!"
     dm neutral "Then you could tell us who is the definitive David!"
@@ -252,22 +252,22 @@ label .beat3:
     label DavidResearchChoice:
         menu:
             "[[Lie] Psh. I got that memorized. I don't need to run you no errand.":
-                d neutral "You have the Bible memorized?"
+                d "You have the Bible memorized?"
                 dm neutral "All chapters and verses… committed to memory?"
                 dd neutral "That's a lot of words… not going to lie."
                 db neutral "You shooting us straight?"
                 pc  "Uh… yeah… of course. All of it… Right up here…In my mind palace."
-                d neutral "Well in that case we can't wait to hear what you think tomorrow!"
+                d "Well in that case we can't wait to hear what you think tomorrow!"
                 pc  "Erm… right!… Yes… Tomorrow!"
                 $ BibleResearched = -1
             "You know what? I'm done. Time to separate you.":
                 pc  "I can't look at you anymore. I'm just gonna shove you each in a corner until the gala is over."
-                d neutral "No please! Wait!"
+                d "No please! Wait!"
                 pc "What is it now?"
                 dm neutral "Give us one last chance!"
                 dd neutral "We'll be good! We promise! "
                 db neutral "We're on our last legs here. If you don't help us out… it could…"
-                d neutral "Crumble us!"
+                d "Crumble us!"
                 menu:
                     "Sorry, my Daves. It's to the corner with you all!":
                         #bad end
@@ -278,7 +278,7 @@ label .beat3:
                         jump DavidResearchChoice
             "Of course I'll head to the archives for you all.":
                 #archives
-                d neutral "We can't wait to hear what you find! Be safe on the stairs!"
+                d "We can't wait to hear what you find! Be safe on the stairs!"
                 $ BibleResearched = 1
                 #minigame go here
                 #will probably need some player response lines
@@ -327,7 +327,7 @@ label .beat4:
         jump DavidsEnd
 
     label DavidsIntact:
-        d neutral "Well well, look who it is!"
+        d "Well well, look who it is!"
         dm neutral "Here to administer your final judgement, I see."
         dd neutral "Can't believe you can memorize a whole book, let alone the good book itself."
         db neutral "That's no mean feat, kid. Impressive stuff."
@@ -336,7 +336,7 @@ label .beat4:
         dm neutral "I can't wait to see how impressed museum goers will be with me."
         dd neutral "Puh-leeee-sssuhh! [pc_name] is going to be choosing me anyways. "
         db neutral "Nobody in their right mind will choose either of you two. This is a hero's exhibit, not Biblical cosplaying."
-        d neutral "So, using that memory of yours, who's it going to be? Who's the definitive David?"
+        d "So, using that memory of yours, who's it going to be? Who's the definitive David?"
         pc  "From what I remember of the Bible, the definitive David is…"
         menu:
             "Michelangelo's David.":
@@ -379,11 +379,11 @@ label .beat4:
     label BibleResearched:
         $ DefinitiveDave = "all"
         #this has gotta get broken up
-        d neutral "Look at you! We knew you'd be back."
+        d "Look at you! We knew you'd be back."
         dm neutral "You can read! You can REALLY read!"
         dd neutral "And make it down stairs!"
         db neutral "And back up them too."
-        d neutral "We thank you!"
+        d "We thank you!"
         pc  "Just getting my steps and my reading in for the week. "
         pc  "I have some good news… or at least I think it's pretty good."
         pc  "Turns out the source has it all."
