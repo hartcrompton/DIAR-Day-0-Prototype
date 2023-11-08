@@ -10,11 +10,16 @@ default ClosedLine_ss = 0
 default ClosedLine_p = 0
 
 label final_exhibit:
+    scene black with fade
+    show day countdown 4 at truecenter with fade
+    $ renpy.pause(1.0)
+    show day_countdown at AlphaIn
+    $ renpy.pause(4.5)
     jump AllOutcomes
     return
 
 label AllOutcomes:
-    scene foyer bg:
+    scene foyer bg with fade:
         blur 5
     play music "music/Admin_ZY_02.wav" volume 0.6
     show admin at truecenter:
@@ -53,18 +58,14 @@ label AllOutcomes:
         "The donors were unimpressed, to say the least."
         "Even the catering was uneven, with some guests trying their luck with out-of-date candy from the vending machine."
     call conv_Arnolfini.Outcome from _call_conv_Arnolfini_Outcome_1
-
     call conv_Davids.Outcome from _call_conv_Davids_Outcome_1
-
     call conv_Gilgamesh.Outcome from _call_conv_Gilgamesh_Outcome_1
-
     call conv_MonaLisa.Outcome from _call_conv_MonaLisa_Outcome_1
-
     call conv_SaintCatherine.Outcome from _call_conv_SaintCatherine_Outcome_1
-
     call conv_SoupAndSunflowers.Outcome from _call_conv_SoupAndSunflowers_Outcome_1
-
     call conv_Poster.Outcome from _call_conv_Poster_Outcome_1
+    call conv_Admin.Outcome from _call_conv_Admin_Outcome
+    call conv_VendingMachine.Outcome from _call_conv_VendingMachine_Outcome
     scene black with fade
     if StoryCompletedTotal >= 3:
         "In the wake of the Gala, you've already received several emails from collectors and interviewers, all eager to meet the new curator."
@@ -74,6 +75,7 @@ label AllOutcomes:
         "The museum closes. Most pieces return to private collections, some find their ways into renowned museums."
         "But none forget the first curator who could really hear them."
     stop sfx2 fadeout 0.5
+    scene black
     show credits end at truecenter with fade
     $ renpy.pause(30.0)
     stop music

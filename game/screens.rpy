@@ -207,7 +207,34 @@ screen input(prompt):
             ypos gui.dialogue_ypos
 
             text prompt style "input_prompt"
-            input id "input"
+            input id "input":
+                if pc_color == "#70d2c2":
+                    color "#70d2c2"
+                elif pc_color == "#81c195":
+                    color "#81c195"
+                elif pc_color == "#fdde8f":
+                    color "#fdde8f"
+                elif pc_color == "#f2948a":
+                    color "#f2948a"
+                elif pc_color == "#f5dae3":
+                    color "#f5dae3"
+
+
+        #     "{color=#70d2c2}Blue{/color}":
+        #     $ pc_color = "#70d2c2"
+        #     pass
+        # "{color=#81c195}Green{/color}":
+        #     $ pc_color = "#81c195"
+        #     pass
+        # "{color=#fdde8f}Yellow{/color}":
+        #     $ pc_color = "#fdde8f"
+        #     pass
+        # "{color=#f2948a}Red{/color}":
+        #     $ pc_color = "#f2948a"
+        #     pass
+        # "{color=#f5dae3}Pink{/color}":
+        #     $ pc_color = "#f5dae3"
+             #color "#f2a571"
 
 style input_prompt is default
 
@@ -680,16 +707,22 @@ screen file_slots(title):
 
                     button:
                         action FileAction(slot)
-
                         has vbox
-
-                        add FileScreenshot(slot) xalign 0.5
-
+                        add FileScreenshot(slot):
+                            xalign 0.5
+                        # if FileScreenshot(slot):
+                        #     add "save_frame_hover":
+                        #         xalign 0.5
+                        #         yoffset -15
                         text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
                             style "slot_time_text"
+                            #yoffset -309
+                            # yalign 0.9
 
                         text FileSaveName(slot):
                             style "slot_name_text"
+                            #yoffset -309
+                            # yalign 0.9
 
                         key "save_delete" action FileDelete(slot)
 

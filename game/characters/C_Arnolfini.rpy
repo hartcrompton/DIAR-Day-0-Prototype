@@ -80,18 +80,18 @@ label .Beat1:
             arm neutral "Maybe you were too busy stealing things that don't belong to you!"
             arw neutral "Again, I didn't do anything!"
         "Who needs a name?":
-            arw neutral "Well I think I'd like to have one. His name is Giovanni, why can't I have one?"
+            arw neutral "Well, I think I'd like to have one. His name is Giovanni, why can't I have one?"
             arm neutral "Like you could have a better name than mine, anyway."
             arw confused "Ugh!"
         "You seem like an \"Ethel\" to me.":
             $ arwName = "Ethel?"
             arw question "Ethel? I don't know…"
-            arm neutral "I knew an Ethel once. Just awful."
+            arm neutral "I knew an Ethel, once. Just awful."
             arw neutral "Please, I'm the only woman you've ever talked to."
             arm panic "That's not true! There's… there's…"
             arw neutral "You're going to say you talked to an \"Ethel,\" aren't you?"
             arm panic "I wasn't… NO!"
-    arm neutral "Anyway you've caught us at an impasse. For you see, {i}she{/} has stolen something most precious to me!"
+    arm neutral "Anyway, you've caught us at an impasse. For you see, {i}she{/i} has stolen something most precious to me!"
     menu:
         "Well didn't you take something of hers?":
             arm neutral "I did no such thing!"
@@ -102,9 +102,9 @@ label .Beat1:
             arm dots "…"
             arm neutral  "No."
             arw neutral "See? You don't even know where you had it in the first place. How do you know you didn't lose it yourself?"
-        "Maybe if you {i}nicely{/i} asked for it back she'd give it to you?":
+        "Maybe if you asked {i}nicely{/i} for it back, she'd give it to you?":
             arm neutral "Ha! You must be new here."
-            arw neutral "Gio, [they] {i}[are]{/i} new here. This is the first time we've met."
+            arw neutral "Gio, [they] {i}{0}is{/0}{1}is{/1}{2}are{/2}{/i} new here. This is the first time we've met."
             arm neutral "I… "
             arm angry "See what I mean!? She's impossible! A thief with a boorish tongue!"
             arw neutral "Oh, please."
@@ -121,8 +121,8 @@ label .Beat1:
             arm neutral "Incorrigible!"
             arw neutral "Ugh, enough with the vocabulary! We get it! You like big words!"
     
-    pc  "Want me to just find the comb and brooch for you two? They're probably somewhere in the painting with you."
-    arw bulb "Oh, yes please! Let's put an end to this, I'd really appreciate it."
+    pc  "Want me to find the comb and brooch for you two? They're probably somewhere in the painting with you."
+    arw bulb "Oh, yes, please! Let's put an end to this, I'd really appreciate it."
     arm neutral "I'd appreciate it more."
     #minigame go here
     call minigamestart_arnolfini(1) from _call_minigamestart_arnolfini
@@ -165,7 +165,7 @@ label .Beat1:
         "I guess I'll see what I can do.":
             ard sparkle "You'd be a life saver for little old me!"
         "Are you sure they're worth it?":
-            ard neutral "Listen, I ask that sometimes too, but I'd do anything for some peace at this point."
+            ard neutral "Listen, I ask that sometimes too; but I'd do anything for some peace at this point."
         "Of course I'll help!":
             ard sparkle "Glad to hear it, thank you!"
     "As you walk away, you hear the Arnolfinis continue their arguing"
@@ -179,30 +179,31 @@ label .Beat1:
 
 label .Beat2:
 
-    arw neutral "Thanks for coming back, I thought you'd never return! Hahaha…"
+    arw neutral "Thanks for coming back, I thought you'd never return! Haha…"
     arw sigh "{i}God, I need friends.{/i}"
-    arw neutral "Also I never really introduced myself properly: I'm Alessandra."
+    $ arwName = "Alessandra"
+    arw neutral "Also, I never really introduced myself properly: I'm Alessandra."
     arm neutral "Alessandra? A bit flowery for a name, don't you think?"
     arw neutral "That's rich coming from a Giovanni."
     arm dots "…"
     arm neutral "Anyway, we're both so sorry for all of our quarreling. We just want some space, is all."
     arw neutral "Yes, a private space. Away from each other."
     pc  "Aren't you two married? You seem married."
-    arw question "Actually…are we? We are aren't we?"
+    arw question "Actually…are we? We are, aren't we?"
     arm questions "I…I don't know. I've never thought about it."
-    arw panic "Oh my god!"
-    arm panic "Oh my god!"
-    ard sigh "Oh my god."
+    arw panic "Oh my God!"
+    arm panic "Oh my God!"
+    ard sigh "Oh my God."
     menu:
-        "You really never thought if you were married?":
+        "You really never considered if you were married?":
             arw neutral "Listen, I just was dealt the hand I got. Gio's here and…I don't know how we ended up together."
-            arm neutral "I mean it does look I'm vowing something to you. And we're touching hands!"
-            arw neutral "Ugh don't remind me. I wish I had gloves."
-        "Well I mean maybe you aren't. I don't know.":
+            arm neutral "I mean it does look like I'm vowing something to you. And we're touching hands!"
+            arw neutral "Ugh, don't remind me. I wish I had gloves."
+        "Well, I mean, maybe you aren't. I don't know.":
             arm neutral "Right! It's not like we {i}chose{/i} to be stuck together like this, touching hands and everything!"
             arw neutral "You have very clammy hands, by the way."
-            arm angry "See, if I was your husband you'd {i}never{/i} say anything like that to me. You'd listen!"
-            arw neutral "Well good thing we probably aren't, I'd never agree to you being the head of any kind of household!"
+            arm angry "See, if I were your husband you'd {i}never{/i} say anything like that to me. You'd listen!"
+            arw neutral "Well, good thing we probably aren't. I'd never agree to you being the head of any kind of household!"
             arw neutral "The dog would be better at handling our affairs!"
             ard neutral "Well, she's got a point."
             arm neutral "Did you hear something?"
@@ -213,12 +214,12 @@ label .Beat2:
             arm dots "…"
             arm neutral "Why do you have a pillow under your clothes?"
             arw happy "I have a hand sitting here and it keeps it comfy. Simple!"
-    pc  "Well if you two are stuck together, let's find some similar ground. What are your common interests?"
+    pc  "Well, if you two are stuck together, let's find some similar ground. What are your common interests?"
     arw sparkles "The finer things! Fabrics! Little baubles! Beautiful jewelry!"
     arm dots "… I like my comb."
     arw neutral "But really, I have more issues with him then he does me! I need friends! Help me, not him!"
     arm neutral "She has no respect for me! I'm suffering more! Help me instead!"
-    ard neutral "Hey, buddy! Hey! Just listen to me. I want them to both get along for their sakes."
+    ard neutral "Hey, buddy! Hey! Just listen to me. I want them both to get along for their sakes."
     ard neutral "And mine. Mostly mine. But still! Up to you."
     menu:
         "[[Help Arnolfini's…Wife? Sister? Cousin?]":
@@ -235,11 +236,11 @@ label .Beat2:
             arm neutral "Let me get back to you in a bit. I think I have a way to finally get some respect around here!"
         "[[Help The Dog]":
             $ ar_b2_c1 = "c"
-            ard happy "I judged you right. I have some ideas to make things work here. I'll talk to you later."
+            ard happy "I judged you right. I have some ideas to make things work, here. I'll talk to you later."
             arm angry "The dog? Really? Hmph!"
             arw angry "Uh, the dog? I knew I was right about you."
             ard neutral "I can talk!"
-            arw neutral "Gio, you hear something?"
+            arw neutral "Gio, did you hear something?"
             arm neutral "Nothing."
             ard confused "Ugh, they're oblivious."
 
@@ -252,10 +253,10 @@ label .Beat3:
         arw neutral "There you are! I'm trying a new name today. Alessandra was passé, you know?"
         #change ARW name here
         $ arwName = "Gertrude"
-        arw sparkles "Now how about this: Gertrude. Beautiful, no?"
+        arw sparkles "Now, how about this: Gertrude. Beautiful, no?"
         pc  "I think whatever you want works best."
         arw happy "Thank you! Nice to see some approval around here."
-        arw neutral "Now then, any ideas on how we can separate? I was thinking what if we ripped the painting in two? Clean in half!"
+        arw neutral "Now then, any ideas on how we can separate? What if we ripped the painting in two? Clean in half!"
         menu:
             "Let's maybe try something else.":
                 arw sigh "Oh…okay."
@@ -264,7 +265,7 @@ label .Beat3:
             "Sure, let me go grab a {i}BIG{/i} pair of scissors real quick!":
                 arw sweat "Oh, uh, on second thought, maybe not. Scissors sound a bit…barbaric."
         pc  "I was getting the impression you wanted to make friends outside the painting?"
-        arw sparkle "I mean…yes! Yes I want that."
+        arw sparkle "I mean…yes! Yes, I want that."
         pc  "What if we used your husband–"
         arw neutral "Not my husband."
         arw sweat "I think."
@@ -274,24 +275,24 @@ label .Beat3:
         arw neutral "I guess it's worth a shot. Giovanni!"
         arw question "I like, uh, your taste in combs?"
         arm sparkle "Really? That's nice of you to say"
-        arw neutral "Well I don't talk about it enough. You have, dare I say, good taste! I mean your hat!"
+        arw neutral "Well, I don't talk about it enough. You have, dare I say, good taste! I mean, your hat–"
         arm happy "Ooh, I was thinking of adding a feather to it. Or at least imagining a feather."
         arw happy "That'd be nice! Don't you agree, [pc_name]?"
         pc  "I agree!"
         arm neutral "…I think a new necklace would look nice on you as well."
-        arw surprise "Oh wouldn't it?"
+        arw surprise "Oh, wouldn't it?"
         pc  "Look at you two! You haven't yelled in at least a minute!"
         ard neutral "Finally!"
         arw neutral "I have a thought! Do you think you could help us find these things for each other?"
         arm sparkle "Yes that'd be so nice of you! One final favor! We'll be the talk of the room!"
     if ar_b2_c1 == "b":
-        arm sparkle "Welcome back! Thank you for listening to me. The reasonable one!"
+        arm sparkle "Welcome back! Thank you for listening to me, the reasonable one!"
         arw neutral "Hmph."
-        arm neutral "Now about us having our own space. I was thinking of you adding a very thick line between us"
+        arm neutral "Now about us having our own space. How about you add a very thick line between us."
         arm sparkles "VERY thick."
         menu:
             "I'm sure I'm not allowed to do that.":
-                arm neutral "Well why not!? Be like me and take charge!"
+                arm neutral "Well, why not!? Be like me and take charge!"
                 arw laugh "Ha! You? Taking charge? That'd be the day."
                 arm neutral "Hmph."
             "Would that even accomplish anything?":
@@ -303,10 +304,10 @@ label .Beat3:
                 arm neutral "Well that wouldn't look good with my hat, would it? Forget I mentioned that."
         pc  "What if you tried to look outside of your frame a bit? Don't you want to make some friends?"
         arm neutral "Well…yes…"
-        pc  "But you two bicker so much how could anyone else ever get a word in?"
+        pc  "But you two bicker so much, how could anyone else ever get a word in?"
         ard sigh "Preach."
         arm neutral "What am I supposed to do about that!"
-        pc  "Well what if you started off being friends with your wife—"
+        pc  "Well, what if you started off being friends with your wife—"
         arm neutral "Not my wife."
         arm sweat "I think."
         pc  "–your picture companion…"
@@ -318,11 +319,11 @@ label .Beat3:
         $ arwName = "Gertrude"
         arw neutral "It's Gertrude today."
         arm neutral "You look quite…nice today…Gertrude. I like your taste. I don't say that enough."
-        arw happy "Well thank you!"
-        arm neutral "You always look lovely and you should take pride in that."
+        arw happy "Well, thank you!"
+        arm neutral "You always look lovely, and you should take pride in that."
         arw neutral "Same to you! I've always liked your, uh, hat!"
         arm sparkle "You think so? I was thinking that it needed a feather in it. I think you'd look lovely with a necklace!"
-        arw sparkles "Really? I think so too!"
+        arw sparkles "Really? I think so, too!"
         pc  "Look at you two! You haven't yelled in at least a minute!"
         ard sigh "Finally!"
         arw neutral "I have a thought! Do you think you could help us find these things for each other?"
@@ -335,12 +336,12 @@ label .Beat3:
         $ MaybeSomethingElse = 0
         ard happy "Hey, you finally came by!"
         pc  "Yeah! It seemed like you had some ideas, or an idea, of how to get these two to get along? At least a little bit?"
-        ard neutral "Well I mean we could just separate them. Draw like a BIG line between them."
+        ard neutral "Well, I mean we could just separate them. Draw like a BIG line between them."
         menu:
             "Can't do that." if CantDoThat == 0:
                 $ CantDoThat = 1
                 pass
-            "Oh that's a bad idea." if ABadIdea == 0:
+            "Oh, that's a bad idea." if ABadIdea == 0:
                 $ ABadIdea = 1
                 pass
             "Maybe something else?" if MaybeSomethingElse == 0:
@@ -351,7 +352,7 @@ label .Beat3:
             "Can't do that." if CantDoThat == 0:
                 $ CantDoThat = 1
                 pass
-            "Oh that's a bad idea." if ABadIdea == 0:
+            "Oh, that's a bad idea." if ABadIdea == 0:
                 $ ABadIdea = 1
                 pass
             "Maybe something else?" if MaybeSomethingElse == 0:
@@ -362,7 +363,7 @@ label .Beat3:
             "Can't do that." if CantDoThat == 0:
                 $ CantDoThat = 1
                 pass
-            "Oh that's a bad idea." if ABadIdea == 0:
+            "Oh, that's a bad idea." if ABadIdea == 0:
                 $ ABadIdea = 1
                 pass
             "Maybe something else?" if MaybeSomethingElse == 0:
@@ -370,14 +371,14 @@ label .Beat3:
                 pass
         "The dog lets out a long, somewhat adorable sigh."
         ard neutral "But you know? I actually like it here. The whole painting. I don't expect them to get along perfectly."
-        ard neutral "And they both have similar interests.They just have to communicate!"
+        ard neutral "They both have similar interests. They just have to communicate!"
         menu:
             "They actually have interests?":
                 pass
             "Do they like anything beyond themselves?":
                 pass
-        ard neutral "Listen its shallow, but have you seen the place we're in? It's beautiful. They like nice things."
-        ard neutral "Get them to compliment each others things. Their taste. I can coach you. If you haven't noticed they don't really pay attention to me. Watch."
+        ard neutral "Listen, it's shallow, but have you seen the place we're in? It's beautiful. They like nice things."
+        ard neutral "Get them to compliment each others' things. Their taste. I can coach you. If you haven't noticed, they don't really pay attention to me. Watch."
         "You hear what sounds like the dog passing gas."
         arm sad "Ugh, did you do that!?"
         arw sad "Wasn't me! Gross, it had to have been you!"
@@ -394,10 +395,10 @@ label .Beat3:
         arm neutral "We have nothing to say to you."
         ard neutral "They want to make friends! Mention that!"
         menu:
-            "I couldn't help but notice you two wanted to make friends outside of well, yourselves.":
+            "I couldn't help but notice you two wanted to make friends outside of, well, yourselves.":
                 arm neutral "I mean…"
                 arw panic "It's true! It's extremely true."
-            "It seems like you two wish the other respected you more?":
+            "It seems like you two wish the others respected you more?":
                 arw neutral "Well…"
                 arm panic "Yes! More than anything!"
         ard neutral "Remember: they should really befriend each other first!"
@@ -409,21 +410,21 @@ label .Beat3:
         arw neutral "Not my husband.  "
         arm neutral "Not my wife.  "
         arw neutral "I don't think…"
-        pc  "Your photo companion?"
+        pc  "Your painting companion?"
         arm neutral "Meh."
         arw neutral "Sure."
         pc  "Just…try?"
-        arw neutral "Fine. If he won't try first I guess I will."
+        arw neutral "Fine. If he won't try first, I guess I will.."
         arw neutral "Giovanni. That comb you found. It's…nice. You have good taste."
         arm neutral "Really? That's nice of you to say. Should I be suspicious?"
-        arw neutral "No! I don't talk about it enough. It suits you. Your hat does too."
+        arw neutral "No! I don't talk about it enough. It suits you. Your hat does, too."
         arm sparkle "You know, I was thinking of adding a feather to it. Or at least imagining a feather."
         arw happy "Oh, that'd be nice!"
         arm neutral "I think a new necklace would look nice on you as well…what's your name again?"
         $ arwName = "Gertrude"
         arw neutral "It's Gertrude today."
         arm neutral "It looks good…Gertrude. I like your taste. I don't say that enough."
-        arw sparkle "Really? Well thank you!"
+        arw sparkle "Really? Well, thank you!"
         menu:
             "Look at you two! You haven't yelled in at least a minute!":
                 ard sigh "I'll take a minute of peace!"
@@ -432,7 +433,7 @@ label .Beat3:
             "Look, you can exist together! Sort of!":
                 ard sigh "One moment's peace is something. I can take that."
         arw neutral "I have a thought! Do you think you could help us find these things for each other?"
-        arm neutral "Yes that'd be so nice of you! One final favor! We'll be the talk of the room!"
+        arm neutral "Yes, that'd be so nice of you! One final favor! We'll be the talk of the room!"
     arw sparkles "Ooh, I'd love a beautiful necklace, it'd go so nicely with my brooch!"
     arm neutral "… Can I have another comb?"
     arw neutral "Gio! Really?"
@@ -445,23 +446,23 @@ label .Beat3:
     show arnolfiniportrait at truecenter:
         zoom .7
         yoffset -100
-    arw happy "Oh thank you, this is just lovely!"
+    arw happy "Oh, thank you, this is just lovely!"
     arm happy "Yes, thank you!"
     ard happy "Thank you SO MUCH! Finally! Some peace!"
     arm neutral "The dog can talk?"
     ard sad "If I could move my eyes they'd be rolling right now."
-    arw neutral "Well anyway. There's something that's been on my mind, lately."
+    arw neutral "Well, anyway. There's something that's been on my mind, lately."
     arm neutral "Tell me! Anything!"
     arw neutral "What…are we?"
     arm neutral "Like, existentially?"
     pc  "Oh boy."
     pc  "Oh no."
     pc  "Oh shit."
-    arw neutral "No, no! Like, are we married? Frankly I never thought about it, I just assumed."
+    arw neutral "No, no! Like, are we married? Frankly, I've never thought about it, I just assumed."
     arm neutral "That's a good question. I know we mentioned it recently, but I'm still not sure. Does the dog know?"
     ard neutral "Don't look at me. I tuned you two out ages ago."
     arw neutral "Now that we can agree on some things, I'd really love to know. It's always been in the back of my mind."
-    arm neutral "Well could we be blood relatives? Or is it really marriage?"
+    arm neutral "Well, could we be blood relatives? Or is it really marriage?"
     arw neutral "…"
     menu:
         "What are you thinking?":
@@ -471,7 +472,7 @@ label .Beat3:
         "Should I be concerned?":
             pass
     arw dots "…"
-    arw neutral "…what if we're both?"
+    arw neutral "…What if we're both?"
     arm sweat "Oh no."
     arw sweat "Oh no."
     menu:
@@ -490,7 +491,7 @@ label .Beat3:
     jump FreeRoam
 
 label .Beat4:
-    ard neutral "Hi again! These two have been…eerily silent."
+    ard neutral "Hi, again! These two have been…eerily silent."
     arm dots "…"
     arw dots "…"
     arw panic "… We just don't know what to think!"
@@ -503,8 +504,8 @@ label .Beat4:
         "[[Lie] I really don't think it's that big of a deal!":
             arm sweat "You've got to be kidding."
     arw panic "What would the other pieces of art think if we didn't know? How would we even introduce ourselves!?"
-    pc  "Well let's look at what you have argued about and maybe we can figure this out."
-    arw neutral "I prefer \"discussion with force.\""
+    pc  "Well, let's look at what you've argued about and maybe we can figure this out."
+    arw neutral "I prefer \"discussed with force.\""
     ard neutral "I've seen the PC doing a lot of cleaning, lets see if it can jog you two's memories."
     ard neutral "Maybe there's an answer outside of the painting?"
     pc  "Hey, it's worth a shot!"
@@ -530,7 +531,7 @@ label .Beat4:
     #Dialogue	ArnolfiniDog	I have this really intense desire to chew on those socks right now. Can you put them away before I lose any restraint?				Socks
     ### minigame go here
     #meta "Clean up various objects that each of the Arnolfini's finds relatable to their interests. Don't know if we have design implementation for specific objects in the minigmae, but I can tailor the writing to what is available if not."
-    ard neutral "Well anything? Some kind of memory jogged?"
+    ard neutral "Well, anything? Some kind of memory jogged?"
     arw neutral "Let me think…"
     arm neutral "…I've got nothing."
     arw neutral "No, not a clue. I really don't know. Great job cleaning though!"
@@ -539,7 +540,7 @@ label .Beat4:
             pass
         "It's all in the wrist.":
             pass
-        "I really wish I knew how half of stains showed up.":
+        "I really wish I knew how half of the stains showed up.":
             pass
     "She doesn't really notice you respond."
     arw happy "Look, Gio, I complimented them!"
@@ -557,20 +558,20 @@ label .Beat4:
                 $ SpeakGiovanni = 1
                 $ ar_b4_c1 = "a"
                 pc  "Do you remember anything from your past that might help define you two's relationship?"
-                arm neutral "Now she mentioned a previous green dress with a veil…I remember that. I'm not one hundred percent sure but…"
+                arm neutral "She mentioned a previous green dress with a veil…I remember that. I'm not one-hundred percent sure, but…"
                 arm neutral "…I really think it was at a wedding. Our wedding. I could be wrong, though."
                 jump ArnolfiniInvestigate
             "[[Speak to Gertrude]" if SpeakWoman == 0:
                 $ SpeakWoman = 1
                 $ ar_b4_c1 = "b"
                 pc  "What can you tell me about your history with Giovanni? Maybe there's something we're missing."
-                arw neutral "Now about those socks – I really do remember getting them as a gift. And Gio was there!"
+                arw neutral "About those socks–I really do remember getting them as a gift. And Gio was there!"
                 arw neutral "I can't speak with total authority, but I feel like we're just cousins. We're related, not married."
                 jump ArnolfiniInvestigate
             "[[Speak to the Dog]" if SpeakDog == 0:
                 $ SpeakDog = 1
                 $ ar_b4_c1 = "c"
-                ard neutral "So you said you remembered something?"
+                ard neutral "You said you remembered something?"
                 ard neutral "All that crud you cleaned up? I think they're both right with what they remember."
                 ard neutral "The green veil? That was their wedding. And the socks at Christmas? I think they're cousins. They grew up together."
                 ard neutral "I can't be sure, but I think they're married {i}and{/} related."
@@ -602,7 +603,7 @@ label .Beat4:
         arm happy "Of course, I knew it!"
         arw laugh "Sure you did."
         arm neutral "Do you think our family is even bigger than just us?"
-        arw neutral "Oh no where do you think they are? Should we look for them? You! [player]! Can you get us out of this painting too?"
+        arw neutral "Oh no, where do you think they are? Should we look for them? You! [pc_name]! Can you get us out of this painting too?"
         ard neutral "Oh, brother. Well, at least they're doing better. Thanks again for your help."
         arm neutral "Yes, thank you!"
         arw neutral "We won't forget this!"
@@ -610,10 +611,10 @@ label .Beat4:
         pc  "I think you two are married…and related."
         arw sad "Oh…"
         arm sad "Oh no…"
-        pc  "Well it was the 1400s? If that helps? It wasn't {i}that{/i} weird…I think."
+        pc  "Well it was the 1400s, if that helps. It wasn't {i}that{/i} weird…I think."
         arm neutral "I don't really know what you mean by that, but I guess this is fine?"
         arw neutral "The family must've had a good reason, even if I don't like you like that."
-        arm confused "What of my own parents? Were they too…related?"
+        arm confused "What of my own parents? Were they, too…related?"
         arw dots "…"
         arm dots "…"
         arw panic "I don't like where this is going. I'm just not going to think about it. At least it's settled."
@@ -623,9 +624,9 @@ label .Beat4:
         arw neutral "We won't forget this!"
     pc  "Well no matter what, it looks like you two–Giovanni and–"
     $ arwName = "Carlotta"
-    arw neutral "It's Carlotta now. I'm workshopping it. I'm actually circling back on Ethel, maybe."
+    arw neutral "It's Carlotta, now. I'm workshopping it. I'm actually circling back on Ethel, maybe."
     pc  "Well no matter what, it looks like you two–Giovanni and–"
-    ard neutral "{i}Ahem{/i}"
+    ard neutral "Ahem."
     pc  "—you THREE seem to be pretty okay now. More or less."
     arw neutral "Maybe we can finally make other friends? Ooh, like that Mona Lisa!"
     arm bulb "Ooh, there are those statues I've heard a bit about. They all have the same name!"
@@ -633,15 +634,15 @@ label .Beat4:
     arm questions "…Who?"
     arw questions "Yes, who are you talking about?"
     menu:
-        "... Me. It's me. I'm your friend.":
-            arw neutral "Oh…oh you! Yes, that's true. I'm sorry. Thank you so much again!"
+        "…Me. It's me. I'm your friend.":
+            arw neutral "Oh…Oh you! Yes, that's true. I'm sorry. Thank you so much again!"
             arm neutral "Yes, thank you! You are really a friend. Well now what do we do?"
-        "... Never mind.":
+        "…Never mind.":
             arw neutral "Well, whatever you say!"
             arm neutral "Yes, yes. Well now what do we do?"
         "Forget I said anything. Look! You aren't arguing as much!":
-            arw neutral "Yes, it's nice not to be so aggrieved all the time for once."
-            arm neutral "Ooh, I like that word! Well now what do we do?"
+            arw neutral "Yes, it's nice not to be so aggrieved all the time."
+            arm neutral "Ooh, I like that word! Well, now what do we do?"
 
     ard neutral "What if you two paid attention to me a bit for a change?"
     arw neutral "I don't see why not!"
@@ -661,7 +662,7 @@ label .Outcome:
             zoom .7
             yoffset -100
         "The Arnolfinis were a lot happier together."
-        "Sure, they still fought a bit, but they started making friends with nearby paintings and actually - finally - enjoyed each other's presence."
+        "While they still fought now and then, they eventually made friends with nearby paintings and–finally–enjoyed each other's presence."
         "The dog too!"
     elif beat_Arnolfini > 1:
         scene fineart_tod:
@@ -669,15 +670,15 @@ label .Outcome:
         show arnolfiniportrait at truecenter:
             zoom .7
             yoffset -100
-        "The Arnolfinis were getting a long a bit better, but there arguments never ended, annoying all the surrounding pieces of art."
-        "If only you could've helped them reconcile..."
+        "The Arnolfinis got along a bit better, but their arguments never ended; annoying all of the surrounding pieces of art."
+        "If only you had helped them reconcile…"
     else:
         scene fineart_tod:
             blur 5
         show arnolfiniportrait at truecenter:
             zoom .7
             yoffset -100
-        "The Arnolfinis arguments grew more and more irate and every piece of art around them suffered for it, including the dog."
+        "The Arnolfinis' arguments grew more and more dire and every piece of art around them suffered for it, including the dog."
         "Eventually, the piece tore in two, separating them forever and leaving them all alone."
-        "Sure, they weren't arguing anymore, but now they had no one else to talk to."
+        "Their arguing ended, along with all other contact and conversation."
     return

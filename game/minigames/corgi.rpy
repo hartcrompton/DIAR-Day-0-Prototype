@@ -283,7 +283,7 @@ label minigamestart_corgi(gameimage="notdefault"):
             #barks
             corgi_barks = []
             corgi_barks.append("That's perfect!")
-            corgi_barks.append("No, that's not it. Though I bet you could something\ndelicious in that!")
+            corgi_barks.append("I bet you could put something delicious in that!\nWatch out for any fuzzy bits, though.")
             corgi_barks.append("Definitely not, unfortunately. I think I've seen\nsomething scurrying in and out of that lately. Careful!")
             corgi_barks.append("That won't work. Though I've seen it make tasty \nsnacks before that'll be sure to give you energy!")
             corgi_barks.append("I've seen that can be useful for various things,\nbut no, not for cheering. Please don't use that on me!")
@@ -310,7 +310,7 @@ label minigamestart_corgi(gameimage="notdefault"):
             corgi_barks.append("The wire on that looks busted. Not exactly inspiring.\nMore flammable than anything.")
             corgi_barks.append("Ooh still not sure that'll work. Did you clean it yet?\nI feel like the fuzzy things are getting bigger.")
             corgi_barks.append("I saw that thing crawling out of there earlier today.\nI'm naming it Geoffrey.")
-            corgi_barks.append("Oh those will be perfect! Yes! Let's get the tape!")
+            corgi_barks.append("Oh, those will be perfect! Yes! Let's get the tape!")
             corgi_barks.append("{i}shudder{/i} Keep that away from me, please!")
             corgi_barks.append("I really dont like that thing. Those teeth?\nThey'd hurt my little paws!")
             #overlaid objects

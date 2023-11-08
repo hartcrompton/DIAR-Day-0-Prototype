@@ -94,7 +94,7 @@ label DayZero:
         yoffset 450
     "The voices come from somewhere behind a trio of statues."
     #need another arguing line here
-    #"They're not... coming from the statues, are they?"
+    #"They're not…coming from the statues, are they?"
     "All that's stopping you from getting closer is the impenetrable velvet rope."
 
     menu:                                               
@@ -173,10 +173,10 @@ label DayZero:
     ad dots "Oh. He resigned."
     #revise
     ad neutral "That's great, that's fine." 
-    ad "I just need to finish the paperwork, start redesigning the brochures now..."
-    ad "...send out the press releases and donor letters..."
-    #ad "...budgeting a generous half-hour for sleep..."
-    #ad "Which would leave... twenty-minutes to prep for the gala."
+    ad "I just need to finish the paperwork, start redesigning the brochures now…"
+    ad "…send out the press releases and donor letters…"
+    #ad "…budgeting a generous half-hour for sleep…"
+    #ad "Which would leave…twenty-minutes to prep for the gala."
 
     menu:                                               
         "I could do it.":          
@@ -184,7 +184,7 @@ label DayZero:
             "What IT is exactly, you're not sure."
         "Sounds like you're hiring.":          
             #"Hey, worth a shot."
-            ad surprise "I... guess we could."
+            ad surprise "I…guess we could."
 
     ad neutral "What's your name?"
     jump PlayerNameInput
@@ -203,7 +203,7 @@ label PlayerNameInput:
     play music "music/Admin_ZY_02.wav" volume 0.6
     ad sparkles "Are you {i}the{/i} Dr. [pc_name]?"
     ad neutral "We spoke after your last visit."
-    ad "Your paper on the deontological ramifications of popularized historicity was..."
+    ad "Your paper on the deontological ramifications of popularized historicity was…"
     ad "Well, I didn't understand much of it, but wow!"
 
     #revise
@@ -249,26 +249,26 @@ label PlayerNameInput:
         ad "Do you have any relevant work experience?"                             
         "I was a gas station attendant.": 
             $ pc_work = "gas station attendant"
-            ad "That's... OK, great!"
+            ad "That's…OK, great!"
         "Mostly gig work.":       
             $ pc_work = "gig worker"
             ad "Good, you'll be wearing plenty of hats here."
             #ad "Metaphorically. The raccoons started off in the gift shop."
         "Bouncer.":       
             $ pc_work = "bouncer"
-            ad "That's... OK, great!"
+            ad "That's…OK, great!"
         "I've done some painting.":      
             $ pc_work = "\"painter\""
             ad "Wonderful! Portraits, landscapes?"
             pc "Mostly houses. A few boats, some propane tanks."
-            ad "That's... OK, great!"
+            ad "That's…OK, great!"
         "I, um, I've {i}procured{/i} art from private clients.":     
             $ pc_work = "\"procurer\"" 
             ad "You mean you procured art {i}for{/i} clients?"
             pc "No, mostly {i}from{/i}."
         "I mean, not really?":     
             $ pc_work = "layabout" 
-            ad "That's... well it's not too important."
+            ad "That's…well it's not too important."
     
     #update variables
     menu:              
@@ -290,7 +290,7 @@ label PlayerNameInput:
             ad "Ah, we do get a lot of those here."
         "Afraid not.":      
             $ pc_skill = "nothing"
-            ad "I'm not sure... oh, it's fine."
+            ad "I'm not sure…oh, it's fine."
 
     #update variables
     menu:             
@@ -333,7 +333,7 @@ label MuseumTour:
         #matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
     ad "I left the cordless phone in the Grand Foyer, so you're probably there right now!"
-    ad "And these… are our Davids."
+    ad "And these…are our Davids."
     "At first, you think you hear an echo:"
     #fix up the echo
     hide admin
@@ -366,13 +366,13 @@ label MuseumTour:
     show davidb at truecenter:
         xoffset -300
         yoffset 200
-    "But as you approach, the echo fractures into three different voices, each one placing more emphasis on claiming identity for the one true David."
+    "But as you approach, the echo fractures into three different voices."
     dm sparkles "It's preposterous that either of you could be the David. It's clearly me."
     dd angry "No way, {i}I'm{/i} the David. You're just a couple of posers!"
     db neutral "Neither of you weaklings could possibly be {i}the{/i} David. I am!"
     
     menu:
-        "They're... talking?":
+        "They're…talking?":
             $ renpy.music.set_volume(0.6, delay=0.2, channel="music")
             pass
         "There's three of them? Don't we only need one?":
@@ -396,12 +396,12 @@ label MuseumTour:
     gi sparkles "Nasir, look sharp! Another of the common-folk has come to bask in my glory. Ah to have such an opportunity."
     gi neutral "I'd envy [them] if I didn't pity [them]."
     show gilgamesh at left with move:
-        xoffset 300
+        xoffset 350
         zoom .8
     show eanasir at right:
-        xoffset -300
+        xoffset -350
         zoom .75
-    e sad "Ugh..."
+    e sad "Ugh…"
     hide gilgamesh
     hide eanasir
     #show sue at truecenter with hpunch
@@ -438,7 +438,7 @@ label MuseumTour:
         yoffset -50
     m neutral "This {i}bischerə{/i}. I'm Florentine, not French."
     m neutral "And what do we have here? A [pc_work]. How prestigious. And rain-soaked."
-    m neutral "Water remains the driving force of all nature. When it drives this place into the ground we can all go home."
+    m neutral "Water remains the driving force of all nature. When it drives this place into the ground, we can all go home."
     #revise
     hide monalisa
     menu:
@@ -459,7 +459,7 @@ label MuseumTour:
     show soupandsunflowers at truecenter:
         zoom .8
         yoffset -50
-    #ad "Sunflowers was in the Fine Art wing with the other Van Gogh, until..."
+    #ad "Sunflowers was in the Fine Art wing with the other Van Gogh, until…"
     ad "We've got a couple of Van Goghs in our collection. This one was purchased at a generous discount!"
     $ renpy.music.set_volume(0.1, delay=0.4, channel="music")
     su neutral "Say, there’s a new face!"
@@ -470,7 +470,7 @@ label MuseumTour:
         matrixcolor TintMatrix("#7d91c7")
     #show saintblondebroken at truecenter
     ad "This is where our stained glass of Saint Catherine of Alexandria used to hang. It's French. Or Roman? Either way, it's broken."
-    st neutral "It’s so dark. Where am I?"
+    st neutral "It's so dark. Where am I?"
     st neutral "Who am I?"
     st confused "Please…I know you can't hear me, but I'm here."
     menu:
@@ -491,9 +491,9 @@ label MuseumTour:
     hide admin
     "Surely there's nothing in here that can talk."
     $ renpy.music.set_volume(0.1, delay=0.4, channel="music")
-    p neutral "Um... uh... good luck!"
+    p neutral "Um…uh…good luck!"
     menu:
-        "...Who said that?":
+        "…Who said that?":
             pass
         "Of course.":
             pass
@@ -502,21 +502,24 @@ label MuseumTour:
         zoom .8
         yoffset -110
     "You turn to see an inspirational poster hanging on the wall featuring a cute corgi leaping into the air."
-    p sweat "I... I hope you do your best today! I'm rooting for you!"
+    p sweat "I…I hope you do your best today! I'm rooting for you!"
     
     scene foyer night with fade:
         blur 5
         #matrixcolor TintMatrix("#7d91c7")
     show admin at AdminPortrait
     $ renpy.music.set_volume(0.7, delay=0.4, channel="music")
-    ad "And that's the tour! As you can see, it's all very straightforward. Really, all you need to do is clean."
+    ad sparkle "And that's the tour! As you can see, it's all very straightforward."
+    ad neutral "Mostly, I just need you to clean up the, well, everything."
+    ad "Oh! And make sure to familiarize yourself with the art collection."
+    ad "Though I'm sure you know more about the pieces than me."
     menu:
         "Uh huh. Totally.":
             pass
         "Hold on, they were {i}talking{/i}.":
             pass
     #pc "No, hold on, they were {i}talking{/i}--"
-    ad surprise "Is there anything else...? Oh, I nearly forgot! "
+    ad surprise "Is there anything else…? Oh, I nearly forgot! "
     ad panic "We might be closing permanently after our Grand Gala in four days."
     menu:
         #ad "We might be closing permanently after our Grand Gala in four days."
@@ -556,7 +559,7 @@ label MuseumTour:
         "Am I really on my own?":
             v "Nah, don't be silly."
             v "You've got me!"
-        "Why is this place so... crappy?":
+        "Why is this place so…crappy?":
             v "Whoa, throwin' shade!" 
             v "A little scrubbing, a little sweeping, this place could be as beautiful as the day it opened."
             v "It's the art that's the real mess."
@@ -580,7 +583,7 @@ label MuseumTour:
                 v "But art speaks so quiet, they can't hear it over their own thoughts."
                 pc "So why can {i}I{/i} hear it?"
                 "The Vending Machine pauses with an electric hum."
-                v "I guess you know how to keep your head clear."
+                v "I guess you know how to keep your head clear. Like, {i}really{/i} clear."
                 jump WhyAndArt
 
     #v "You got it twisted, {0}buddy{/0}{1}girl{/1}{2}buckaroo{/2}."
@@ -666,15 +669,17 @@ label MuseumTour:
     #"But that can wait for tomorrow."
     #"As you leave, someone whispers behind you, unnoticed. (Or is that somebodies, plural?)"
     "After you leave, a new voice echoes through the Foyer."
+    
+    play music "music/Nighthawks_ZU_01.wav" volume 0.3
+    
+    n1 "Think our new curator is going to make it?"
+    n2 "After THAT first day? Doubtful."
     scene foyer night:
         blur 5
         #matrixcolor TintMatrix("#7d91c7")
-    play music "music/Nighthawks_ZU_01.wav" volume 0.3
     show nighthawks at truecenter:
         zoom .65
         yoffset -125
-    n1 "Think our new curator is going to make it?"
-    n2 "After THAT first day? Doubtful."
     if NameLie == 1:
         n3 "Like watching a slow-moving car crash. I mean, everyone knows the REAL Dr. [pc_name] is summering in the Hamptons with Banksy."
     if NameLie == 0:

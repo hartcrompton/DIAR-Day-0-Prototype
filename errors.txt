@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day_zero.rpy", line 623: choice menuitem expects a non-empty block.
-    "Whoa, that's awesome.":
-                            ^
+File "game/characters/C_MonaLisa.rpy", line 537: expected statement.
+    The Mona Lisa was too small to notice. But she noticed.
+                                         ^
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Thu Oct 26 10:58:41 2023
+Tue Nov  7 21:21:56 2023

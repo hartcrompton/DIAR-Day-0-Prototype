@@ -102,45 +102,45 @@ label .beat1:
         xoffset -115
         yoffset -125
         zoom .8
-    p happy "This will help me so much, I mean look at it!"
+    p happy "This will help me so much–I mean, look at it!"
     "The corgi poster makes a grunting noise, seemingly as an attempt to wave the little flag."
-    "Wow, look at me! I hope me and my little flag here helps make your day the best it can be! Good luck!"
+    "Wow, look at me! I hope me and my little flag here help make your day the best it can be! Good luck!"
     #####
     $ beat_Poster += 1
     jump FreeRoam
     
 label .beat2:
     p sparkle "Hope you do your best today! And thank you for helping yesterday, it really helps me emphasize my words! Watch!"
-    "Again, the poster seems to indicate its waving the flag. Again, nothing actually happens."
+    "Again, the poster seems to indicate it's waving the flag. Again, nothing actually happens."
     p laugh "I feel so free!"
     p neutral "…Who said that!?"
     p sigh "…Unlike the last person who was here."
     menu:
         "What happened with them?":
-            p neutral "I'm not sure. At least not completely."
+            p neutral "I'm not sure. At least, not completely."
         "Could the last person hear you too?":
             p neutral "I don't think so, but that didn't stop me from doing my job to motivate them!"
         "Maybe they were a cat person.":
             p sad "I don't see how that's relevant."
-    #p "The last employee here seemed really happy and I thought I was helping."
-    #p "Cheering them on, words of encouragement, everything! Even though I don't think they could actually hear me."
+    p "The last employee seemed really happy here, and I thought I was helping."
+    p "Cheering him on, words of encouragement, everything! Even though I don't think they could actually hear me."
     menu:
-        "Well that's good, right?":
-            p neutral "I thought so. Whenever they looked at me they usually gave me a little smile!"
+        "Well, that's good, right?":
+            p neutral "I thought so. Whenever he looked at me, he usually gave me a little smile!"
         "I'm sure you did your best.":
             p confused "I could've tried harder, though! I wasn't enough."
         "Well you didn't have a flag then!":
             p dots "I guess that's true…"
-    p neutral "But eventually they started to ignore me. They were barely in here at all."
+    p neutral "But eventually he started to ignore me. He was barely in here at all."
     p neutral "I tried to yell as loud as I could to see if maybe I could actually be heard, but nothing."
-    p sigh "They didn't even so much as glance at me. It was like they were sleepwalking."
-    p neutral "Then, one day, they stopped coming here completely. I never saw them again."
+    p sigh "He didn't even so much as glance at me. It was like he was sleepwalking."
+    p neutral "Then, one day, he stopped coming here completely. I never saw him again."
     menu:
         "I'm sorry.":
-            p sweat "{i}Sniff{/i} …thanks."
+            p sweat "{i}Sniff{/i}…Thanks."
         "[[Pet the dog's head]":
-            "The Corgi Poster lets out a content, yet still sad sigh."
-    p  "It's all my fault! I should've tried harder to help them, but I wasn't enough."
+            "the Corgi Poster lets out a contented sigh, but still seems sad."
+    p  "It's all my fault! I should've tried harder to help him, but I wasn't enough."
     p neutral "So I really gotta help you so you don't leave too!"
     p neutral "You are staying, right?"
     menu:
@@ -161,7 +161,7 @@ label .beat3:
         p neutral "If you're just going to leave like the last person did, why even try?"
         pc "I might stay!"
     if p_b2_c1 == "a":
-        p neutral "I don't know. You said you'd stay but how do I do if you really won't leave like the last one?"
+        p neutral "I don't know. You said you'd stay but how do I know if you really won't leave like the last one?"
         pc "I really thing I'm going to stay!"
     p confused "Sure…"
     pc  "Well what if I have something to help cheer you up?"
@@ -176,14 +176,16 @@ label .beat3:
                 jump CheerYouUp
             "Uh...there, there. [[Pet the dogs head]" if AnotherPat == 0:
                 $ AnotherPat = 1
-                "The corgi sadly whines a bit. Pets are nice but clearly that's not the solution here."
+                "The Corgi whines sadly. Pets are nice, but clearly that's not the solution here."
                 jump CheerYouUp
             "What if I got you out of this room for a little bit?":
                 p sigh "I mean okay, I guess."
     pc "I need to do some cleaning and I really think you could motivate me to do my best!"
     p "Oh! I think I can help with that!"   
     call minigamestart_cleaning_corgi from _call_minigamestart_cleaning_corgi
-    scene office bg with fade:
+    scene fineart_tod
+    p "Cleanup complete! Gooooooo you!"
+    scene office bg:
         blur 2
     if CorgiPortraitStage == "base":
         show corgi base at truecenter:
@@ -215,13 +217,13 @@ label .beat3:
             p sparkles "That's exciting! Right at the front!"
         "The Ticket Counter.":
             $ p_b3_c1 = "Ticket Counter"
-            p sparkles "Ooh, that's' probably a busy area. That so exciting, I love that!"
+            p sparkles "Ooh, that's probably a busy area. That's so exciting, I love that!"
         "By the Restrooms.":
             $ p_b3_c1 = "Restroom"
             p sparkle "That should work! Wow, this is so exciting I feel like I could burst! And I hear that's a good place for bursting!"
     p neutral "But I feel like I'm still missing something. Can you help?"
     pc  "Again?"
-    p neutral "Yeah, just one more thing. The flag is great but if I'm going to be out amongst the people, I think I need a little more flair!"
+    p neutral "Yeah, just one more thing. The flag is great but if I'm going to be out among the people, I think I need a little more flair!"
     call minigamestart_corgi("2") from _call_minigamestart_corgi_1
     scene office bg:
         blur 5
@@ -239,15 +241,15 @@ label .beat3:
         zoom .9
     $ CorgiPortraitStage = "final"
     p sparkles "This is perfect, thank you! I'm rooting for you!"
-    p neutral "You mentioned the [p_b3_c1]–I think I'm ready to be moved out there!"
-    "Of course, they don't move, but it's the thought that counts: They generate the necessary good vibes."
+    "The corgi poster seems to indicate that it's doing something with the new pom-poms."
+    "Of course, they don't move; but it's the thought that counts: they generate the necessary good vibes."
     p laugh "Gooooo you!"
 
     $ beat_Poster += 1
     jump FreeRoam
 label .beat4:
     ####
-    p sigh "{i}Sigh{/i} Hi again."
+    p sigh "{i}Sigh{/i}…Hi, again."
     menu:
         "What's bothering you?":
             pass
@@ -257,8 +259,8 @@ label .beat4:
             pass
     p neutral "You found these things for me to help out more, but what if it's not enough? What if you still leave?"
     p neutral "What if this was all for nothing?"
-    p surprise "{i}GASP!{/i}"
-    p panic "What if EVERYONE leaves???"
+    "The Corgi gasps."
+    p panic "What if EVERYONE leaves?"
     $ OtherThanMe = 0
     label WhatIfEveryoneLeaves:
         menu:
@@ -268,7 +270,7 @@ label .beat4:
                 p question "It wasn't?"
             "Everyone? Do you know someone other than me?" if OtherThanMe == 0:
                 $ OtherThanMe = 1
-                p neutral "Well, you and Geoffrey. The creature in the chip bag."
+                p neutral "Well, you and Geoffrey, the creature in the chip bag."
                 jump WhatIfEveryoneLeaves
     pc "I don't know, maybe you motivated the last person here {i}so{/i} well they moved on to bigger and better things!"
     p neutral "Wait–"
@@ -288,7 +290,7 @@ label .beat4:
             "The corgi smiles proudly."
         "Go you!":
             p happy "Yay! Go me!"
-        "[[Proudly pet the corgis head]":
+        "[[Proudly pet the Corgi's head]":
             "The corgi squeaks happily as you pat its head. This time the pets are enough."
     p bulb "You know what? I think I'm ready to move out of this room."
     p neutral "I love helping you, but I think I'm ready to support more people with my cheering!"
@@ -300,13 +302,13 @@ label .beat4:
     p sparkle "Good! I know I am, I just wanted you to confirm it! I've helped you be more confident in yourself too, you know!"
     if p_b3_c1 == "Museum Entrance":
         p neutral "Now I'm ready to motivate the people as they walk into this place!"
-        p surprise "TO THE ENTRANCE!!!"
+        p surprise "TO THE ENTRANCE!"
     if p_b3_c1 == "Ticket Counter":
         p neutral "Now I'm ready to motivate the people as they buy their tickets to this place!"
-        p surprise "TO THE TICKET COUNTER!!!"
+        p surprise "TO THE TICKET COUNTER!"
     if p_b3_c1 == "Restroom":
-        p neutral "Now I'm ready to motivate the people as they do their…uh…business."
-        p surprise "TO THE RESTROOMS!!!"
+        p neutral "Now I'm ready to motivate the people as they do their…uh…business!"
+        p surprise "TO THE RESTROOMS!"
     "You take the poster out to the [p_b3_c1]"
     if p_b3_c1 == "Museum Entrance":
         scene foyer bg:
@@ -316,7 +318,7 @@ label .beat4:
             yoffset -125
             zoom .9
         p happy "I love it here! Ooh I can see outside too!"
-        p neutral "Now do your best! I'll be seeing you everyday first thing as you walk in!"
+        p neutral "Now do your best! I'll be seeing you every day, first thing as you walk in!"
     if p_b3_c1 == "Ticket Counter":
         scene foyer bg:
             blur 5
@@ -336,7 +338,7 @@ label .beat4:
         p happy "Oh, this is a fun spot! That's an interesting smell, what is that?"
         p neutral "No matter! People will be coming in and out of here and I'm sure they'll really need the motivation to get their business done!"
         p neutral "Now do your best! I'm sure I'll see you around here too. I see the things you eat when you're not doing much."
-    p neutral "Haha, I can say to so many people now! Do your best! You do your best too! Yes, especially you over there!"
+    p neutral "Haha, I can say it to so many people now! Do your best! You do your best too! Yes, especially you over there!"
     menu:
         "Thank you for pushing me too, you really helped!":
             pass
@@ -344,7 +346,7 @@ label .beat4:
             pass
         "I'm glad you're so happy. Now {i}you{/i} do your best!":
             pass
-    "Even though the poster still is static and unmoving, you feel like its smiler has somehow, someway, gotten bigger."
+    "Even though the poster is still static and unmoving, you feel like its smile has somehow, some way, gotten bigger."
     p happy "Hooray!"
     $ StoryCompletedTotal += 1
     $ beat_Poster += 1
@@ -386,6 +388,6 @@ label .Outcome:
                 yoffset -125
                 xoffset -115
                 zoom .8
-        "The corgi poster sat lonely in the office, wondering why there words of encouragement never reached [pc_name]."
-        "Were they just not helpful enough? Could they really not be heard. I guess they'll never know."
+        "The Corgi Poster sat lonely in the office, wondering why their words of encouragement never reached [pc_name]."
+        "Were they just not helpful enough? Could they really not be heard? They'll never know."
     return

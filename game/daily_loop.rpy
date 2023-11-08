@@ -13,6 +13,11 @@ default CleanFineArt = 0
 default CleanFoyer = 0
 default CleanMixedMedia = 0
 default CleaningRoom = "NONE"
+transform AlphaIn:
+    xalign .5
+    yalign .5
+    alpha 0.0
+    ease .5 alpha 1.0
 
 #the different times of day are just recolored versions of the same background
 image museum_morning:
@@ -66,11 +71,23 @@ image day_countdown = ConditionSwitch(
 #fineart
 #mixedmedia
 #office - this will just be a tint matrix
+default AdminClass = 0
 
 label DayStart:
     scene black with fade
-    show day_countdown at truecenter with fade
-    $ renpy.pause(3.0)
+    if DayNumber == 1:
+        show day countdown base at truecenter with fade
+    elif DayNumber == 2:
+        show day countdown 1 at truecenter with fade
+    elif DayNumber == 3:
+        show day countdown 2 at truecenter with fade
+    elif DayNumber == 4:
+        show day countdown 3 at truecenter with fade
+    elif DayNumber == 5:
+        show day countdown 4 at truecenter with fade
+    $ renpy.pause(1.0)
+    show day_countdown at AlphaIn
+    $ renpy.pause(4.5)
     #"Day [DayNumber]"
     $ actions = 4
     show screen gameUI
@@ -90,11 +107,12 @@ label DayStart:
         stop music fadeout 0.3
         hide admin
         "The Admin's right, this place is a mess."
+        "There's a {i}lot{/i} of museum to clean."
     elif DayNumber == 2:
         show admin at AdminPortrait
         play music "music/Admin_ZY_02.wav" volume 0.6
         ad "[pc_name], hi! I actually went outside yesterday. Did you know grass and trees are, like, alive? Anyway, how are you?"
-        ad "But I'm sure you've got LOTS to do, so I'll let you go."
+        ad "But I'm sure you've got LOTS more cleaning to do, so I'll let you go."
         play sound "sfx/AdminHangup.wav"
         stop music fadeout 0.3
         hide admin
@@ -110,7 +128,7 @@ label DayStart:
                 pass
         ad "Great to hear!"
         "You doubt the Admin heard you at all."
-        ad "Let's put a pin in this, talk tomorrow!"
+        ad "Let's put a pin in this, I'll leave you to clean, talk tomorrow!"
         play sound "sfx/AdminHangup.wav"
         stop music fadeout 0.3
         hide admin
@@ -152,6 +170,7 @@ label DayStart:
             "You're a crucial part of the team. The museum needs you.":
                 ad "Aw, thanks [pc_name]. You're the best! Another call coming in, talk soon!"
             "Have you ever wanted to, uh, take a class? Or something?":
+                $ AdminClass == 1
                 ad "A class? A class! Yes, I could... I guess I could do anything! Thanks, [pc_name]. Another call, please hold!"
         play sound "sfx/AdminHangup.wav"
         stop music fadeout 0.3
@@ -163,21 +182,25 @@ label DayStart:
 
     menu:
         "[[Clean the Antiquities wing]" if CleanAntiquities == 0:
+            "Good idea. Wait much longer and the trash here would qualify as antique."
             play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
             $ CleanAntiquities = 1
             $ CleaningRoom =  "antiquities"
             jump DailyCleaning
         "[[Clean the Fine Art wing]" if CleanFineArt == 0:
+            "Even the finest art looks cheap next to discarded chip bags."
             play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
             $ CleanFineArt = 1
             $ CleaningRoom =  "fineart"
             jump DailyCleaning
         "[[Clean the Foyer]" if CleanFoyer == 0:
+            "First impressions are important. Probably best if the Foyer wasn't a pigsty."
             play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
             $ CleanFoyer = 1
             $ CleaningRoom =  "foyer"
             jump DailyCleaning
         "[[Clean the Mixed Media wing]" if CleanMixedMedia == 0:
+            "Mixed Media has some avant-garde pieces, but the trash is a bridge too far."
             play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
             $ CleanMixedMedia = 1
             $ CleaningRoom =  "mixedmedia"
@@ -185,9 +208,24 @@ label DayStart:
 
 label DailyCleaning:
     play music "music/Vending_ZV_01.wav" fadein 0.5 volume 0.2
-    scene foyer_tod
+    scene foyer_tod 
     call minigamestart_cleaning(CleaningRoom) from _call_minigamestart_cleaning
-    
+    if CleaningRoom == "antiquities":
+        scene antiquities_tod
+        "Nice work. The expired snacks weren't {i}quite{/i} old enough to be considered artifacts."
+        scene antiquities_tod
+    if CleaningRoom == "fineart":
+        scene fineart_tod
+        "Not bad, the Fine Art wing certainly looks finer."
+        scene fineart_tod
+    if CleaningRoom == "foyer":
+        scene foyer_tod
+        "At least now guests won't trip coming up the steps."
+        scene foyer_tod
+    if CleaningRoom == "mixedmedia":
+        scene mixedmedia_tod
+        "That's better. Now, the only mixed media is on the walls."
+        scene mixedmedia_tod
     #meta "Now you're free to roam around the museum"
     jump FreeRoam_FromCleaning
 
@@ -206,6 +244,7 @@ label FreeRoam_FromCleaning:
 #pull up map
 #
 label OutOfActions:
+    scene foyer_tod with fade
     stop music fadeout 1.0
     play sfx2 "sfx/InteriorSound.wav" volume 0.4 fadein 0.5
     play music "music/Nighthawks_ZU_01.wav" fadein 0.4 volume 0.4

@@ -5,8 +5,10 @@
 
 #when character names start with the same letter, all are given 2-letter abbreviations
 #player character
-define pc = Character("[pc_name]")
-define config.rollback_enabled = False
+default pc_color = "#fcba03"   
+#define n = Character("name", who_prefix="{color=[namecol]}", who_suffix="{/color}")
+define pc = Character("[pc_name]", who_prefix="{color=[pc_color]}", who_suffix="{/color}")
+define config.rollback_enabled = True
 
 #main characters
 define hm = Character("Hiring Manager", color="#ffd65c")
@@ -481,7 +483,7 @@ layeredimage mlayered:
             "confused"
 image side mlayered = LayeredImageProxy("mlayered", Transform(xoffset=0, yoffset=0))
 
-define p = Character("Corgi Poster", image="playered", color="#cb7b39")
+define p = Character("Corgi Poster", image="playered", color="#f2a571")
 layeredimage playered:
     always:
         "side_poster"
@@ -541,7 +543,7 @@ image side playered = LayeredImageProxy("playered", Transform(xoffset=0, yoffset
 define st = Character("St. Catherine", image="stlayered", color="#f1d264")
 layeredimage stlayered:
     always:
-        "side_saintcatherine"
+        ConditionSwitch ("SaintHair == 0", "side_saintcatherine", "SaintHair == 1", "side_saintcatherine_b")
     group emotion:
         attribute neutral default:
             "neutral"
@@ -1110,7 +1112,7 @@ layeredimage n4layered:
             "confused"
 image side n4layered = LayeredImageProxy("n4layered", Transform(xoffset=0, yoffset=0))
 
-define v = Character("Vending Machine", image="vlayered")
+define v = Character("Vending Machine", image="vlayered", color="#e78d09")
 layeredimage vlayered:
     always:
         "side_vendingmachine"
@@ -1167,6 +1169,8 @@ layeredimage vlayered:
             "confused"
 image side vlayered = LayeredImageProxy("vlayered", Transform(xoffset=0, yoffset=0))
 
+image SaveOverlay = "slot_idle_background"
+
 define sue = Character("Sue")
 define t = Character("Theodore")
 
@@ -1208,6 +1212,7 @@ default d_Total = 0
 
 #function to return disposition label from value - deprecated, to be removed
 init python:
+    
     renpy.music.register_channel("sfx2", "music")
     class d_LabelFromValue():
 
@@ -1243,7 +1248,8 @@ label start(show_credits=0):
         $ renpy.pause(30.0)
         return
     $ StoryCompletedTotal = 0
-    scene museum bg1
+    scene intro bg
+    #pc "TestLine"
     call pronounselection from _call_pronounselection
     menu:
         "Are you okay with a little (artistic) nudity?"
@@ -1253,6 +1259,24 @@ label start(show_credits=0):
         "I don't mind nudity.":
             $ DavidsNude = 1
             pass
+    menu:
+        "And what's your favorite color?"
+        "{color=#70d2c2}Blue{/color}":
+            $ pc_color = "#70d2c2"
+            pass
+        "{color=#81c195}Green{/color}":
+            $ pc_color = "#81c195"
+            pass
+        "{color=#fdde8f}Yellow{/color}":
+            $ pc_color = "#fdde8f"
+            pass
+        "{color=#f2948a}Red{/color}":
+            $ pc_color = "#f2948a"
+            pass
+        "{color=#f5dae3}Pink{/color}":
+            $ pc_color = "#f5dae3"
+            pass
+    #pc "This is my color"
     #menu:
     #    "Skip to beats":
     #        jump FreeRoam

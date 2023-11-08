@@ -14,9 +14,21 @@ default SSFakeCleanCount = 0
 default SSMerged = 0
 default SSTimeout = 0
 
+transform SSShake:
+    zoom .75
+    yoffset -100
+    xalign 0.5
+    yalign 0.5
+    ease .25 zoom .85 yoffset -50
+    ease 0.05 xoffset 20
+    ease 0.05 xoffset -20
+    ease 0.05 xoffset 20
+    ease 0.05 xoffset -20
+    ease 0.05 xoffset 0
+
 image ssportrait = ConditionSwitch(
     "SoupOutcome == 'Remain'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png",
-    "SoupOutcome == 'Erase'", "images/Characters/SoupAndSunflowers/sunflowersonly.jpg",
+    "SoupOutcome == 'Erase'", "images/Characters/SoupAndSunflowers/sunflowersonly.png",
     "SoupOutcome == 'Detach'", "images/Characters/SoupAndSunflowers/soupandsunflowersdetached.png",
     "SoupOutcome == 'NONE'", "images/Characters/SoupAndSunflowers/soupandsunflowers.png")
 
@@ -67,7 +79,7 @@ label .use_action:
 
 label .beat1:
     su neutral "Hey, psst, [pc_name], right? Pleasure to meet you! I'm Sunflowers."
-    su neutral "Listen… I've got a stain on my frame. You can see it, can't you? "
+    su neutral "Listen…I've got a stain on my frame. You can see it, can't you? "
     su neutral "Would you mind helping me out?"
     menu:
         "You can count on me, flower guy!":
@@ -112,7 +124,7 @@ label .beat1:
     so neutral "I need to stay as a reminder. You can't wipe away the coming climate apocalypse."
     menu:
         "And what's Sunflowers got to do with any of that?":
-            su neutral "Nothing at all. I'm just an unfortunate casualty in Soup's eco war."
+            su neutral "Nothing at all. I'm just an unfortunate casualty in Soup's ecowar."
             so neutral "You {i}could{/i} be an ally instead. And so could you, [pc_name]."
             menu:
                 "I'm not sure pouring soup on myself will help.":
@@ -158,7 +170,7 @@ label .beat1:
                     su neutral "Maybe they should have tried pouring soup on the problem…"
                     so neutral "I can recognize {i}your{/i} sarcasm, Sunflowers. And I don't care for it."
                     su neutral "I'm just making a point! Staining things with soup isn't the solution to an environmental crisis."
-                    so panic "It's… it's all part of the process!"
+                    so panic "It's…it's all part of the process!"
         "I can't wipe away metaphors, but I can wipe away soup stains no problem.":
             so neutral "Look, you can be an ally in the fight for climate justice, or you can be wilfully ignorant."
             su neutral "There's another option: they care about art!"
@@ -205,22 +217,22 @@ label .beat1:
             so angry "You have delusions of adequacy!"
     "There's no getting through to them right now. Better let them get it out of their system before you try again."
     menu:
-        "[[Slip away while they're distracted.]":
-            "Success! They never noticed a thing."
-        "[[Wait awkwardly for a break in the argument so you can say goodbye.]":
+        "[[Slip away while they're distracted]":
+            "You sneakily make your escape."
+        "[[Wait awkwardly for a break in the argument so you can say goodbye]":
             "The moment never comes. They just {i}keep going{/i}. Your eventual goodbye goes unheard, but it was very polite."
-        "[[Storm off hoping they'll at least feel bad about making you leave.]":
+        "[[Storm off hoping they'll at least feel bad about making you leave]":
             "They don't even notice. How rude!"
-    "Honestly, though, it didn't matter how you chose to leave. They're in their own world. Hopefully you catch them in a better mood next time."
+    "Honestly, it didn't matter how you chose to leave. They're in their own world. Hopefully you catch them in a better mood next time."
     $ beat_SoupAndSunflowers += 1
     jump FreeRoam
 label .beat2:
     "As you approach Soup and Sunflowers, you're surprised you haven't heard their bickering voices."
-    "But as soon as you get close…"
+    "But, as soon as you get close…"
     if Day1Side == "Both":
         so neutral "Well, well, well, if it isn't the attempted murderer. Going to try to erase me again?"
         su neutral "If you're not here to clean off this pesky stain, you might as well keep walking."
-        so neutral "You {i}better{/i} keep walking if you care about the planet. Unlike someone…"
+        so neutral "You'd {i}better{/i} keep walking if you care about the planet. Unlike someone…"
         su sigh "Oh, forgive me for wanting the curator of this art museum to care about art, too."
         so angry "You just want to silence my {i}message{/i}!"
     if Day1Side == "Sunflowers":
@@ -234,7 +246,7 @@ label .beat2:
         so neutral "Don't be bitter just because [pc_name] cares about the planet."
         su neutral "Oh, forgive me for wanting the curator of this art museum to care about art, too."
         so angry "You just want to silence my {i}message{/i}!"
-    "And there they go. You better cut in."
+    "And there they go. You'd better cut in."
     menu:
         "One at a time! I'll hear Sunflowers out now and Soup later on.":
             "Soup and Sunflowers finally stop arguing, though they're still grumbling."
@@ -262,7 +274,7 @@ label .beat3:
             "You return to Soup and Sunflowers. As promised, Soup keeps their word to remain silent while you talk to Sunflowers."
         #if SoloChoice == "Sunflowers":
         #    "You return to Soup and Sunflowers. Soup has surprisingly kept their word to remain silent while you talk to Sunflowers."
-        "With no one speaking, things are starting to feel a bit awkward."
+        "With no one speaking, things start to feel a bit awkward."
         menu:
             "It's your turn to talk, Sunflowers.":
                 pass
@@ -278,7 +290,7 @@ label .beat3:
         menu:
             "First I want to know more about you.":
                 su neutral "Kind of you to ask! Let's see…"
-                su neutral "I was painted in 1888 by the amazing Vincent van Gogh. But of course you already knew that."
+                su neutral "I was painted in 1888 by the amazing Vincent van Gogh. But of course, you already knew that."
                 menu:
                     "Of course.":
                         pass
@@ -350,7 +362,7 @@ label .beat3:
                     pass
                 "Be patient. I'll get to you when I get to you.":
                     pass
-            so neutral "You better!"
+            so neutral "You'd better!"
             "You say goodbye for now. Soup can wait a bit longer."
         if beat_SoupAndSunflowers == 3:
             so neutral "All right, you've heard from both of us. You've got a big decision to make, so don't rush it."
@@ -362,13 +374,13 @@ label .beat3:
                     pass
                 "I know you will. Because you can't move.":
                     pass
-            so neutral "I know you'll make the right choice!"
-            su sweat "Oh, stop sucking up."
+            su neutral "I know you'll make the right choice!"
+            so sweat "Oh, stop sucking up."
             so neutral "No, no, it's only the fate of the environment at stake. Don't worry about it."
             su sigh "Oh, brother."
             so neutral "Har har."
             su neutral "Not the most creative joke, but good effort!"
-            "You leave Soup and Sunflowers for now. They chatter amongst themselves, but with less harshness than before."
+            "You leave Soup and Sunflowers for now. They chatter among themselves, but with less harshness than before."
             "You've influenced their opinions on how to deal with the impasse. Now it's up to you to make the call. Hopefully they respect your decision!"
         $ beat_SoupAndSunflowers += 1
         jump FreeRoam
@@ -382,10 +394,10 @@ label .beat3:
         menu:
             "Ready to talk about your feelings, Soup?":
                 so neutral "I'm ready to talk about {i}facts{/i}, [pc_name]."
-            "If only I had a therapist couch. One that's comfortable for paintings.":
+            "If only I had a therapist's couch. One that's comfortable for paintings.":
                 so neutral "Great. I could talk about how I use dumb jokes to protect myself from having to reckon with the existential crisis of global warming."
                 so confused "Oh, wait. That's you. You're the one doing that."
-            "I know you've got things to say. Let it all out, baby. I'm here.":
+            "I know you've got things to say. Let it all out. I'm here.":
                 so dots "Don't make this weird, [pc_name]."
         so neutral "Frankly, I'm excited to speak my truth without Sunflowers constantly interrupting me."
         so neutral "I don't even know where to start…"
@@ -463,10 +475,10 @@ label .beat3:
                 so neutral "It's not as though I {i}want{/i} to be stuck with Sunflowers. But I don't think my message is as strong alone."
                 so neutral "It's not a protest if no one is uncomfortable."
                 so neutral "That said, just because I aim to discomfort doesn't mean I want to make Sunflowers miserable."
-                so neutral "Maybe you're right that my legacy can still be a strong message without the constant need for vandalism. "
+                so neutral "Maybe you're right that my legacy can still be a strong message without the vandalism. "
                 so neutral "Hm. Better than getting erased, I guess. So… I'll think about it."
                 $ SoupWant = "Detach"
-        so neutral "Anyway, I guess I've said what I needed to say. Appreciate you hearing me out."
+        so neutral "Anyway, I guess I've said what I needed to say. I appreciate you hearing me out."
         if beat_SoupAndSunflowers == 2:
             su neutral "And remember, it's my turn next! I look forward to it."
             menu:
@@ -479,10 +491,10 @@ label .beat3:
             su neutral "Right! Until then!"
             "You leave Soup and Sunflowers behind for now. Hopefully they'll keep the peace until you return."
         if beat_SoupAndSunflowers == 3:
-            su neutral "Well, you've heard from both of us now. Only thing left is to decide what to do about the stain…"
+            su neutral "Well, you've heard from both of us now. The only thing left is to decide what to do about the stain…"
             so dots "The {i}stain{/i} can hear you, you know."
             su neutral "Yes. I know. "
-            so neutral "Hrmph. [pc_name], it'll have to be your decision. Make the right one, yeah?"
+            so neutral "Hmph. [pc_name], it'll have to be your decision. Make the right one, yeah? We'll be waiting right here."
             menu:
                 "Understood. Until then.":
                     pass
@@ -496,7 +508,7 @@ label .beat3:
             su sigh "Oh, brother."
             so neutral "Har har."
             su neutral "Not the most creative joke, but good effort!"
-            "You leave Soup and Sunflowers for now. They chatter amongst themselves, but with less harshness than before."
+            "You leave Soup and Sunflowers for now. They chatter among themselves, but with less harshness than before."
             "You've influenced their opinions on how to deal with the impasse. Now it's up to you to make the call. Hopefully they respect your decision!"
         $ beat_SoupAndSunflowers += 1
         jump FreeRoam
@@ -557,39 +569,41 @@ label .beat4:
         su neutral "Not “we.”"
         so neutral "No. Not “we”…"
         #SHAKE
+        hide ssportrait
+        show ssportrait at SSShake
         ss neutral "I."
         ss neutral "I am Soup & Sunflowers. A work of art all my own. "
         menu:
             "Whoa. What just happened?":
-                ss sparkles "You were right, mate. I'm something new, now!"
+                ss sparkles "You were right. I'm something new, now!"
 
             "Are you still two beings?":
-                ss sparkles "Naw, mate. Only one work of art here!"
+                ss sparkles "Nah, only one work of art here!"
 
             "Damn, I wasn't sure that would work…":
-                ss sparkles "It worked beautifully, mate. I'm a whole new me!"
+                ss sparkles "It worked beautifully. I'm a whole new me!"
         ss neutral "I'm not a striking stain {i}and{/i} a valuable painting…"
         ss neutral "I'm a striking stain {i}on{/i} a valuable painting, and I damn well know it. My existence is purposeful discord."
         ss sparkles "You and me, [pc_name], we're gonna save the world!"
         "The positive vibes are radiating from Soup & Sunflowers."
         menu:
             "I'm glad you know who you are now.":
-                ss happy "Me too, mate. Why be kind and passive like a flower, or rude and aggressive like a stain, when I can be kind and aggressive like a LEADER?"
+                ss happy "Me too! Why be kind and passive like a flower, or rude and aggressive like a stain, when I can be kind and aggressive like a LEADER?"
                 ss neutral "That's the real way to win folks over. "
-            "Hell yeah we are!":
+            "Hell yeah, we are!":
                 ss surprise "Fuck yes! This museum is going to make a difference. I can feel it!"
             "Is it rude if I ask about your “before” selves?":
-                ss neutral "All good, mate. They're part of me still. They make up who I am now. But rather than speaking at odds, they're speaking in harmony."
+                ss neutral "All good! They're part of me still. They make up who I am now. But rather than speaking at odds, they're speaking in harmony."
                 ss neutral "I was always mixed media. But now I embrace it."
         ss neutral "You gotta know the rules to break 'em. And I break 'em well."
         ss bulb "When you display me, I won't be at odds with myself. I'll be a singular force. A pro-environment message with legitimacy and purpose."
-        ss neutral "Thanks for helping me figure my shit out, [pc_name]. You're a star, mate."
+        ss neutral "Thanks for helping me figure my shit out, [pc_name]. You're a star!"
         menu:
             "My pleasure. I'm starting to think I might be good at this job!":
                 ss happy "Who knew, eh? Ha!"
             "Sometimes I get it right. Nobody's more surprised than me.":
                 ss happy "Take the win, big star. You earned it."
-            "Damn right I am!":
+            "Damn right, I am!":
                 ss happy "Love it, love it!"
         ss surprise "Now get back out there and curate the FUCK out of this museum! Woo! Planet Earth, let's gooooo!"
         "As you take your leave of the new and improved Soup & Sunflowers, you're full of energy and ready to take on the world."
@@ -632,7 +646,7 @@ label .beat4:
                     so neutral "Could be better. Could definitely be worse. Look after yourself, [pc_name]. And the planet, too."
                 su sparkles "I look forward to continuing to work with you! Let's make this place the best it can be. Good luck, [pc_name]!"
                 "You say goodbye, feeling like you've made the vibes here much better."
-            "Can't believe I managed to make both of you happy!" if ((SoupWant == SunflowersWant) and (SoupWant == SoupOutcome)):
+            "I can't believe I managed to make both of you happy!" if ((SoupWant == SunflowersWant) and (SoupWant == SoupOutcome)):
                 if SoupOutcome != "Erase":
                     so neutral "Could be better. Could definitely be worse. Look after yourself, [pc_name]. And the planet, too."
                 su sparkles "I look forward to continuing to work with you! Let's make this place the best it can be. Good luck, [pc_name]!"
@@ -683,7 +697,7 @@ label .Outcome:
     if beat_SoupAndSunflowers == 5:
         if SSMerged == 1:
             "In a bold choice from the curator, Van Gogh's soup-covered {i}Fifteen Sunflowers in a Vase{/i} is on display with a new name: {i}Soup & Sunflowers{/i}. "
-            "Not only is the stain present, but it now feels one with the painting. Was it given a protective coating? Or was it recreated with paint oil? "
+            "Not only is the stain present, but it now feels one with the painting. Was it given a protective coating? Or was it recreated with oil paints?"
             "Whatever the curator did, the piece feels bold and contemporary. It's in-your-face, yet inspiring and without shame."
             "While the curator of course didn't paint {i}Sunflowers{/i}, nor did they toss the soup, the presentation of this bold statement is its own artistic choice."
             "Vandalism has become art. And curator has become artist. How magnificent!"

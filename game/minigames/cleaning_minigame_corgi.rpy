@@ -313,7 +313,7 @@ label minigamestart_cleaning_corgi(gameimage="notdefault"):
         corgi_barks.append("Impressive!")
         corgi_barks.append("No holding back!")
         corgi_barks.append("Splendid job!")
-        corgi_barks.append("Yeah, lets go!")
+        corgi_barks.append("Yeah, let's go!")
         diff_items = []
         diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 383, 65, 270, 150))
         diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 767, 112, 295, 186))

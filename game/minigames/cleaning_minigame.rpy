@@ -228,9 +228,14 @@ label TestPosterLines():
     p "This is a test line."
     return
 
-
+transform CleaningAlphaIn:
+    xalign 0.5
+    yalign 0.5
+    alpha 0.0
+    ease 1.0 alpha 1.0
 
 label minigamestart_cleaning(gameimage="notdefault"):
+    #scene black with fade
     if gameimage == "antiquities":
         python:
             diff_items = []
@@ -306,7 +311,7 @@ label minigamestart_cleaning(gameimage="notdefault"):
         
         difference_image.randomizeItems(7)
         #TempCleaningBackground = difference_image
-        ui.add(difference_image)
+        ui.add(At(difference_image, CleaningAlphaIn))
         #ui.textbutton("Give Up", clicked=ui.returns(difference_image.the_score), xalign=0.98, yalign=0.1)
         winner = ui.interact(suppress_overlay=False, suppress_underlay=False)
         winner = difference_image.the_score

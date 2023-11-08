@@ -16,15 +16,19 @@ image TimeOfDayOverlay = ConditionSwitch(
 image MapOverlay = "UI/Map/map bg.png"
 
 label call_mapUI:
+    #scene black with fade
     $ TokenHovered = "NONE"
     call screen MapUI
     #show screen gameUI
 
+image SaintTokenSwitch = ConditionSwitch(
+    "SaintHair == 0", "Characters/SideImages/side_saintcatherine.png",
+    "SaintHair == 1", "Characters/SideImages/side_saintcatherine_b.png")
 image SaintTimeoutToken:
-    "Characters/SideImages/side_saintcatherine.png"
+    "SaintTokenSwitch"
     matrixcolor SaturationMatrix(0)
 image SaintToken = ConditionSwitch(
-    "SaintTimeout == 0", "Characters/SideImages/side_saintcatherine.png",
+    "SaintTimeout == 0", "SaintTokenSwitch",
     "SaintTimeout >= 1", "SaintTimeoutToken")
 
 image GilgameshTimeoutToken:
@@ -89,6 +93,11 @@ transform PipUnhover:
     ease .1 alpha 0.0
 
 screen MapUI:
+# window at AlphaIn:
+#     xminimum 1920
+#     xmaximum 1920
+#     yminimum 1080
+#     ymaximum 1080
     #add "newmap/museum_map.jpg"
     #textbutton "Stats":
     #    xalign 1.0
@@ -187,6 +196,7 @@ screen MapUI:
             zoom .4
         add "TimeOfDayOverlay":
             zoom .4
+            #yalign 1
     #textbutton "Stats":
     #    xalign 1.0
     #    yalign 0.0

@@ -66,26 +66,30 @@ label .beat1:
     "Out of the corner of your eye, you spot a painting–the subject: indistinct figures at a moody midnight diner–which was definitely NOT speaking during the day."
     menu:
         "Who are you?":
+            "When you speak up, the painting suddenly falls silent. For a second, it's as if you imagined the sound of furtive muttering emanating from its frame."
+            "But then–the second you turn back around to leave–the painting starts whispering again."
             pass
         "Another talking painting to keep track of, seriously?":
+            "When you speak up, the painting suddenly falls silent. For a second, it's as if you imagined the sound of furtive muttering emanating from its frame."
+            "But then–the second you turn back around to leave–the painting starts whispering again."
             pass
-    "When you speak up, the painting suddenly falls silent. For a second, it's as if you imagined the sound of furtive muttering emanating from its frame."
-    "But then–the second you turn back around to leave–the painting starts whispering again."
-    n3 sad "Anyways…"
+        "[[Stay silent]":
+            "You stay silent, and try to listen it to the sound. It almost seems like the painting is whispering–to itself?"
+            "What's clear is they aren't talking to you."
+            pass
+    n3 sad "Anyway…"
     #"(Stay silent.)"
-    "You stay silent, and try to listen it to the sound. It almost seems like the painting is whispering–to itself?"
-    "What clear is they aren't talking to you."
     menu:
         "[[Stay and eavesdrop]":
             pass
         "[[Go home]":
             return
     $ ListenCount += 1
-    "After the wild first day you've had, it's not like you're going to be able to fall asleep soon anyways."
+    "After the wild first day you've had, it's not like you're going to be able to fall asleep soon anyway."
     "You strain your ears to listen in to the soft murmuring. As the voices of the Nighthawks become clearer, you realize–"
-    n4 neutral "I think we're ALL surprised [they] came back. Anyone hear how [their] first day went? Did they break everything completely?"
+    n4 neutral "I think we're ALL surprised [pc_name] came back. Anyone hear how [their] first day went? Did [they] break everything completely?"
     "–they're not talking to you, but they are talking ABOUT you."
-    n1 neutral "Hm…I don't know if I'd say broke EVERYTHING, exactly. Here's what I heard went down…"
+    n1 neutral "Hm…I don't know if I'd say [they] broke EVERYTHING, exactly. Here's what I heard went down…"
     call conv_Nighthawks.Arnolfini from _call_conv_Nighthawks_Arnolfini_1
     call conv_Nighthawks.Poster from _call_conv_Nighthawks_Poster_1
     call conv_Nighthawks.MonaLisa from _call_conv_Nighthawks_MonaLisa_1 
@@ -97,9 +101,9 @@ label .beat1:
     n3 angry "Eh, I wouldn't give them too much credit just yet. It's not like they can solve EVERYONE's problems in four days. It would be folly to try."
     n4 sad "They showed up today, but who's to say they won't no-show tomorrow?"
     n2 sparkle "I don't know. I've got a feeling…"
-    "As the Nighthawks fall silent, an uncertain note hanging in the air, you suddenly feel the tiredness set in."
+    "As the Nighthawks fall silent, an uncertain note hangs in the air, you suddenly feel the tiredness set in."
     "What a long first day it's been. "
-    "Anything to do with the painting gossiping about you at midnight will have to wait til tomorrow."
+    "Anything to do with the painting gossiping about you at midnight will have to wait till tomorrow."
     return
 
 label .beat2:
@@ -130,7 +134,7 @@ label .beat2:
     "At that, the Nighthawks abruptly fall silent. You feel eyes glance over towards where you're skulking–before you can think better of it, you hastily withdraw."
     pc  "Well, that was…odd."
     "As you make your way out of the museum, you can't help but wonder: what's this \"rule\" they're talking about?"
-    pc  "{i}Yawn{/i}…"
+    pc  "{i}Yawn…{/i}"
     "Perhaps a better question for the morning. "
     return
 
@@ -143,7 +147,7 @@ label .beat3:
             pass
         "[[Go home]":
             return
-    n2 confused "…still think we should try and them to [them], not just ABOUT [them]. "
+    n2 confused "…still think we should try and talk to [them], not just ABOUT [them]. "
     n1 neutral "I'm starting to agree."
     n3 neutral "You KNOW why we shouldn't. We're observers. Anything else, and we'll just get….we all know why the rule is in place. Right? "
     n3 questions "Right?"
@@ -163,13 +167,14 @@ label .beat3:
     n2 neutral "…Do we?"
     "The Nighthawks fall silent. This time, you're sure there are eyes on you before you move away."
     "You're not sure what to make of it all. There's an odd tension in the air as you leave the museum on the third night. "
+    return
 
 label .beat4:
     "Tonight, the Nighthawks' whispering has taken on a different quality. "
     if ListenCount >= 3:
-        "You assume it's to do with the grand gala looming on the horizon."
-    else:
         "You're not sure if it has to do with the looming gala or the topic they've been dancing around for the past three nights."
+    else:
+        "You assume it's to do with the Grand Gala looming on the horizon."
     menu:
         "[[Stay and eavesdrop]":
             pass
@@ -184,7 +189,7 @@ label .beat4:
     call conv_Nighthawks.SaintCatherine from _call_conv_Nighthawks_SaintCatherine_4
     call conv_Nighthawks.SoupAndSunflowers from _call_conv_Nighthawks_SoupAndSunflowers_4
     n1 neutral "That's all that was accomplished today."
-    n2 question "Will it be enough for the grand gala, do you think?"
+    n2 question "Will it be enough for the Grand Gala, do you think? "
     if ListenCount < 3:
         n3 neutral "I don't know. That's a question for morningl    arks, and we're–"
         n4 neutral "Yes, yes. Pass the coffee, won't you?"
@@ -192,7 +197,7 @@ label .beat4:
         "For a second you wonder: was there something you missed with the Nighthawks? Something that passed in the dead of night, unheard?"
         "For a second you wonder what it could be, but intrusive thoughts of tomorrow quickly overtake you."
         "Tonight doesn't matter in the grand scheme of things. What matters is what morning brings; what stands, proud and terrifying, in the stark light of day."
-        "The grand gala awaits."
+        "The Grand Gala awaits."
     elif ListenCount >= 3:
         n3 neutral "I don't know…why don't we ask [pc_name]?"
         menu:
@@ -201,7 +206,7 @@ label .beat4:
             "You're actually talking to me? ":
                 n3 laugh "Yes, we are, [pc_name]. It's rare we do this, so you best enjoy our company!"
         n1 sparkle "Did you know, [pc_name]–our creator once said he wanted nothing more than to paint sunlight on the side of a house. And wouldn't that be wonderful?"
-        n4 neutral "But that's not what he painted for us. We're the lonely city; we're the diner open at midnight."
+        n4 neutral "But that's not what he painted for us. We're the empty city; we're the only diner open at midnight."
         n4 neutral "We are alone. "
         n2 neutral "Nobody listens to us. Nobody even tries anymore. Except you. "
         pc "I thought YOU had a rule not to talk to people. "
@@ -218,13 +223,13 @@ label .Arnolfini:
         $ b1_ArLines = 1
         n1 "The Arnolfinis are fighting. Again."
         n2 "You'd think they'd eventually run out of things to argue about, but no…honestly, I'm impressed by their mutual devotion to spite."
-        n3 "Someone should get them marital counseling. Wait–are they even–"
+        n3 "Someone should get them marital counseling. Wait…Are they even–"
         n4 "Honestly, who even knows? But enough about that–what else is going on?"
     if (beat_Arnolfini == 3) and (b2_ArLines == 0):
         $ b2_ArLines = 1
-        n1 "The Arnolfinis have implored our dear curator to help them sort out their differences. And [they] ARE helping–one of them, at least."
+        n1 "The Arnolfinis have implored our dear curator to help them sort out their differences. And [they] {0}IS{/0}{1}IS{/1}{2}ARE{/2} helping–one of them, at least."
         n2 "Oh, drama! Whose side did the curator take?"
-        if if ar_b2_c1 == "a":
+        if ar_b2_c1 == "a":
             n3 "Missus Arnolfini, she of the many names."
         if ar_b2_c1 == "b":
             n3 "Giovanni, the man himself."
@@ -236,7 +241,7 @@ label .Arnolfini:
         n1 "The Arnolfinis have reached a…well, I don't know if resolution is the right term. An impasse with each other? Let's go with that."
         n2 "Whatever it is, I'm just glad they're not yelling at each other. But how exactly did this even happen?"
         n3 "Our ingenious curator used the oldest trick in the conflict resolution handbook. [they!c] appealed to the Arnolfinis' vanity."
-        n4 "Ah, truly…nothing solves issues faster than money. What else?"
+        n4 "Ah, truly…nothing solves issues faster than gifts. What else?"
     if (beat_Arnolfini == 5) and (b4_ArLines == 0):
         $ b4_ArLines = 1
         if ar_b4_c2 == "a":
@@ -261,7 +266,7 @@ label .Davids:
         $ b2_DLines = 1
         n1 "Our dear curator made a CRITICAL mistake–[they] called [b2_DefinitiveDave] the REAL David."
         n2 "Oof. Rookie mistake."
-        n3 "Bets on which of the other two Davids is going to 'accidentally' tip over and crush [pc_name] flat?"
+        n3 "Bets on which of the other two Davids is going to \"accidentally\" tip over and crush [pc_name] flat?"
         n4 "No betting in the diner! We've been over this…what else?"
     if (beat_Davids == 4) and (b3_DLines == 0):
         $ b3_DLines = 1
@@ -275,12 +280,12 @@ label .Davids:
         if BibleResearched == -1:
             n1 "Stop your sinning, everyone–I hear SOMEONE cracked open the ol' Bible today."
             n2 "Did you? See, I heard different. QUITE different."
-            n3 "I heard differently as well. 'Memorized'? My, my, my…"
+            n3 "I heard differently as well. \"Memorized?\" My, my, my…"
             n4 "Yes, this should be interesting…what else?"
         #annoyed
         if BibleResearched == 0:
             n1 "Stop your sinning, everyone–I hear SOMEONE cracked open the ol' Bible today."
-            n2 "Who cares about that? The Davids got put into separate corners today! Like kindergartners!"
+            n2 "Who cares about that? The Davids got put into separate corners today! Like kindergarteners!"
             n3 "Seems…unproductive?"
             n4 "Only time will tell. What else is going on?"
     if (beat_Davids == 5) and (b4_DLines == 0):
@@ -322,10 +327,10 @@ label .Gilgamesh:
         n4 "Oh, CERTAINLY not for him...anything else noteworthy happen today?"
     if (beat_Gilgamesh == 4) and (b3_GiLines == 0):
         $ b3_GiLines = 1
-        n1 "Antiquities wing. Inexplicable flooding. Need I say more?"
+        n1 "Antiquities Wing. Inexplicable flooding. Need I say more?"
         n2 "Best if you don't. Gil might start crying again if he hears us talking about him."
         n3 "I doubt that. His conversation with the curator seems to bring him back to his senses...maybe this time he'll finally be able to grieve properly. "
-        n4 "Grieving for King Gilgamesh...I shudder to think what that looks like. What else?"
+        n4 "The Grieving King Gilgamesh…I shudder to think what that looks like. What else?"
     if (beat_Gilgamesh == 5) and (b4_GiLines == 0):
         $ b4_GiLines = 1
         if SongA > SongB:
@@ -378,7 +383,7 @@ label .MonaLisa:
             n1 "Oh, just a daring heist…a scandal to last generations. Nothing terribly exciting."
             n2 "I'll give our curator this, [they] certainly take[s] RISKS. But will getting rid of the Mona Lisa pay off–or has this museum just lost its crown jewel?"
             n3 "We won't have to wait long. The gala  is just around the corner..."
-            n4 "No, now, don't jump to the end so quickly! What else is going on?"
+            n4 "Now, now, don't jump to the end so quickly! What else is going on?"
 
     return
 
@@ -387,11 +392,11 @@ label .Poster:
         $ b1_PLines = 1
         n1 "Our dear curator spent a lot of time in the office today. Shirking duties, perhaps?"
         n2 "I can't think of any other reason to be in there. Except that–"
-        n3 "Oh, don't mention THEM. 'Motivational art'? Sure. Motivate me to leave the museum."
+        n3 "Oh, don't mention THEM. \"Motivational art?\" Sure. Motivate me to leave the museum."
         n4 "Enough gatekeeping. It's not attractive. What else is happening?"
     if (beat_Poster == 3) and (b2_PLines == 0):
         $ b2_PLines = 1
-        n1 "More time in the office for dear [pc_name]. Getting 'motivated'."
+        n1 "More time in the office for dear [pc_name]. Getting \"motivated.\""
         n2 "Honestly. All this fine, priceless art, and [they] choose[s] to spend [their] time chatting with a dollar store poster?"
         n3 "You're going to eat those elitist words of yours. The corgi has a FLAG now."
         n4 "God, the world will never be the same. What else?"
@@ -406,7 +411,7 @@ label .Poster:
         n1 "Well, I can't help but feel quite MOTIVATED for some reason…"
         n2 "You joke, but I think displaying the motivational poster in the museum WORKS. I can't tell if it's the pom-poms, or–"
         n3 "No, no. It's the…SINCERITY of it all. Sometimes it's good to be reminded that not everything needs to be buried under three layers of jaded pretension."
-        n4 "Who would have thought–self-growth, right here in the diner! What other surprises do we have in store for today?"
+        n4 "Who would have thought…Self-growth, right here in the diner! What other surprises do we have in store for today?"
     return
 
 label .SaintCatherine:
@@ -459,7 +464,7 @@ label .SoupAndSunflowers:
         $ b1_SSLines = 1
         n1 "Did you hear? Sunflowers tried to trick our dear curator into getting rid of Soup."
         n2 "Wouldn't you? If you were stuck with a stain who also YELLS constantly..."
-        n3 "I doubt the 'stain' is happy either. Sunflowers isn't exactly famous for their sparkly conversation."
+        n3 "I doubt the \"stain\" is happy either. Sunflowers isn't exactly famous for their sparkling conversation."
         n4 "Unlike us, you mean? Don't answer that. What else is happening?"
     if (beat_SoupAndSunflowers == 3) and (b2_SSLines == 0):
         $ b2_SSLines = 1

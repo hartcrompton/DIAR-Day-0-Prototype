@@ -56,10 +56,10 @@ label .beat1:
             pass
         "Excuse me, hello?":
             pass
-        "Shut the hell up! I can hear you from the lobby!":
+        "Shut the hell up! I can hear you from across the museum!":
             pass
     db neutral "Who are you? State your business."
-    dd neutral "Woah, sorry, geez."
+    dd neutral "Whoa, sorry, geez."
     dm neutral "Who might you be, that you can comprehend my euphonic voice?"
     menu:
         "I'm the new kid on the job.":
@@ -73,17 +73,17 @@ label .beat1:
     if pc_name == "David":
         dm neutral "Well, I stand corrected, it is another David."
     menu:
-        "Are you, like, brothers or something?":
+        "Are you brothers or something?":
             db surprise "Brothers?! How dare you. I don't look anything like these prissy posers."
             pass
         "Who put you in the same room?":
             dm neutral "Don't you know anything about museums? We're arranged according to our proper places."
             pass
-    dd confused "Don't pretend like you know what you're talking about, you… false witness!"
+    dd confused "Don't pretend like you know what you're talking about, you…false witness!"
     menu:
         "What's so bad about having three of you here?":
             pass
-        "I already have four or five Davids in my life. Remind me why I need another?":
+        "I already have enough Davids in my life. Why do I need another?":
             pass
     db neutral "I'm the heroic one. You can take pictures, but I'm not posing. "
     dm neutral "Ugh…Did the pipes break again? All I heard was a lot of hot air."
@@ -128,9 +128,9 @@ label .beat2:
     #needs some sort of transition from the first response
     dm neutral "The Biblical David. The grand vision of a great figure."
     dd neutral "The shepherd boy who combined bravery and skill."
-    db neutral "… The one who slew Goliath."
+    db neutral "…The one who slew Goliath."
     menu:
-        "Okay so you were a kid soldier… or something?":
+        "Okay so you were a kid soldier…or something?":
             pass
         "So you're an important king from the Bible.":
             pass
@@ -144,7 +144,7 @@ label .beat2:
             dd confused "NO! NOT LIKE KING ARTHUR!"
             db neutral "What an imitator. Pulling a sword out of a rock doesn't compare to felling an actual giant."
             dm neutral "Does this look like a room full of Arthurs to you? I implore you to attend to our current issue."
-            dm neutral "We are the young shepherd boy …"
+            dm neutral "We are the young shepherd boy…"
             dd neutral "Chosen by like the actual God himself."
             db neutral "To be the King of his chosen people."
         "Ah! Yes, that's right. I remember now.":
@@ -173,10 +173,10 @@ label .beat2:
         "Let me guess, {i}Leonardo's{/i} David.":
             dm neutral "You can't be serious, [pc_name]."
             dd neutral "Leo couldn't have made all this, are you paying attention at all?"
-    db neutral "Bernini. I am {i}Bernini's{/i} vision of David. The David the moment he became The David."
+    db neutral "Bernini. I am {i}Bernini's{/i} vision of David. David the moment he became {i}The{/i} David."
     db neutral "Art isn't a beauty pageant, and war is no place for little kids."
     db neutral "All art is in the action. Drama has its actors. Heroes have jobs, kid. I'm here to do mine."
-    pc  "So after first introductions and impressions I'm feeling that the definitive David so far is"
+    pc  "Well, after those introductions and impressions, I guess the definitive David so far is…"
     menu:
         "Michelangelo's David.":
             $ b2_DefinitiveDave = "Michelangelo's"
@@ -191,7 +191,7 @@ label .beat2:
         "Bernini's David.":
             $ b2_DefinitiveDave = "Bernini's"
             dm sigh "Oh no, not him. Hardly anyone knows him!"
-            dd question "That dude? He hasn't even slayed Goliath yet! Got no goodies to show for it."
+            dd question "That dude? He hasn't even slain Goliath yet! Got no goodies to show for it."
             db happy "That a way there, newbie. Now people can see what a real hero is. "
 
     dm neutral "Let me ask you this, [pc_name] why did you choose who you chose?"
@@ -200,7 +200,7 @@ label .beat2:
             pass
         "I honestly don't know what makes a David, THE David.":
             pass
-        "I don't know, I feel like you all bullied me into an answer!":
+        "I don't know, you all bullied me into an answer!":
             pass
     db questions "So we got no satisfactory decision! What do we do about that now?"    
     menu:
@@ -209,8 +209,8 @@ label .beat2:
         "You've been around for centuries, how have you dealt with this before?":
             pass
     db neutral "Is there…"
-    dm neutral "… Anyone who knows us better…"
-    dd neutral "… than we know ourselves?"
+    dm neutral "…anyone who knows us better…"
+    dd neutral "…than we know ourselves?"
     d "…"
     d "Come back later, we'll think on it."
     ###
@@ -218,22 +218,24 @@ label .beat2:
     jump FreeRoam
 label .beat3:
     d "But that's what I've been saying!"
-    pc  "Oh, God. You three again. Well, you've had the night to think. What do you got?"
+    pc  "Oh God. You three again. Well, you've had the night to think. What's the plan?"
     dm neutral "Indeed, indeed, my dear, [pc_name]. Yes, yes, this time I have a–"
     db neutral "He means \"we.\""
     dd neutral "Yeah as in \"we\" came up with a solution."
     menu:
-        "Consult an expert like myself?":
-            "You beam a smile."
-            d "Not {i}an{/i} expert… {i}the{/i} expert."
+        "Consult an expert like myself? [[Beam a smile]":
+            d "Not {i}an{/i} expert…{i}the{/i} expert."
+            d "THE SOURCE!"
+        "Let's hear it.":
+            d "Not just {i}any{/i} expert…{i}the{/i} expert."
             d "THE SOURCE!"
     menu:
         "The what?":
             pass
-        "It always worries me a little when you all are enthusiastic and in agreement…":
+        "It worries me a little that you're all enthusiastic and in agreement…":
             pass
     db neutral "Scuttlebutt around the vending machine is that you can read. "
-    dd neutral "Aloud and silently!"
+    dd neutral "Aloud {i}and{/i} silently!"
     db neutral "And that you can make it down stairwells no problem."
     dm neutral "There are rumors that beneath our very feet, hidden in the shelves of archives, is a copy of…"
     d "The Bible!"
@@ -244,29 +246,29 @@ label .beat3:
         "Of course. How could I not see this coming?":
             pass
     d "Exactly!"
-    db neutral "Kid, if you could let us know what the original passage says about us taking out that old Philistenian oaf, Goliath…"
+    db neutral "Kid, if you could let us know what the original passage says about us taking out that old Philistinian oaf, Goliath…"
     dd neutral "This old lug I got at my feet right here!"
-    dm neutral "Then you could tell us who is the definitive David!"
-    pc  "You want me to go read The Bible for you?"
+    dm neutral "Then you could tell us who the definitive David is!"
+    pc  "You want me to go read the Bible for you?"
     "They all slowly nod their heads."
     label DavidResearchChoice:
         menu:
-            "[[Lie] Psh. I got that memorized. I don't need to run you no errand.":
+            "[[Lie] Psh. I have it memorized. I don't need to run an errand.":
                 d "You have the Bible memorized?"
-                dm neutral "All chapters and verses… committed to memory?"
-                dd neutral "That's a lot of words… not going to lie."
+                dm neutral "All chapters and verses…committed to memory?"
+                dd neutral "That's a lot of words…not going to lie."
                 db neutral "You shooting us straight?"
-                pc  "Uh… yeah… of course. All of it… Right up here…In my mind palace."
+                pc  "Uh…yeah…of course. All of it…Right up here…In my mind palace."
                 d "Well in that case we can't wait to hear what you think tomorrow!"
-                pc  "Erm… right!… Yes… Tomorrow!"
+                pc  "Erm…right! Yes…tomorrow."
                 $ BibleResearched = -1
             "You know what? I'm done. Time to separate you.":
-                pc  "I can't look at you anymore. I'm just gonna shove you each in a corner until the gala is over."
+                pc  "I'm just gonna shove you each in a corner until the Gala is over."
                 d "No please! Wait!"
                 pc "What is it now?"
                 dm neutral "Give us one last chance!"
                 dd neutral "We'll be good! We promise! "
-                db neutral "We're on our last legs here. If you don't help us out… it could…"
+                db neutral "We're on our last legs here. If you don't help us out…it could…"
                 d "Crumble us!"
                 menu:
                     "Sorry, my Daves. It's to the corner with you all!":
@@ -276,7 +278,7 @@ label .beat3:
                         jump FreeRoam
                     "Let me think.":
                         jump DavidResearchChoice
-            "Of course I'll head to the archives for you all.":
+            "Of course I'll head to the archives for you.":
                 #archives
                 d "We can't wait to hear what you find! Be safe on the stairs!"
                 $ BibleResearched = 1
@@ -285,7 +287,7 @@ label .beat3:
                 hide davids
                 scene archives bg
                 "You descend the chilly stairwell that leads to the archives."
-                "Man, I really hope snooping around this archive settles things for those three."
+                pc "I really hope snooping around this archive settles things for those three. "
                 call call_catalogue("Davids") from _call_call_catalogue
                 label DavidsResearch:
                     $ renpy.set_return_stack([])
@@ -294,13 +296,13 @@ label .beat3:
                     hide screen ResearchMinigameUI
                     show bible overlay
                     show book overlay
-                    "1 Samuel 17:38-40" "Then Saul dressed David in his own tunic. He put a coat of armor on him and a bronze helmet on his head."
-                    "1 Samuel 17:38-40" "David fastened on his sword over the tunic and tried walking around, because he was not used to them. \"I cannot go in these,\" he said to Saul, \"because I am not used to them.\" So he took them off."
-                    "1 Samuel 17:38-40" "Then he took his staff in his hand, chose five smooth stones from the stream, put them in the pouch of his shepherd's bag and, with his sling in his hand, approached the Philistine."
+                    "{color=#ffffff}1 Samuel 17:38-40{/color}" "Then Saul dressed David in his own tunic. He put a coat of armor on him and a bronze helmet on his head."
+                    "{color=#ffffff}1 Samuel 17:38-40{/color}" "David fastened on his sword over the tunic and tried walking around, because he was not used to them. \"I cannot go in these,\" he said to Saul, \"because I am not used to them.\" So he took them off."
+                    "{color=#ffffff}1 Samuel 17:38-40{/color}" "Then he took his staff in his hand, chose five smooth stones from the stream, put them in the pouch of his shepherd's bag and, with his sling in his hand, approached the Philistine."
                     hide bible overlay
                     hide book overlay
                     "You slam the book shut, a constellation of dust leaps to the air, illuminated by the overhead light…"
-                    pc  "Gee… I can see every one of those three in that passage."
+                    pc  "Geez…I can see every one of those three in that passage."
                     pc  "Could it be all of them?"
     #######
     $ beat_Davids += 1
@@ -314,30 +316,30 @@ label .beat4:
         jump DavidsIntact
         
     label DavidsDestroyed:
-        "For the first time ever, the David's wing is silent. Not even a peep from them."
-        pc  "Uh… guys?"
-        "But all you find where the three heroes once stood is a pile of dismembered bronze and marble."
+        "For the first time ever, the Davids' wing is silent. Not even a peep from them."
+        pc  "Uh…guys?"
+        "But all you find—where the three heroes once stood—is a pile of dismembered bronze and marble."
         menu:
-            "Actually this is a good thing… Couldn't stand those guys…":
+            "Actually this is a good thing…I couldn't stand them.":
                 pass
             #little on the nose
-            "Oh no! I feel guilty.":
+            "Oh no! I didn't mean for this to happen…":
                 pass
-        "You bend down to pick up the only recognizable artifiact in the rubble, a single sling shot."
+        "You bend down to pick up the only recognizable artifact in the rubble: a single sling shot."
         jump DavidsEnd
 
     label DavidsIntact:
-        d "Well well, look who it is!"
+        d "Well, well, look who it is!"
         dm neutral "Here to administer your final judgement, I see."
         dd neutral "Can't believe you can memorize a whole book, let alone the good book itself."
         db neutral "That's no mean feat, kid. Impressive stuff."
-        pc  "Yeah… erm… well…"
+        pc  "Yeah…erm…well…"
         dm neutral "Once you settle this once and for all, this museum can claim to house the definitive David. "
         dm neutral "I can't wait to see how impressed museum goers will be with me."
         dd neutral "Puh-leeee-sssuhh! [pc_name] is going to be choosing me anyways. "
         db neutral "Nobody in their right mind will choose either of you two. This is a hero's exhibit, not Biblical cosplaying."
         d "So, using that memory of yours, who's it going to be? Who's the definitive David?"
-        pc  "From what I remember of the Bible, the definitive David is…"
+        pc  "From what I remember of the Bible, the definitive David is:"
         menu:
             "Michelangelo's David.":
                 $ DefinitiveDave = "dm"
@@ -361,7 +363,7 @@ label .beat4:
     label DonatelloTrue:
         dd neutral "Let's go! That's what I'm saying."
         dm neutral "Alack! Nay rather…"
-        db neutral "Fucking pathetic.  Went with the kid?"
+        db neutral "Fucking pathetic. Went with the kid?"
         dd neutral "Good luck competing for seconds, you losers."
         "He picks up the head of Goliath and gives it a kiss."
         dd neutral "We did it, big guy! Two heads are better than one! Our very own exhibit on youthful vigor."
@@ -373,7 +375,7 @@ label .beat4:
         dd neutral "This guy's face is barely visible. It's all shadowy and hidden. Dude don't even look at the audience!"
         db neutral "Cool it, you two. No more beauty pageant masquerading as art."
         "He begins to coil in position, flexing and swinging his sling."
-        db neutral "Call me old fashioned, but I'm just here to get the job done."
+        db neutral "Call me old-fashioned, but I'm just here to get the job done."
         jump DavidsEnd
 
     label BibleResearched:
@@ -385,23 +387,40 @@ label .beat4:
         db neutral "And back up them too."
         d "We thank you!"
         pc  "Just getting my steps and my reading in for the week. "
-        pc  "I have some good news… or at least I think it's pretty good."
+        pc  "I have some good news…or at least I think it's pretty good."
         pc  "Turns out the source has it all."
         dd neutral "Who's {i}Et Al{i}?"
         dm neutral "Ah yes, I remember Et well."
-        pc  "No. Not et al. The source… it's more complex than I thought…"
-        pc  "It's got this idea that David, despite being just a mortal, can approach being an ideal human."
-        dm neutral "Thus it is me who–"
-        pc  "It's also got this idea that David, though a kid, can do what grown-ups can't, even behead a giant."
-        dd neutral "I told you, you 40 pounds of bronze replicated skull, you!"
-        pc  "It's also got this idea that David, even though he doesn't say much, is a hero of duty, action, bravery."
-        db neutral "Not a lie to my ears."
-        pc  "Point being, the source says you all define David. Heroes are complicated people, not singular in any one respect. "
+        pc  "No, not {i}et al{/i}. The source…it's more complex than I thought…"
+        $ DefM = 0
+        $ DefD = 0
+        $ DefB = 0
+        label TheDefinitiveDavid:
+            menu:
+                "It's got this idea that David, despite being just a mortal, can approach being an ideal human." if DefM == 0:
+                    $ DefM = 1
+                    dm neutral "Thus it is me who–"
+                    pc "Hold on, there's more."
+                    jump TheDefinitiveDavid
+                "It also has the concept that David, though a kid, can do what grown-ups can't, even behead a giant." if DefD == 0:
+                    $ DefD = 1
+                    dd neutral "I told you, you 40 pounds of bronze replicated skull, you!"
+                    pc "That's not all."
+                    jump TheDefinitiveDavid
+                "There's the theme that David, even though he doesn't say much, is a hero of duty, action, bravery." if DefB == 0:
+                    $ DefB = 1
+                    db neutral "Not a lie to my ears."
+                    pc "Just wait a second."
+                    jump TheDefinitiveDavid
+        pc  "The source says you {i}all{/i} define David. Heroes are complicated people, not singular in any one respect. "
         "The Davids look at eachother and shrug their collective shoulders. "
-        pc  "I know alone you each beat a Goliath."
-        pc  "But as an exhibit, together you can beat the greatest challenge you heroes face: pride."
-        "[The Davids start to cry]"
-        pc  "Oh please. No more tears. I've already had to weather that storm with Gilgamesh."
+        pc  "I know you each beat Goliath alone."
+        pc  "But together as an exhibit, you can beat the greatest challenge you heroes face: pride."
+        "The Davids start to cry."
+        if beat_Gilgamesh >= 3:
+            pc  "Oh, please. No more tears. I've already had to weather that storm with Gilgamesh."
+        else:
+            pc "Oh, please. No more tears. I'm pretty sure we don't have flood insurance."
     $ StoryCompletedTotal += 1
     label DavidsEnd:
         $ beat_Davids += 1
@@ -419,29 +438,29 @@ label .Outcome:
         elif DefinitiveDave == "dd":
             show davidd at center
             "Donatello's David stands alone, proudly beaming a smile.  "
-            "Now as the one and true definitive David, the exhibit bears a banner that reads…"
+            "Now, as the one and true definitive David, the exhibit bears a banner that reads…"
             "Adolescence Ascending: Ephebic Hero, Future King."
         elif DefinitiveDave == "dm":
             show davidm at center
             "Michelangelo's David has somehow had his pedestal placed on another pedestal, and so stands especially tall, almost out of sight."
             "What can be discerned on his face is a mixture of threatening menace, steely resolve, and holy devotion."
             "The exhibit banner reads…"
-            "Liberated From Stone, Destined for Heaven."
+            "Liberated from Stone, Destined for Heaven."
         elif DefinitiveDave == "NONE":
             show davids destroyed at center
-            "The Davids lie in a heap of crumbled stone, graveled marble."
+            "The Davids lie in a mess of crumbled stone, graveled marble."
             "Where once stood heroes, now is an undifferentiated heap."
-            "On top of which sits a single stone, which could be used in a slingshot."
+            "On top sits a single stone, which could be used in a slingshot."
         elif DefinitiveDave == "all":
             show davids at center
             "All Davids stand facing outward, having each other's back, in mutual appreciation. Their banner reads…"
-            "Conquered, The Hero's Pride."
+            "Conquered, the Hero's Pride."
     elif beat_Davids > 1:
         #need an unresolved line
         "Their prayers unanswered, the Davids lie in a crumbled, ashy heap."
-        "On top of which sits a single stone, what could be used in a slingshot."
+        "On top sits a single stone, which could be used in a slingshot."
     else:
         #bad
         show davids destroyed at center
         "Their prayers unanswered, the Davids lie in a crumbled, ashy heap."
-        "On top of which sits a single stone, what could be used in a slingshot."
+        "On top sits a single stone, which could be used in a slingshot."

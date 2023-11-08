@@ -1,91 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('images/minigame/research/research catalogue asd base.jpg') at 0x0000000007a70fd0>:
-  File "game/characters/C_Gilgamesh.rpy", line 168, in script call
-    call call_catalogue("Gilgamesh") from _call_call_catalogue_1
-  File "game/minigames/research.rpy", line 49, in script call
-    call screen wait_for_user()
-  File "game/minigames/research.rpy", line 49, in script
-    call screen wait_for_user()
-  File "renpy/common/000statements.rpy", line 670, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-OSError: Couldn't find file 'images/minigame/research/research catalogue asd base.jpg'.
+Compiling ATL code at game/characters/C_SoupAndSunflowers.rpy:19
+  File "game/characters/C_SoupAndSunflowers.rpy", line 573, in script
+    show ssportrait at SSShake
+  File "game/characters/C_SoupAndSunflowers.rpy", line 19, in <module>
+    ea
+NameError: name 'ea' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/characters/C_Gilgamesh.rpy", line 168, in script call
-    call call_catalogue("Gilgamesh") from _call_call_catalogue_1
-  File "game/minigames/research.rpy", line 49, in script call
-    call screen wait_for_user()
-  File "game/minigames/research.rpy", line 49, in script
-    call screen wait_for_user()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 2259, in execute
-    self.call("execute")
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 2241, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\statements.py", line 342, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 670, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 3345, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4172, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 2779, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\transform.py", line 909, in render
-    return RenderTransform(self).render(width, height, st, at)
-  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
-  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 731, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 676, in render
-    return cache.get(self, render=True)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 330, in get
-    surf = image.load()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 803, in load
-    raise e
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 757, in load
-    filelike = renpy.loader.load(self.filename, directory="images")
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\loader.py", line 833, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'images/minigame/research/research catalogue asd base.jpg'.
+  File "game/characters/C_SoupAndSunflowers.rpy", line 573, in script
+    show ssportrait at SSShake
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1428, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1391, in show_imspec
+    renpy.config.show(name,
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 759, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 1277, in add
+    thing.visit_all(lambda d : None)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 671, in visit_all
+    for d in self.visit():
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 669, in visit
+    block = self.compile()
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 573, in compile
+    block = self.atl.compile(self.context)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 788, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 788, in <listcomp>
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 1099, in compile
+    child = ctx.eval(expr)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 277, in eval
+    return renpy.python.py_eval(expr, locals=self.context)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/characters/C_SoupAndSunflowers.rpy", line 19, in <module>
+    ea
+NameError: name 'ea' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
-DIAR Beta 3 0.31
-Thu Oct 26 11:38:06 2023
+DIAR Beta 3 0.33
+Tue Nov  7 17:36:47 2023
