@@ -8,7 +8,7 @@
 default pc_color = "#fcba03"   
 #define n = Character("name", who_prefix="{color=[namecol]}", who_suffix="{/color}")
 define pc = Character("[pc_name]", who_prefix="{color=[pc_color]}", who_suffix="{/color}")
-define config.rollback_enabled = True
+define config.rollback_enabled = False
 
 #main characters
 define hm = Character("Hiring Manager", color="#ffd65c")
@@ -768,7 +768,7 @@ layeredimage sslayered:
             "confused"
 image side sslayered = LayeredImageProxy("sslayered", Transform(xoffset=0, yoffset=0))
 
-define ad = Character("Admin", image="adminlayered")
+define ad = Character("Admin", image="adminlayered", color="#5bc3ef")
 layeredimage adminlayered:
     always:
         "side_admin"
