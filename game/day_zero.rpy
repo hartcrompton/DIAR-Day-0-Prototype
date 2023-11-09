@@ -74,7 +74,7 @@ label DayZero:
     scene foyer night with hpunch:
         ##matrixcolor TintMatrix("#7d91c7")
     play music "music/B14_W_02.wav" volume 0.5
-    "???" "But do you have to {i}stand{/i} on the head? It's grisly."
+    "{color=#ffffff}???{/color}" "But do you have to {i}stand{/i} on the head? It's grisly."
     "A voice echoes through the empty hall."
 
     menu:                                               
@@ -83,7 +83,7 @@ label DayZero:
         "{i}Where is that coming from?{/i}":                                 
             "You certainly don't see anyone."
 
-    "???" "It's {i}David{/i} and Goliath not {i}Goliath{/i} and Goliath you oversized buffoon."
+    "{color=#ffffff}???{/color}" "It's {i}David{/i} and Goliath not {i}Goliath{/i} and Goliath you oversized buffoon."
 
     #put the velvet rope hre
     scene foyer night:
@@ -538,7 +538,7 @@ label MuseumTour:
         "Hello?":
             stop sound fadeout 2.0
             "The dial tone does not respond."
-    "???" "Psst."
+    "{color=#ffffff}???{/color}" "Psst."
     "No, the vending machine did not just, 'psst' you."
     show vendingmachine
     play music "music/Vending_ZV_01.wav" fadein 0.9 volume 0.2
