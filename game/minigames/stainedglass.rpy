@@ -185,8 +185,8 @@ init python:
 
 
 label minigamestart_stainedglass(materialchoice="default"):
-    scene storage bg:
-        blur 3
+    scene storage bg minigame:
+        blur 5
     if materialchoice == "default":
         return
     if materialchoice == "glass":

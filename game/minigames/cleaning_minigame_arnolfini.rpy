@@ -296,22 +296,26 @@ label minigamestart_cleaning_arnolfini(gameimage="notdefault"):
         diff_items = []
         arnolfini_barks = []
         #stains
-        arnolfini_barks.append("Oh, I love green. I had an outfit that color.")
-        arnolfini_barks.append("I think I killed a man once...")
-        arnolfini_barks.append("I remember a dress, a veil... was it a wedding?")
+        #Oh, I love the color green! I remember a previous outfit I had that was that color. It came with a veil, I think?
+        arnolfini_barks.append("Oh, I love green! I had an outfit that color.")
+        arnolfini_barks.append("Red? I think I killed a man once…")
+        arnolfini_barks.append("I remember a dress, a veil…was it a wedding?")
         #chips
+        #Ah, food! I've always wanted to try it! That reminds me of the time we had some at…I want to say a party? What were we celebrating?
         arnolfini_barks.append("Ah, food! I've always wanted to try it!")
-        arnolfini_barks.append("I think we had something like that at a party!")
-        arnolfini_barks.append("Have you ever cooked? Have I?")
+        arnolfini_barks.append("That reminds me of something we had…at a party?")
+        arnolfini_barks.append("I remember a party, but what were we celebrating?")
         #socks
+        #Those are nowhere near as fancy as what we wear. Didn't we get some for Christmas one year? Wait, were we together as kids?
         arnolfini_barks.append("Nowhere near as fancy as what we wear.")
-        arnolfini_barks.append("Didn't we get socks as children one Christmas?\nTogether?")
+        arnolfini_barks.append("Didn't we get socks as children one Christmas?\nWere we together?")
         arnolfini_barks.append("I have this really intense desire\nto chew on those socks right now.")
         #cups
+        #A drink vessel! Rather plain, isn't it? Reminds me of when we visited family…my family? Our family? I don't know what to think…
         arnolfini_barks.append("A drink vessel! Rather plain, isn't it?")
-        arnolfini_barks.append("We had drinks with family once! I think...")
-        arnolfini_barks.append("What a waste.")
-        arnolfini_barks.append("I remember a dinner with wine...")
+        arnolfini_barks.append("Reminds me of when we visited family.")
+        arnolfini_barks.append("We had drinks with…my family? Our family?")
+        arnolfini_barks.append("I don't know what to think…")
         #stains
         diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 383, 65, 270, 150))
         diff_items.append(STD_Item("images/minigame/cleaning/cleaning fineart overlay.png", 767, 112, 295, 186))

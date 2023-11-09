@@ -1,25 +1,43 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/characters/C_SoupAndSunflowers.rpy:19
-  File "game/characters/C_SoupAndSunflowers.rpy", line 573, in script
-    show ssportrait at SSShake
-  File "game/characters/C_SoupAndSunflowers.rpy", line 19, in <module>
-    ea
-NameError: name 'ea' is not defined
+Compiling ATL code at game/minigames/stainedglass.rpy:190
+  File "game/daily_loop.rpy", line 183, in script call
+    menu:
+  File "renpy/common/00console.rpy", line 1163, in script
+    python in _console:
+  File "renpy/common/00console.rpy", line 1165, in <module>
+    console.interact()
+  File "renpy/common/00console.rpy", line 605, in interact
+    line = ui.interact()
+Exception: Not a displayable: <store.TintMatrix object at 0x0000000007893400>
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/characters/C_SoupAndSunflowers.rpy", line 573, in script
-    show ssportrait at SSShake
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1428, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1391, in show_imspec
-    renpy.config.show(name,
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 759, in show
-    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 1277, in add
-    thing.visit_all(lambda d : None)
+  File "game/daily_loop.rpy", line 183, in script call
+    menu:
+  File "renpy/common/00console.rpy", line 1163, in script
+    python in _console:
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00console.rpy", line 1165, in <module>
+    console.interact()
+  File "renpy/common/00console.rpy", line 605, in interact
+    line = ui.interact()
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
+    d.visit_all(callback, seen)
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 671, in visit_all
     for d in self.visit():
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 669, in visit
@@ -30,19 +48,13 @@ Full traceback:
     statements = [ i.compile(ctx) for i in self.statements ]
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 788, in <listcomp>
     statements = [ i.compile(ctx) for i in self.statements ]
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 1099, in compile
-    child = ctx.eval(expr)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 277, in eval
-    return renpy.python.py_eval(expr, locals=self.context)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1153, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/characters/C_SoupAndSunflowers.rpy", line 19, in <module>
-    ea
-NameError: name 'ea' is not defined
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 1108, in compile
+    child = renpy.easy.displayable(child)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\easy.py", line 145, in displayable
+    raise Exception("Not a displayable: %r" % (d,))
+Exception: Not a displayable: <store.TintMatrix object at 0x0000000007893400>
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
 DIAR Beta 3 0.33
-Tue Nov  7 17:36:47 2023
+Wed Nov  8 17:31:29 2023

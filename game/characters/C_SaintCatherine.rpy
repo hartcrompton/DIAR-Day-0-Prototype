@@ -555,7 +555,8 @@ label .beat4:
             call minigamestart_stainedglass("plastic") from _call_minigamestart_stainedglass_3
             pass
     $ SaintRepaired = 1
-    scene storage bg
+    scene storage bg:
+        blur 3
     show SaintPortrait at truecenter:
         zoom .8
     "The artwork has been repaired."
