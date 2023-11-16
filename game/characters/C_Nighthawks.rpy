@@ -468,12 +468,12 @@ label .SoupAndSunflowers:
         n4 "Unlike us, you mean? Don't answer that. What else is happening?"
     if (beat_SoupAndSunflowers == 3) and (b2_SSLines == 0):
         $ b2_SSLines = 1
-        if SoloChoice == "Soup":
+        if SoloChoice == "Sunflowers":
             n1 "The curator spoke with Soup. Alone."
             n2 "You mean Sunflowers pretended not to hear. How'd it go? Did [they] convince the activist to play nice?"
             n3 "Well, [they] certainly convinced Soup of SOMETHING. All that remains to be seen is if [pc_name] follows through."
             n4 "We'll see…what else?"
-        if SoloChoice == "Sunflowers":
+        if SoloChoice == "Soup":
             n1 "The curator spoke with Sunflowers. Alone."
             n2 "You mean Soup pretended not to hear. How'd it go? Did [they] convince the wallflower to play nice?"
             n3 "Well, [they] certainly convinced Sunflowers of SOMETHING. All that remains to be seen is if [pc_name] follows through."

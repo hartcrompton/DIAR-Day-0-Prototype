@@ -77,9 +77,9 @@ label .beat1:
         "Do you at least have a name?":
             st sigh "Saint…It's Catherine. Just Catherine."
         "The admin called you Saint Catherine.":
-            neutral"Saint? Your predecessor, Charles, said that as well. It's hard to remember."
+            st neutral "Saint? Your predecessor, Charles, said that as well. It's hard to remember."
         "Are you okay?":
-            neutral"I don't know."
+            st neutral "I don't know."
     st laugh "I remember Latin script. Taking Emperor Maxentius' greatest minds to task for persecuting the innocent. And winning."
     st happy "But also--songs in French. Gossiping in town. Carefree days in summer, surrounded by friends."
     st question "I remember both selves, but I'm not sure which is real: the great saint, or the French girl?"

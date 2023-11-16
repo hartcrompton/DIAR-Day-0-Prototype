@@ -78,6 +78,10 @@ label AllOutcomes:
     scene black
     show credits end at truecenter with fade
     $ renpy.pause(30.0)
+    show credits_art end at truecenter with fade
+    $ renpy.pause(10.0)
+    show credits_audio end at truecenter with fade
+    $ renpy.pause(10.0)
     stop music
     $ renpy.set_return_stack([])
     return

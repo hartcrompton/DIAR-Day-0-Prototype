@@ -113,7 +113,7 @@ label .beat2:
     p sparkle "Hope you do your best today! And thank you for helping yesterday, it really helps me emphasize my words! Watch!"
     "Again, the poster seems to indicate it's waving the flag. Again, nothing actually happens."
     p laugh "I feel so free!"
-    p neutral "…Who said that!?"
+    p neutral "I hope I'm helping you at least a little bit…"
     p sigh "…Unlike the last person who was here."
     menu:
         "What happened with them?":

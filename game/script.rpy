@@ -1246,6 +1246,10 @@ label start(show_credits=0):
         scene black with fade
         show credits end at truecenter with fade
         $ renpy.pause(30.0)
+        show credits_art end at truecenter with fade
+        $ renpy.pause(10.0)
+        show credits_audio end at truecenter with fade
+        $ renpy.pause(10.0)
         return
     $ StoryCompletedTotal = 0
     scene intro bg
@@ -1316,5 +1320,9 @@ label testing:
 label MainMenuCredits:
     show credits end at truecenter with fade
     $ renpy.pause(30.0)
+    show credits_art end at truecenter with fade
+    $ renpy.pause(10.0)
+    show credits_audio end at truecenter with fade
+    $ renpy.pause(10.0)
     return
 
