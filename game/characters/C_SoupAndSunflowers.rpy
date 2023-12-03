@@ -145,7 +145,7 @@ label .beat1:
                     so neutral "No can do, soldier. You've been drafted. "
                     su sweat "Goodness {i}gracious{/i} with this silly stain…"
                     so neutral "And so have you! You should both be proud to help me bring awareness to a critical issue."
-                    su neutral "Your “creators” could have {i}asked{/i} first. I'm sure some other priceless painting would have {/i}loved{/i} to be part of your crusade."
+                    su neutral "Your \"creators\" could have {i}asked{/i} first. I'm sure some other priceless painting would have {i}loved{/i} to be part of your crusade."
                     so bulb "You think? Well, we can get more soup just for them!"
         "Not even with a really, really big paper towel?":
             so neutral "Not even then!"

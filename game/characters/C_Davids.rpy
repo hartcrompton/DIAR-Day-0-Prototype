@@ -157,7 +157,7 @@ label .beat2:
     dd neutral "YOU'RE SO BORING!"
     db neutral "You look like you're standing before a weekly drawing class, not the field of battle. "
     dd neutral "Yeah! You tell him!"
-    dd neutral "I was made the earliest! I'm the most legitimate! {i}Donatello{i} cast me from bronze a hundred years before you even existed!"
+    dd neutral "I was made the earliest! I'm the most legitimate! {i}Donatello{/i} cast me from bronze a hundred years before you even existed!"
     dd neutral "And at five-foot-seven-inches, I'm the closest to the true David at the moment he chose bravery and saw victory!" 
     menu:
         "An idealized David sounds more comprehensive. More real.":
@@ -389,7 +389,7 @@ label .beat4:
         pc  "Just getting my steps and my reading in for the week. "
         pc  "I have some good news…or at least I think it's pretty good."
         pc  "Turns out the source has it all."
-        dd neutral "Who's {i}Et Al{i}?"
+        dd neutral "Who's {i}Et Al{/i}?"
         dm neutral "Ah yes, I remember Et well."
         pc  "No, not {i}et al{/i}. The source…it's more complex than I thought…"
         $ DefM = 0

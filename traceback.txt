@@ -1,60 +1,84 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/minigames/stainedglass.rpy:190
-  File "game/daily_loop.rpy", line 183, in script call
-    menu:
-  File "renpy/common/00console.rpy", line 1163, in script
-    python in _console:
-  File "renpy/common/00console.rpy", line 1165, in <module>
-    console.interact()
-  File "renpy/common/00console.rpy", line 605, in interact
-    line = ui.interact()
-Exception: Not a displayable: <store.TintMatrix object at 0x0000000007893400>
+While loading <renpy.display.im.Image object ('map/rooms/back_idle.png') at 0x00000000055c5970>:
+  File "game/characters/C_Gilgamesh.rpy", line 168, in script call
+    call call_catalogue("Gilgamesh") from _call_call_catalogue_1
+  File "game/minigames/research.rpy", line 49, in script call
+    call screen wait_for_user()
+  File "game/minigames/research.rpy", line 158, in script
+    call screen ResearchMinigameDrawerUI
+  File "renpy/common/000statements.rpy", line 670, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+OSError: Couldn't find file 'map/rooms/back_idle.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/daily_loop.rpy", line 183, in script call
-    menu:
-  File "renpy/common/00console.rpy", line 1163, in script
-    python in _console:
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00console.rpy", line 1165, in <module>
-    console.interact()
-  File "renpy/common/00console.rpy", line 605, in interact
-    line = ui.interact()
+  File "game/characters/C_Gilgamesh.rpy", line 168, in script call
+    call call_catalogue("Gilgamesh") from _call_call_catalogue_1
+  File "game/minigames/research.rpy", line 49, in script call
+    call screen wait_for_user()
+  File "game/minigames/research.rpy", line 158, in script
+    call screen ResearchMinigameDrawerUI
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 2259, in execute
+    self.call("execute")
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ast.py", line 2241, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\statements.py", line 342, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 670, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\exports.py", line 3345, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4052, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 681, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 671, in visit_all
-    for d in self.visit():
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 669, in visit
-    block = self.compile()
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 573, in compile
-    block = self.atl.compile(self.context)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 788, in compile
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 788, in <listcomp>
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\atl.py", line 1108, in compile
-    child = renpy.easy.displayable(child)
-  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\easy.py", line 145, in displayable
-    raise Exception("Not a displayable: %r" % (d,))
-Exception: Not a displayable: <store.TintMatrix object at 0x0000000007893400>
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 4172, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\core.py", line 2779, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\behavior.py", line 944, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\layout.py", line 1336, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 676, in render
+    return cache.get(self, render=True)
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 330, in get
+    surf = image.load()
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 803, in load
+    raise e
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\display\im.py", line 757, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "C:\Users\Hart\Downloads\renpy-8.1.1-sdk\renpy\loader.py", line 833, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'map/rooms/back_idle.png'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.1.23060707
-DIAR Beta 3 0.33
-Wed Nov  8 17:31:29 2023
+Please Don't Touch the Art 1.1.2
+Wed Nov 22 17:46:04 2023
